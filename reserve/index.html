@@ -195,18 +195,20 @@
         .product-hero {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem 3rem;
+            padding: 2rem 2rem 3rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
         }
 
         .product-image-wrap {
             position: relative;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            position: sticky;
+            top: 100px;
         }
 
         .product-image-wrap img {
@@ -654,9 +656,20 @@
                 padding: 3rem 1.5rem 2rem;
             }
 
-            .product-image-wrap { order: -1; }
+            .product-image-wrap {
+                order: -1;
+                position: static;
+                flex-direction: column;
+                align-items: center;
+            }
 
             .product-image-wrap img { max-height: 380px; }
+
+            .product-badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 0.75rem;
+            }
 
             .product-details h1 { font-size: 2rem; }
 
