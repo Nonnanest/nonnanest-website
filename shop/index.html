@@ -763,7 +763,7 @@ footer {
     <a href="/#features">Features</a>
     <a href="/#faq">FAQ</a>
     <a href="/blog">Blog</a>
-    <a href="#" class="nav-cta" onclick="document.querySelector('.preorder-btn').scrollIntoView({behavior:'smooth'});return false;">Pre-order</a>
+    <a href="/reserve" class="nav-cta">Reserve Yours</a>
   </div>
   <button class="hamburger" onclick="this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('open');" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -775,7 +775,7 @@ footer {
   <a href="/#features" onclick="closeMobileNav()">Features</a>
   <a href="/#faq" onclick="closeMobileNav()">FAQ</a>
   <a href="/blog" onclick="closeMobileNav()">Blog</a>
-  <a href="#" class="mobile-cta" onclick="closeMobileNav();document.querySelector('.preorder-btn').scrollIntoView({behavior:'smooth'});">Pre-order Now</a>
+  <a href="/reserve" class="mobile-cta" onclick="closeMobileNav();">Reserve Yours</a>
 </div>
 
 <script>
@@ -835,7 +835,7 @@ function closeMobileNav() {
     </div>
     <p class="product-installment">Or <strong>4 payments of ~$82</strong> with Shop Pay Installments</p>
 
-    <button class="preorder-btn" onclick="alert('Pre-orders opening soon! Check back shortly.');">
+    <button class="preorder-btn" onclick="window.location.href='/reserve';">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
       Pre-order Now — $329
     </button>
@@ -1066,7 +1066,7 @@ function closeMobileNav() {
   <h2>Peace of mind, <em>made simple</em></h2>
   <p>No wearables. No WiFi. No subscriptions. Just a parent who built something better.</p>
 
-  <button class="preorder-btn" onclick="alert('Pre-orders opening soon! Check back shortly.');">
+  <button class="preorder-btn" onclick="window.location.href='/reserve';">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
     Pre-order Now — $329
   </button>
