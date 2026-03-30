@@ -14,18 +14,18 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Press — Nonnanest | The Only Contactless Baby Temperature Monitor</title>
-<meta name="description" content="Nonnanest press room. Media resources, press releases, and contact information for the only baby monitor that senses skin temperature without touching your baby. No wearables, no WiFi, no subscriptions.">
+<title>Press | Nonnanest | Baby Wellness Technology</title>
+<meta name="description" content="Press resources for Nonnanest and SightAware, the contactless infrared skin temperature baby wellness monitor. Product images, founder bio, fact sheet, and media contact.">
 <!-- Open Graph -->
-<meta property="og:title" content="Press — Nonnanest">
-<meta property="og:description" content="Nonnanest press resources, media kit, and company information for journalists and publishers.">
+<meta property="og:title" content="Press | Nonnanest">
+<meta property="og:description" content="Press resources for Nonnanest and SightAware, the contactless infrared skin temperature baby wellness monitor. Product images, founder bio, and media contact.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nonnanest.com/press">
 <meta property="og:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
 <meta property="og:site_name" content="Nonnanest">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Press — Nonnanest">
-<meta name="twitter:description" content="Nonnanest press resources, media kit, and company information for journalists and publishers.">
+<meta name="twitter:title" content="Press | Nonnanest">
+<meta name="twitter:description" content="Press resources for Nonnanest and SightAware, the contactless infrared skin temperature baby wellness monitor.">
 <meta name="twitter:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
 
 <!-- Organization Schema -->
@@ -111,7 +111,6 @@ nav {
 }
 .nav-cta:hover { background: var(--soft-teal) !important; transform: translateY(-1px); }
 
-/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -253,6 +252,150 @@ nav {
 }
 
 
+/* ===== FOUNDER BIO ===== */
+.founder-bio {
+  background: var(--cream);
+  border: 1px solid var(--linen);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.founder-bio h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+
+.founder-bio p {
+  font-size: 15px;
+  color: var(--earth);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.founder-bio p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ===== PRODUCT FACTS ===== */
+.product-facts {
+  margin-top: 48px;
+}
+
+.product-facts h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.product-facts .section-sub {
+  font-size: 15px;
+  color: var(--bark);
+  margin-bottom: 32px;
+}
+
+.fact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.fact-list li {
+  font-size: 15px;
+  color: var(--earth);
+  line-height: 1.75;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--linen);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.fact-list li:last-child {
+  border-bottom: none;
+}
+
+.fact-list li::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--soft-teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  top: -2px;
+}
+
+
+/* ===== QUOTES ===== */
+.quotes-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.quotes-section .section-sub {
+  font-size: 15px;
+  color: var(--bark);
+  margin-bottom: 40px;
+}
+
+.quote-card {
+  background: var(--cream);
+  border: 1px solid var(--linen);
+  border-radius: 16px;
+  padding: 32px 36px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.quote-card::before {
+  content: '\201C';
+  font-family: 'Fraunces', serif;
+  font-size: 48px;
+  color: var(--pale-aqua);
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  line-height: 1;
+}
+
+.quote-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--soft-teal);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.quote-card p {
+  font-size: 15px;
+  color: var(--earth);
+  line-height: 1.75;
+  font-style: italic;
+  padding-left: 20px;
+}
+
+.quote-attr {
+  font-size: 13px;
+  color: var(--bark);
+  font-style: normal;
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+
 /* ===== PRESS RELEASES ===== */
 .press-releases h2 {
   font-family: 'Fraunces', serif;
@@ -269,45 +412,42 @@ nav {
   margin-bottom: 40px;
 }
 
-.press-placeholder {
+.press-release-item {
   background: var(--cream);
-  border: 1px dashed var(--warm-sand);
+  border: 1px solid var(--linen);
   border-radius: 16px;
-  padding: 56px 40px;
-  text-align: center;
+  padding: 32px 36px;
+  margin-bottom: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.press-placeholder-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--teal-mist);
-  border: 1px solid var(--pale-aqua);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
+.press-release-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44,37,32,0.06);
 }
 
-.press-placeholder-icon svg {
-  width: 22px;
-  height: 22px;
-  color: var(--deep-teal);
+.press-release-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--soft-teal);
+  margin-bottom: 8px;
+  display: block;
 }
 
-.press-placeholder h3 {
+.press-release-item h3 {
   font-family: 'Fraunces', serif;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--charcoal);
   margin-bottom: 8px;
+  line-height: 1.4;
 }
 
-.press-placeholder p {
+.press-release-item p {
   font-size: 14px;
   color: var(--bark);
-  max-width: 400px;
-  margin: 0 auto;
   line-height: 1.6;
 }
 
@@ -391,6 +531,56 @@ nav {
   background: var(--teal-mist);
   padding: 4px 12px;
   border-radius: 6px;
+}
+
+.media-card .download-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--deep-teal);
+  border-bottom: 1px solid var(--pale-aqua);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.media-card .download-link:hover {
+  color: var(--soft-teal);
+  border-color: var(--soft-teal);
+}
+
+
+/* ===== BRAND NOTE ===== */
+.brand-note {
+  background: var(--teal-mist);
+  border: 1px solid var(--pale-aqua);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 32px;
+}
+
+.brand-note p {
+  font-size: 14px;
+  color: var(--deep-teal);
+  line-height: 1.65;
+}
+
+.brand-note strong {
+  font-weight: 500;
+}
+
+
+/* ===== REGULATORY ===== */
+.regulatory-notice {
+  margin-top: 48px;
+  padding: 24px 28px;
+  border-left: 3px solid var(--warm-sand);
+}
+
+.regulatory-notice p {
+  font-size: 13px;
+  color: var(--bark);
+  line-height: 1.7;
 }
 
 
@@ -479,6 +669,8 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .hamburger { display: flex; }
   .footer-grid { grid-template-columns: 1fr; }
   .boilerplate { padding: 28px 20px; }
+  .founder-bio { padding: 28px 20px; }
+  .quote-card { padding: 28px 20px; }
 }
 </style>
 </head>
@@ -487,13 +679,13 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 
 <!-- ===== NAV ===== -->
 <nav>
-  <a href="/" class="wordmark">Nonnanest™</a>
+  <a href="/" class="wordmark">Nonnanest&#8482;</a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/#how-it-works">How It Works</a></li>
     <li><a href="/#features">Why Nonnanest</a></li>
     <li><a href="/#faq">FAQ</a></li>
-    <li><a href="/#pricing" class="nav-cta">Get Yours — $329</a></li>
+    <li><a href="/#pricing" class="nav-cta">Get Yours &#8212; $329</a></li>
   </ul>
   <button class="hamburger" onclick="this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('open');" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -505,7 +697,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   <a href="/#how-it-works" onclick="closeMobileNav()">How It Works</a>
   <a href="/#features" onclick="closeMobileNav()">Why Nonnanest</a>
   <a href="/#faq" onclick="closeMobileNav()">FAQ</a>
-  <a href="/#pricing" class="mobile-nav-cta" onclick="closeMobileNav()">Get Yours — $329</a>
+  <a href="/#pricing" class="mobile-nav-cta" onclick="closeMobileNav()">Get Yours &#8212; $329</a>
 </div>
 
 <script>
@@ -519,16 +711,71 @@ function closeMobileNav() {
 <!-- ===== PAGE HEADER ===== -->
 <section class="page-header">
   <div class="section-label">Press</div>
-  <h1>Nonnanest in <em>the news</em></h1>
+  <h1>Nonnanest <em>press room</em></h1>
   <p>Media resources, press releases, and brand information for the only baby monitor that senses skin temperature without touching your baby. No wearables, no WiFi, no subscriptions.</p>
 </section>
 
 
-<!-- ===== BOILERPLATE ===== -->
+<!-- ===== COMPANY OVERVIEW + FOUNDER ===== -->
 <div class="section" style="padding-top:0;">
   <div class="boilerplate">
     <h2>About Nonnanest</h2>
-    <p>Nonnanest is the only baby monitor that senses skin temperature without touching your baby — no wearables, no WiFi, no subscriptions. Founded in Charleston, South Carolina, Nonnanest was born in a nursery, not a boardroom — by a parent who realized the market didn't need another camera, it needed awareness. Every other monitor that tracks wellness insights requires a wearable. Nonnanest closes that gap with patent-pending contactless infrared technology that gives parents continuous comfort awareness through a dedicated 5" HD handheld display, fully offline and private by design. The Nonnanest monitor is available for $329 as a one-time purchase with all features included.</p>
+    <p>Nonnanest, Inc. is a baby wellness technology company based in Charleston, SC, founded in 2024 by Nathan Overbey. The company's flagship product, SightAware&#8482; by Nonnanest, is a contactless infrared baby wellness monitor that reads skin temperature from up to four feet away without requiring a wearable, WiFi, or a smartphone app. SightAware communicates via FHSS (Frequency Hopping Spread Spectrum), a secure wireless protocol that keeps all data local between the nursery camera and a dedicated 5-inch HD parent display. Patent pending. Priced at $329 with no subscription fees.</p>
+  </div>
+
+  <div class="founder-bio">
+    <h2>Founder</h2>
+    <p><strong>Nathan Overbey, Founder &amp; CEO</strong></p>
+    <p>Nathan designed SightAware after realizing no baby monitor on the market could track skin temperature contactlessly. He brings over 15 years of enterprise technology experience from Salesforce, ServiceNow, and Blackbaud, and holds an MBA from the University of South Carolina. Nathan is a father of two and the product's first real-world user.</p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+
+<!-- ===== PRODUCT FACT SHEET ===== -->
+<div class="section product-facts">
+  <h2>Product fact sheet</h2>
+  <p class="section-sub">SightAware&#8482; by Nonnanest</p>
+
+  <ul class="fact-list">
+    <li>Contactless infrared skin temperature sensing up to 4 feet</li>
+    <li>FHSS secure wireless transmission, no WiFi or Bluetooth required</li>
+    <li>Dedicated 5-inch HD parent display, no phone or app needed</li>
+    <li>Real-time skin temperature and room temperature awareness</li>
+    <li>Customizable comfort thresholds with gentle audible alerts</li>
+    <li>355-degree pan, 60-degree tilt, two-way audio, lullabies, and infrared night vision</li>
+    <li>5-minute setup with crib mount and wall mount included</li>
+    <li>$329, no subscription, no recurring fees</li>
+    <li>Patent pending</li>
+    <li>FCC ID: 2AYKP-ABM570</li>
+  </ul>
+</div>
+
+<hr class="section-divider">
+
+
+<!-- ===== PRE-WRITTEN QUOTES ===== -->
+<div class="section quotes-section">
+  <h2>Founder quotes</h2>
+  <p class="section-sub">Journalists are welcome to use these quotes attributed to Nathan Overbey, Founder &amp; CEO, Nonnanest.</p>
+
+  <div class="quote-card">
+    <span class="quote-label">On the origin</span>
+    <p>When our son was six months old, he woke up in the middle of the night warm, and all the monitor could tell me was the room temperature. I thought, how long had his skin temperature been rising? That was the moment I realized the market needed more awareness, not another camera.</p>
+    <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
+  </div>
+
+  <div class="quote-card">
+    <span class="quote-label">On privacy</span>
+    <p>We made a deliberate decision to keep SightAware offline. Parents are concerned about connected devices and security risks. We built it on FHSS, a fully encrypted signal that never touches the internet. Private by design, not by promise.</p>
+    <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
+  </div>
+
+  <div class="quote-card">
+    <span class="quote-label">On the approach</span>
+    <p>We're not trying to replace a parent's instinct. We're giving that instinct better information. SightAware is a gentle layer of awareness that works quietly in the background while your baby sleeps.</p>
+    <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
   </div>
 </div>
 
@@ -540,12 +787,10 @@ function closeMobileNav() {
   <h2>Press releases</h2>
   <p class="section-sub">Announcements and company news.</p>
 
-  <div class="press-placeholder">
-    <div class="press-placeholder-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-    </div>
-    <h3>Press releases coming soon</h3>
-    <p>Our first announcements are on the way. Check back shortly or reach out to our press contact below for early access.</p>
+  <div class="press-release-item">
+    <span class="press-release-date">April 7, 2026</span>
+    <h3>Charleston Father Files Patent for First Contactless Infrared Skin Temperature Baby Wellness Monitor</h3>
+    <p>Nonnanest introduces SightAware&#8482;, a non-wearable baby monitor that tracks skin temperature from across the crib with no WiFi, no app, and no subscription.</p>
   </div>
 </div>
 
@@ -563,8 +808,9 @@ function closeMobileNav() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
       </div>
       <h3>Product photos</h3>
-      <p>High-resolution images of the Nonnanest camera and handheld display.</p>
-      <span class="coming-soon">Coming soon</span>
+      <p>High-resolution images of the SightAware camera and parent display in nursery settings.</p>
+      <!-- TODO: Replace with download link once image ZIP is hosted -->
+      <span class="coming-soon">Available on request</span>
     </div>
 
     <div class="media-card">
@@ -572,18 +818,34 @@ function closeMobileNav() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
       </div>
       <h3>Logo &amp; brand marks</h3>
-      <p>Nonnanest wordmark, logomark, and usage guidelines.</p>
-      <span class="coming-soon">Coming soon</span>
+      <p>Nonnanest wordmark and logomark in SVG and PNG formats, light and dark variants.</p>
+      <!-- TODO: Replace with download link once logo ZIP is hosted -->
+      <span class="coming-soon">Available on request</span>
     </div>
 
     <div class="media-card">
       <div class="media-card-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </div>
-      <h3>Founder bio &amp; headshot</h3>
-      <p>Background on Nathan, Nonnanest's founder, and high-res headshot.</p>
-      <span class="coming-soon">Coming soon</span>
+      <h3>Founder headshot</h3>
+      <p>Professional headshot of Nathan Overbey, Founder &amp; CEO, in high resolution.</p>
+      <!-- TODO: Replace with download link once headshot is hosted -->
+      <span class="coming-soon">Available on request</span>
     </div>
+  </div>
+
+  <div class="brand-note">
+    <p><strong>Brand usage:</strong> Please use "Nonnanest" (one word, capital N). The product name is "SightAware&#8482; by Nonnanest." For logo usage guidelines or additional assets, contact <a href="mailto:hello@nonnanest.com" style="color:var(--deep-teal);border-bottom:1px solid var(--pale-aqua);">hello@nonnanest.com</a>.</p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+
+<!-- ===== REGULATORY NOTICE ===== -->
+<div class="section" style="padding-top:40px;padding-bottom:40px;">
+  <div class="regulatory-notice">
+    <p>Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents be aware of general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
   </div>
 </div>
 
@@ -594,7 +856,7 @@ function closeMobileNav() {
 <div class="section">
   <div class="press-contact">
     <h2>Press inquiries</h2>
-    <p>For media inquiries, interview requests, or review units, please reach out directly. We'd love to hear from you.</p>
+    <p>For media inquiries, interview requests, or review units, please reach out directly.</p>
     <a href="mailto:hello@nonnanest.com" class="press-email">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       hello@nonnanest.com
@@ -608,7 +870,7 @@ function closeMobileNav() {
   <div class="footer-grid">
     <div class="footer-brand">
       <span class="wordmark" style="color:var(--warm-white);">Nonnanest</span>
-      <p>The only baby monitor that senses skin temperature without touching your baby. Calm, connection, and confidence — through technology that protects privacy and empowers peace of mind.</p>
+      <p>The only baby monitor that senses skin temperature without touching your baby. Calm, connection, and confidence through technology that protects privacy and empowers peace of mind.</p>
     </div>
     <div class="footer-col">
       <h4>Product</h4>
@@ -634,8 +896,17 @@ function closeMobileNav() {
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Nonnanest. All rights reserved. Designed in Charleston, SC.</p>
+    <p>&copy; 2026 Nonnanest. All rights reserved. Designed in Charleston, SC.</p>
     <div class="footer-bottom-links">
-      <a href="/privacy-policy"
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-conditions">Terms &amp; Conditions</a>
+    </div>
+  </div>
+
+  <div class="wellness-disclaimer">
+    Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only. For health concerns, consult a pediatrician.
+  </div>
+</footer>
+
 </body>
 </html>
