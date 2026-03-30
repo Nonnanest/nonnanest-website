@@ -1,64 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VXRF2PKBGP"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-VXRF2PKBGP");</script>
-
-<!-- Meta Pixel -->
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1076529151218038");fbq("track","PageView");</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1076529151218038&ev=PageView&noscript=1"/></noscript>
-
-<!-- HubSpot -->
-<script src="https://js-na2.hsforms.net/forms/embed/242981565.js" defer></script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Nonnanest</title>
 <meta name="description" content="Nonnanest privacy policy. We built a baby monitor with no WiFi, no cloud, and no data collection by design. Here's exactly how we handle your information.">
-<!-- Open Graph -->
-<meta property="og:title" content="Privacy Policy — Nonnanest">
-<meta property="og:description" content="How Nonnanest handles your data. Privacy-first by design.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.nonnanest.com/privacy-policy">
-<meta property="og:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
-<meta property="og:site_name" content="Nonnanest">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Privacy Policy — Nonnanest">
-<meta name="twitter:description" content="How Nonnanest handles your data. Privacy-first by design.">
-<meta name="twitter:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Outfit:wght@300;400;500;600&family=Oswald:wght@600&display=swap" rel="stylesheet">
 <style>
 :root {
   --soft-teal: #559092;
   --deep-teal: #3D6B6D;
-  --pale-aqua: #C8E3DF;
-  --teal-mist: #E4EFEE;
+  --charcoal: #2C2520;
   --warm-white: #FAF8F5;
   --cream: #F5F0EA;
   --linen: #EDE7DF;
   --warm-sand: #D4CCC2;
   --clay: #B8A99A;
-  --charcoal: #2C2520;
+  --pale-aqua: #C8E3DF;
+  --teal-mist: #E4EFEE;
   --earth: #5C4F43;
   --bark: #8C7B6B;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
   font-family: 'Outfit', sans-serif;
-  font-weight: 300;
-  color: var(--earth);
   background: var(--warm-white);
-  line-height: 1.75;
+  color: var(--earth);
+  line-height: 1.7;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: var(--pale-aqua); color: var(--charcoal); }
-a { color: var(--soft-teal); text-decoration: none; transition: color 0.2s; }
-a:hover { color: var(--deep-teal); }
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  position: sticky;
+  top: 0;
+  background: var(--warm-white);
+  z-index: 100;
+  border-bottom: 1px solid var(--linen);
+}
 
 .wordmark {
   font-family: 'Oswald', sans-serif;
@@ -66,85 +54,81 @@ a:hover { color: var(--deep-teal); }
   font-size: 22px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: var(--soft-teal);
+  text-decoration: none;
 }
 
-/* NAV */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(250, 248, 245, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(237, 231, 223, 0.6);
-}
 .nav-back {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--deep-teal);
   display: flex;
   align-items: center;
   gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bark);
+  text-decoration: none;
+  transition: color 0.2s;
 }
+.nav-back:hover { color: var(--soft-teal); }
 .nav-back svg { width: 16px; height: 16px; }
 
-/* LEGAL CONTENT */
+/* HEADER */
 .legal-header {
-  padding: 100px 24px 40px;
+  padding: 80px 24px 40px;
   max-width: 720px;
   margin: 0 auto;
 }
 
 .legal-header h1 {
   font-family: 'Fraunces', serif;
-  font-size: 36px;
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -1px;
+  font-size: 36px;
   color: var(--charcoal);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-.legal-header .effective {
+.effective {
   font-size: 14px;
   color: var(--bark);
+  font-weight: 400;
 }
 
+/* BODY */
 .legal-body {
-  padding: 0 24px 80px;
   max-width: 720px;
   margin: 0 auto;
+  padding: 0 24px 80px;
+  font-size: 15px;
+}
+
+.legal-body p {
+  margin-bottom: 16px;
+  color: var(--earth);
 }
 
 .legal-body h2 {
   font-family: 'Fraunces', serif;
-  font-size: 22px;
   font-weight: 400;
+  font-size: 24px;
   color: var(--charcoal);
   margin-top: 40px;
-  margin-bottom: 12px;
-  letter-spacing: -0.3px;
-}
-
-.legal-body p {
-  font-size: 15px;
-  color: var(--earth);
   margin-bottom: 16px;
-  line-height: 1.75;
 }
 
-.legal-body strong { font-weight: 500; color: var(--charcoal); }
+.legal-body a {
+  color: var(--soft-teal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.legal-body a:hover { color: var(--deep-teal); }
 
+.legal-body strong { font-weight: 600; color: var(--charcoal); }
+
+/* CALLOUT BOX */
 .legal-callout {
-  padding: 20px 24px;
   background: var(--teal-mist);
   border: 1px solid var(--pale-aqua);
   border-radius: 12px;
+  padding: 20px 24px;
   margin: 24px 0;
 }
 
@@ -165,7 +149,8 @@ nav {
   font-size: 12px;
   color: var(--bark);
 }
-.legal-footer a { color: var(--soft-teal); }
+.legal-footer a { color: var(--soft-teal); text-decoration: none; }
+.legal-footer a:hover { text-decoration: underline; }
 
 @media (min-width: 600px) {
   .legal-header, .legal-body { padding-left: 48px; padding-right: 48px; }
@@ -179,7 +164,7 @@ nav {
 <body>
 
 <nav>
-  <a href="/" class="wordmark">Nonnanest™</a>
+  <a href="/" class="wordmark">Nonnanest</a>
   <a href="/" class="nav-back">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
     Back to home
@@ -205,7 +190,7 @@ nav {
 
   <p><strong>When you make a purchase:</strong> We collect the information needed to fulfill your order — your name, shipping address, email address, and payment information. Payment processing is handled by Shopify Payments and we do not store your credit card number on our servers.</p>
 
-  <p><strong>When you contact us:</strong> If you email us at <a href="mailto:hello@nonnanest.com">hello@nonnanest.com</a> or <a href="mailto:hello@nonnanest.com">hello@nonnanest.com</a>, we retain your message and contact information to respond and improve our service.</p>
+  <p><strong>When you contact us:</strong> If you email us at <a href="mailto:support@nonnanest.com">support@nonnanest.com</a> or <a href="mailto:press@nonnanest.com">press@nonnanest.com</a>, we retain your message and contact information to respond and improve our service.</p>
 
   <p><strong>When you subscribe to updates:</strong> If you sign up for our newsletter, we store your email address to send you product updates and content. You can unsubscribe at any time.</p>
 
@@ -235,6 +220,29 @@ nav {
 
   <p>Our website is directed at parents and caregivers, not children. We do not knowingly collect personal information from anyone under the age of 13. Our monitor device collects no data at all — from anyone of any age.</p>
 
-  <h2>Your rights
+  <h2>Your rights</h2>
+
+  <p>You may request access to, correction of, or deletion of personal information we hold about you by emailing <a href="mailto:support@nonnanest.com">support@nonnanest.com</a>. We will respond within 30 days.</p>
+
+  <h2>Changes to this policy</h2>
+
+  <p>If we update this policy, we'll post the revised version here with a new effective date. We won't reduce your rights under this policy without giving you clear notice.</p>
+
+  <h2>Governing law</h2>
+
+  <p>This policy is governed by the laws of the State of Delaware, United States.</p>
+
+  <h2>Contact us</h2>
+
+  <p>If you have questions about this privacy policy, email us at <a href="mailto:support@nonnanest.com">support@nonnanest.com</a>.</p>
+
+  <p>Nonnanest, Inc.<br>Charleston, SC</p>
+
+</article>
+
+<div class="legal-footer">
+  <p>&copy; 2026 Nonnanest. <a href="/">nonnanest.com</a></p>
+</div>
+
 </body>
 </html>
