@@ -610,23 +610,80 @@ nav {
 .feature-detail svg { width: 18px; height: 18px; color: var(--soft-teal); flex-shrink: 0; margin-top: 2px; }
 .feature-detail span { font-size: 14px; color: var(--earth); line-height: 1.5; }
 
-
 /* ===== TESTIMONIALS ===== */
 .testimonial-section { background: linear-gradient(170deg, var(--charcoal) 0%, #1a1614 60%, var(--deep-teal) 100%); color: var(--warm-white); padding: 120px 48px; }
 .testimonial-section .section-label { color: var(--pale-aqua); }
-.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1200px; margin: 0 auto; }
-.testimonial-card {
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px; padding: 36px 28px; backdrop-filter: blur(10px);
-}
-.testimonial-stars { color: var(--pale-aqua); font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
-.testimonial-card blockquote {
-  font-family: 'Fraunces', serif; font-size: 17px; font-weight: 300;
-  font-style: italic; line-height: 1.6; color: rgba(250,248,245,0.9); margin-bottom: 24px;
-}
-.testimonial-author { font-size: 13px; color: var(--clay); }
-.testimonial-author strong { color: var(--warm-white); font-weight: 500; display: block; margin-bottom: 2px; }
 
+.testimonial-single {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 48px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  text-align: center;
+}
+
+.testimonial-single .quote-mark {
+  width: 32px;
+  height: 32px;
+  color: var(--pale-aqua);
+  opacity: 0.5;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+.testimonial-single blockquote {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(250,248,245,0.95);
+  letter-spacing: -0.3px;
+  margin-bottom: 36px;
+}
+
+.testimonial-attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pale-aqua);
+}
+
+.attribution-line {
+  height: 1px;
+  width: 32px;
+  background: rgba(200,227,223,0.3);
+}
+
+.attribution-text {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .testimonial-single {
+    padding: 40px 28px;
+  }
+  .testimonial-single blockquote {
+    font-size: 21px;
+  }
+  .testimonial-attribution {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .attribution-line {
+    width: 48px;
+  }
+}
 
 /* ===== PRICING ===== */
 .pricing-section { text-align: center; }
@@ -1043,34 +1100,22 @@ function closeMobileNav() {
 
 <!-- ===== TESTIMONIALS ===== -->
 <section class="testimonial-section">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label">What parents say</div>
-    <h2 style="font-family:'Fraunces',serif;font-size:40px;font-weight:400;letter-spacing:-1px;color:var(--warm-white);margin-bottom:48px;">Parents who <em style="font-style:italic;font-weight:300;color:var(--pale-aqua);">get it</em></h2>
+  <div style="max-width:760px;margin:0 auto;text-align:center;">
+    <div class="section-label">From an early tester</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:40px;font-weight:400;letter-spacing:-1px;color:var(--warm-white);margin-bottom:16px;">In their <em style="font-style:italic;font-weight:300;color:var(--pale-aqua);">own words</em></h2>
+    <p style="font-size:16px;color:var(--clay);line-height:1.7;max-width:560px;margin:0 auto 56px;">Before we ship, we put SightAware™ in the hands of a few families. This is one of them.</p>
 
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-        <blockquote>"I got the first alert about a skin temp shift at 2 AM. By morning, it was obvious something had changed. We were already a step ahead."</blockquote>
-        <div class="testimonial-author">
-          <strong>Elizabeth M.</strong>
-          Second-time parent
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-        <blockquote>"We tried the sock monitors — our daughter kicked them off every night. Nonnanest doesn't touch her at all. That's the difference."</blockquote>
-        <div class="testimonial-author">
-          <strong>James T.</strong>
-          Dad of two
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-        <blockquote>"No WiFi was the reason I looked. Nothing on my baby was the reason I bought it. The fact that it just works out of the box is everything."</blockquote>
-        <div class="testimonial-author">
-          <strong>Sarah K.</strong>
-          Mom of one
-        </div>
+    <div class="testimonial-single">
+      <svg class="quote-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/>
+      </svg>
+      <blockquote>
+        The peace of mind we've had since getting to test out your spare has been a game changer. We are so excited to finally be able to get one for both girls.
+      </blockquote>
+      <div class="testimonial-attribution">
+        <span class="attribution-line"></span>
+        <span class="attribution-text">Early Tester · Nonnanest Beta Program</span>
+        <span class="attribution-line"></span>
       </div>
     </div>
   </div>
