@@ -798,6 +798,147 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   .founder-text blockquote { font-size: 20px; }
 }
+/* ===== RESOURCES SECTION ===== */
+.resources-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+ 
+.resources-card {
+  display: block;
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--cream);
+  border: 1px solid var(--linen);
+  border-radius: 24px;
+  padding: 48px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+ 
+.resources-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--soft-teal);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+ 
+.resources-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(44,37,32,0.08);
+  border-color: var(--pale-aqua);
+}
+ 
+.resources-card:hover::before {
+  opacity: 1;
+}
+ 
+.resources-card-content {
+  position: relative;
+}
+ 
+.resources-card-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--soft-teal);
+  margin-bottom: 16px;
+}
+ 
+.resources-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+ 
+.resources-card p {
+  font-size: 16px;
+  color: var(--earth);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+ 
+.resources-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--linen);
+  border-bottom: 1px solid var(--linen);
+  margin-bottom: 28px;
+}
+ 
+.resources-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--bark);
+  letter-spacing: 0.2px;
+}
+ 
+.resources-meta-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--soft-teal);
+  flex-shrink: 0;
+}
+ 
+.resources-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--deep-teal);
+  letter-spacing: 0.2px;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+ 
+.resources-card-cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+ 
+.resources-card:hover .resources-card-cta {
+  color: var(--soft-teal);
+  gap: 12px;
+}
+ 
+.resources-card:hover .resources-card-cta svg {
+  transform: translateX(3px);
+}
+ 
+@media (max-width: 760px) {
+  .resources-card {
+    padding: 36px 28px;
+  }
+  .resources-card h3 {
+    font-size: 24px;
+  }
+  .resources-card-meta {
+    gap: 14px;
+  }
+  .resources-meta-item {
+    font-size: 12.5px;
+  }
+}
 </style>
 </head>
 
@@ -1171,6 +1312,38 @@ function closeMobileNav() {
   </div>
 </section>
 
+  <!-- ===== RESOURCES — FREE TOOL FOR PARENTS ===== -->
+<section class="section resources-section" id="resources">
+  <div class="section-label">A free tool for parents</div>
+  <h2>The Nonnanest way to set up <em>a calm nursery</em></h2>
+  <p class="section-intro">An interactive checklist grounded in pediatric and safety guidance from the AAP, CPSC, and EPA. Eight short sections, six minutes, a printable summary at the end. No signup required.</p>
+ 
+  <a href="/nursery-checklist" class="resources-card">
+    <div class="resources-card-content">
+      <div class="resources-card-eyebrow">Interactive checklist</div>
+      <h3>Nursery Safety Check</h3>
+      <p>Walk through your nursery against current pediatric guidance — temperature, humidity, crib setup, monitor placement, lighting, sound, and air quality. Reviewed by a registered nurse for clinical accuracy.</p>
+      <div class="resources-card-meta">
+        <span class="resources-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          About 6 minutes
+        </span>
+        <span class="resources-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Printable PDF
+        </span>
+        <span class="resources-meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          No signup
+        </span>
+      </div>
+      <div class="resources-card-cta">
+        Start the checklist
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+  </a>
+</section>
 
 <!-- ===== FAQ ===== -->
 <section class="section" id="faq">
@@ -1288,6 +1461,7 @@ function closeMobileNav() {
       <a href="#story">Our Story</a>
       <a href="/blog">Blog</a>
       <a href="/press">Press</a>
+      <a href="/nursery-checklist">Nursery Checklist</a>
       <a href="mailto:hello@nonnanest.com">Contact</a>
     </div>
     <div class="footer-col">
