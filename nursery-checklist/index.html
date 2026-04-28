@@ -1,0 +1,2110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Nursery Safety Checklist — Pediatric Guidance for Parents | Nonnanest</title>
+<meta name="description" content="A free, interactive nursery safety checklist grounded in AAP, CPSC, and EPA guidance. 8 sections, 6 minutes, printable summary. No signup." />
+<link rel="canonical" href="https://nonnanest.com/nursery-checklist" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Nursery Safety Check — Nonnanest" />
+<meta property="og:description" content="The Nonnanest way to set up a calm nursery. 8 short sections grounded in pediatric and safety guidance. 6 minutes. A printable summary at the end." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nonnanest.com/nursery-checklist" />
+<meta property="og:site_name" content="Nonnanest" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Nursery Safety Check — Nonnanest" />
+<meta name="twitter:description" content="A pediatric-grounded nursery safety check. 8 sections, 6 minutes, printable summary." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================
+   The Calm Nursery Checklist — styles
+   Brand: Warm White #FAF8F5, Cream #F5F0EA, Soft Teal #559092,
+          Deep Teal #3D6B6D, Charcoal #2C2520. No Alert Red.
+   Fonts: Fraunces (display/headings), Outfit (UI/body).
+   ========================================================= */
+
+:root {
+  --warm-white: #FAF8F5;
+  --cream: #F5F0EA;
+  --cream-2: #EFE8DF;
+  --soft-teal: #559092;
+  --soft-teal-tint: #DCECEC;
+  --deep-teal: #3D6B6D;
+  --charcoal: #2C2520;
+  --charcoal-70: rgba(44, 37, 32, 0.72);
+  --charcoal-50: rgba(44, 37, 32, 0.52);
+  --charcoal-20: rgba(44, 37, 32, 0.18);
+  --charcoal-10: rgba(44, 37, 32, 0.10);
+  --charcoal-6:  rgba(44, 37, 32, 0.06);
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 1px 0 rgba(44,37,32,.04), 0 8px 24px -12px rgba(44,37,32,.10);
+  --shadow-pop:  0 2px 0 rgba(44,37,32,.04), 0 20px 40px -20px rgba(44,37,32,.18);
+
+  --serif: "Fraunces", "Cochin", Georgia, "Times New Roman", serif;
+  --sans: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--charcoal);
+  background: var(--warm-white);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 17px;
+}
+
+[x-cloak] { display: none !important; }
+
+.vh {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; top: -40px; left: 8px;
+  background: var(--deep-teal); color: white; padding: 8px 12px;
+  border-radius: 6px; text-decoration: none; z-index: 100;
+}
+.skip-link:focus { top: 8px; }
+
+/* hide the static crawlable mirror from sighted users */
+#crawlable { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---------- layout ---------- */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.wrap.narrow { max-width: 760px; }
+@media (max-width: 620px) {
+  .wrap { padding: 0 20px; }
+}
+
+/* ---------- header ---------- */
+.site-header {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--charcoal-10);
+  background: var(--warm-white);
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(1.1) blur(6px);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.wordmark {
+  font-family: "Oswald", var(--sans);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--deep-teal);
+  text-decoration: none;
+  font-size: 15px;
+}
+.nav { display: flex; gap: 22px; }
+.nav a {
+  color: var(--charcoal-70);
+  text-decoration: none;
+  font-size: 14.5px;
+}
+.nav a:hover { color: var(--deep-teal); }
+
+/* ---------- hero ---------- */
+.hero { padding: 88px 0 72px; }
+.eyebrow {
+  font-size: 12.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft-teal);
+  font-weight: 500;
+  margin: 0 0 18px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 5.5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--deep-teal);
+  margin: 0 0 22px;
+  text-wrap: balance;
+}
+.hero .lede {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--charcoal-70);
+  margin: 0 0 36px;
+  max-width: 38ch;
+  line-height: 1.45;
+}
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.hero .fine { color: var(--charcoal-50); font-size: 13.5px; margin-top: 16px; }
+
+.section-peek {
+  list-style: none; padding: 0; margin: 56px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--charcoal-10);
+}
+.section-peek li {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--charcoal-10);
+  display: flex; gap: 16px; align-items: baseline;
+}
+.peek-num {
+  font-family: var(--serif);
+  color: var(--soft-teal);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.peek-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--deep-teal);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform .12s ease, background .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease;
+  text-decoration: none;
+}
+.btn:focus-visible { outline: 3px solid var(--soft-teal-tint); outline-offset: 2px; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.btn-primary {
+  background: var(--deep-teal);
+  color: white;
+}
+.btn-primary:hover:not(:disabled) { background: #315658; transform: translateY(-1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--deep-teal);
+  border-color: var(--charcoal-20);
+}
+.btn-ghost:hover:not(:disabled) { border-color: var(--deep-teal); background: var(--cream); }
+
+.btn-text {
+  background: transparent;
+  color: var(--charcoal-70);
+  padding: 10px 14px;
+}
+.btn-text:hover:not(:disabled) { color: var(--deep-teal); }
+
+.linkish {
+  background: none; border: 0; padding: 0;
+  color: var(--soft-teal);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.linkish:hover { color: var(--deep-teal); }
+
+/* ---------- quiz ---------- */
+.quiz-topbar {
+  position: sticky; top: 61px; z-index: 5;
+  background: var(--warm-white);
+  padding: 16px 0 14px;
+  border-bottom: 1px solid var(--charcoal-10);
+}
+.progress-track {
+  height: 4px; background: var(--charcoal-10); border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: var(--soft-teal); border-radius: 999px;
+  transition: width .4s cubic-bezier(.2,.7,.2,1);
+}
+.progress-text {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--charcoal-70);
+  font-variant-numeric: tabular-nums;
+}
+.progress-text strong { color: var(--deep-teal); font-weight: 600; }
+
+.quiz { padding: 44px 0 96px; }
+
+.section-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 40px clamp(28px, 5vw, 52px) 32px;
+  box-shadow: var(--shadow-soft);
+  animation: cardIn .45s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-head { margin-bottom: 28px; }
+.section-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--warm-white);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--deep-teal);
+  margin-bottom: 18px;
+  box-shadow: inset 0 0 0 1px var(--charcoal-10);
+}
+.section-eyebrow {
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--soft-teal); font-weight: 500; margin: 0 0 10px;
+}
+.section-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 38px);
+  color: var(--deep-teal);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.section-sub {
+  color: var(--charcoal-70);
+  font-size: 16px;
+  margin: 0;
+  max-width: 56ch;
+}
+
+/* ---------- questions ---------- */
+.questions { display: flex; flex-direction: column; gap: 26px; }
+.q {
+  border: 0; padding: 0; margin: 0;
+  border-top: 1px solid var(--charcoal-10);
+  padding-top: 22px;
+}
+.q:first-child { border-top: 0; padding-top: 6px; }
+.q legend {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--charcoal);
+  margin: 0 0 6px;
+  padding: 0;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.q-helper { color: var(--charcoal-50); font-size: 14px; margin: 0 0 14px; }
+
+/* numeric input */
+.numeric {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin-top: 10px;
+}
+.numeric input[type="number"] {
+  font-family: var(--serif);
+  font-size: 28px;
+  width: 120px;
+  padding: 12px 14px;
+  border: 1px solid var(--charcoal-20);
+  border-radius: var(--radius-sm);
+  background: var(--warm-white);
+  color: var(--deep-teal);
+  font-variant-numeric: tabular-nums;
+}
+.numeric input[type="number"]:focus {
+  outline: none;
+  border-color: var(--soft-teal);
+  box-shadow: 0 0 0 3px var(--soft-teal-tint);
+}
+.numeric .unit {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--charcoal-50);
+}
+.numeric .na {
+  font-size: 14px; color: var(--charcoal-70);
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* choices */
+.choices {
+  display: grid; gap: 10px;
+  margin-top: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.choice {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  background: var(--warm-white);
+  border: 1px solid var(--charcoal-10);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background .15s, border-color .15s, box-shadow .15s;
+  position: relative;
+}
+.choice:hover { border-color: var(--charcoal-20); background: #FDFBF8; }
+.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice-dot, .choice-box {
+  width: 18px; height: 18px; flex-shrink: 0;
+  border: 1.5px solid var(--charcoal-20);
+  transition: border-color .15s, background .15s;
+}
+.choice-dot { border-radius: 50%; }
+.choice-box { border-radius: 5px; }
+.choice-label {
+  font-size: 15px; color: var(--charcoal);
+  line-height: 1.35;
+}
+.choice.selected {
+  border-color: var(--soft-teal);
+  background: var(--soft-teal-tint);
+  box-shadow: inset 0 0 0 1px var(--soft-teal);
+}
+.choice.selected .choice-dot {
+  border-color: var(--soft-teal);
+  background: radial-gradient(circle, var(--soft-teal) 40%, transparent 45%);
+}
+.choice.selected .choice-box {
+  border-color: var(--soft-teal);
+  background: var(--soft-teal);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FAF8F5' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>");
+  background-size: 14px; background-position: center; background-repeat: no-repeat;
+}
+.choice:focus-within { outline: 3px solid var(--soft-teal-tint); outline-offset: 2px; }
+
+/* citation */
+.citation {
+  margin-top: 32px;
+  padding: 18px 20px;
+  background: var(--cream-2);
+  border-left: 3px solid var(--soft-teal);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  display: flex; gap: 14px;
+  color: var(--charcoal-70);
+}
+.citation svg { color: var(--soft-teal); flex-shrink: 0; margin-top: 2px; }
+.citation-label {
+  font-size: 11.5px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--soft-teal); font-weight: 600;
+  margin: 0 0 4px;
+}
+.citation-text {
+  font-size: 14px; margin: 0;
+  line-height: 1.5;
+}
+
+/* section actions */
+.section-actions {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--charcoal-10);
+  flex-wrap: wrap;
+}
+.section-actions .spacer { flex: 1; }
+@media (max-width: 540px) {
+  .section-actions { gap: 10px; }
+  .section-actions .spacer { display: none; }
+  .section-actions .btn { flex: 1 1 auto; justify-content: center; }
+}
+
+/* ---------- summary ---------- */
+.summary { padding: 56px 0 80px; }
+.summary-head { margin-bottom: 28px; }
+.summary-head h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 54px);
+  color: var(--deep-teal);
+  margin: 6px 0 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+.summary-date { color: var(--charcoal-50); margin: 0 0 18px; font-size: 14px; }
+.summary-lede {
+  color: var(--charcoal-70);
+  max-width: 64ch;
+  margin: 0 0 24px;
+  font-size: 16px;
+}
+
+.summary-actions {
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+  padding: 20px 0;
+}
+.summary-actions.top { border-top: 1px solid var(--charcoal-10); border-bottom: 1px solid var(--charcoal-10); margin-bottom: 40px; }
+
+/* three-column results */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+@media (max-width: 960px) { .summary-grid { grid-template-columns: 1fr; } }
+
+.col {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+}
+.col header { margin-bottom: 18px; }
+.col-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--warm-white);
+  color: var(--deep-teal);
+  margin-bottom: 14px;
+}
+.col h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--deep-teal);
+  margin: 0 0 2px;
+}
+.col header p {
+  font-size: 13px; color: var(--charcoal-50);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.col li {
+  padding: 16px;
+  background: var(--warm-white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--charcoal-10);
+}
+.item-section {
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+.item-body {
+  font-size: 15px;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+.item-cite {
+  font-size: 12px;
+  color: var(--charcoal-50);
+  line-height: 1.4;
+  margin: 0;
+  font-style: italic;
+}
+.col .empty {
+  color: var(--charcoal-50);
+  font-size: 14px;
+  font-style: italic;
+  padding: 16px;
+  border: 1px dashed var(--charcoal-20);
+  border-radius: var(--radius-sm);
+  margin: 0;
+}
+
+.col-good .col-icon { background: var(--soft-teal-tint); color: var(--deep-teal); }
+.col-good .item-section { color: var(--soft-teal); }
+.col-good li { border-left: 3px solid var(--soft-teal); }
+
+.col-adjust .item-section { color: var(--charcoal-70); }
+.col-adjust li { border-left: 3px solid var(--charcoal-70); }
+
+.col-watch .item-section { color: var(--deep-teal); }
+.col-watch li { border-left: 3px solid var(--deep-teal); }
+
+/* ---------- email capture ---------- */
+.email-capture {
+  background: var(--cream-2);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 48px;
+}
+.email-capture h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--deep-teal);
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+.email-capture p { color: var(--charcoal-70); margin: 0 0 18px; font-size: 15px; }
+.email-row {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.email-row input {
+  flex: 1; min-width: 220px;
+  padding: 13px 16px;
+  font-family: var(--sans); font-size: 15px;
+  border: 1px solid var(--charcoal-20);
+  border-radius: 999px;
+  background: var(--warm-white);
+  color: var(--charcoal);
+}
+.email-row input:focus {
+  outline: none; border-color: var(--soft-teal);
+  box-shadow: 0 0 0 3px var(--soft-teal-tint);
+}
+
+/* ---------- related ---------- */
+.related h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--deep-teal);
+  margin: 0 0 16px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 860px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-decoration: none;
+  color: var(--charcoal);
+  transition: transform .2s, box-shadow .2s;
+  display: block;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-pop); }
+.related-kicker {
+  font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--soft-teal); font-weight: 500; margin: 0 0 10px;
+}
+.related-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--deep-teal);
+  margin: 0 0 12px;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.related-meta { font-size: 12.5px; color: var(--charcoal-50); margin: 0; }
+
+/* ---------- site footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--charcoal-10);
+  padding: 32px 0 48px;
+  background: var(--cream);
+}
+.disclaimer {
+  font-size: 13px;
+  color: var(--charcoal-70);
+  line-height: 1.55;
+  max-width: 80ch;
+  margin: 0 0 18px;
+}
+.foot-row {
+  display: flex; justify-content: space-between; gap: 16px;
+  font-size: 12.5px; color: var(--charcoal-50);
+  flex-wrap: wrap;
+}
+.foot-row a { color: var(--deep-teal); text-decoration: none; }
+.foot-row p { margin: 0; }
+
+</style>
+
+<!-- Alpine.js -->
+<script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+<!-- jsPDF for client-side printable PDF -->
+<script src="https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+
+<!-- Schema.org structured data: every recommendation as FAQPage for AI citation -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Nursery Safety Check",
+  "about": "Pediatric and safety guidance for infant nursery environments",
+  "publisher": { "@type": "Organization", "name": "Nonnanest", "url": "https://nonnanest.com" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What temperature should a baby's room be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pediatric institutions including Cleveland Clinic and Children's Health point to a comfortable range of 68 to 72 degrees Fahrenheit for infant sleep. The American Academy of Pediatrics itself does not prescribe a specific number — its 2022 policy recommends dressing baby in no more than one layer more than an adult would wear comfortably in the same environment.",
+        "citation": "Cleveland Clinic, Children's Health (Children's Medical Center Dallas), Sleep Foundation. American Academy of Pediatrics, 2022 Updated Recommendations for a Safe Infant Sleeping Environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What humidity level is recommended for a baby's room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The U.S. Environmental Protection Agency recommends keeping indoor humidity between 30 and 50 percent. Below that range can dry airways; above 50 percent encourages mold and dust mites. The American Academy of Pediatrics specifically recommends cool-mist humidifiers over warm-mist for infant rooms because warm-mist units carry burn risk.",
+        "citation": "EPA Care for Your Air: A Guide to Indoor Air Quality. American Academy of Pediatrics. Boston Children's Hospital Pediatric Environmental Health Center."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should a crib be placed relative to vents and windows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avoid placing the crib directly under or beside an HVAC vent. Direct airflow creates uneven temperature exposure and skews any temperature reading from a thermostat, baby monitor sensor, or thermometer. The AAP flags overheating as a SIDS risk factor. Keep cribs away from windows as well — the AAP recommends arm's-length distance from furniture and windows, and CPSC documents window blind cords as a strangulation hazard.",
+        "citation": "American Academy of Pediatrics 2022 Sleep-Related Infant Deaths policy. AAP HealthyChildren.org guidance on crib placement. U.S. Consumer Product Safety Commission window blind cord guidance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far should a baby monitor be from the crib?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The U.S. Consumer Product Safety Commission recommends keeping baby monitors and their power cords at least 3 feet away from every edge of the crib — top, bottom, and all four sides. CPSC has documented at least seven infant strangulation deaths from monitor cords placed too close to cribs. Never mount a monitor on a crib rail. Reassess placement as baby grows, especially once they start pulling up.",
+        "citation": "U.S. Consumer Product Safety Commission, Baby Monitor Cord Safety. American Academy of Pediatrics independently endorses the 3-foot rule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the safest way to set up a crib?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow the ABCs of safe sleep: baby sleeps Alone, on their Back, in a Crib. Use a firm, flat mattress with a fitted sheet only — no blankets, pillows, stuffed animals, bumpers, positioners, or wedges for babies under 12 months. Room-share without bed-sharing for at least the first 6 months, ideally the first year, which the AAP associates with up to 50 percent reduction in SIDS risk. After 12 months, the safety guidance softens.",
+        "citation": "American Academy of Pediatrics, Sleep-Related Infant Deaths: Updated 2022 Recommendations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of lighting is best in a baby's room at night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pediatric sleep specialists generally recommend dark rooms for infant sleep. If a nightlight is used, red or amber is preferred — blue and white light suppress melatonin and can disrupt sleep cycles, even at low intensity. Glowing LEDs from monitors, sound machines, and chargers add up at baby's eye level.",
+        "citation": "Harvard Health Publishing on circadian rhythms and blue light. American Academy of Pediatrics general sleep environment guidance. Pediatric sleep specialist consensus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should a sound machine or white noise be used safely?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AAP's 2023 noise exposure policy recommends locating sound machines as far from baby as possible and keeping the volume as low as possible. Pediatric research referenced in the policy points to at least 7 feet of distance and roughly 50 decibels — about the volume of a quiet shower. The AAP also gives a simple test: if you'd raise your voice to talk to someone an arm's length away, it's too loud.",
+        "citation": "American Academy of Pediatrics 2023 Policy Statement: Preventing Excessive Noise Exposure in Infants, Children, and Adolescents. NIOSH Sound Level Meter app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a nursery have smoke and carbon monoxide detectors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The U.S. Consumer Product Safety Commission and National Fire Protection Association recommend a working smoke detector within hearing distance of every sleep area, tested monthly with batteries replaced at least once a year. If the home has any gas appliances — stove, water heater, dryer, fireplace — the CDC also recommends a carbon monoxide detector on every floor and near sleep areas. Combo smoke and CO units are around $30 and replace existing smoke detectors directly.",
+        "citation": "U.S. Consumer Product Safety Commission. Centers for Disease Control and Prevention. National Fire Protection Association."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- HowTo: the 8-section setup path for AI extraction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Set up a calm nursery using pediatric and safety guidance",
+  "description": "Evaluate a nursery against publicly available pediatric and safety guidance across eight dimensions: temperature, humidity, airflow and crib placement, monitor placement, crib setup, lighting, sound, and air quality and safety.",
+  "totalTime": "PT6M",
+  "step": [
+    { "@type": "HowToStep", "name": "Room temperature", "text": "Pediatric institutions point to 68–72°F. Measure at crib height, away from vents and windows." },
+    { "@type": "HowToStep", "name": "Humidity", "text": "EPA recommends 30–50%. Use a cool-mist humidifier per AAP, distilled water, cleaned weekly." },
+    { "@type": "HowToStep", "name": "Airflow and crib placement", "text": "Keep the crib away from direct vent airflow and away from windows and blind cords." },
+    { "@type": "HowToStep", "name": "Monitor placement", "text": "CPSC: keep monitor and cord 3+ feet from every edge of the crib. Never mount on a crib rail." },
+    { "@type": "HowToStep", "name": "Crib setup (ABCs)", "text": "Baby sleeps Alone, on their Back, in a Crib. Firm flat mattress, fitted sheet only for under 12 months." },
+    { "@type": "HowToStep", "name": "Lighting", "text": "Dark room. Red or amber light only if any. No visible blue or white LEDs." },
+    { "@type": "HowToStep", "name": "Sound environment", "text": "Sound machine as far from baby as possible (research points to 7+ feet), as low as possible (around 50 dB)." },
+    { "@type": "HowToStep", "name": "Air quality and safety", "text": "Working smoke detector within hearing distance. CO detector on every floor if gas appliances are present." }
+  ]
+}
+</script>
+
+<!-- Site nav styles — match nonnanest.com convention -->
+<style>
+/* Override the simpler header from the tool's base CSS with the full site nav.
+   These rules take precedence because they come after the main <style> block. */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(237, 231, 223, 0.6);
+}
+.site-nav .wordmark {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav .nav-links a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--charcoal-70, #5C4F43);
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.site-nav .nav-links a:hover { color: var(--deep-teal); }
+.site-nav .nav-cta {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--warm-white) !important;
+  background: var(--deep-teal);
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: all 0.25s;
+}
+.site-nav .nav-cta:hover {
+  background: var(--soft-teal) !important;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 200;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--charcoal);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 150;
+  background: rgba(250, 248, 245, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--charcoal);
+  padding: 16px 0;
+  transition: color 0.2s;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+.mobile-nav a:hover { color: var(--deep-teal); }
+.mobile-nav .mobile-nav-cta {
+  margin-top: 24px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--warm-white);
+  background: var(--deep-teal);
+  padding: 16px 40px;
+  border-radius: 12px;
+  transition: all 0.25s;
+}
+.mobile-nav .mobile-nav-cta:hover { background: var(--soft-teal); }
+
+/* Hide the older .site-header rules from the base styles — we replaced its markup */
+.site-header { display: none; }
+
+/* Push main content down past the fixed nav */
+main#main { padding-top: 72px; }
+
+/* Mobile responsive */
+@media (max-width: 760px) {
+  .site-nav { padding: 16px 24px; }
+  .site-nav .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+</style>
+
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Site navigation — matches nonnanest.com -->
+<nav class="site-nav" role="banner">
+  <a href="https://nonnanest.com" class="wordmark">Nonnanest&#8482;</a>
+  <ul class="nav-links">
+    <li><a href="https://nonnanest.com">Home</a></li>
+    <li><a href="https://nonnanest.com/#how-it-works">How It Works</a></li>
+    <li><a href="https://nonnanest.com/#features">Why Nonnanest</a></li>
+    <li><a href="https://nonnanest.com/#faq">FAQ</a></li>
+    <li><a href="https://nonnanest.com/#pricing" class="nav-cta">Get Yours &#8212; $329</a></li>
+  </ul>
+  <button class="hamburger" onclick="this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('open');" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="https://nonnanest.com" onclick="closeMobileNav()">Home</a>
+  <a href="https://nonnanest.com/#how-it-works" onclick="closeMobileNav()">How It Works</a>
+  <a href="https://nonnanest.com/#features" onclick="closeMobileNav()">Why Nonnanest</a>
+  <a href="https://nonnanest.com/#faq" onclick="closeMobileNav()">FAQ</a>
+  <a href="https://nonnanest.com/#pricing" class="mobile-nav-cta" onclick="closeMobileNav()">Get Yours &#8212; $329</a>
+</div>
+
+<script>
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.querySelector('.hamburger').classList.remove('active');
+}
+</script>
+
+<main id="main" x-data="checklist()" x-init="init()" x-cloak>
+
+  <!-- ============ ENTRY / HERO ============ -->
+  <section class="hero" x-show="step === 'intro'">
+    <div class="wrap narrow">
+      <p class="eyebrow">For new parents</p>
+      <h1>Nursery Safety Check</h1>
+      <p class="lede" style="font-style: italic; color: var(--deep-teal);">The Nonnanest way to set up a calm nursery.</p>
+      <p class="lede">Eight short sections grounded in pediatric and safety guidance. Five to six minutes. A printable summary at the end.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" @click="start()">Start the checklist</button>
+        <template x-if="hasSaved">
+          <button class="btn btn-ghost" @click="resume()">Resume where you left off</button>
+        </template>
+      </div>
+      <p class="fine">No signup. No tracking of your answers. Optional email at the end if you want a copy.</p>
+
+      <ul class="section-peek" aria-label="What's inside">
+        <template x-for="(s, i) in sections" :key="s.id">
+          <li>
+            <span class="peek-num" x-text="String(i+1).padStart(2,'0')"></span>
+            <span class="peek-title" x-text="s.title"></span>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ INTAKE: AGE BAND ============ -->
+  <section class="quiz" x-show="step === 'intake'" aria-live="polite">
+    <div class="wrap narrow">
+      <article class="section-card" aria-labelledby="h-intake">
+        <header class="section-head">
+          <p class="section-eyebrow">Quick question first</p>
+          <h2 id="h-intake">How old is baby?</h2>
+          <p class="section-sub">This helps us tailor the recommendations to where you are right now. Some guidance shifts at 12 months.</p>
+        </header>
+
+        <div class="questions">
+          <fieldset class="q">
+            <legend class="vh">Baby's age band</legend>
+            <div class="choices">
+              <template x-for="opt in ageOptions" :key="opt.value">
+                <label class="choice" :class="{selected: ageBand === opt.value}">
+                  <input type="radio" name="ageBand" :value="opt.value" x-model="ageBand" />
+                  <span class="choice-dot" aria-hidden="true"></span>
+                  <span class="choice-label" x-text="opt.label"></span>
+                </label>
+              </template>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="section-actions">
+          <button class="btn btn-ghost" @click="step = 'intro'">Back</button>
+          <div class="spacer"></div>
+          <button class="btn btn-primary" @click="beginQuiz()" :disabled="!ageBand">
+            Start
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ SECTION SCREENS ============ -->
+  <section class="quiz" x-show="step === 'quiz'" aria-live="polite">
+    <div class="wrap narrow">
+
+      <div class="progress" role="progressbar"
+           :aria-valuenow="currentIndex + 1" aria-valuemin="1" :aria-valuemax="sections.length"
+           :aria-label="`Section ${currentIndex+1} of ${sections.length}`">
+        <div class="progress-track">
+          <div class="progress-fill" :style="`width: ${((currentIndex+1)/sections.length)*100}%`"></div>
+        </div>
+        <div class="progress-meta">
+          <span>Section <strong x-text="currentIndex + 1"></strong> of <span x-text="sections.length"></span></span>
+          <button class="linkish" @click="jumpToSummary()">Jump to summary</button>
+        </div>
+      </div>
+
+      <template x-for="(s, idx) in sections" :key="s.id">
+        <article class="section-card" x-show="currentIndex === idx" :aria-labelledby="`h-${s.id}`">
+
+          <header class="section-head">
+            <div class="section-icon" x-html="s.icon" aria-hidden="true"></div>
+            <p class="section-eyebrow" x-text="`Section ${idx+1} of ${sections.length}`"></p>
+            <h2 :id="`h-${s.id}`" x-text="s.title"></h2>
+            <p class="section-sub" x-text="s.subtitle"></p>
+          </header>
+
+          <div class="questions">
+            <template x-for="q in s.questions" :key="q.id">
+              <fieldset class="q">
+                <legend x-text="q.label"></legend>
+                <p class="q-helper" x-show="q.helper" x-text="q.helper"></p>
+
+                <!-- numeric -->
+                <template x-if="q.type === 'number'">
+                  <div class="numeric">
+                    <input :type="'number'"
+                           :id="q.id" :name="q.id"
+                           :min="q.min" :max="q.max" :step="q.step || 1"
+                           :placeholder="q.placeholder || ''"
+                           x-model="answers[q.id]" />
+                    <span class="unit" x-text="q.unit" x-show="q.unit"></span>
+                    <label class="na" x-show="q.allowUnknown">
+                      <input type="checkbox" :checked="answers[q.id] === 'unknown'"
+                             @change="answers[q.id] = $event.target.checked ? 'unknown' : ''" />
+                      I don't know
+                    </label>
+                  </div>
+                </template>
+
+                <!-- single choice -->
+                <template x-if="q.type === 'single'">
+                  <div class="choices">
+                    <template x-for="opt in q.options" :key="opt.value">
+                      <label class="choice" :class="{selected: answers[q.id] === opt.value}">
+                        <input type="radio" :name="q.id" :value="opt.value" x-model="answers[q.id]" />
+                        <span class="choice-dot" aria-hidden="true"></span>
+                        <span class="choice-label" x-text="opt.label"></span>
+                      </label>
+                    </template>
+                  </div>
+                </template>
+
+                <!-- multi choice -->
+                <template x-if="q.type === 'multi'">
+                  <div class="choices">
+                    <template x-for="opt in q.options" :key="opt.value">
+                      <label class="choice checkbox" :class="{selected: (answers[q.id]||[]).includes(opt.value)}">
+                        <input type="checkbox" :value="opt.value"
+                               :checked="(answers[q.id]||[]).includes(opt.value)"
+                               @change="toggleMulti(q.id, opt.value, opt.exclusive)" />
+                        <span class="choice-box" aria-hidden="true"></span>
+                        <span class="choice-label" x-text="opt.label"></span>
+                      </label>
+                    </template>
+                  </div>
+                </template>
+              </fieldset>
+            </template>
+          </div>
+
+          <!-- Visible source citation -->
+          <aside class="citation" aria-label="Source citation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M8 8h8M8 12h8M8 16h5"/>
+            </svg>
+            <div>
+              <p class="citation-label">Source</p>
+              <p class="citation-text" x-text="s.citation"></p>
+            </div>
+          </aside>
+
+          <div class="section-actions">
+            <button class="btn btn-ghost" @click="prev()" :disabled="currentIndex === 0">Back</button>
+            <div class="spacer"></div>
+            <button class="btn btn-text" @click="skip()">Skip this section</button>
+            <button class="btn btn-primary" @click="next()">
+              <span x-text="currentIndex === sections.length - 1 ? 'See my summary' : 'Continue'"></span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </article>
+      </template>
+    </div>
+  </section>
+
+  <!-- ============ SUMMARY ============ -->
+  <section class="summary" x-show="step === 'summary'">
+    <div class="wrap">
+      <header class="summary-head">
+        <p class="eyebrow">Your results</p>
+        <h2>Your Nursery Summary</h2>
+        <p class="summary-lede">Here's what pediatric and safety guidance suggests for your setup. Nothing below is a diagnosis or medical advice — it's guidance to take to your pediatrician if you have questions.</p>
+      </header>
+
+      <div class="summary-actions top">
+        <button class="btn btn-primary" @click="downloadPdf()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download printable PDF
+        </button>
+        <button class="btn btn-ghost" @click="shareTool()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+          <span x-text="shareCopied ? 'Link copied' : 'Share the checklist'"></span>
+        </button>
+        <button class="btn btn-text" @click="retake()">Retake the checklist</button>
+      </div>
+
+      <div class="summary-grid">
+        <!-- Dialed in -->
+        <section class="col col-good">
+          <header>
+            <div class="col-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <h3>Dialed in</h3>
+            <p x-text="`${results.good.length} ${results.good.length === 1 ? 'item' : 'items'}`"></p>
+          </header>
+          <template x-if="results.good.length === 0">
+            <p class="empty">Nothing to celebrate yet — take another look through the sections and try again. You'll get here.</p>
+          </template>
+          <ul>
+            <template x-for="item in results.good" :key="item.id">
+              <li>
+                <p class="item-section" x-text="item.section"></p>
+                <p class="item-body" x-text="item.body"></p>
+                <p class="item-cite" x-text="item.cite"></p>
+              </li>
+            </template>
+          </ul>
+        </section>
+
+        <!-- Worth adjusting -->
+        <section class="col col-adjust">
+          <header>
+            <div class="col-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-9"/><path d="M5 12l7-7 7 7"/></svg>
+            </div>
+            <h3>Worth adjusting</h3>
+            <p x-text="`${results.adjust.length} ${results.adjust.length === 1 ? 'item' : 'items'}`"></p>
+          </header>
+          <template x-if="results.adjust.length === 0">
+            <p class="empty">Nothing flagged. Your setup aligns with current pediatric guidance across the sections you answered.</p>
+          </template>
+          <ul>
+            <template x-for="item in results.adjust" :key="item.id">
+              <li>
+                <p class="item-section" x-text="item.section"></p>
+                <p class="item-body" x-text="item.body"></p>
+                <p class="item-cite" x-text="item.cite"></p>
+              </li>
+            </template>
+          </ul>
+        </section>
+
+        <!-- Watch as baby grows -->
+        <section class="col col-watch">
+          <header>
+            <div class="col-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <h3>Watch as baby grows</h3>
+            <p x-text="`${results.watch.length} ${results.watch.length === 1 ? 'reminder' : 'reminders'}`"></p>
+          </header>
+          <template x-if="results.watch.length === 0">
+            <p class="empty">No age-dependent reminders based on your answers today.</p>
+          </template>
+          <ul>
+            <template x-for="item in results.watch" :key="item.id">
+              <li>
+                <p class="item-section" x-text="item.section"></p>
+                <p class="item-body" x-text="item.body"></p>
+                <p class="item-cite" x-text="item.cite"></p>
+              </li>
+            </template>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Optional email capture -->
+      <section class="email-capture" aria-labelledby="email-h">
+        <h3 id="email-h">Want a copy in your inbox?</h3>
+        <p>Optional. We'll email your summary to you. No marketing, no follow-ups unless you opt in.</p>
+        <form @submit.prevent="submitEmail()" class="email-row">
+          <label for="email" class="vh">Email address</label>
+          <input type="email" id="email" name="email" x-model="email" placeholder="you@example.com" required />
+          <button class="btn btn-primary" type="submit" :disabled="emailSubmitting">
+            <span x-text="emailSubmitted ? 'Sent' : (emailSubmitting ? 'Sending…' : 'Email my summary')"></span>
+          </button>
+        </form>
+        <p class="fine" x-show="emailSubmitted">Thanks. Check your inbox in a minute or two.</p>
+        <p class="fine" x-show="emailError" x-text="emailError" style="color: var(--charcoal-70);"></p>
+      </section>
+
+      <!-- Related reading -->
+      <section class="related" aria-labelledby="related-h">
+        <h3 id="related-h">Related reading</h3>
+        <div class="related-grid">
+          <a class="related-card" href="https://nonnanest.com/blog/safe-sleep-environment">
+            <p class="related-kicker">Safe sleep</p>
+            <p class="related-title">The 2022 AAP safe sleep guidance, translated for real bedrooms</p>
+            <p class="related-meta">Nonnanest · Blog</p>
+          </a>
+          <a class="related-card" href="https://nonnanest.com/blog/nursery-temperature">
+            <p class="related-kicker">Environment</p>
+            <p class="related-title">Why pediatric institutions cite 68–72°F (and what the AAP actually says)</p>
+            <p class="related-meta">Nonnanest · Blog</p>
+          </a>
+          <a class="related-card" href="https://nonnanest.com/blog/monitor-cord-safety">
+            <p class="related-kicker">Safety</p>
+            <p class="related-title">The 3-foot rule: why CPSC places baby monitors this far from cribs</p>
+            <p class="related-meta">Nonnanest · Blog</p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="disclaimer">This checklist reflects publicly available pediatric and safety guidance. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. For specific questions about your baby's health or environment, consult your pediatrician.</p>
+      <div class="foot-row">
+        <p>Reviewed by a registered nurse for clinical accuracy · Pediatric guidance reviewed: April 2026</p>
+        <p><a href="https://nonnanest.com">nonnanest.com</a> · Peace of Mind, Made Simple</p>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- Static, crawlable content mirror for SEO/LLM extraction. -->
+<div id="crawlable" aria-hidden="true">
+  <h2>Pediatric guidance reference</h2>
+
+  <h3>Room temperature</h3>
+  <p>Pediatric institutions including Cleveland Clinic and Children's Health (Children's Medical Center Dallas) point to a comfortable range of 68 to 72 degrees Fahrenheit for infant sleep. The American Academy of Pediatrics 2022 policy does not prescribe a specific number — it recommends dressing baby in no more than one layer more than an adult would wear in the same environment. Place a thermometer at crib height, away from vents and windows. Source: Cleveland Clinic, Children's Health, AAP 2022 Updated Recommendations for a Safe Infant Sleeping Environment.</p>
+
+  <h3>Humidity</h3>
+  <p>The U.S. Environmental Protection Agency recommends keeping indoor humidity between 30 and 50 percent. Use a cool-mist humidifier per AAP guidance, distilled water, cleaned weekly. Source: EPA Care for Your Air guide, American Academy of Pediatrics, Boston Children's Hospital Pediatric Environmental Health Center.</p>
+
+  <h3>Airflow and crib placement</h3>
+  <p>Avoid placing the crib directly under or beside an HVAC vent. Direct airflow creates uneven temperature exposure and skews any temperature reading from a thermostat or sensor. The AAP flags overheating as a SIDS risk factor. Keep the crib away from windows and blind cords. Source: AAP 2022 Sleep-Related Infant Deaths policy on overheating, AAP HealthyChildren.org on crib placement, CPSC window blind cord guidance.</p>
+
+  <h3>Baby monitor placement</h3>
+  <p>The U.S. Consumer Product Safety Commission recommends keeping baby monitors and their power cords at least 3 feet away from every edge of the crib. CPSC has documented at least 7 infant strangulation deaths and 3 near-strangulations from monitor cords placed too close to cribs. Never mount on a crib rail. Source: U.S. Consumer Product Safety Commission, AAP News.</p>
+
+  <h3>Crib setup (ABCs of safe sleep)</h3>
+  <p>Baby sleeps Alone, on their Back, in a Crib. Firm flat mattress, fitted sheet only for babies under 12 months. No blankets, pillows, stuffed animals, bumpers, positioners, or wedges. Room-share without bed-sharing for the first 6 to 12 months. Source: AAP 2022 safe sleep recommendations, AAP HealthyChildren.org parent guide on safe sleep.</p>
+
+  <h3>Lighting</h3>
+  <p>Pediatric sleep specialists generally recommend dark rooms for infant sleep. If a nightlight is used, red or amber is preferred over blue or white. Source: Harvard Health Publishing on circadian rhythms and blue light exposure, American Academy of Pediatrics general sleep environment guidance, pediatric sleep specialist consensus.</p>
+
+  <h3>Sound environment</h3>
+  <p>The AAP 2023 noise exposure policy recommends locating sound machines as far from baby as possible and keeping volume as low as possible. Pediatric research informing the policy points to at least 7 feet of distance and roughly 50 decibels. The AAP gives a simple test: if the volume is too loud for an adult, it is too loud for a child. Source: AAP 2023 Policy Statement Preventing Excessive Noise Exposure in Infants, Children, and Adolescents.</p>
+
+  <h3>Air quality and safety</h3>
+  <p>Working smoke detector within hearing distance of the nursery, tested monthly, batteries replaced at least annually. If the home has gas appliances, also a CO detector on every floor and near sleep areas. Combo smoke and CO units replace existing smoke detectors. Source: U.S. Consumer Product Safety Commission, Centers for Disease Control and Prevention, National Fire Protection Association.</p>
+</div>
+<script>
+/* =========================================================
+   Nursery Safety Check — logic
+   Client-side only. Alpine.js component.
+   The Nonnanest way to set up a calm nursery.
+   ========================================================= */
+
+// --- Icons (simple line SVG, stroke only, teal/charcoal) ---
+const ICONS = {
+  thermo:   `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13V4a2 2 0 1 1 4 0v9"/><circle cx="12" cy="16" r="3"/><path d="M14.5 3.5h2M14.5 7h2M14.5 10.5h2"/></svg>`,
+  humidity: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11z"/></svg>`,
+  vent:     `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8l10 8M17 8 7 16M12 4v16"/></svg>`,
+  monitor:  `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><circle cx="12" cy="11" r="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  crib:     `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8v11M21 8v11M3 14h18"/><path d="M6 8v6M9 8v6M12 8v6M15 8v6M18 8v6"/><path d="M3 8h18"/></svg>`,
+  moon:     `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>`,
+  sound:    `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6a8 8 0 0 1 0 12"/></svg>`,
+  shield:   `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9.4 8 10 4.5-.6 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>`,
+};
+
+// --- Age band options ---
+const AGE_OPTIONS = [
+  { value: '0-3',   label: '0–3 months' },
+  { value: '4-6',   label: '4–6 months' },
+  { value: '7-12',  label: '7–12 months' },
+  { value: '13-24', label: '13–24 months' },
+];
+
+// --- Section + question definitions (8 sections, 2 questions each) ---
+const SECTIONS = [
+  {
+    id: 'temp',
+    title: 'Room temperature',
+    subtitle: 'Most pediatric sources point to a comfortable range. Where you measure matters as much as the number.',
+    icon: ICONS.thermo,
+    citation: "Cleveland Clinic and Children's Health (Children's Medical Center Dallas) cite 68–72°F as a comfortable range. AAP 2022 policy: dress baby in no more than one layer more than an adult would wear comfortably.",
+    questions: [
+      { id: 't_value', type: 'number', label: "What's the temperature in baby's room right now?", helper: "It's okay to estimate. Most thermostats show this number.", unit: '°F', min: 40, max: 100, placeholder: '70', allowUnknown: true },
+      { id: 't_place', type: 'single', label: 'Where in the room is your thermometer or sensor?',
+        options: [
+          { value: 'near_crib', label: 'Near the crib' },
+          { value: 'far',       label: 'Across the room from the crib' },
+          { value: 'near_vent', label: 'Near a vent or window' },
+          { value: 'hallway',   label: 'On a thermostat in the hallway' },
+          { value: 'none',      label: "I don't have one — that's the temperature in my house generally" },
+        ] },
+    ],
+  },
+  {
+    id: 'humidity',
+    title: 'Humidity',
+    subtitle: 'Dry enough to discourage mold, humid enough for comfortable breathing.',
+    icon: ICONS.humidity,
+    citation: "EPA Care for Your Air guide: indoor humidity 30–50%. AAP recommends cool-mist over warm-mist humidifiers. Boston Children's Hospital Pediatric Environmental Health Center.",
+    questions: [
+      { id: 'h_state', type: 'single', label: "Do you know how humid baby's room is?",
+        options: [
+          { value: 'measured', label: 'Yes — I have a hygrometer' },
+          { value: 'normal',   label: 'Roughly — feels normal' },
+          { value: 'dry',      label: 'It feels dry (skin, throat, static)' },
+          { value: 'damp',     label: 'It feels damp' },
+          { value: 'unknown',  label: 'Honestly, no idea' },
+        ] },
+      { id: 'h_device', type: 'single', label: 'Do you use a humidifier or dehumidifier?',
+        options: [
+          { value: 'cool',    label: 'Yes — cool-mist humidifier' },
+          { value: 'warm',    label: 'Yes — warm-mist humidifier' },
+          { value: 'dehumid', label: 'Yes — dehumidifier' },
+          { value: 'none',    label: 'No, neither' },
+          { value: 'unsure',  label: 'Not sure which kind' },
+        ] },
+    ],
+  },
+  {
+    id: 'airflow',
+    title: 'Airflow and crib placement',
+    subtitle: 'Direct airflow on the crib creates uneven temperature exposure — and skews any temperature reading.',
+    icon: ICONS.vent,
+    citation: "AAP 2022 policy on overheating as SIDS risk factor. AAP HealthyChildren.org on crib placement away from windows and at arm's length from furniture. CPSC window blind cord guidance.",
+    questions: [
+      { id: 'a_vent', type: 'single', label: 'Where is the crib relative to any HVAC vents?',
+        options: [
+          { value: 'under',   label: 'Directly under or beside a vent' },
+          { value: 'near',    label: 'Within a few feet of a vent' },
+          { value: 'away',    label: 'Away from vents entirely' },
+          { value: 'unsure',  label: 'Not sure' },
+        ] },
+      { id: 'a_window', type: 'single', label: 'Is the crib right next to a window?',
+        options: [
+          { value: 'yes',     label: 'Yes' },
+          { value: 'nearby',  label: "It's in the same wall area but not pressed against it" },
+          { value: 'no',      label: 'No' },
+        ] },
+    ],
+  },
+  {
+    id: 'monitor',
+    title: 'Baby monitor placement',
+    subtitle: "The most safety-critical section. CPSC's 3-foot rule applies on every edge of the crib.",
+    icon: ICONS.monitor,
+    citation: "U.S. Consumer Product Safety Commission, Baby Monitor Cord Safety. CPSC documents at least 7 infant strangulation deaths from monitor cords placed too close to cribs. AAP News independently endorses the 3-foot rule.",
+    questions: [
+      { id: 'm_distance', type: 'single', label: 'How far is the monitor — and any cord — from the closest edge of the crib?',
+        options: [
+          { value: 'close',  label: "Less than 3 feet (about an arm's length)" },
+          { value: 'ok',     label: '3 feet or more' },
+          { value: 'rail',   label: "It's mounted on the crib itself" },
+          { value: 'unsure', label: 'Honestly not sure' },
+          { value: 'none',   label: "We don't have a monitor yet" },
+        ] },
+      { id: 'm_position', type: 'single', label: 'Where is the monitor and its cord positioned?',
+        options: [
+          { value: 'wall',   label: 'Wall-mounted, far from the crib' },
+          { value: 'shelf',  label: 'On a shelf or dresser nearby' },
+          { value: 'crib',   label: 'On the crib rail' },
+          { value: 'floor',  label: 'On the floor near the crib' },
+          { value: 'none',   label: "We don't have one yet" },
+        ] },
+    ],
+  },
+  {
+    id: 'crib',
+    title: 'Crib setup',
+    subtitle: 'The ABCs of safe sleep: Alone, on Back, in a Crib. Everything else is commentary.',
+    icon: ICONS.crib,
+    citation: "AAP, Sleep-Related Infant Deaths: Updated 2022 Recommendations. AAP HealthyChildren.org parent guide. Room-sharing reduces SIDS risk by up to 50%.",
+    questions: [
+      { id: 'c_items', type: 'multi', label: "What's in the crib right now, besides baby?",
+        options: [
+          { value: 'sheet',     label: 'Just a fitted sheet' },
+          { value: 'blanket',   label: 'A blanket' },
+          { value: 'pillow',    label: 'A pillow or sleep pillow' },
+          { value: 'stuffed',   label: 'Stuffed animals or soft toys' },
+          { value: 'bumpers',   label: 'Crib bumpers (mesh or padded)' },
+          { value: 'positioner',label: 'A sleep positioner or wedge' },
+          { value: 'sack',      label: 'A sleep sack (worn by baby)' },
+        ] },
+      { id: 'c_room', type: 'single', label: 'Where does baby sleep at night?',
+        options: [
+          { value: 'roomshare',  label: 'In the same room as us, on their own surface' },
+          { value: 'ownroom',    label: 'In their own room' },
+          { value: 'bedshare',   label: 'In our bed with us' },
+          { value: 'switches',   label: 'Switches between options' },
+        ] },
+    ],
+  },
+  {
+    id: 'lighting',
+    title: 'Lighting',
+    subtitle: 'Dark rooms support natural sleep cycles. If a nightlight is used, red or amber over blue or white.',
+    icon: ICONS.moon,
+    citation: "Harvard Health Publishing on circadian rhythms and blue light exposure. AAP general sleep environment guidance. Pediatric sleep specialist consensus.",
+    questions: [
+      { id: 'l_dark', type: 'single', label: "How dark is baby's room when they're sleeping?",
+        options: [
+          { value: 'pitch',    label: "Pitch black — I can't see my hand" },
+          { value: 'dark',     label: 'Pretty dark, but not blackout' },
+          { value: 'night',    label: 'Some light from a nightlight' },
+          { value: 'devices',  label: 'Some light from devices (monitor, sound machine, etc.)' },
+          { value: 'lit',      label: "Lighter than I'd like" },
+        ] },
+      { id: 'l_color', type: 'single', label: 'If you use a nightlight or any glowing device, what color is the light?',
+        options: [
+          { value: 'red',    label: 'Red or amber/orange' },
+          { value: 'warm',   label: 'Warm white' },
+          { value: 'blue',   label: 'Bright white or blue' },
+          { value: 'multi',  label: 'Multi-color or rotating' },
+          { value: 'none',   label: 'None — no lights in the room' },
+        ] },
+    ],
+  },
+  {
+    id: 'sound',
+    title: 'Sound environment',
+    subtitle: 'Sound machines are optional. If you use one, distance and volume are what matter.',
+    icon: ICONS.sound,
+    citation: "AAP 2023 Policy: Preventing Excessive Noise Exposure in Infants, Children, and Adolescents. Specific 7-foot distance and 50 dB threshold derive from the 2014 Hugh et al. Pediatrics study referenced in the AAP policy. NIOSH Sound Level Meter app.",
+    questions: [
+      { id: 's_use', type: 'single', label: "Do you use a sound machine or white noise in baby's room?",
+        options: [
+          { value: 'always',  label: 'Yes, every night' },
+          { value: 'sometimes', label: 'Sometimes — for naps or when needed' },
+          { value: 'past',    label: 'Used to, not anymore' },
+          { value: 'no',      label: 'No' },
+        ] },
+      { id: 's_distance', type: 'single', label: 'How far is the sound machine from the crib?',
+        helper: "Skip if you don't use one.",
+        options: [
+          { value: 'close', label: 'Right next to the crib (less than 3 feet)' },
+          { value: 'far',   label: 'Across the room (about 7 feet or more)' },
+          { value: 'mid',   label: 'Somewhere in between' },
+          { value: 'unsure',label: 'Not sure' },
+          { value: 'na',    label: 'Not applicable' },
+        ] },
+    ],
+  },
+  {
+    id: 'safety',
+    title: 'Air quality and safety',
+    subtitle: 'Working smoke and carbon monoxide detection. Easy to forget, easy to fix.',
+    icon: ICONS.shield,
+    citation: "U.S. Consumer Product Safety Commission and National Fire Protection Association on smoke and CO alarm placement and testing. CDC guidance on residential CO detection.",
+    questions: [
+      { id: 'sf_smoke', type: 'single', label: "Is there a working smoke detector within hearing distance of baby's room?",
+        options: [
+          { value: 'yes_tested', label: 'Yes — and I tested it recently' },
+          { value: 'yes_unsure', label: "Yes, but I'm not sure if it works" },
+          { value: 'hallway',    label: 'There is one in the hallway or another room' },
+          { value: 'no',         label: 'No, or not sure' },
+        ] },
+      { id: 'sf_co', type: 'single', label: 'What about a carbon monoxide detector?',
+        options: [
+          { value: 'yes',     label: 'Yes — separate one, or a combo smoke/CO unit' },
+          { value: 'smoke',   label: 'No, just smoke' },
+          { value: 'unsure',  label: 'Not sure' },
+          { value: 'electric',label: "We don't have appliances that produce CO (electric only)" },
+        ] },
+    ],
+  },
+];
+
+// ---------- Evaluation ----------
+function push(bucket, arr, id, section, body, cite) {
+  bucket[arr].push({ id, section, body, cite });
+}
+
+function evaluate(answers, ageBand) {
+  const r = { good: [], adjust: [], watch: [] };
+
+  // ---- Section 1: Temperature ----
+  const tSec = 'Room temperature';
+  const tCite = 'Cleveland Clinic, Children\'s Health · AAP 2022 Sleep-Related Infant Deaths policy.';
+  const temp = parseFloat(answers.t_value);
+  if (!isNaN(temp) && answers.t_value !== 'unknown') {
+    if (temp >= 68 && temp <= 72) {
+      push(r, 'good', 't_range', tSec,
+        `${temp}°F sits in the comfortable range pediatric institutions point to. Keep an eye on it as the seasons change — what works in spring may shift in summer or winter.`, tCite);
+    } else {
+      push(r, 'adjust', 't_range', tSec,
+        `${temp}°F is outside the 68–72°F range Cleveland Clinic and Children's Health point to. A few degrees off usually isn't a safety issue — what matters most is how you're dressing baby. The AAP recommends no more than one extra layer than an adult would wear.`, tCite);
+    }
+  } else if (answers.t_value === 'unknown' || !answers.t_value) {
+    push(r, 'adjust', 't_unknown', tSec,
+      "A small digital thermometer at crib height takes the guesswork out — they run about $10–15 at most baby stores. The AAP's actual guidance is on dressing, not on a specific number: one more layer than you'd wear yourself.", tCite);
+  }
+  if (answers.t_place === 'near_vent') {
+    push(r, 'adjust', 't_place_vent', tSec,
+      'Sensors near vents or windows read the airflow, not the air baby is breathing. Move it closer to the crib for a more accurate reading.', tCite);
+  } else if (answers.t_place === 'hallway') {
+    push(r, 'watch', 't_hallway', tSec,
+      'Your hallway thermostat reads the hallway, not baby\'s room — actual nursery temperature can vary by 2–4°F. A small thermometer at crib height gives you the real number.', tCite);
+  } else if (answers.t_place === 'none') {
+    push(r, 'adjust', 't_no_thermometer', tSec,
+      "Without a thermometer in the room itself, it's hard to know what baby is actually experiencing. A basic digital thermometer at crib height is around $10–15 — worth it.", tCite);
+  } else if (answers.t_place === 'near_crib') {
+    push(r, 'good', 't_place_ok', tSec,
+      "Measuring near the crib gives you the air baby is actually breathing. Nicely placed.", tCite);
+  }
+
+  // ---- Section 2: Humidity ----
+  const hSec = 'Humidity';
+  const hCite = 'EPA Care for Your Air · AAP cool-mist guidance · Boston Children\'s Hospital.';
+  if (answers.h_state === 'measured') {
+    push(r, 'good', 'h_measured', hSec,
+      "Having a hygrometer in the room is the right move. The EPA-recommended range is 30–50%.", hCite);
+  } else if (answers.h_state === 'dry') {
+    push(r, 'adjust', 'h_dry', hSec,
+      "If the room feels dry, a cool-mist humidifier with distilled water, cleaned weekly, helps airways stay comfortable. The EPA's recommended range is 30–50%.", hCite);
+  } else if (answers.h_state === 'damp') {
+    push(r, 'adjust', 'h_damp', hSec,
+      "Anything above 50% starts to encourage mold and dust mites. Check that your HVAC is venting properly and consider a small dehumidifier. The EPA's recommended range is 30–50%.", hCite);
+  } else if (answers.h_state === 'unknown') {
+    push(r, 'adjust', 'h_unknown', hSec,
+      "A basic hygrometer runs about $15 and takes the guesswork out. Place it at crib height, away from the humidifier itself. The EPA-recommended range is 30–50%.", hCite);
+  }
+  if (answers.h_device === 'warm') {
+    push(r, 'adjust', 'h_warm', hSec,
+      'The American Academy of Pediatrics specifically recommends cool-mist over warm-mist humidifiers for nurseries — warm-mist units can cause burns if knocked over. Cool-mist units are the safer default.', hCite);
+  } else if (answers.h_device === 'cool') {
+    push(r, 'good', 'h_cool', hSec,
+      'Cool-mist is exactly what the AAP recommends for nurseries. Clean it weekly with white vinegar and use distilled water — that prevents the mineral buildup and bacterial growth that humidifiers are prone to.', hCite);
+  }
+
+  // ---- Section 3: Airflow and crib placement ----
+  const aSec = 'Airflow and crib placement';
+  const aCite = 'AAP 2022 policy on overheating · AAP HealthyChildren.org on crib placement · CPSC window blind cord guidance.';
+  if (answers.a_vent === 'under') {
+    push(r, 'adjust', 'a_under', aSec,
+      'Direct airflow on the crib creates uneven temperature exposure — and any temperature reading, whether from your thermostat, a baby monitor sensor, or a thermometer, will read the airflow rather than the actual air baby is breathing. The AAP flags overheating as a SIDS risk factor. The practical fix is moving the crib, redirecting the vent with a magnetic deflector ($5–10 at any hardware store), or both.', aCite);
+  } else if (answers.a_vent === 'near') {
+    push(r, 'adjust', 'a_near', aSec,
+      'Not as urgent as a crib directly under a vent, but worth knowing: if airflow can be felt at the crib, it\'s affecting both baby\'s comfort and any temperature reading nearby. A small magnetic vent deflector redirects the airflow without closing the vent off entirely.', aCite);
+  } else if (answers.a_vent === 'away') {
+    push(r, 'good', 'a_away', aSec,
+      "Good crib placement. You're avoiding direct airflow, which keeps baby's temperature exposure stable and lets any thermometer or sensor in the room read accurately.", aCite);
+  }
+  if (answers.a_window === 'yes') {
+    push(r, 'adjust', 'a_window', aSec,
+      'Windows create temperature swings overnight, and blind cords are a documented strangulation risk per CPSC. The AAP recommends keeping cribs away from windows — at least an arm\'s length, ideally more.', aCite);
+  } else if (answers.a_window === 'no') {
+    push(r, 'good', 'a_window_ok', aSec,
+      "Crib well away from windows is exactly what AAP guidance recommends — fewer temperature swings and no risk from blind cords.", aCite);
+  }
+
+  // ---- Section 4: Monitor placement ----
+  const mSec = 'Baby monitor placement';
+  const mCite = 'U.S. CPSC Baby Monitor Cord Safety · AAP News · 7+ documented infant strangulation deaths since 2002.';
+  if (answers.m_distance === 'close') {
+    push(r, 'adjust', 'm_close', mSec,
+      'This is one of the most important safety items in the tool. The Consumer Product Safety Commission has documented at least seven infant strangulation deaths from baby monitor cords placed too close to cribs. CPSC recommends keeping all cords and monitor parts at least 3 feet away on every side. Move the monitor and the cord today if you can.', mCite);
+  } else if (answers.m_distance === 'rail' || answers.m_position === 'crib') {
+    if (ageBand === '0-3') {
+      push(r, 'watch', 'm_rail_young', mSec,
+        "Crib-mounted monitors carry higher risk than wall mounts because cords and parts are closer to baby. CPSC's documented strangulation cases all involve cords reachable to the baby — so the safety question is really about cord routing. For non-mobile newborns, a crib mount with cords fully secured (cord clips, covers, or routing fully outside the crib) can work. Plan to switch to a wall or shelf mount at least 3 feet from the crib once baby starts rolling, pulling up, or grabbing.", mCite);
+    } else {
+      push(r, 'adjust', 'm_rail', mSec,
+        "Now that baby is mobile, a crib-mounted monitor puts the monitor and its cord within reach. CPSC has documented infant strangulation deaths from cords accessible from inside the crib. Move the monitor to a wall mount or shelf at least 3 feet from every edge of the crib, and route the cord well clear of baby's reach.", mCite);
+    }
+  } else if (answers.m_distance === 'ok' && (answers.m_position === 'wall' || answers.m_position === 'shelf')) {
+    push(r, 'good', 'm_ok', mSec,
+      'Your monitor placement follows the CPSC\'s 3-foot rule. One thing worth flagging: reassess as baby starts pulling up or standing — what\'s out of reach now may not be in a few weeks.', mCite);
+  }
+  if (answers.m_distance === 'none' || answers.m_position === 'none') {
+    push(r, 'watch', 'm_shopping', mSec,
+      "When you do pick a monitor, look for one with enough sensing range to mount at least 3 feet from the crib without losing image or audio quality. Some newer monitors are designed specifically with this distance in mind — SightAware senses up to 4 feet contactlessly, which makes the 3-foot CPSC rule easy to meet. This is a design answer to a safety requirement, not a product pitch.", mCite);
+  }
+  // Age-conditional reminder
+  if ((ageBand === '4-6' || ageBand === '7-12') && (answers.m_distance === 'ok' || answers.m_position === 'wall' || answers.m_position === 'shelf')) {
+    push(r, 'watch', 'm_growing', mSec,
+      "This is the stage where placement matters most. Babies pulling up or standing can reach things that were safely out of reach a few weeks earlier. Reassess cord and monitor distance every couple of weeks during this phase.", mCite);
+  }
+
+  // ---- Section 5: Crib setup ----
+  const cSec = 'Crib setup';
+  const cCite = 'AAP Sleep-Related Infant Deaths: Updated 2022 Recommendations · AAP HealthyChildren.org.';
+  const items = Array.isArray(answers.c_items) ? answers.c_items : [];
+  const isUnder12 = ageBand === '0-3' || ageBand === '4-6' || ageBand === '7-12';
+  const isOver12  = ageBand === '13-24';
+  const softItems = items.filter(v => ['blanket','pillow','stuffed','bumpers','positioner'].includes(v));
+  const hasSheet  = items.includes('sheet');
+  const hasSack   = items.includes('sack');
+
+  if (hasSheet && softItems.length === 0 && isUnder12) {
+    push(r, 'good', 'c_clean', cSec,
+      "You're following the AAP's ABCs of safe sleep — Alone, on the Back, in a Crib. The fitted sheet plus sleep sack setup is exactly what's recommended.", cCite);
+  } else if (softItems.length > 0 && isUnder12) {
+    const pretty = softItems.map(v => ({
+      blanket: 'blankets', pillow: 'pillows', stuffed: 'stuffed animals',
+      bumpers: 'bumpers', positioner: 'positioners or wedges'
+    }[v])).filter(Boolean).join(', ');
+    push(r, 'adjust', 'c_soft', cSec,
+      `For babies under 12 months, the AAP recommends nothing in the crib except a fitted sheet. Loose items (${pretty}) are associated with increased SIDS and suffocation risk. A wearable sleep sack is the safe alternative to blankets.`, cCite);
+  } else if (softItems.length > 0 && isOver12) {
+    push(r, 'watch', 'c_soft_toddler', cSec,
+      "After 12 months, the safety guidance softens — most pediatric sources allow lightweight blankets at this age. If you have specific questions about your toddler's setup, your pediatrician is the best person to ask.", cCite);
+  }
+  if (hasSack && isUnder12) {
+    push(r, 'good', 'c_sack', cSec,
+      "Sleep sacks are the AAP's safe alternative to blankets — they keep baby warm without the suffocation risk of loose bedding.", cCite);
+  }
+
+  if (answers.c_room === 'roomshare' && isUnder12) {
+    push(r, 'good', 'c_roomshare', cSec,
+      "Room-sharing without bed-sharing is exactly what the AAP recommends for the first 6–12 months. It's associated with up to 50% reduction in SIDS risk.", cCite);
+  } else if (answers.c_room === 'bedshare') {
+    push(r, 'adjust', 'c_bedshare', cSec,
+      "The AAP recommends room-sharing without bed-sharing — baby in your room, on their own separate surface. Bed-sharing is associated with significantly higher suffocation and SIDS risk.", cCite);
+  } else if (answers.c_room === 'ownroom' && (ageBand === '0-3' || ageBand === '4-6')) {
+    push(r, 'watch', 'c_ownroom', cSec,
+      "The AAP recommends room-sharing for at least the first 6 months, ideally the first year. Worth considering if it's feasible for your setup.", cCite);
+  }
+
+  // ---- Section 6: Lighting ----
+  const lSec = 'Lighting';
+  const lCite = 'Harvard Health Publishing on circadian rhythms · pediatric sleep specialist consensus.';
+  const dark = answers.l_dark === 'pitch' || answers.l_dark === 'dark';
+  const okColor = answers.l_color === 'red' || answers.l_color === 'none';
+  if (dark && okColor) {
+    push(r, 'good', 'l_ok', lSec,
+      "This setup supports baby's natural sleep cycles. Pediatric sleep specialists generally recommend dark rooms and red-spectrum light over blue or white.", lCite);
+  }
+  if (answers.l_color === 'blue' || answers.l_color === 'multi') {
+    push(r, 'adjust', 'l_blue', lSec,
+      'Blue and bright white light suppress melatonin and can disrupt sleep cycles, even at low intensity. Swapping to a red or amber bulb is one of the easiest single changes you can make.', lCite);
+  } else if (answers.l_color === 'warm') {
+    push(r, 'watch', 'l_warm', lSec,
+      "Warm white is better than cool white or blue, but red or amber is what pediatric sleep specialists actually recommend if any nightlight is used. Worth considering when your current bulb burns out.", lCite);
+  }
+  if (answers.l_dark === 'devices') {
+    push(r, 'adjust', 'l_devices', lSec,
+      "Glowing LEDs from monitors, sound machines, and chargers add up — especially at baby's eye level. A small piece of black electrical tape works in a pinch. Some newer monitors are designed with no visible LEDs.", lCite);
+  } else if (answers.l_dark === 'lit') {
+    push(r, 'adjust', 'l_lit', lSec,
+      "A lit room makes it harder for baby to consolidate night sleep. Blackout curtains plus a red or amber nightlight if any is needed.", lCite);
+  }
+
+  // ---- Section 7: Sound ----
+  const sSec = 'Sound environment';
+  const sCite = 'AAP 2023 Policy on Preventing Excessive Noise Exposure · 2014 Hugh et al. Pediatrics study · NIOSH Sound Level Meter app.';
+  if (answers.s_use === 'no') {
+    push(r, 'good', 's_none', sSec,
+      "Sound machines are optional, not required. A quiet room works beautifully.", sCite);
+  } else if (answers.s_use === 'always' || answers.s_use === 'sometimes') {
+    if (answers.s_distance === 'far') {
+      push(r, 'good', 's_far', sSec,
+        "Your placement supports the AAP's 2023 noise exposure guidance — the policy recommends locating sound machines as far from baby as possible. Pediatric research informing the policy points to at least 7 feet.", sCite);
+    } else if (answers.s_distance === 'close' || answers.s_distance === 'mid') {
+      push(r, 'adjust', 's_close', sSec,
+        "The AAP recommends keeping sound machines as far from baby's sleep space as possible. Pediatric research referenced in the 2023 policy points to at least 7 feet of distance to keep sound levels in a safe range for developing ears. Move it across the room — the sound still works, baby just isn't in its direct path. The AAP also gives a simple test: if you'd raise your voice to talk to someone an arm's length away, it's too loud.", sCite);
+    }
+  }
+
+  // ---- Section 8: Air quality and safety ----
+  const sfSec = 'Air quality and safety';
+  const sfCite = 'U.S. CPSC and NFPA on smoke and CO alarm placement · CDC guidance on residential CO detection.';
+  if (answers.sf_smoke === 'yes_tested') {
+    push(r, 'good', 'sf_smoke_ok', sfSec,
+      "Working smoke detector you've tested recently — exactly what the CPSC and NFPA recommend. Worth retesting monthly and replacing the battery at least once a year.", sfCite);
+  } else if (answers.sf_smoke === 'yes_unsure' || answers.sf_smoke === 'no') {
+    push(r, 'adjust', 'sf_smoke', sfSec,
+      "Press the test button. If it doesn't beep, replace the battery — or the unit if it's more than 10 years old. Most smoke detectors fail silently, and that's the most common cause of detector-related fatalities per CPSC data.", sfCite);
+  } else if (answers.sf_smoke === 'hallway') {
+    push(r, 'watch', 'sf_smoke_hall', sfSec,
+      "A hallway smoke detector covers the nursery if it's within hearing distance. NFPA actually recommends one inside every sleeping room as well. Worth adding if you don't have one.", sfCite);
+  }
+  if (answers.sf_co === 'yes') {
+    push(r, 'good', 'sf_co_ok', sfSec,
+      "CO detector covered. Same testing routine as smoke — monthly button test, annual battery swap.", sfCite);
+  } else if (answers.sf_co === 'smoke' || answers.sf_co === 'unsure') {
+    push(r, 'adjust', 'sf_co', sfSec,
+      "If your home has any gas appliances — stove, water heater, dryer, fireplace — the CDC and CPSC strongly recommend a CO detector on every floor and near sleep areas. Combo smoke/CO units are around $30 and replace your existing smoke detector directly.", sfCite);
+  } else if (answers.sf_co === 'electric') {
+    push(r, 'good', 'sf_electric', sfSec,
+      "All-electric homes have a much lower CO risk. NFPA still recommends a CO detector if you have an attached garage where vehicles run, but otherwise smoke detection alone is the priority.", sfCite);
+  }
+
+  return r;
+}
+
+// ---------- Alpine component ----------
+function checklist() {
+  return {
+    step: 'intro',              // 'intro' | 'intake' | 'quiz' | 'summary'
+    sections: SECTIONS,
+    ageOptions: AGE_OPTIONS,
+    ageBand: '',
+    currentIndex: 0,
+    answers: {},
+    results: { good: [], adjust: [], watch: [] },
+    hasSaved: false,
+    email: '',
+    emailSubmitting: false,
+    emailSubmitted: false,
+    emailError: '',
+    shareCopied: false,
+
+    init() {
+      // Restore from localStorage
+      try {
+        const raw = localStorage.getItem('nursery-safety-check-state');
+        if (raw) {
+          const saved = JSON.parse(raw);
+          if (saved && typeof saved === 'object') {
+            this.answers = saved.answers || {};
+            this.ageBand = saved.ageBand || '';
+            this.currentIndex = Math.min(saved.currentIndex || 0, SECTIONS.length - 1);
+            this.hasSaved = !!(saved.step === 'quiz' || saved.step === 'summary' || saved.step === 'intake');
+          }
+        }
+      } catch (e) { /* ignore */ }
+
+      // Persist on every change
+      this.$watch('answers', () => this.save());
+      this.$watch('currentIndex', () => this.save());
+      this.$watch('step', () => this.save());
+      this.$watch('ageBand', () => this.save());
+    },
+
+    save() {
+      try {
+        localStorage.setItem('nursery-safety-check-state', JSON.stringify({
+          answers: this.answers, currentIndex: this.currentIndex, step: this.step, ageBand: this.ageBand,
+        }));
+      } catch (e) { /* ignore */ }
+    },
+
+    start() {
+      // Go to age intake first
+      this.step = 'intake';
+      this.scrollTop();
+      this.ga('checklist_start');
+    },
+    resume() {
+      // If they have an age band saved, go straight to the quiz; otherwise intake
+      this.step = this.ageBand ? 'quiz' : 'intake';
+      this.scrollTop();
+    },
+    beginQuiz() {
+      if (!this.ageBand) return;
+      this.step = 'quiz';
+      this.currentIndex = 0;
+      this.scrollTop();
+      this.ga('intake_complete', { age_band: this.ageBand });
+    },
+
+    next() {
+      if (this.currentIndex < SECTIONS.length - 1) {
+        this.ga('section_complete', { section: SECTIONS[this.currentIndex].id });
+        this.currentIndex++;
+        this.scrollTop();
+      } else {
+        this.jumpToSummary();
+      }
+    },
+    prev() {
+      if (this.currentIndex > 0) { this.currentIndex--; this.scrollTop(); }
+      else { this.step = 'intake'; this.scrollTop(); }
+    },
+    skip() { this.next(); },
+
+    jumpToSummary() {
+      this.results = evaluate(this.answers, this.ageBand);
+      this.step = 'summary';
+      this.scrollTop();
+      this.ga('summary_view', { good: this.results.good.length, adjust: this.results.adjust.length, watch: this.results.watch.length });
+    },
+
+    retake() {
+      if (!confirm('This will clear your answers and restart the checklist. Continue?')) return;
+      this.answers = {};
+      this.ageBand = '';
+      this.currentIndex = 0;
+      this.step = 'intro';
+      this.results = { good: [], adjust: [], watch: [] };
+      this.email = ''; this.emailSubmitted = false; this.emailError = '';
+      try { localStorage.removeItem('nursery-safety-check-state'); } catch(e) {}
+      this.scrollTop();
+    },
+
+    toggleMulti(qid, value, exclusive) {
+      const cur = Array.isArray(this.answers[qid]) ? [...this.answers[qid]] : [];
+      const has = cur.includes(value);
+      if (exclusive) {
+        this.answers[qid] = has ? [] : [value];
+      } else {
+        if (has) this.answers[qid] = cur.filter(v => v !== value);
+        else {
+          const exclusiveValues = SECTIONS
+            .flatMap(s => s.questions)
+            .find(q => q.id === qid)?.options
+            .filter(o => o.exclusive).map(o => o.value) || [];
+          this.answers[qid] = [...cur.filter(v => !exclusiveValues.includes(v)), value];
+        }
+      }
+    },
+
+    scrollTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+
+    todayFormatted() {
+      return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    },
+
+    shareTool() {
+      // Share the tool URL only — NEVER the parent's personalized results.
+      const url = 'https://nonnanest.com/nursery-checklist';
+      const text = "Just checked our nursery against pediatric guidance with this free tool from Nonnanest — worth doing if you're prepping baby's room.";
+      const shareData = { title: 'Nursery Safety Check — Nonnanest', text, url };
+
+      // Try Web Share API first (mobile, modern browsers)
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData).then(() => {
+          this.ga('share_native');
+        }).catch(() => {
+          // User cancelled or share failed — fall through silently
+        });
+        return;
+      }
+
+      // Fallback: copy URL to clipboard
+      const fallbackText = `${text} ${url}`;
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(fallbackText).then(() => {
+          this.shareCopied = true;
+          setTimeout(() => this.shareCopied = false, 2200);
+          this.ga('share_copy');
+        });
+      }
+    },
+
+    submitEmail() {
+      if (!this.email || this.emailSubmitting) return;
+      this.emailSubmitting = true;
+      this.emailError = '';
+
+      // HubSpot form submission. Configure at deploy time via the script block
+      // injected at the bottom of the page:
+      //   window.NONNANEST_HUBSPOT = { portalId: '...', formId: '...', region: 'na2' };
+      // region is one of 'na1' (default, legacy portals) or 'na2' (newer portals).
+      const cfg = window.NONNANEST_HUBSPOT;
+      const summaryText = this.formatSummaryForEmail();
+      const payload = {
+        submittedAt: Date.now(),
+        fields: [
+          { objectTypeId: '0-1', name: 'email', value: this.email },
+          { objectTypeId: '0-1', name: 'nursery_check_age_band', value: this.ageBand },
+          { objectTypeId: '0-1', name: 'nursery_check_summary', value: summaryText.slice(0, 4000) },
+        ],
+        context: { pageUri: location.href, pageName: 'Nursery Safety Check' },
+      };
+
+      const done = (ok, msg) => {
+        this.emailSubmitting = false;
+        if (ok) {
+          this.emailSubmitted = true;
+          this.ga('email_capture');
+        } else {
+          this.emailError = msg || "Something went wrong. Please try again.";
+        }
+      };
+
+      if (cfg?.portalId && cfg?.formId) {
+        const region = cfg.region || 'na1';
+        const apiHost = region === 'na2' ? 'api-na2.hsforms.com' : 'api.hsforms.com';
+        const url = `https://${apiHost}/submissions/v3/integration/submit/${cfg.portalId}/${cfg.formId}`;
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        })
+        .then(res => {
+          if (res.ok) {
+            done(true);
+          } else {
+            return res.json().catch(() => ({})).then(body => {
+              console.error('HubSpot submission failed', res.status, body);
+              done(false, "We couldn't save your email right now. Please try again in a moment.");
+            });
+          }
+        })
+        .catch(err => {
+          console.error('HubSpot submission error', err);
+          done(false, "We couldn't save your email right now. Please try again in a moment.");
+        });
+      } else {
+        // Dev / no HubSpot config: just simulate success.
+        setTimeout(() => done(true), 600);
+      }
+    },
+
+    formatSummaryForEmail() {
+      const lines = [];
+      lines.push('Nursery Safety Check — Your Summary');
+      lines.push('Generated ' + this.todayFormatted());
+      lines.push('');
+      const block = (heading, items) => {
+        if (!items.length) return;
+        lines.push('=== ' + heading + ' ===');
+        items.forEach(i => {
+          lines.push('[' + i.section + '] ' + i.body);
+          lines.push('  Source: ' + i.cite);
+          lines.push('');
+        });
+      };
+      block('Dialed in', this.results.good);
+      block('Worth adjusting', this.results.adjust);
+      block('Watch as baby grows', this.results.watch);
+      lines.push('---');
+      lines.push('This checklist reflects publicly available pediatric and safety guidance.');
+      lines.push('Nonnanest is a wellness device, not a medical device.');
+      lines.push('https://nonnanest.com/nursery-checklist');
+      return lines.join('\n');
+    },
+
+    ga(event, params = {}) {
+      try { window.gtag && window.gtag('event', event, { tool: 'nursery_safety_check', ...params }); } catch(e) {}
+    },
+
+    downloadPdf() {
+      this.ga('pdf_download');
+      generatePdf(this.results, this.ageBand);
+    },
+  };
+}
+
+// ---------- PDF generation (jsPDF) ----------
+function generatePdf(results, ageBand) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+  const W = doc.internal.pageSize.getWidth();
+  const H = doc.internal.pageSize.getHeight();
+  const M = 54; // margin
+  let y = M;
+
+  // Brand colors per Nonnanest Brand Voice & Visual Identity Guide
+  const TEAL = [61, 107, 109];       // Deep Teal
+  const SOFT = [85, 144, 146];       // Soft Teal
+  const CHAR = [44, 37, 32];         // Charcoal
+  const CHAR70 = [96, 88, 82];
+  const CHAR50 = [140, 130, 122];
+  const CREAM = [245, 240, 234];
+
+  const setFont = (kind = 'body', size = 11) => {
+    if (kind === 'serif') doc.setFont('times', 'normal');
+    else if (kind === 'serif-b') doc.setFont('times', 'bold');
+    else if (kind === 'body-b') doc.setFont('helvetica', 'bold');
+    else doc.setFont('helvetica', 'normal');
+    doc.setFontSize(size);
+  };
+
+  const ensure = (needed) => {
+    if (y + needed > H - M - 80) {
+      addFooter();
+      doc.addPage();
+      y = M;
+    }
+  };
+
+  const addFooter = () => {
+    const fy = H - 50;
+    doc.setDrawColor(...CHAR).setLineWidth(0.4);
+    doc.line(M, fy - 22, W - M, fy - 22);
+    setFont('body', 8); doc.setTextColor(...CHAR70);
+    const disc = "This checklist reflects publicly available pediatric and safety guidance. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. For specific questions about your baby's health or environment, consult your pediatrician.";
+    const lines = doc.splitTextToSize(disc, W - M * 2 - 24);
+    doc.text(lines, M, fy - 8);
+    setFont('body', 8); doc.setTextColor(...CHAR50);
+    doc.text('nonnanest.com · Peace of Mind, Made Simple', M, H - 26);
+    doc.text('Reviewed by a registered nurse · Guidance reviewed April 2026', W - M, H - 26, { align: 'right' });
+  };
+
+  // --- Header ---
+  setFont('body-b', 9); doc.setTextColor(...TEAL);
+  doc.text('NONNANEST', M, y);
+  setFont('body', 9); doc.setTextColor(...CHAR50);
+  doc.text('Nursery Safety Check', W - M, y, { align: 'right' });
+  y += 10;
+  doc.setDrawColor(...CHAR).setLineWidth(0.4);
+  doc.line(M, y, W - M, y);
+  y += 30;
+
+  setFont('body', 8); doc.setTextColor(...SOFT);
+  doc.text('YOUR RESULTS', M, y);
+  y += 16;
+  setFont('serif', 26); doc.setTextColor(...TEAL);
+  doc.text('Your Nursery Summary', M, y);
+  y += 22;
+  setFont('body', 10); doc.setTextColor(...CHAR70);
+  const ageLabels = { '0-3': '0–3 months', '4-6': '4–6 months', '7-12': '7–12 months', '13-24': '13–24 months' };
+  const ageTxt = ageBand ? ('Baby age: ' + ageLabels[ageBand] + ' · ') : '';
+  doc.text(ageTxt + 'Generated ' + new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), M, y);
+  y += 22;
+
+  const intro = "Here's what pediatric and safety guidance suggests for your setup. Nothing below is a diagnosis or medical advice — it's guidance to take to your pediatrician if you have questions.";
+  setFont('body', 10); doc.setTextColor(...CHAR70);
+  doc.text(doc.splitTextToSize(intro, W - M * 2 - 24), M, y);
+  y += 44;
+
+  // --- Sections ---
+  const renderColumn = (heading, items, accent, count) => {
+    // Pre-calculate the size of the heading block + first item so we can
+    // ensure they stay together. Avoids orphaning a heading at the bottom
+    // of a page or splitting a column from its first item.
+    const HEADING_H = 36;
+    let firstItemH = 0;
+    const contentWidth = W - M * 2 - 90;
+    if (items.length > 0) {
+      const firstBody = doc.splitTextToSize(items[0].body, contentWidth);
+      const firstCite = doc.splitTextToSize(items[0].cite, contentWidth);
+      firstItemH = 18 + firstBody.length * 13 + 6 + firstCite.length * 11 + 12;
+    } else {
+      firstItemH = 22;
+    }
+    ensure(HEADING_H + firstItemH);
+
+    doc.setFillColor(...CREAM); doc.rect(M, y, W - M * 2, 26, 'F');
+    doc.setFillColor(...accent); doc.rect(M, y, 3, 26, 'F');
+    setFont('serif-b', 14); doc.setTextColor(...TEAL);
+    doc.text(heading, M + 14, y + 18);
+    setFont('body', 9); doc.setTextColor(...CHAR50);
+    doc.text(count + ' ' + (count === 1 ? 'item' : 'items'), W - M - 4, y + 18, { align: 'right' });
+    y += 36;
+
+    if (items.length === 0) {
+      setFont('body', 10); doc.setTextColor(...CHAR50);
+      doc.text('Nothing to note here based on your answers.', M + 14, y);
+      y += 22;
+      return;
+    }
+
+    // Content area inside the column: starts at M+14 (indent), ends at W-M-14 (right pad).
+    // Browser jsPDF (2.5.2) uses canvas-based font metrics that under-measure compared
+    // to the built-in helvetica width tables, so splitTextToSize produces lines that
+    // render past the page edge. Use an aggressive buffer to force conservative wrap.
+
+    items.forEach((item, idx) => {
+      const bodyLines = doc.splitTextToSize(item.body, contentWidth);
+      const citeLines = doc.splitTextToSize(item.cite, contentWidth);
+      const blockH = 18 + bodyLines.length * 13 + 6 + citeLines.length * 11 + 12;
+
+      // Look-ahead: if rendering this item would leave the next item alone
+      // at the bottom of the page (or pushed to the next page by itself when
+      // there are only 2 items in this column), prefer to break before this one.
+      // We only avoid orphans for the LAST item in a column.
+      const isPenultimate = idx === items.length - 2;
+      if (isPenultimate && items.length === 2) {
+        const nextBody = doc.splitTextToSize(items[idx + 1].body, contentWidth);
+        const nextCite = doc.splitTextToSize(items[idx + 1].cite, contentWidth);
+        const nextH = 18 + nextBody.length * 13 + 6 + nextCite.length * 11 + 12;
+        // If both fit on this page, fine. If only this one fits and next would orphan, break now.
+        const remaining = (H - M - 80) - y;
+        if (blockH < remaining && (blockH + nextH) > remaining) {
+          // Push both to next page together
+          addFooter();
+          doc.addPage();
+          y = M;
+        }
+      } else {
+        ensure(blockH);
+      }
+
+      setFont('body-b', 8); doc.setTextColor(...accent);
+      doc.text(item.section.toUpperCase(), M + 14, y);
+      y += 12;
+      setFont('body', 10.5); doc.setTextColor(...CHAR);
+      doc.text(bodyLines, M + 14, y);
+      y += bodyLines.length * 13 + 4;
+      setFont('body', 8.5); doc.setTextColor(...CHAR50);
+      doc.setFont('helvetica', 'italic');
+      doc.text(citeLines, M + 14, y);
+      y += citeLines.length * 11 + 14;
+    });
+  };
+
+  renderColumn('Dialed in', results.good, SOFT, results.good.length);
+  y += 6;
+  renderColumn('Worth adjusting', results.adjust, CHAR70, results.adjust.length);
+  y += 6;
+  renderColumn('Watch as baby grows', results.watch, TEAL, results.watch.length);
+
+  addFooter();
+  doc.save('nursery-safety-check-' + new Date().toISOString().slice(0, 10) + '.pdf');
+}
+
+// Expose for Alpine
+window.checklist = checklist;
+</script>
+
+<!-- HubSpot configuration (NA2 portal) -->
+<script>
+  window.NONNANEST_HUBSPOT = {
+    portalId: '242981565',
+    formId: '11f429ec-44da-497e-9530-a8052ab4349f',
+    region: 'na2'
+  };
+</script>
+
+</body>
+</html>
