@@ -16,7 +16,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Press | Nonnanest | Baby Wellness Technology</title>
 <meta name="description" content="Press resources for Nonnanest and SightAware, the contactless infrared skin temperature baby wellness monitor. Product images, founder bio, fact sheet, and media contact.">
-<!-- Open Graph -->
 <meta property="og:title" content="Press | Nonnanest">
 <meta property="og:description" content="Press resources for Nonnanest and SightAware, the contactless infrared skin temperature baby wellness monitor. Product images, founder bio, and media contact.">
 <meta property="og:type" content="website">
@@ -28,7 +27,6 @@
 <meta name="twitter:description" content="Press resources for Nonnanest and SightAware, the contactless infrared skin temperature baby wellness monitor.">
 <meta name="twitter:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
 
-<!-- Organization Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,557 +110,390 @@ nav {
 .nav-cta:hover { background: var(--soft-teal) !important; transform: translateY(-1px); }
 
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 200;
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 8px; z-index: 200;
 }
 .hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--charcoal);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  display: block; width: 22px; height: 2px;
+  background: var(--charcoal); border-radius: 2px; transition: all 0.3s ease;
 }
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 .mobile-nav {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 150;
-  background: rgba(250, 248, 245, 0.98);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 150; background: rgba(250, 248, 245, 0.98);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  flex-direction: column; align-items: center; justify-content: center; gap: 0;
 }
 .mobile-nav.open { display: flex; }
 .mobile-nav a {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--charcoal);
-  padding: 16px 0;
-  transition: color 0.2s;
-  letter-spacing: -0.5px;
+  font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400;
+  color: var(--charcoal); padding: 16px 0; transition: color 0.2s; letter-spacing: -0.5px;
 }
 .mobile-nav a:hover { color: var(--deep-teal); }
 .mobile-nav .mobile-nav-cta {
-  margin-top: 24px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--warm-white);
-  background: var(--deep-teal);
-  padding: 16px 40px;
-  border-radius: 12px;
-  transition: all 0.25s;
+  margin-top: 24px; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 500;
+  color: var(--warm-white); background: var(--deep-teal);
+  padding: 16px 40px; border-radius: 12px; transition: all 0.25s;
 }
 .mobile-nav .mobile-nav-cta:hover { background: var(--soft-teal); }
-
 
 /* ===== PAGE HEADER ===== */
 .page-header {
   padding: 160px 48px 80px;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 800px; margin: 0 auto; text-align: center;
 }
-
 .page-header .section-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--soft-teal);
-  margin-bottom: 16px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--soft-teal); margin-bottom: 16px;
 }
-
 .page-header h1 {
-  font-family: 'Fraunces', serif;
-  font-size: 44px;
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -1.5px;
-  color: var(--charcoal);
-  margin-bottom: 20px;
+  font-family: 'Fraunces', serif; font-size: 44px; font-weight: 400;
+  line-height: 1.15; letter-spacing: -1.5px; color: var(--charcoal); margin-bottom: 20px;
 }
-
-.page-header h1 em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--soft-teal);
-}
-
+.page-header h1 em { font-style: italic; font-weight: 300; color: var(--soft-teal); }
 .page-header p {
-  font-size: 17px;
-  color: var(--earth);
-  line-height: 1.7;
-  max-width: 560px;
-  margin: 0 auto;
+  font-size: 17px; color: var(--earth); line-height: 1.7;
+  max-width: 560px; margin: 0 auto;
 }
-
 
 /* ===== SECTIONS ===== */
-.section {
-  padding: 80px 48px;
-  max-width: 900px;
-  margin: 0 auto;
-}
+.section { padding: 80px 48px; max-width: 900px; margin: 0 auto; }
+.section-divider { border: none; border-top: 1px solid var(--linen); max-width: 900px; margin: 0 auto; }
 
-.section-divider {
-  border: none;
-  border-top: 1px solid var(--linen);
-  max-width: 900px;
-  margin: 0 auto;
+/* ===== SECTION HEADERS ===== */
+.section-header { margin-bottom: 40px; }
+.section-header h2 {
+  font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400;
+  color: var(--charcoal); margin-bottom: 8px; letter-spacing: -0.5px;
 }
+.section-header .section-sub { font-size: 15px; color: var(--bark); }
 
+/* ===== IN THE PRESS ===== */
+.coverage-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.coverage-card {
+  background: var(--cream); border: 1px solid var(--linen); border-radius: 16px;
+  padding: 28px 32px; transition: transform 0.3s, box-shadow 0.3s; display: block;
+}
+.coverage-card:hover {
+  transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,0.07);
+}
+.coverage-outlet {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal);
+  margin-bottom: 8px; display: block;
+}
+.coverage-card h3 {
+  font-family: 'Fraunces', serif; font-size: 16px; font-weight: 400;
+  color: var(--charcoal); margin-bottom: 8px; line-height: 1.4;
+}
+.coverage-card p { font-size: 13px; color: var(--bark); line-height: 1.6; }
+.coverage-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px; font-size: 13px; font-weight: 500; color: var(--deep-teal);
+  border-bottom: 1px solid var(--pale-aqua); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.coverage-link:hover { color: var(--soft-teal); border-color: var(--soft-teal); }
+.coverage-link svg { width: 13px; height: 13px; }
+
+/* ===== STORY ANGLES ===== */
+.angles-intro {
+  background: var(--teal-mist); border: 1px solid var(--pale-aqua);
+  border-radius: 12px; padding: 20px 24px; margin-bottom: 28px;
+}
+.angles-intro p { font-size: 14px; color: var(--deep-teal); line-height: 1.65; }
+.angle-card {
+  border-left: 3px solid var(--soft-teal); padding: 20px 24px;
+  margin-bottom: 16px; background: var(--cream);
+  border-radius: 0 12px 12px 0;
+}
+.angle-tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal);
+  margin-bottom: 8px; display: block;
+}
+.angle-card h3 {
+  font-size: 15px; font-weight: 600; color: var(--charcoal);
+  margin-bottom: 8px; line-height: 1.4;
+}
+.angle-card p { font-size: 14px; color: var(--earth); line-height: 1.7; }
+.angles-contact {
+  margin-top: 24px; font-size: 14px; color: var(--bark); font-style: italic;
+}
+.angles-contact a { color: var(--deep-teal); border-bottom: 1px solid var(--pale-aqua); }
 
 /* ===== BOILERPLATE ===== */
 .boilerplate {
-  background: var(--cream);
-  border: 1px solid var(--linen);
-  border-radius: 16px;
-  padding: 40px;
-  margin-bottom: 48px;
+  background: var(--cream); border: 1px solid var(--linen);
+  border-radius: 16px; padding: 40px; margin-bottom: 20px;
 }
-
 .boilerplate h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--charcoal);
-  margin-bottom: 16px;
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400;
+  color: var(--charcoal); margin-bottom: 16px;
 }
-
-.boilerplate p {
-  font-size: 15px;
-  color: var(--earth);
-  line-height: 1.75;
-}
-
+.boilerplate p { font-size: 15px; color: var(--earth); line-height: 1.75; }
 
 /* ===== FOUNDER BIO ===== */
 .founder-bio {
-  background: var(--cream);
-  border: 1px solid var(--linen);
-  border-radius: 16px;
-  padding: 40px;
+  background: var(--cream); border: 1px solid var(--linen);
+  border-radius: 16px; padding: 40px;
 }
-
 .founder-bio h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--charcoal);
-  margin-bottom: 16px;
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400;
+  color: var(--charcoal); margin-bottom: 16px;
 }
-
-.founder-bio p {
-  font-size: 15px;
-  color: var(--earth);
-  line-height: 1.75;
-  margin-bottom: 12px;
-}
-
-.founder-bio p:last-child {
-  margin-bottom: 0;
-}
-
+.founder-bio p { font-size: 15px; color: var(--earth); line-height: 1.75; margin-bottom: 12px; }
+.founder-bio p:last-child { margin-bottom: 0; }
 
 /* ===== PRODUCT FACTS ===== */
-.product-facts {
-  margin-top: 48px;
-}
-
-.product-facts h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--charcoal);
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-
-.product-facts .section-sub {
-  font-size: 15px;
-  color: var(--bark);
-  margin-bottom: 32px;
-}
-
-.fact-list {
-  list-style: none;
-  padding: 0;
-}
-
+.fact-list { list-style: none; padding: 0; }
 .fact-list li {
-  font-size: 15px;
-  color: var(--earth);
-  line-height: 1.75;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--linen);
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
+  font-size: 15px; color: var(--earth); line-height: 1.75;
+  padding: 12px 0; border-bottom: 1px solid var(--linen);
+  display: flex; align-items: baseline; gap: 12px;
 }
-
-.fact-list li:last-child {
-  border-bottom: none;
-}
-
+.fact-list li:last-child { border-bottom: none; }
 .fact-list li::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: var(--soft-teal);
-  border-radius: 50%;
-  flex-shrink: 0;
-  position: relative;
-  top: -2px;
+  content: ''; display: inline-block; width: 6px; height: 6px;
+  background: var(--soft-teal); border-radius: 50%; flex-shrink: 0;
+  position: relative; top: -2px;
 }
-
 
 /* ===== QUOTES ===== */
-.quotes-section h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--charcoal);
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-
-.quotes-section .section-sub {
-  font-size: 15px;
-  color: var(--bark);
-  margin-bottom: 40px;
-}
-
 .quote-card {
-  background: var(--cream);
-  border: 1px solid var(--linen);
-  border-radius: 16px;
-  padding: 32px 36px;
-  margin-bottom: 20px;
-  position: relative;
+  background: var(--cream); border: 1px solid var(--linen);
+  border-radius: 16px; padding: 32px 36px; margin-bottom: 20px; position: relative;
 }
-
 .quote-card::before {
-  content: '\201C';
-  font-family: 'Fraunces', serif;
-  font-size: 48px;
-  color: var(--pale-aqua);
-  position: absolute;
-  top: 16px;
-  left: 24px;
-  line-height: 1;
+  content: '\201C'; font-family: 'Fraunces', serif; font-size: 48px;
+  color: var(--pale-aqua); position: absolute; top: 16px; left: 24px; line-height: 1;
 }
-
 .quote-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--soft-teal);
-  margin-bottom: 12px;
-  display: block;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal);
+  margin-bottom: 12px; display: block;
 }
-
 .quote-card p {
-  font-size: 15px;
-  color: var(--earth);
-  line-height: 1.75;
-  font-style: italic;
-  padding-left: 20px;
+  font-size: 15px; color: var(--earth); line-height: 1.75;
+  font-style: italic; padding-left: 20px;
 }
-
 .quote-attr {
-  font-size: 13px;
-  color: var(--bark);
-  font-style: normal;
-  margin-top: 12px;
-  padding-left: 20px;
+  font-size: 13px; color: var(--bark); font-style: normal;
+  margin-top: 12px; padding-left: 20px;
 }
-
 
 /* ===== PRESS RELEASES ===== */
-.press-releases h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--charcoal);
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-
-.press-releases .section-sub {
-  font-size: 15px;
-  color: var(--bark);
-  margin-bottom: 40px;
-}
-
 .press-release-item {
-  background: var(--cream);
-  border: 1px solid var(--linen);
-  border-radius: 16px;
-  padding: 32px 36px;
-  margin-bottom: 16px;
+  background: var(--cream); border: 1px solid var(--linen);
+  border-radius: 16px; padding: 32px 36px; margin-bottom: 16px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .press-release-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(44,37,32,0.06);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(44,37,32,0.06);
 }
-
 .press-release-date {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--soft-teal);
-  margin-bottom: 8px;
-  display: block;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--soft-teal);
+  margin-bottom: 8px; display: block;
 }
-
 .press-release-item h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--charcoal);
-  margin-bottom: 8px;
-  line-height: 1.4;
+  font-family: 'Fraunces', serif; font-size: 18px; font-weight: 400;
+  color: var(--charcoal); margin-bottom: 8px; line-height: 1.4;
 }
-
-.press-release-item p {
-  font-size: 14px;
-  color: var(--bark);
-  line-height: 1.6;
-}
-
+.press-release-item p { font-size: 14px; color: var(--bark); line-height: 1.6; }
 
 /* ===== MEDIA KIT ===== */
-.media-kit h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--charcoal);
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
+.media-kit-download {
+  background: var(--charcoal); border-radius: 16px; padding: 36px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; margin-bottom: 32px;
 }
-
-.media-kit .section-sub {
-  font-size: 15px;
-  color: var(--bark);
-  margin-bottom: 40px;
+.media-kit-download-text h3 {
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400;
+  color: var(--warm-white); margin-bottom: 8px;
 }
+.media-kit-download-text p { font-size: 14px; color: var(--clay); line-height: 1.6; max-width: 440px; }
+.media-kit-download-text ul {
+  list-style: none; margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px;
+}
+.media-kit-download-text ul li {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--soft-teal); background: rgba(85,144,146,0.12);
+  padding: 4px 10px; border-radius: 6px;
+}
+.download-btn {
+  display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0;
+  padding: 14px 28px; background: var(--soft-teal); color: var(--warm-white);
+  font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500;
+  border-radius: 10px; transition: all 0.25s; white-space: nowrap;
+}
+.download-btn:hover {
+  background: var(--deep-teal); transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(61,107,109,0.3);
+}
+.download-btn svg { width: 18px; height: 18px; }
 
 .media-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px;
+}
+.media-grid-photos {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px;
+}
+.photo-card {
+  border-radius: 12px; overflow: hidden; border: 1px solid var(--linen);
+  transition: transform 0.3s, box-shadow 0.3s; position: relative;
+}
+.photo-card:hover {
+  transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,0.1);
+}
+.photo-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.photo-card-label {
+  padding: 10px 14px; background: var(--cream); border-top: 1px solid var(--linen);
+  font-size: 12px; color: var(--bark); display: flex; justify-content: space-between; align-items: center;
+}
+.photo-card-label a {
+  font-size: 11px; font-weight: 500; color: var(--deep-teal);
+  border-bottom: 1px solid var(--pale-aqua); padding-bottom: 1px;
 }
 
 .media-card {
-  background: var(--cream);
-  border: 1px solid var(--linen);
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
+  background: var(--cream); border: 1px solid var(--linen);
+  border-radius: 16px; padding: 28px 24px; text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .media-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(44,37,32,0.06);
+  transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,0.06);
 }
-
 .media-card-icon {
-  width: 44px;
-  height: 44px;
-  background: var(--teal-mist);
-  border: 1px solid var(--pale-aqua);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
+  width: 44px; height: 44px; background: var(--teal-mist); border: 1px solid var(--pale-aqua);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
 }
-
-.media-card-icon svg {
-  width: 20px;
-  height: 20px;
-  color: var(--deep-teal);
-}
-
+.media-card-icon svg { width: 20px; height: 20px; color: var(--deep-teal); }
 .media-card h3 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--charcoal);
-  margin-bottom: 8px;
+  font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 500;
+  color: var(--charcoal); margin-bottom: 8px;
 }
-
-.media-card p {
-  font-size: 13px;
-  color: var(--bark);
-  line-height: 1.5;
-}
-
+.media-card p { font-size: 13px; color: var(--bark); line-height: 1.5; }
 .media-card .coming-soon {
-  display: inline-block;
-  margin-top: 12px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--soft-teal);
-  background: var(--teal-mist);
-  padding: 4px 12px;
-  border-radius: 6px;
+  display: inline-block; margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--soft-teal);
+  background: var(--teal-mist); padding: 4px 12px; border-radius: 6px;
 }
-
 .media-card .download-link {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--deep-teal);
-  border-bottom: 1px solid var(--pale-aqua);
-  padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
+  display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 500;
+  color: var(--deep-teal); border-bottom: 1px solid var(--pale-aqua);
+  padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
 }
+.media-card .download-link:hover { color: var(--soft-teal); border-color: var(--soft-teal); }
 
-.media-card .download-link:hover {
-  color: var(--soft-teal);
-  border-color: var(--soft-teal);
+/* Headshot cards */
+.headshot-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;
 }
-
+.headshot-card {
+  border-radius: 12px; overflow: hidden; border: 1px solid var(--linen);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.headshot-card:hover {
+  transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,0.1);
+}
+.headshot-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; }
+.headshot-card-label {
+  padding: 12px 16px; background: var(--cream); border-top: 1px solid var(--linen);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.headshot-card-label span { font-size: 13px; color: var(--earth); }
+.headshot-card-label a {
+  font-size: 12px; font-weight: 500; color: var(--deep-teal);
+  border-bottom: 1px solid var(--pale-aqua); padding-bottom: 1px;
+}
 
 /* ===== BRAND NOTE ===== */
 .brand-note {
-  background: var(--teal-mist);
-  border: 1px solid var(--pale-aqua);
-  border-radius: 12px;
-  padding: 24px 28px;
-  margin-top: 32px;
+  background: var(--teal-mist); border: 1px solid var(--pale-aqua);
+  border-radius: 12px; padding: 24px 28px; margin-top: 24px;
 }
-
-.brand-note p {
-  font-size: 14px;
-  color: var(--deep-teal);
-  line-height: 1.65;
-}
-
-.brand-note strong {
-  font-weight: 500;
-}
-
+.brand-note p { font-size: 14px; color: var(--deep-teal); line-height: 1.65; }
+.brand-note strong { font-weight: 500; }
 
 /* ===== REGULATORY ===== */
-.regulatory-notice {
-  margin-top: 48px;
-  padding: 24px 28px;
-  border-left: 3px solid var(--warm-sand);
-}
-
-.regulatory-notice p {
-  font-size: 13px;
-  color: var(--bark);
-  line-height: 1.7;
-}
-
+.regulatory-notice { margin-top: 48px; padding: 24px 28px; border-left: 3px solid var(--warm-sand); }
+.regulatory-notice p { font-size: 13px; color: var(--bark); line-height: 1.7; }
 
 /* ===== CONTACT ===== */
 .press-contact {
-  background: var(--charcoal);
-  border-radius: 20px;
-  padding: 56px 48px;
-  text-align: center;
+  background: var(--charcoal); border-radius: 20px; padding: 56px 48px; text-align: center;
 }
-
 .press-contact h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--warm-white);
-  margin-bottom: 12px;
+  font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400;
+  color: var(--warm-white); margin-bottom: 12px;
 }
-
 .press-contact p {
-  font-size: 15px;
-  color: var(--clay);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 15px; color: var(--clay); line-height: 1.7; margin-bottom: 32px;
+  max-width: 480px; margin-left: auto; margin-right: auto;
 }
-
 .press-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 32px;
-  background: var(--deep-teal);
-  color: var(--warm-white);
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 10px;
-  transition: all 0.25s;
-  letter-spacing: 0.2px;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; background: var(--deep-teal); color: var(--warm-white);
+  font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 500;
+  border-radius: 10px; transition: all 0.25s; letter-spacing: 0.2px;
 }
-
 .press-email:hover {
-  background: var(--soft-teal);
-  transform: translateY(-2px);
+  background: var(--soft-teal); transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(61,107,109,0.2);
 }
-
-.press-email svg {
-  width: 18px;
-  height: 18px;
-}
-
+.press-email svg { width: 18px; height: 18px; }
 
 /* ===== FOOTER ===== */
 footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48px 40px; }
-.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+.footer-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px;
+}
 .footer-brand p { font-size: 14px; line-height: 1.7; color: var(--clay); margin-top: 16px; max-width: 280px; }
-.footer-col h4 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-sand); margin-bottom: 20px; }
+.footer-col h4 {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--warm-sand); margin-bottom: 20px;
+}
 .footer-col a { display: block; font-size: 14px; color: var(--clay); margin-bottom: 12px; transition: color 0.2s; }
 .footer-col a:hover { color: var(--pale-aqua); }
-.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto; padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+}
 .footer-bottom p { font-size: 12px; color: var(--warm-gray); }
 .footer-bottom-links { display: flex; gap: 24px; }
 .footer-bottom-links a { font-size: 12px; color: var(--warm-gray); transition: color 0.2s; }
 .footer-bottom-links a:hover { color: var(--pale-aqua); }
-.wellness-disclaimer { font-size: 11px; color: var(--warm-gray); line-height: 1.6; max-width: 800px; margin: 24px auto 0; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
-
+.wellness-disclaimer {
+  font-size: 11px; color: var(--warm-gray); line-height: 1.6; max-width: 800px;
+  margin: 24px auto 0; text-align: center; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .page-header { padding: 140px 24px 60px; }
   .page-header h1 { font-size: 34px; }
   .section { padding: 60px 24px; }
-  .media-grid { grid-template-columns: 1fr; }
+  .media-grid { grid-template-columns: 1fr 1fr; }
+  .media-grid-photos { grid-template-columns: 1fr 1fr; }
+  .coverage-grid { grid-template-columns: 1fr; }
+  .headshot-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   nav { padding: 16px 24px; }
   .press-contact { padding: 40px 24px; }
+  .media-kit-download { flex-direction: column; text-align: center; }
+  .media-kit-download-text ul { justify-content: center; }
 }
-
 @media (max-width: 600px) {
   .page-header h1 { font-size: 28px; }
   .nav-links { display: none; }
@@ -671,6 +502,9 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .boilerplate { padding: 28px 20px; }
   .founder-bio { padding: 28px 20px; }
   .quote-card { padding: 28px 20px; }
+  .media-grid { grid-template-columns: 1fr; }
+  .media-grid-photos { grid-template-columns: 1fr; }
+  .headshot-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -699,13 +533,13 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   <a href="/#faq" onclick="closeMobileNav()">FAQ</a>
   <a href="/#pricing" class="mobile-nav-cta" onclick="closeMobileNav()">Get Yours &#8212; $329</a>
 </div>
-
 <script>
 function closeMobileNav() {
   document.getElementById('mobileNav').classList.remove('open');
   document.querySelector('.hamburger').classList.remove('active');
 }
 </script>
+
 
 <!-- ===== PAGE HEADER ===== -->
 <section class="page-header">
@@ -714,13 +548,14 @@ function closeMobileNav() {
   <p>Media resources, press releases, and brand information for the only baby monitor that senses skin temperature without touching your baby. No wearables, no WiFi, no subscriptions.</p>
 </section>
 
+
 <!-- ===== IN THE PRESS ===== -->
 <div class="section" style="padding-top:0;">
   <div class="section-header">
     <h2>In the press</h2>
     <p class="section-sub">Coverage and editorial mentions of SightAware&#8482; by Nonnanest.</p>
   </div>
- 
+
   <div class="coverage-grid">
     <a href="https://www.trendhunter.com/trends/sightaware" target="_blank" rel="noopener" class="coverage-card">
       <span class="coverage-outlet">TrendHunter &mdash; April 2026</span>
@@ -731,7 +566,7 @@ function closeMobileNav() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
       </span>
     </a>
- 
+
     <a href="https://mikeshouts.com/nonnanest-sightaware-baby-monitor/" target="_blank" rel="noopener" class="coverage-card">
       <span class="coverage-outlet">Mikeshouts &mdash; 2026</span>
       <h3>Nonnanest SightAware Baby Monitor</h3>
@@ -743,24 +578,9 @@ function closeMobileNav() {
     </a>
   </div>
 </div>
- 
-<hr class="section-divider">
-
-<!-- ===== COMPANY OVERVIEW + FOUNDER ===== -->
-<div class="section" style="padding-top:0;">
-  <div class="boilerplate">
-    <h2>About Nonnanest</h2>
-    <p>Nonnanest, Inc. is a baby wellness technology company based in Charleston, SC, founded in 2024 by Nathan Overbey. The company's flagship product, SightAware&#8482; by Nonnanest, is a contactless infrared baby wellness monitor that reads skin temperature from up to four feet away without requiring a wearable, WiFi, or a smartphone app. SightAware communicates via FHSS (Frequency Hopping Spread Spectrum), a secure wireless protocol that keeps all data local between the nursery camera and a dedicated 5-inch HD parent display. Patent pending. Priced at $329 with no subscription fees.</p>
-  </div>
-
-  <div class="founder-bio">
-    <h2>Founder</h2>
-    <p><strong>Nathan Overbey, Founder &amp; CEO</strong></p>
-    <p>Nathan designed SightAware after realizing no baby monitor on the market could track skin temperature contactlessly. He brings over 15 years of enterprise technology experience from Salesforce, ServiceNow, and Blackbaud, and holds an MBA from the University of South Carolina. Nathan is a father of two and the product's first real-world user.</p>
-  </div>
-</div>
 
 <hr class="section-divider">
+
 
 <!-- ===== STORY ANGLES ===== -->
 <div class="section">
@@ -768,56 +588,82 @@ function closeMobileNav() {
     <h2>Story angles</h2>
     <p class="section-sub">For journalists and editors. Nathan Overbey is available for interviews, background conversations, and product demos.</p>
   </div>
- 
+
   <div class="angles-intro">
     <p>SightAware by Nonnanest sits at the intersection of three strong editorial angles: privacy-first technology, founder origin story, and a product gap the baby monitor category has ignored for decades. Each angle below is available for editorial use.</p>
   </div>
- 
+
   <div class="angle-card">
     <span class="angle-tag">The privacy angle</span>
     <h3>A baby monitor built to stay offline &mdash; on purpose</h3>
-    <p>FHSS connectivity — the closed-loop wireless protocol that keeps all data local — is not new to baby monitors. What is new is combining it with wellness insights. Every product on the market that tracks meaningful health-adjacent data requires an internet connection to function. SightAware is the only monitor that delivers contactless skin temperature awareness entirely offline. No cloud. No app. No account. It is a deliberate design choice at a time when every other wellness tech product is moving toward connectivity, not away from it.</p>
+    <p>Parents are increasingly wary of connected devices in the nursery. SightAware is one of the only baby monitors built on FHSS, a closed-loop wireless protocol that never touches the internet. No cloud storage, no app, no account. It is a contrarian bet at a time when every other baby tech product is adding connectivity, not removing it. And here's what struck the founder: every wellness insight product on the market today requires an internet connection to function. SightAware was built to be the exception.</p>
   </div>
- 
+
   <div class="angle-card">
     <span class="angle-tag">The founder angle</span>
     <h3>A Charleston dad built what the market didn't have</h3>
     <p>Nathan Overbey built SightAware after a 3am moment with his six-month-old son. His baby woke crying, clearly unwell, and the monitor could only tell him the room temperature. He spent two years researching the gap, sourced and engineered the product while working a full-time job, and used it on his own kids before shipping a single unit. He is a father of two, a 15-year enterprise tech veteran, and a first-time hardware founder based in Charleston, SC.</p>
   </div>
- 
+
   <div class="angle-card">
     <span class="angle-tag">The product gap angle</span>
     <h3>Every baby monitor measures the room. Only one measures the baby.</h3>
     <p>Every major baby monitor on the market measures room temperature. SightAware measures the baby's skin temperature, contactlessly, from up to four feet away, using the same infrared sensing principle as no-touch thermometers. No wearable. No app. No subscription. $329, one time. It is a feature the category has never had in a standalone dedicated monitor.</p>
   </div>
- 
+
   <div class="angle-card">
     <span class="angle-tag">The gift guide angle</span>
     <h3>One-time price. No subscription. Ships from the US.</h3>
-    <p>SightAware fits roundups for best baby monitors, tech gifts for new parents, non-WiFi baby monitors, and privacy-first baby gear. It also fits the broader wellness and smart product landscape — gift guides covering smart home wellness, modern parenting tech, and connected wellness insight devices that respect privacy. One-time purchase at $329, no subscription, ships domestically. Available at nonnanest.com.</p>
+    <p>SightAware fits roundups for best baby monitors, tech gifts for new parents, non-WiFi baby monitors, and privacy-first baby gear. One-time purchase at $329, no subscription, ships domestically. Available at nonnanest.com.</p>
   </div>
- 
+
   <p class="angles-contact">Interview requests and review unit inquiries: <a href="mailto:hello@nonnanest.com">hello@nonnanest.com</a></p>
 </div>
- 
+
 <hr class="section-divider">
 
+
+<!-- ===== COMPANY OVERVIEW + FOUNDER ===== -->
+<div class="section">
+  <div class="section-header">
+    <h2>About &amp; founder</h2>
+  </div>
+
+  <div class="boilerplate">
+    <h2>About Nonnanest</h2>
+    <p>Nonnanest, Inc. is a baby wellness technology company based in Charleston, SC, founded in 2024 by Nathan Overbey. The company's flagship product, SightAware&#8482; by Nonnanest, is a contactless infrared baby wellness monitor that reads skin temperature from up to four feet away without requiring a wearable, WiFi, or a smartphone app. SightAware communicates via FHSS (Frequency Hopping Spread Spectrum), a secure wireless protocol that keeps all data local between the nursery camera and a dedicated 5-inch HD parent display. Patent pending. Priced at $329 with no subscription fees.</p>
+  </div>
+
+  <div style="margin-top:20px;">
+    <div class="founder-bio">
+      <h2>Founder</h2>
+      <p><strong>Nathan Overbey, Founder &amp; CEO</strong></p>
+      <p>Nathan designed SightAware after realizing no baby monitor on the market could track skin temperature contactlessly. He brings over 15 years of enterprise technology experience from Salesforce, ServiceNow, and Blackbaud, and holds an MBA from the University of South Carolina. Nathan is a father of two and the product's first real-world user.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+
 <!-- ===== PRODUCT FACT SHEET ===== -->
-<div class="section product-facts">
-  <h2>Product fact sheet</h2>
-  <p class="section-sub">SightAware&#8482; by Nonnanest</p>
+<div class="section">
+  <div class="section-header">
+    <h2>Product fact sheet</h2>
+    <p class="section-sub">SightAware&#8482; by Nonnanest</p>
+  </div>
 
   <ul class="fact-list">
     <li>Contactless infrared skin temperature sensing up to 4 feet</li>
-    <li>FHSS secure wireless transmission, no WiFi or Bluetooth required</li>
-    <li>Dedicated 5-inch HD parent display, no phone or app needed</li>
+    <li>FHSS secure wireless transmission &mdash; no WiFi or Bluetooth required</li>
+    <li>Dedicated 5-inch HD parent display &mdash; no phone or app needed</li>
     <li>Real-time skin temperature and room temperature awareness</li>
     <li>Customizable comfort thresholds with gentle audible alerts</li>
     <li>355-degree pan, 60-degree tilt, two-way audio, lullabies, and infrared night vision</li>
     <li>5-minute setup with crib mount and wall mount included</li>
     <li>$329, no subscription, no recurring fees</li>
     <li>Patent pending</li>
-    <li>FCC ID: 2AYKP-ABM570</li>
+    <li>FCC certified</li>
   </ul>
 </div>
 
@@ -830,47 +676,50 @@ function closeMobileNav() {
     <h2>Founder quotes</h2>
     <p class="section-sub">Journalists are welcome to use any of the following quotes attributed to Nathan Overbey, Founder &amp; CEO, Nonnanest.</p>
   </div>
- 
+
   <div class="quote-card">
     <span class="quote-label">On the origin</span>
     <p>When our son was six months old, he woke us up crying in the middle of the night. By the time we got to his room, it was obvious something was wrong. He was clearly unwell. I looked back at the monitor and all it could tell me was the room temperature. I kept thinking: how long had his skin temperature been rising while we slept? That was the moment I realized the market needed more awareness, not another camera.</p>
     <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
   </div>
- 
+
   <div class="quote-card">
     <span class="quote-label">On privacy</span>
     <p>We made a deliberate decision to keep SightAware offline. Parents are concerned about connected devices and security risks. We built it on FHSS, a fully encrypted signal that never touches the internet. Private by design, not by promise.</p>
     <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
   </div>
- 
+
   <div class="quote-card">
     <span class="quote-label">On the approach</span>
     <p>We're not trying to replace a parent's instinct. We're giving that instinct better information. SightAware is a gentle layer of awareness that works quietly in the background while your baby sleeps.</p>
     <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
   </div>
- 
+
   <div class="quote-card">
     <span class="quote-label">On design philosophy</span>
     <p>We're not anti-technology. We're very pro-innovation. But here's what struck me: every wellness insight product on the market today requires an internet connection to function. We made a deliberate choice to go the other way. Every design decision started with one question: does this serve the parent, or does it serve the product?</p>
     <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
   </div>
 </div>
- 
+
 <hr class="section-divider">
 
+
 <!-- ===== PRESS RELEASES ===== -->
-<div class="section press-releases">
-  <h2>Press releases</h2>
-  <p class="section-sub">Announcements and company news.</p>
-  
+<div class="section">
+  <div class="section-header">
+    <h2>Press releases</h2>
+    <p class="section-sub">Announcements and company news.</p>
+  </div>
+
   <a href="/press/company-profile-preorders-open/" style="display:block;text-decoration:none;color:inherit;">
-      <div class="press-release-item">
-        <span class="press-release-date">June 9, 2026</span>
-        <h3>Nonnanest Contactless Baby Wellness Monitor Now Available for Pre-Order: No WiFi, No App, No Subscription</h3>
-        <p>Parent-founded Charleston startup opens pre-orders for patent-pending contactless skin temperature baby monitor. $329, no subscriptions. FHSS secure, private by design.</p>
-      </div>
-    </a>
-  
+    <div class="press-release-item">
+      <span class="press-release-date">June 9, 2026</span>
+      <h3>Nonnanest Contactless Baby Wellness Monitor Now Available for Pre-Order: No WiFi, No App, No Subscription</h3>
+      <p>Parent-founded Charleston startup opens pre-orders for patent-pending contactless skin temperature baby monitor. $329, no subscriptions. FHSS secure, private by design.</p>
+    </div>
+  </a>
+
   <a href="/press/patent-pending-april-2026/" style="display:block;text-decoration:none;color:inherit;">
     <div class="press-release-item">
       <span class="press-release-date">April 7, 2026</span>
@@ -889,7 +738,7 @@ function closeMobileNav() {
     <h2>Media kit</h2>
     <p class="section-sub">All assets in one download, or access individual files below.</p>
   </div>
- 
+
   <!-- Full kit download -->
   <div class="media-kit-download">
     <div class="media-kit-download-text">
@@ -907,11 +756,11 @@ function closeMobileNav() {
       Download Media Kit
     </a>
   </div>
- 
+
   <!-- Product photos -->
   <h3 style="font-family:'Fraunces',serif;font-size:18px;font-weight:400;color:var(--charcoal);margin-bottom:16px;">Product photos</h3>
   <div class="media-grid-photos">
- 
+
     <div class="photo-card">
       <img src="/images/nonnanest-baby-monitor-camera-parent-unit.png" alt="SightAware full system — camera and parent display" loading="lazy">
       <div class="photo-card-label">
@@ -919,7 +768,7 @@ function closeMobileNav() {
         <a href="/images/nonnanest-baby-monitor-camera-parent-unit.png" download>Download</a>
       </div>
     </div>
- 
+
     <div class="photo-card">
       <img src="/images/Nonnanest_closeup_handheld.png" alt="SightAware parent display close-up showing skin temperature reading" loading="lazy">
       <div class="photo-card-label">
@@ -927,7 +776,7 @@ function closeMobileNav() {
         <a href="/images/Nonnanest_closeup_handheld.png" download>Download</a>
       </div>
     </div>
- 
+
     <div class="photo-card">
       <img src="/images/Nonnanest_Handheld_table.png" alt="SightAware parent display in use on kitchen table" loading="lazy">
       <div class="photo-card-label">
@@ -935,7 +784,7 @@ function closeMobileNav() {
         <a href="/images/Nonnanest_Handheld_table.png" download>Download</a>
       </div>
     </div>
- 
+
     <div class="photo-card">
       <img src="/images/Nonnanest_Wall_Mounted.png" alt="SightAware camera unit wall mounted in nursery" loading="lazy">
       <div class="photo-card-label">
@@ -943,7 +792,7 @@ function closeMobileNav() {
         <a href="/images/Nonnanest_Wall_Mounted.png" download>Download</a>
       </div>
     </div>
- 
+
     <div class="photo-card">
       <img src="/images/Nonnanest_Crib_Arm.png" alt="SightAware camera unit mounted on crib arm" loading="lazy">
       <div class="photo-card-label">
@@ -951,7 +800,7 @@ function closeMobileNav() {
         <a href="/images/Nonnanest_Crib_Arm.png" download>Download</a>
       </div>
     </div>
- 
+
     <div class="photo-card">
       <img src="/images/Nonnanest_in_the_box.png" alt="SightAware complete contents — what's in the box" loading="lazy">
       <div class="photo-card-label">
@@ -959,13 +808,13 @@ function closeMobileNav() {
         <a href="/images/Nonnanest_in_the_box.png" download>Download</a>
       </div>
     </div>
- 
+
   </div>
- 
+
   <!-- Headshots -->
   <h3 style="font-family:'Fraunces',serif;font-size:18px;font-weight:400;color:var(--charcoal);margin-bottom:16px;">Founder headshots</h3>
   <div class="headshot-grid">
- 
+
     <div class="headshot-card">
       <img src="/images/nathan-overbey-headshot.jpg" alt="Nathan Overbey, Founder and CEO of Nonnanest" loading="lazy">
       <div class="headshot-card-label">
@@ -973,7 +822,7 @@ function closeMobileNav() {
         <a href="/images/nathan-overbey-headshot.jpg" download>Download</a>
       </div>
     </div>
- 
+
     <div class="headshot-card">
       <img src="/images/nathan-overbey-family.jpg" alt="Nathan Overbey, Founder and CEO of Nonnanest, with family" loading="lazy">
       <div class="headshot-card-label">
@@ -981,9 +830,9 @@ function closeMobileNav() {
         <a href="/images/nathan-overbey-family.jpg" download>Download</a>
       </div>
     </div>
- 
+
   </div>
- 
+
   <!-- Logo + Fact Sheet -->
   <div class="media-grid">
     <div class="media-card">
@@ -994,7 +843,7 @@ function closeMobileNav() {
       <p>Nonnanest wordmark and logomark. Additional formats available on request.</p>
       <a href="/images/Nonnanest_Round_Logo.png" download class="download-link">Download logo</a>
     </div>
- 
+
     <div class="media-card">
       <div class="media-card-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -1003,7 +852,7 @@ function closeMobileNav() {
       <p>One-page press reference. Product specs, founder bio, quotes, and media contact.</p>
       <a href="/downloads/nonnanest-press-fact-sheet.pdf" download class="download-link">Download PDF</a>
     </div>
- 
+
     <div class="media-card">
       <div class="media-card-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1013,12 +862,12 @@ function closeMobileNav() {
       <a href="mailto:hello@nonnanest.com" class="download-link">hello@nonnanest.com</a>
     </div>
   </div>
- 
+
   <div class="brand-note">
     <p><strong>Brand usage:</strong> Please use "Nonnanest" (one word, capital N). The product name is "SightAware&#8482; by Nonnanest." For logo usage guidelines or additional formats, contact <a href="mailto:hello@nonnanest.com" style="color:var(--deep-teal);border-bottom:1px solid var(--pale-aqua);">hello@nonnanest.com</a>.</p>
   </div>
 </div>
- 
+
 <hr class="section-divider">
 
 
@@ -1074,7 +923,6 @@ function closeMobileNav() {
       <a href="/shipping">Shipping</a>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p>&copy; 2026 Nonnanest. All rights reserved. Designed in Charleston, SC.</p>
     <div class="footer-bottom-links">
@@ -1082,7 +930,6 @@ function closeMobileNav() {
       <a href="/terms-conditions">Terms &amp; Conditions</a>
     </div>
   </div>
-
   <div class="wellness-disclaimer">
     Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only. For health concerns, consult a pediatrician.
   </div>
