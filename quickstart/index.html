@@ -375,6 +375,76 @@ nav {
   margin-bottom: 0;
 }
 
+/* ===== WALL MOUNT DETAIL ===== */
+.mount-detail {
+  margin-top: 16px;
+  border: 1px solid var(--linen);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--warm-white);
+}
+
+.mount-detail summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--deep-teal);
+  background: var(--cream);
+  transition: background 0.2s;
+}
+
+.mount-detail summary::-webkit-details-marker { display: none; }
+.mount-detail summary:hover { background: var(--linen); }
+
+.mount-detail summary .chevron {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  transition: transform 0.25s;
+}
+
+.mount-detail[open] summary .chevron { transform: rotate(180deg); }
+
+.mount-detail-body {
+  padding: 20px 18px 4px;
+}
+
+.mount-substep {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 18px;
+}
+
+.mount-substep-num {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  background: var(--teal-mist);
+  border: 1px solid var(--pale-aqua);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--deep-teal);
+}
+
+.mount-substep-text {
+  font-size: 14px;
+  color: var(--earth);
+  line-height: 1.6;
+  padding-top: 2px;
+}
+
+.mount-substep-text strong { color: var(--charcoal); font-weight: 500; }
+
 
 /* ===== DISPLAY GUIDE ===== */
 .display-guide {
@@ -769,7 +839,37 @@ nav {
           <p>Flush and out of reach — ideal once your baby can sit or stand.</p>
         </div>
       </div>
+<details class="mount-detail">
+        <summary>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+          Using the Wall Mount? Tap for instructions
+          <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="mount-detail-body">
 
+          <div class="mount-substep">
+            <div class="mount-substep-num">1</div>
+            <div class="mount-substep-text">Hold the round mount plate against the wall so the two <strong>screw holes run vertically</strong> (top and bottom) and the two <strong>teeth run horizontally</strong> (left and right). The teeth sit slightly off-center, closer to the top. Secure the plate with the included screws.</div>
+          </div>
+
+          <div class="mount-substep">
+            <div class="mount-substep-num">2</div>
+            <div class="mount-substep-text">On the back of the camera base, find the two keyhole-shaped slots. Line up the wide opening of each slot over the two teeth on the plate, then press the camera gently against it.</div>
+          </div>
+
+          <div class="mount-substep">
+            <div class="mount-substep-num">3</div>
+            <div class="mount-substep-text"><strong>Slide the camera straight down</strong> until it locks into place. When seated correctly, it sits flush against the plate and is centered and even on all sides.</div>
+          </div>
+
+          <div class="step-tip" style="margin-top:4px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span><strong>To remove:</strong> Slide the camera straight up to release the teeth, then lift it away from the wall.</span>
+          </div>
+
+        </div>
+      </details>
+      
       <div class="step-tip">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         <span>For the most accurate skin temperature readings, mount the camera <strong>directly above the crib, facing downward</strong>. Measure the distance from the camera lens to the crib mattress surface — you'll set this in Step 5.</span>
