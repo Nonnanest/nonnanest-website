@@ -110,6 +110,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 /* Shopify Buy Button container */
 .shopify-buy-container { margin-bottom: 16px; }
 
+/* ===== BACK SOON / NOTIFY (pause state) ===== */
+.backsoon-pill { display: block; width: 100%; text-align: center; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 500; padding: 18px 32px; border-radius: 12px; color: var(--earth); background: var(--cream); border: 1px solid var(--linen); margin-bottom: 16px; cursor: default; }
+.notify-block { margin-bottom: 16px; padding: 20px; background: var(--cream); border: 1px solid var(--linen); border-radius: 12px; }
+.notify-block h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 400; color: var(--charcoal); margin-bottom: 6px; }
+.notify-block p { font-size: 13px; color: var(--bark); line-height: 1.55; margin-bottom: 14px; }
+
 /* ===== KEY DIFFERENTIATORS ===== */
 .diff-strip { padding: 60px 24px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--linen); }
 .diff-strip h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); text-align: center; margin-bottom: 40px; letter-spacing: -0.5px; }
@@ -160,6 +166,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 .bottom-cta h2 em { font-style: italic; font-weight: 300; color: var(--soft-teal); }
 .bottom-cta p { font-size: 15px; color: var(--earth); margin-bottom: 28px; }
 .bottom-cta .shopify-buy-container { max-width: 320px; margin: 0 auto 12px; }
+.bottom-cta .notify-block { max-width: 420px; margin: 0 auto 12px; text-align: left; }
 .bottom-cta .bottom-disclaimer { font-size: 11px; color: var(--bark); line-height: 1.5; max-width: 480px; margin: 0 auto; }
 
 /* ===== FOOTER ===== */
@@ -254,11 +261,13 @@ function closeMobileNav() {
     </div>
     <p class="product-installment">Or <strong>4 payments of ~$82</strong> with Shop Pay Installments</p>
 
-    <div class="product-shipping">Available now, Ships immediately</div>
+    <div class="product-shipping">Back soon</div>
 
-    <!-- Shopify Buy Button — Hero -->
-    <div class="shopify-buy-container">
-      <div id="shopify-buy-hero"></div>
+    <!-- Notify me (pause state) — replaces Shopify Buy Button -->
+    <div class="notify-block">
+      <h3>Be the first to know</h3>
+      <p>We're temporarily sold out while the next batch is on its way. Leave your email and we'll let you know the moment ordering reopens.</p>
+      <div class="hs-form-frame" data-region="na2" data-form-id="4c5d2cd3-ca46-41bb-98ee-3b58b173ac27" data-portal-id="242981565"></div>
     </div>
 
     <div class="product-disclaimer">
@@ -340,7 +349,9 @@ function closeMobileNav() {
 </section>
 
 
-<!-- ===== TESTING DATA ===== -->
+<!-- ===== TESTING DATA — HIDDEN DURING PAUSE =====
+     Accuracy claims temporarily removed from the live page while ordering is paused.
+     Restore this section when corrected units are confirmed against the QC spec.
 <section class="testing-section">
   <div class="testing-card">
     <h2>Tested at real crib distances</h2>
@@ -354,6 +365,7 @@ function closeMobileNav() {
     <p class="testing-disclaimer">Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition.</p>
   </div>
 </section>
+-->
 
 
 <!-- ===== WHAT'S IN THE BOX ===== -->
@@ -375,9 +387,11 @@ function closeMobileNav() {
   <h2>Peace of mind, <em>made simple</em></h2>
   <p>No wearables. No WiFi. No subscriptions. Just a parent who built something better.</p>
 
-  <!-- Shopify Buy Button — Bottom -->
-  <div class="shopify-buy-container">
-    <div id="shopify-buy-bottom"></div>
+  <!-- Notify me (pause state) — replaces Shopify Buy Button -->
+  <div class="notify-block">
+    <h3>Be the first to know</h3>
+    <p>We're temporarily sold out while the next batch is on its way. Leave your email and we'll let you know the moment ordering reopens.</p>
+    <div class="hs-form-frame" data-region="na2" data-form-id="4c5d2cd3-ca46-41bb-98ee-3b58b173ac27" data-portal-id="242981565"></div>
   </div>
 
   <p class="bottom-disclaimer">Nonnanest is a wellness device, not a medical device. Temperature readings are for informational purposes only. For any health concerns, consult a pediatrician.</p>
@@ -419,90 +433,6 @@ function closeMobileNav() {
   </div>
 </footer>
 
-
-<!-- ===== SHOPIFY BUY BUTTON ===== -->
-<script type="text/javascript">
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
-  } else { loadScript(); }
-
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-
-  var buttonOptions = {
-    "product": {
-      "styles": {
-        "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
-        "button": {
-          "font-family": "Outfit, sans-serif",
-          "font-size": "16px",
-          "font-weight": "500",
-          "padding": "18px 32px",
-          "width": "100%",
-          "border-radius": "12px",
-          "color": "#FAF8F5",
-          "background-color": "#3D6B6D",
-          "transition": "all 0.25s",
-          ":hover": { "color": "#FAF8F5", "background-color": "#559092" },
-          ":focus": { "background-color": "#559092" }
-        }
-      },
-      "buttonDestination": "checkout",
-      "contents": { "img": false, "title": false, "price": false },
-      "text": {
-        "button": "Order Now \u2014 $329",
-        "outOfStock": "Order Now \u2014 $329",
-        "unavailable": "Coming Soon"
-      }
-    },
-    "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } } },
-    "modalProduct": {
-      "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
-      "styles": {
-        "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
-        "button": { "color": "#FAF8F5", "background-color": "#3D6B6D", ":hover": { "color": "#FAF8F5", "background-color": "#559092" }, ":focus": { "background-color": "#559092" } }
-      },
-      "text": { "button": "Add to cart" }
-    },
-    "option": {},
-    "cart": {
-      "styles": { "button": { "color": "#FAF8F5", "background-color": "#3D6B6D", ":hover": { "color": "#FAF8F5", "background-color": "#559092" }, ":focus": { "background-color": "#559092" } } },
-      "text": { "total": "Subtotal", "button": "Checkout" }
-    },
-    "toggle": {
-      "styles": {
-        "toggle": { "background-color": "#3D6B6D", ":hover": { "background-color": "#559092" }, ":focus": { "background-color": "#559092" } },
-        "count": { "color": "#FAF8F5", ":hover": { "color": "#FAF8F5" } },
-        "iconPath": { "fill": "#FAF8F5" }
-      }
-    }
-  };
-
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'cdu13a-bk.myshopify.com',
-      storefrontAccessToken: 'b4fd75c765d32381d5e6c827d77dba29',
-    });
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      var heroNode = document.getElementById('shopify-buy-hero');
-      if (heroNode) {
-        ui.createComponent('product', { id: '10929901338817', node: heroNode, moneyFormat: '%24%7B%7Bamount%7D%7D', options: buttonOptions });
-      }
-      var bottomNode = document.getElementById('shopify-buy-bottom');
-      if (bottomNode) {
-        ui.createComponent('product', { id: '10929901338817', node: bottomNode, moneyFormat: '%24%7B%7Bamount%7D%7D', options: buttonOptions });
-      }
-    });
-  }
-})();
-</script>
 
 <script>
 if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
