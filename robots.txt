@@ -1,4 +1,56 @@
+# robots.txt for nonnanest.com
+# Policy: open by default. We want search engines and AI answer engines
+# to crawl and cite this site. See notes at bottom before restricting anything.
+
+# --- AI answer / citation crawlers (the ones that can cite us) ---
+# Explicitly allowed. These power AI Overviews, ChatGPT search, Perplexity,
+# and Claude search results. Blocking these = losing AI visibility.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# --- All other crawlers (Googlebot, Bingbot, etc.) ---
 User-agent: *
 Allow: /
 
+# --- Sitemap ---
 Sitemap: https://www.nonnanest.com/sitemap.xml
+
+# -----------------------------------------------------------------------------
+# OPTIONAL: training-only scrapers
+#
+# The crawlers below collect data primarily for model TRAINING, not for
+# real-time citation. Allowing them gives no direct AI-visibility benefit;
+# blocking them costs no citations. This is a brand/IP judgment call, not SEO.
+#
+# Current decision: LEFT OPEN (product info is already public; patent is the
+# real protection). To close them off later, uncomment this block:
+#
+# User-agent: GPTBot
+# User-agent: anthropic-ai
+# User-agent: ClaudeBot
+# User-agent: CCBot
+# User-agent: Bytespider
+# User-agent: meta-externalagent
+# Disallow: /
+# -----------------------------------------------------------------------------
