@@ -28,6 +28,48 @@
 <meta name="twitter:description" content="Order the Nonnanest SightAware™ Smart Baby Camera for $329. Contactless skin temperature monitoring, HD video, two-way audio, night vision, and lullabies. No wearables. No WiFi.">
 <meta name="twitter:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
 
+<!-- JSON-LD: Product + Offer  —  place in the <head> of /shop/
+     Matches the live page. availability = BackOrder for the "Back soon" state;
+     change to InStock when ordering reopens. Update priceValidUntil as needed.
+     Validate at https://search.google.com/test/rich-results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://www.nonnanest.com/shop/#product",
+  "name": "SightAware by Nonnanest Baby Monitor",
+  "image": [
+    "https://www.nonnanest.com/images/Nonnanest_Handheld_v1.png",
+    "https://www.nonnanest.com/images/Nonnanest_Baby_Camera_Feature.png",
+    "https://www.nonnanest.com/images/Mounting_Options_Nonnanest.png"
+  ],
+  "description": "The only baby monitor that senses skin temperature without touching your baby. Contactless infrared wellness insights from up to 4 feet away — no wearables, no WiFi, no subscriptions. Includes a dedicated 5-inch HD parent display, two-way audio, infrared night vision, lullabies, and both crib and wall mounts.",
+  "brand": { "@type": "Brand", "name": "Nonnanest" },
+  "category": "Baby Monitors",
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Temperature Sensing", "value": "Contactless infrared skin temperature — no wearables required" },
+    { "@type": "PropertyValue", "name": "Connectivity", "value": "FHSS encrypted, no WiFi required" },
+    { "@type": "PropertyValue", "name": "Subscription", "value": "None — one-time purchase, all features included" },
+    { "@type": "PropertyValue", "name": "Display", "value": "Dedicated 5-inch HD handheld display — no phone or app required" },
+    { "@type": "PropertyValue", "name": "Wearables Required", "value": "None — fully contactless from up to 4 feet" }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.nonnanest.com/shop/",
+    "priceCurrency": "USD",
+    "price": "329.00",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/BackOrder",
+    "itemCondition": "https://schema.org/NewCondition",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+    }
+  }
+}
+</script>
+  
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
