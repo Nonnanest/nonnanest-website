@@ -12,6 +12,11 @@
 <!-- HubSpot -->
 <script src="https://js-na2.hsforms.net/forms/embed/242981565.js" defer></script>
 
+<!-- React (for the interactive display guide) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" crossorigin defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" crossorigin defer></script>
+<script src="/js/menu-tour.js" defer></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quick Start Guide — SightAware™ Nonnanest baby monitor</title>
@@ -964,6 +969,12 @@ nav {
         </div>
       </div>
 
+      <!-- Interactive display guide (React component in /js/menu-tour.js).
+           Hidden until the component mounts, so the page degrades gracefully
+           if JavaScript is off or the script fails to load. -->
+      <p style="margin-top:24px;">Want a closer look? Walk through every menu and button below.</p>
+      <div id="nonnanest-menu-tour" style="display:none; margin-top:8px;"></div>
+
       <div class="step-tip" style="margin-top:16px;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         <span>Temperature is set to °F by default. This is a one-time setting — once set, it stays.</span>
@@ -1020,22 +1031,6 @@ nav {
       <div class="step-warning">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         <span>Remember: Pediatric guidelines recommend a minimum of 3 feet (1 meter) between camera and crib mattress. The "Standard" default setting is already calibrated for this safe range.</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP 6 -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-number">6</div>
-      <div class="step-title">Customize your settings</div>
-    </div>
-    <div class="step-body">
-      <p>Use the buttons on the right side of the display to adjust your preferences. You can set volume levels, choose from built-in lullabies, enable two-way audio, and configure sound-activated screen wake so the display turns on when your baby stirs.</p>
-
-      <div class="step-tip">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        <span>The display will gently alert you when skin temperature patterns shift — no need to configure alert thresholds manually.</span>
       </div>
     </div>
   </div>
