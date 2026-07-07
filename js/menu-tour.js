@@ -1109,7 +1109,7 @@ function renderSubItems(stop, subSel) {
 const BUTTONS = [{
   key: "mic",
   name: "Talk",
-  what: "Press and hold to talk through to the camera. Your baby hears your voice from the nursery."
+  what: "Press and hold to talk through to the camera. Your baby hears your voice through the camera speaker."
 }, {
   key: "music",
   name: "Lullaby",
