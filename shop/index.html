@@ -9,9 +9,6 @@
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1076529151218038");fbq("track","PageView");</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1076529151218038&ev=PageView&noscript=1"/></noscript>
 
-<!-- HubSpot -->
-<script src="https://js-na2.hsforms.net/forms/embed/242981565.js" defer></script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nonnanest SightAware™ Smart Baby Camera with Contactless Skin Temperature Sensing | $329</title>
@@ -28,10 +25,7 @@
 <meta name="twitter:description" content="Order the Nonnanest SightAware™ Smart Baby Camera for $329. Contactless skin temperature monitoring, HD video, two-way audio, night vision, and lullabies. No wearables. No WiFi.">
 <meta name="twitter:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
 
-<!-- JSON-LD: Product + Offer  —  place in the <head> of /shop/
-     Matches the live page. availability = BackOrder for the "Back soon" state;
-     change to InStock when ordering reopens. Update priceValidUntil as needed.
-     Validate at https://search.google.com/test/rich-results -->
+<!-- JSON-LD: Product + Offer -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,7 +53,7 @@
     "priceCurrency": "USD",
     "price": "329.00",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/BackOrder",
+    "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition",
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -69,7 +63,7 @@
   }
 }
 </script>
-  
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -152,12 +146,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 /* Shopify Buy Button container */
 .shopify-buy-container { margin-bottom: 16px; }
 
-/* ===== BACK SOON / NOTIFY (pause state) ===== */
-.backsoon-pill { display: block; width: 100%; text-align: center; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 500; padding: 18px 32px; border-radius: 12px; color: var(--earth); background: var(--cream); border: 1px solid var(--linen); margin-bottom: 16px; cursor: default; }
-.notify-block { margin-bottom: 16px; padding: 20px; background: var(--cream); border: 1px solid var(--linen); border-radius: 12px; }
-.notify-block h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 400; color: var(--charcoal); margin-bottom: 6px; }
-.notify-block p { font-size: 13px; color: var(--bark); line-height: 1.55; margin-bottom: 14px; }
-
 /* ===== KEY DIFFERENTIATORS ===== */
 .diff-strip { padding: 60px 24px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--linen); }
 .diff-strip h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); text-align: center; margin-bottom: 40px; letter-spacing: -0.5px; }
@@ -208,7 +196,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 .bottom-cta h2 em { font-style: italic; font-weight: 300; color: var(--soft-teal); }
 .bottom-cta p { font-size: 15px; color: var(--earth); margin-bottom: 28px; }
 .bottom-cta .shopify-buy-container { max-width: 320px; margin: 0 auto 12px; }
-.bottom-cta .notify-block { max-width: 420px; margin: 0 auto 12px; text-align: left; }
 .bottom-cta .bottom-disclaimer { font-size: 11px; color: var(--bark); line-height: 1.5; max-width: 480px; margin: 0 auto; }
 
 /* ===== FOOTER ===== */
@@ -303,13 +290,11 @@ function closeMobileNav() {
     </div>
     <p class="product-installment">Or <strong>4 payments of ~$82</strong> with Shop Pay Installments</p>
 
-    <div class="product-shipping">Back soon</div>
+    <div class="product-shipping">Available now · Ships from Charleston, SC</div>
 
-    <!-- Notify me (pause state) — replaces Shopify Buy Button -->
-    <div class="notify-block">
-      <h3>Be the first to know</h3>
-      <p>We're temporarily sold out while the next batch is on its way. Leave your email and we'll let you know the moment ordering reopens.</p>
-      <div class="hs-form-frame" data-region="na2" data-form-id="4c5d2cd3-ca46-41bb-98ee-3b58b173ac27" data-portal-id="242981565"></div>
+    <!-- Shopify Buy Button (hero) -->
+    <div class="shopify-buy-container">
+      <div id='product-component-hero'></div>
     </div>
 
     <div class="product-disclaimer">
@@ -346,7 +331,7 @@ function closeMobileNav() {
     </p>
   </div>
 </section>
-  
+
 <!-- ===== KEY DIFFERENTIATORS ===== -->
 <section class="diff-strip">
   <h2>What makes Nonnanest different</h2>
@@ -391,9 +376,10 @@ function closeMobileNav() {
 </section>
 
 
-<!-- ===== TESTING DATA — HIDDEN DURING PAUSE =====
-     Accuracy claims temporarily removed from the live page while ordering is paused.
-     Restore this section when corrected units are confirmed against the QC spec.
+<!-- ===== TESTING DATA — HIDDEN =====
+     Accuracy claims kept offline until firmware validation is complete
+     against blackbody reference and shipping units. Restore this section
+     only when the accuracy figure can be defended on every unit sold.
 <section class="testing-section">
   <div class="testing-card">
     <h2>Tested at real crib distances</h2>
@@ -429,11 +415,9 @@ function closeMobileNav() {
   <h2>Peace of mind, <em>made simple</em></h2>
   <p>No wearables. No WiFi. No subscriptions. Just a parent who built something better.</p>
 
-  <!-- Notify me (pause state) — replaces Shopify Buy Button -->
-  <div class="notify-block">
-    <h3>Be the first to know</h3>
-    <p>We're temporarily sold out while the next batch is on its way. Leave your email and we'll let you know the moment ordering reopens.</p>
-    <div class="hs-form-frame" data-region="na2" data-form-id="4c5d2cd3-ca46-41bb-98ee-3b58b173ac27" data-portal-id="242981565"></div>
+  <!-- Shopify Buy Button (bottom CTA) -->
+  <div class="shopify-buy-container">
+    <div id='product-component-bottom'></div>
   </div>
 
   <p class="bottom-disclaimer">Nonnanest is a wellness device, not a medical device. Temperature readings are for informational purposes only. For any health concerns, consult a pediatrician.</p>
@@ -475,6 +459,141 @@ function closeMobileNav() {
   </div>
 </footer>
 
+
+<!-- ===== SHOPIFY BUY BUTTON — renders both hero and bottom instances ===== -->
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'cdu13a-bk.myshopify.com',
+      storefrontAccessToken: 'b4fd75c765d32381d5e6c827d77dba29',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+
+      // HERO button
+      ui.createComponent('product', {
+        id: '10929901338817',
+        node: document.getElementById('product-component-hero'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              },
+              "button": {
+                "font-family": "Outfit, sans-serif",
+                "font-size": "16px",
+                "font-weight": "500",
+                "padding-top": "16px",
+                "padding-bottom": "16px",
+                "color": "#FAF8F5",
+                ":hover": {
+                  "color": "#FAF8F5",
+                  "background-color": "#559092"
+                },
+                "background-color": "#3D6B6D",
+                "border-radius": "12px",
+                ":focus": {
+                  "background-color": "#559092"
+                }
+              }
+            },
+            "buttonDestination": "checkout",
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false
+            },
+            "text": {
+              "button": "Order Now — $329"
+            }
+          },
+          "productSet": {
+            "styles": {
+              "products": {
+                "@media (min-width: 601px)": {
+                  "margin-left": "-20px"
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // BOTTOM CTA button
+      ui.createComponent('product', {
+        id: '10929901338817',
+        node: document.getElementById('product-component-bottom'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              },
+              "button": {
+                "font-family": "Outfit, sans-serif",
+                "font-size": "16px",
+                "font-weight": "500",
+                "padding-top": "16px",
+                "padding-bottom": "16px",
+                "color": "#FAF8F5",
+                ":hover": {
+                  "color": "#FAF8F5",
+                  "background-color": "#559092"
+                },
+                "background-color": "#3D6B6D",
+                "border-radius": "12px",
+                ":focus": {
+                  "background-color": "#559092"
+                }
+              }
+            },
+            "buttonDestination": "checkout",
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false
+            },
+            "text": {
+              "button": "Order Now — $329"
+            }
+          }
+        }
+      });
+
+    });
+  }
+})();
+/*]]>*/
+</script>
 
 <script>
 if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
