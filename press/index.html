@@ -182,6 +182,10 @@ nav {
 .coverage-card:hover {
   transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,0.07);
 }
+.coverage-card.featured {
+  background: linear-gradient(180deg, var(--teal-mist) 0%, var(--cream) 100%);
+  border-color: var(--pale-aqua);
+}
 .coverage-outlet {
   font-family: 'JetBrains Mono', monospace; font-size: 10px;
   letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal);
@@ -200,6 +204,20 @@ nav {
 }
 .coverage-link:hover { color: var(--soft-teal); border-color: var(--soft-teal); }
 .coverage-link svg { width: 13px; height: 13px; }
+
+.coverage-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--warm-white);
+  background: var(--deep-teal);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
 
 /* ===== STORY ANGLES ===== */
 .angles-intro {
@@ -557,6 +575,27 @@ function closeMobileNav() {
   </div>
 
   <div class="coverage-grid">
+
+    <a href="https://www.nappaawards.com/product/sightaware-by-nonnanest/" target="_blank" rel="noopener" class="coverage-card featured">
+      <span class="coverage-outlet">NAPPA Awards &mdash; 2026 <span class="coverage-badge">Winner</span></span>
+      <h3>SightAware&#8482; by Nonnanest &mdash; 2026 NAPPA Award Winner, Best for Baby</h3>
+      <p>National Parenting Product Awards names SightAware a 2026 winner after independent in-home testing by parent panelists. Recognized for contactless design, ease of use, and offline-first architecture.</p>
+      <span class="coverage-link">
+        Read on NAPPA Awards
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </span>
+    </a>
+
+    <a href="https://www.charlestonbusinessmagazine.com/stories/beyond-the-crib-how-a-charleston-dad-built-a-baby-monitor-that-listens-to-the-right-signals,49404" target="_blank" rel="noopener" class="coverage-card featured">
+      <span class="coverage-outlet">Charleston Business Magazine &mdash; 2026</span>
+      <h3>Beyond the Crib: How a Charleston Dad Built a Baby Monitor That Listens to the Right Signals</h3>
+      <p>A founder profile on Nathan Overbey, the 3am moment that started Nonnanest, and how a two-year build turned into a contactless, offline-first baby wellness monitor built in Charleston, SC.</p>
+      <span class="coverage-link">
+        Read on Charleston Business Magazine
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </span>
+    </a>
+
     <a href="https://www.trendhunter.com/trends/sightaware" target="_blank" rel="noopener" class="coverage-card">
       <span class="coverage-outlet">TrendHunter &mdash; April 2026</span>
       <h3>Contactless Infrared Baby Monitors</h3>
@@ -576,6 +615,7 @@ function closeMobileNav() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
       </span>
     </a>
+
   </div>
 </div>
 
@@ -654,6 +694,7 @@ function closeMobileNav() {
   </div>
 
   <ul class="fact-list">
+    <li>2026 NAPPA Award Winner, Best for Baby</li>
     <li>Contactless infrared skin temperature sensing up to 4 feet</li>
     <li>FHSS secure wireless transmission &mdash; no WiFi or Bluetooth required</li>
     <li>Dedicated 5-inch HD parent display &mdash; no phone or app needed</li>
@@ -700,6 +741,12 @@ function closeMobileNav() {
     <p>We're not anti-technology. We're very pro-innovation. But here's what struck me: every wellness insight product on the market today requires an internet connection to function. We made a deliberate choice to go the other way. Every design decision started with one question: does this serve the parent, or does it serve the product?</p>
     <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
   </div>
+
+  <div class="quote-card">
+    <span class="quote-label">On the NAPPA recognition</span>
+    <p>NAPPA reviewers are parents first, testing in their own homes with their own children. That is the audience we built SightAware for. The feedback that stood out most was not about the technology. It was about a monitor that fades into the background of a nursery and gives parents awareness without demanding their attention. That was the design brief from day one.</p>
+    <div class="quote-attr">Nathan Overbey, Founder &amp; CEO, Nonnanest</div>
+  </div>
 </div>
 
 <hr class="section-divider">
@@ -711,6 +758,14 @@ function closeMobileNav() {
     <h2>Press releases</h2>
     <p class="section-sub">Announcements and company news.</p>
   </div>
+
+  <a href="/press/nappa-award-winner-2026/" style="display:block;text-decoration:none;color:inherit;">
+    <div class="press-release-item">
+      <span class="press-release-date">August 11, 2026</span>
+      <h3>SightAware&#8482; by Nonnanest Named 2026 NAPPA Award Winner in Best for Baby</h3>
+      <p>National Parenting Product Awards recognizes the Charleston-based contactless baby wellness monitor after independent in-home testing by parent panelists.</p>
+    </div>
+  </a>
 
   <a href="/press/company-profile-preorders-open/" style="display:block;text-decoration:none;color:inherit;">
     <div class="press-release-item">
