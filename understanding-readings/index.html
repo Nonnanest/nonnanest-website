@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VXRF2PKBGP"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-VXRF2PKBGP");</script>
+
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1076529151218038");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1076529151218038&ev=PageView&noscript=1"/></noscript>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding Your SightAware Readings — Nonnanest</title>
+<link rel="canonical" href="https://www.nonnanest.com/understanding-readings">
+<meta name="description" content="Why SightAware readings look different from a contact thermometer, what a normal range looks like for your baby, and how to set your own alert threshold.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Understanding Your SightAware Readings — Nonnanest">
+<meta property="og:description" content="Why SightAware readings look different from a contact thermometer, what a normal range looks like for your baby, and how to set your own alert threshold.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.nonnanest.com/understanding-readings">
+<meta property="og:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
+<meta property="og:site_name" content="Nonnanest">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Understanding Your SightAware Readings — Nonnanest">
+<meta name="twitter:description" content="Why SightAware readings look different from a contact thermometer, what a normal range looks like for your baby, and how to set your own alert threshold.">
+<meta name="twitter:image" content="https://www.nonnanest.com/images/nonnanest-og.jpg">
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Understanding Your SightAware Readings",
+  "description": "Why SightAware readings look different from a contact thermometer, what a normal range looks like for your baby, and how to set your own alert threshold.",
+  "author": {
+    "@type": "Organization",
+    "name": "Nonnanest"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nonnanest",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.nonnanest.com/images/nonnanest-logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.nonnanest.com/understanding-readings"
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --soft-teal: #559092;
+  --deep-teal: #3D6B6D;
+  --pale-aqua: #C8E3DF;
+  --teal-mist: #E4EFEE;
+  --warm-white: #FAF8F5;
+  --cream: #F5F0EA;
+  --linen: #EDE7DF;
+  --warm-sand: #D4CCC2;
+  --clay: #B8A99A;
+  --charcoal: #2C2520;
+  --earth: #5C4F43;
+  --bark: #8C7B6B;
+  --warm-gray: #6B6560;
+  --alert-red: #C45B4A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: var(--earth);
+  background: var(--warm-white);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--pale-aqua); color: var(--charcoal); }
+a { color: inherit; text-decoration: none; }
+
+/* Nav */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 40px; max-width: 1200px; margin: 0 auto;
+}
+.wordmark {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+.nav-back {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 14px; color: var(--bark); transition: color 0.2s;
+}
+.nav-back:hover { color: var(--deep-teal); }
+.nav-back svg { width: 16px; height: 16px; }
+
+/* Article layout */
+.article-page { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+
+.article-header { margin-bottom: 48px; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--soft-teal); margin-bottom: 12px;
+}
+.article-title {
+  font-family: 'Fraunces', serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.article-subtitle {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bark);
+  line-height: 1.5;
+}
+
+.article-body h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--charcoal);
+  letter-spacing: -0.3px;
+  margin: 48px 0 16px;
+  line-height: 1.3;
+}
+.article-body h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin: 32px 0 12px;
+  letter-spacing: 0.1px;
+}
+.article-body p {
+  font-size: 16px;
+  color: var(--earth);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.article-body strong {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+.article-body ul, .article-body ol {
+  margin: 0 0 24px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.article-body ul li, .article-body ol li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--earth);
+}
+.article-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--soft-teal);
+}
+.article-body ol {
+  counter-reset: step;
+}
+.article-body ol li {
+  counter-increment: step;
+  padding-left: 40px;
+}
+.article-body ol li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--teal-mist);
+  border: 1px solid var(--pale-aqua);
+  color: var(--deep-teal);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quick summary callout */
+.callout {
+  background: var(--cream);
+  border-left: 3px solid var(--soft-teal);
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin: 0 0 40px 0;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout p { font-size: 16px; line-height: 1.7; }
+
+/* Range cards */
+.range-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 24px 0 32px;
+}
+.range-card {
+  background: var(--warm-white);
+  border: 1px solid var(--linen);
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+.range-scenario {
+  font-size: 14.5px;
+  color: var(--earth);
+  line-height: 1.5;
+  flex: 1;
+}
+.range-value {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--deep-teal);
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+
+/* Does / doesn't do panel */
+.dual-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+.dual-panel .panel {
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--linen);
+}
+.dual-panel .panel.does {
+  background: var(--teal-mist);
+  border-color: var(--pale-aqua);
+}
+.dual-panel .panel.doesnt {
+  background: var(--cream);
+}
+.panel-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--soft-teal);
+  margin-bottom: 10px;
+}
+.panel.doesnt .panel-label { color: var(--bark); }
+.panel p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--earth);
+  margin-bottom: 0;
+}
+
+/* Pediatrician block */
+.pediatrician-block {
+  background: var(--warm-white);
+  border: 1px solid var(--linen);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 32px 0;
+}
+.pediatrician-block h3 {
+  margin-top: 0;
+  color: var(--charcoal);
+  font-size: 17px;
+}
+.pediatrician-block p:last-child { margin-bottom: 0; }
+
+/* Related / back to support */
+.related {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--linen);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.related-text {
+  font-size: 14px;
+  color: var(--bark);
+}
+.related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--deep-teal);
+  transition: gap 0.2s, color 0.2s;
+}
+.related-link:hover {
+  color: var(--soft-teal);
+  gap: 12px;
+}
+.related-link svg { width: 14px; height: 14px; }
+
+/* Legal disclaimer */
+.legal-footer {
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--linen);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.legal-footer p {
+  font-size: 12px;
+  color: var(--bark);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.legal-footer a { color: var(--soft-teal); }
+
+@media (max-width: 600px) {
+  nav { padding: 16px 20px; }
+  .article-page { padding: 24px 20px 60px; }
+  .article-title { font-size: 30px; }
+  .article-subtitle { font-size: 17px; }
+  .article-body h2 { font-size: 22px; margin-top: 40px; }
+  .range-card { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .range-value { font-size: 17px; }
+  .dual-panel { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="wordmark">Nonnanest™</a>
+  <a href="/support" class="nav-back">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Help Center
+  </a>
+</nav>
+
+<main class="article-page">
+
+  <div class="article-header">
+    <div class="section-label">Help Center · Guide</div>
+    <h1 class="article-title">Understanding Your SightAware Readings</h1>
+    <p class="article-subtitle">Why the number on your handheld looks different from the one on your thermometer, what a normal range looks like for your baby, and how to set your own alert threshold.</p>
+  </div>
+
+  <div class="article-body">
+
+    <div class="callout">
+      <p><strong>The quick version.</strong> SightAware reads skin temperature. Your thermometer reads a different quantity from a different place. Both are correct. They will not show the same number, and that's how the physics work.</p>
+      <p>A sleeping baby in a typical nursery will show a reading somewhere in the <strong>mid-90s to just under 98°F</strong> on SightAware. That is a normal, healthy reading. It is not a low reading. Skin sits on the outside of the body and trades heat with the room, so it runs cooler than what you'd get from a contact thermometer.</p>
+      <p>The number to trust is <strong>your</strong> baby's baseline. Watch what SightAware shows when your child is comfortable and well for a few nights running. That range is what "normal" looks like for them. A reading that climbs meaningfully above that baseline and holds is your cue to check in with a contact thermometer.</p>
+    </div>
+
+    <h2>What a typical reading looks like</h2>
+    <p>Every baby is a little different, but here's what we see in real-world use at recommended nursery temperatures (69 to 75°F):</p>
+
+    <div class="range-grid">
+      <div class="range-card">
+        <div class="range-scenario">Baby in a sleep sack or sleepwear, sleeping calmly</div>
+        <div class="range-value">95 to 97°F</div>
+      </div>
+      <div class="range-card">
+        <div class="range-scenario">Baby swaddled or under a light layer</div>
+        <div class="range-value">96 to 98°F</div>
+      </div>
+      <div class="range-card">
+        <div class="range-scenario">Baby with more exposed skin, cooler room</div>
+        <div class="range-value">94 to 96°F</div>
+      </div>
+    </div>
+
+    <p>If your reading falls in these ranges, your baby is comfortable. If your reading is well outside them, first check the room temperature and how your baby is dressed. Both move the reading meaningfully.</p>
+
+    <h2>Why skin runs cooler than what your thermometer shows</h2>
+    <p>Your ear, forehead scanner, or under-the-arm thermometer is designed to estimate a deeper reading. Most add a mathematical offset to the raw skin reading to produce a number that looks familiar (around 98.6°F). SightAware doesn't do that. It shows you the actual skin temperature reading, at the surface, where it actually is.</p>
+    <p>The gap between skin and deeper readings depends on the room:</p>
+    <ul>
+      <li><strong>Cooler room (68 to 72°F):</strong> wider gap. Skin reads lower.</li>
+      <li><strong>Warmer room (73 to 76°F):</strong> narrower gap. Skin reads higher.</li>
+      <li><strong>Baby bundled or swaddled:</strong> enclosed skin holds heat better. Reads higher.</li>
+    </ul>
+    <p>None of this is a device error. It's your baby's body doing exactly what it should, exchanging heat with the room to stay comfortable.</p>
+
+    <h2>Setting your alert threshold</h2>
+    <p>SightAware doesn't ship with a pre-set alert. <strong>You set the threshold yourself</strong>, based on what your baby's baseline actually looks like. That's intentional. No two babies read the same, and a threshold that makes sense for one child may be too tight or too loose for another.</p>
+
+    <h3>How to set one</h3>
+    <ol>
+      <li><strong>Watch for a few nights.</strong> Note what SightAware reads when your baby is comfortable, well, and sleeping normally in a room between 69 and 75°F. That range is your baseline.</li>
+      <li><strong>Set the alert 2 to 3°F above the top of that baseline.</strong> If your baby typically reads 95 to 97°F, an alert around 99 to 100°F is a reasonable starting point. You can adjust from there.</li>
+      <li><strong>Verify with a contact thermometer.</strong> When the alert fires, that's the cue to check with a thermometer. SightAware is designed to prompt the check, not answer the question.</li>
+    </ol>
+
+    <p>This works best inside the calibrated range: a nursery held between <strong>69 and 75°F</strong>, with the camera positioned 3 to 4 feet above the crib. Outside that range, ambient conditions start to move the reading in ways SightAware isn't tuned for.</p>
+
+    <h2>Why an elevated reading matters, even though skin normally runs cooler</h2>
+    <p>Skin usually reads several degrees below what a contact thermometer would show. But research on skin temperature shows something important: <strong>when a child is running warmer overall, the gap between skin temperature and what a contact thermometer would show gets smaller.</strong> The two numbers move closer together.</p>
+    <p>That's why a skin reading climbing 2 to 3°F above your baby's usual baseline is meaningful. The gap is closing. Grab the contact thermometer.</p>
+
+    <h2>When SightAware might read lower than you'd expect</h2>
+    <ul>
+      <li>The room has cooled off overnight</li>
+      <li>Baby has kicked off blankets or a swaddle came loose</li>
+      <li>Baby is positioned so mostly exposed skin (like a bare arm) is in the camera's view</li>
+      <li>Room is on the cooler end of the recommended range (69 to 71°F)</li>
+    </ul>
+    <p>If the reading concerns you, the answer is always the same: check with a contact thermometer, and check on your baby. SightAware is designed to prompt that check, not to replace it.</p>
+
+    <h2>What SightAware does and doesn't do</h2>
+    <div class="dual-panel">
+      <div class="panel does">
+        <div class="panel-label">What it does</div>
+        <p>Contactless awareness of your baby's skin temperature, from above the crib, without a wearable. It gives you a signal.</p>
+      </div>
+      <div class="panel doesnt">
+        <div class="panel-label">What it doesn't do</div>
+        <p>Diagnose. Detect illness. Replace a contact thermometer or a call to your pediatrician when your parent instinct is telling you something's off.</p>
+      </div>
+    </div>
+
+    <div class="pediatrician-block">
+      <h3>When to call your pediatrician</h3>
+      <p>Trust your gut. If your baby seems uncomfortable, isn't feeding well, is unusually sleepy or fussy, or if a contact thermometer reading concerns you, call your pediatrician. SightAware supports your awareness. It doesn't replace it.</p>
+    </div>
+
+    <div class="related">
+      <span class="related-text">Still have questions?</span>
+      <a href="/support" class="related-link">
+        Contact the Help Center
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<div class="legal-footer">
+  <p>Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. It is not intended to monitor vital signs. Nonnanest is designed solely to provide parents with general information and awareness about their baby's comfort and environment. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
+</div>
+
+</body>
+</html>
