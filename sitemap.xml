@@ -37,6 +37,31 @@
 
   <!-- Blog posts (evergreen; real publish/update dates) -->
   <url>
+    <loc>https://www.nonnanest.com/blog/do-baby-monitors-need-wifi</loc>
+    <lastmod>2026-08-04</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nonnanest.com/blog/what-happens-when-baby-monitor-company-shuts-down</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nonnanest.com/blog/baby-monitor-false-alarms-at-night</loc>
+    <lastmod>2026-07-09</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nonnanest.com/blog/baby-monitors-no-subscription</loc>
+    <lastmod>2026-06-25</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.nonnanest.com/blog/non-wearable-baby-monitor-guide</loc>
+    <lastmod>2026-06-11</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.nonnanest.com/blog/why-does-baby-feel-warm-at-night</loc>
     <lastmod>2026-03-15</lastmod>
     <priority>0.9</priority>
