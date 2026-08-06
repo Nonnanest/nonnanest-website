@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Our Story — Nonnanest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Outfit:wght@300;400;500;600;700&family=Oswald:wght@600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site-chrome.css">
+  <link rel="stylesheet" href="/css/site-content.css">
+<style>
+/* HERO — founder-forward, warm cream+mist gradient */
+.s-hero{padding:80px 0 40px;background:
+  radial-gradient(ellipse at 20% 0%,var(--mist) 0%,transparent 60%),
+  radial-gradient(ellipse at 100% 100%,rgba(200,227,223,.4) 0%,transparent 60%),var(--warm-white)}
+.s-hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.s-hero-grid{grid-template-columns:1fr;gap:40px}}
+.s-hero .eyebrow{margin-bottom:14px}
+.s-hero h1{margin-bottom:20px;font-size:clamp(2.4rem,4.6vw,3.6rem)}
+.s-hero .intro{font-size:1.2rem;color:var(--earth);line-height:1.5;max-width:520px;margin-bottom:24px}
+.s-hero .byline{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bark);display:flex;gap:14px;flex-wrap:wrap}
+.s-hero .byline span{display:inline-flex;align-items:center;gap:6px}
+.s-hero .byline span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--soft-teal)}
+.s-hero-photo{aspect-ratio:4/5;border-radius:20px;
+  background-image:url('/images/family/daughter-with-baby-reed.jpg');
+  background-size:cover;background-position:center;
+  overflow:hidden;box-shadow:var(--shadow-lg)}
+
+/* PROSE — long-form body */
+.prose{padding:80px 0;background:var(--warm-white)}
+.prose-inner{max-width:720px;margin:0 auto}
+.prose h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.6rem,2.6vw,2rem);color:var(--charcoal);line-height:1.2;margin:48px 0 16px;letter-spacing:-.01em}
+.prose h2:first-child{margin-top:0}
+.prose p{font-size:1.05rem;line-height:1.7;color:var(--earth);margin-bottom:20px}
+.prose p.lead{font-family:'Fraunces',serif;font-weight:400;font-size:1.3rem;line-height:1.45;color:var(--charcoal);margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--linen)}
+.prose blockquote{margin:32px 0;padding:24px 32px;background:var(--cream);border-left:3px solid var(--soft-teal);border-radius:0 10px 10px 0}
+.prose blockquote p{font-family:'Fraunces',serif;font-size:1.2rem;line-height:1.4;color:var(--charcoal);font-style:italic;margin-bottom:0}
+
+/* TIMELINE — clean vertical rhythm */
+.timeline{padding:80px 0;background:var(--cream)}
+.timeline-inner{max-width:720px;margin:0 auto}
+.timeline h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.8rem,2.8vw,2.2rem);color:var(--charcoal);margin-bottom:40px;letter-spacing:-.01em}
+.tl-item{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--linen);align-items:baseline}
+.tl-item:first-of-type{border-top:none}
+.tl-when{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft-teal);font-weight:500}
+.tl-what{color:var(--earth);font-size:1rem;line-height:1.55}
+.tl-what strong{color:var(--charcoal);display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;margin-bottom:4px}
+
+/* PILLARS — the three things that shape everything */
+.pillars-block{padding:80px 0;background:var(--warm-white)}
+.pillars-block .head{max-width:720px;margin:0 auto 40px}
+.pillars-block .head p{color:var(--bark);font-size:1rem;margin-top:8px}
+.pb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+@media(max-width:800px){.pb-grid{grid-template-columns:1fr}}
+.pb-card{background:var(--cream);border:1px solid var(--linen);border-radius:14px;padding:32px}
+.pb-card .num{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;color:var(--deep-teal);margin-bottom:12px}
+.pb-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.15rem;line-height:1.3;color:var(--charcoal);margin-bottom:12px}
+.pb-card p{font-size:.9rem;color:var(--earth);line-height:1.55}
+
+/* QUIET CTA */
+.s-cta{padding:80px 0;background:linear-gradient(180deg,var(--warm-white),var(--cream));text-align:center}
+.s-cta .eyebrow{margin-bottom:14px}
+.s-cta h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--charcoal);margin-bottom:20px;letter-spacing:-.01em}
+.s-cta p{color:var(--bark);font-size:1.05rem;max-width:520px;margin:0 auto 28px}
+.s-cta .signature{margin-top:24px;color:var(--bark);font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.s-cta .signature strong{color:var(--charcoal);font-weight:500}
+
+.strip{background:var(--mist);padding:14px 0;font-size:.85rem;color:var(--deep-teal);text-align:center;font-family:'Fraunces',serif;font-style:italic}
+</style>
+  <meta name="description" content="January 2022. 3 AM. A gap in the market that started everything. The founder story behind Nonnanest, in first person.">
+  <link rel="canonical" href="https://www.nonnanest.com/story">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Our Story — Nonnanest">
+  <meta property="og:description" content="January 2022. 3 AM. A gap in the market that started everything. The founder story behind Nonnanest, in first person.">
+  <meta property="og:url" content="https://www.nonnanest.com/story">
+  <meta property="og:image" content="https://www.nonnanest.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Story — Nonnanest">
+  <meta name="twitter:description" content="January 2022. 3 AM. A gap in the market that started everything. The founder story behind Nonnanest, in first person.">
+  <meta name="twitter:image" content="https://www.nonnanest.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3D6B6D">
+</head>
+<body>
+<!-- PARTIAL:nav-start -->
+<nav>
+  <a href="/" class="wordmark">Nonnanest™</a>
+  <ul class="nav-links">
+    <li><a href="/#how-it-works">How It Works</a></li>
+    <li><a href="/wellness">Wellness</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/press">Press</a></li>
+    <li><a href="/story">Our Story</a></li>
+    <li><a href="/shop/" class="nav-cta">Order — $329</a></li>
+  </ul>
+  <button class="hamburger" onclick="this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('open');" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.querySelector('.hamburger').classList.remove('active');this.parentElement.classList.remove('open');" aria-label="Close menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="/#how-it-works" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">How It Works</a>
+  <a href="/wellness" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Wellness</a>
+  <a href="/privacy" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Privacy</a>
+  <a href="/blog" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Blog</a>
+  <a href="/press" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Press</a>
+  <a href="/story" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Our Story</a>
+  <a href="/shop/" class="mobile-nav-cta">Order — $329</a>
+</div>
+<!-- PARTIAL:nav-end -->
+
+<!-- HERO -->
+<section class="s-hero">
+  <div class="container">
+    <div class="s-hero-grid">
+      <div>
+        <div class="eyebrow">Our Story</div>
+        <h1>I built the monitor I couldn't find.</h1>
+        <p class="intro">Nonnanest exists because one night I needed a monitor that didn't exist yet. Everything you see on this site started with that moment, and the eighteen months of quiet work that came after it.</p>
+        <div class="byline">
+          <span>Nathan Overbey</span>
+          <span>Founder &amp; CEO</span>
+          <span>Customer Zero</span>
+        </div>
+      </div>
+      <div class="s-hero-photo"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROSE -->
+<section class="prose">
+  <div class="container">
+    <div class="prose-inner">
+
+      <p class="lead">January 2022. 3 AM. My son Reed's skin was warmer than it should have been and the monitor next to my bed showed nothing. That was the night the gap became obvious. And it's the night Nonnanest started.</p>
+
+      <h2>The gap I kept running into</h2>
+      <p>I have a daughter, my firstborn, and a son, Reed. The idea for Nonnanest started with Reed, and that night in January.</p>
+      <p>In the days after, I started researching how to solve the specific problem I'd had. Skin-temperature awareness. From across the room. Without picking him up.</p>
+      <p>The baby monitor market has a lot of products. Wearables. WiFi cameras. Cameras with AI alerts. Some interesting design work happening around the edges, and a few brands genuinely innovating. But most of the category is static. Most "new" products are variations on the same idea. Another camera. Another wearable. Another app.</p>
+      <p>The WiFi cameras were the most interesting to me. I liked the idea of being able to check on my baby when I was away for a night, or when we had a sitter. That's a real thing parents want. But even the interesting products weren't solving for skin-temperature awareness. Nobody was building it.</p>
+      <p>So I built it.</p>
+
+      <h2>Why "another camera" wasn't the answer</h2>
+      <p>The market was full of cameras. Some of them were great cameras. That was the whole point. If I already had a good camera, adding a slightly better one wasn't going to solve the January problem.</p>
+      <p>My problem wasn't that I couldn't see Reed. My problem was that I couldn't sense what was happening with him without picking him up. That's a wellness problem, not a video problem. And nobody in the category was treating it that way.</p>
+      <p>So I stopped looking for another camera and started asking a different question. What would a monitor look like if it was designed to add calm instead of features?</p>
+
+      <blockquote>
+        <p>The best kind of monitoring is the kind your baby never feels.</p>
+      </blockquote>
+
+      <h2>How this actually happened</h2>
+      <p>I've spent fifteen years in enterprise software sales. I have an MBA. I do see problems and think "somebody should build this." Usually the somebody is already out there and I just have to find them. That's what I'd tried to do with the January problem.</p>
+      <p>This time there was no somebody.</p>
+      <p>I started talking to other parents. Not to sell anything. Nobody was selling anything yet. Just to check if the gap I'd hit was mine, or if other parents were hitting the same one. It was clear pretty quickly. Everyone had a version of the same story, and nobody had a product that answered it. That's a gap, and a need, and an opportunity.</p>
+      <p>That's when I stopped looking for a product and started building one.</p>
+      <p>By March of 2023 I'd started looking for a manufacturing partner. By August of 2023 I had one, and that's when the real build started. A small team of engineers who understood contactless infrared sensing and closed-network wireless. I patented the mechanism. We sourced a screen that would live on a bedside table and not on a phone. We ran the prototype through the awards program that judges baby products the way parents actually use them, because I wanted to hear from real evaluators before I told anyone else this was real.</p>
+      <p>Every design decision was measured against a single question. Does this add calm, or does this add noise? If it added noise, it didn't ship. That's why there's no WiFi in the box, no app to download, no account to create, and no subscription to keep alive.</p>
+      <p>We built it at a slower pace on purpose. A pace that let us test the product on our own kids first. A pace that let us have real conversations with real parents before we tried to sell them anything. A pace that let us say "not yet" more often than "ship it."</p>
+
+      <h2>What "wellness, on purpose" means</h2>
+      <p>Nonnanest is a wellness monitor. That is the honest description of what it does. It supports your awareness of your baby's comfort. It does not diagnose anything. It is not intended to replace a contact thermometer or a call to your pediatrician when your gut says something is off.</p>
+      <p>We could have tried to be something else. There is a whole category of consumer products that market themselves in medical language. I have watched some of them get called on it. I did not want to build one of those, and I did not want to sell one to another parent.</p>
+      <p>"Wellness, on purpose" is the shortest way I know how to say that. It means: I built this to support your instinct, not to compete with your pediatrician's judgment.</p>
+
+      <h2>What Customer Zero means going forward</h2>
+      <p>I used this on my own kids before I let anyone else buy one. That's what Customer Zero has meant so far. It also means something for what comes next.</p>
+      <p>Every design decision we make about Nonnanest, from now until the day the company stops existing, has to pass the same test the first version passed. Would I be comfortable putting it in my own kid's nursery. Would I be proud to describe it, in plain language, to another parent at a pediatrician's office. Would I want it as it is, or would I be waiting for it to get better before I recommended it to a friend.</p>
+      <p>If a change to the product would fail any of those questions, we don't ship it. That's the promise. That's the whole company.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="container">
+    <div class="timeline-inner">
+      <h2>How we got here.</h2>
+      <div class="tl-item">
+        <div class="tl-when">Jan 2022</div>
+        <div class="tl-what"><strong>3 AM. Reed's nursery.</strong>The gap that started everything.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">2022</div>
+        <div class="tl-what"><strong>The search for a monitor that didn't exist.</strong>Highly-reviewed cameras. Well-designed wearables. WiFi models with the tradeoffs I didn't want. Nothing that answered the January problem.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">March 2023</div>
+        <div class="tl-what"><strong>The search for a manufacturing partner began.</strong>The idea had waited long enough. Time to find someone who could build it.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">August 2023</div>
+        <div class="tl-what"><strong>Manufacturer chosen. Real build starts.</strong>Contactless infrared. Closed-network wireless. A screen that lives on a bedside table.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">2026</div>
+        <div class="tl-what"><strong>Patent pending. NAPPA 2026 Award. First units shipping.</strong>The prototype grew up. The evaluators said it was different in a good way.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Today</div>
+        <div class="tl-what"><strong>SightAware™ by Nonnanest is available.</strong>Built the same way I said it would be. No WiFi. No app. No subscription. No wearable.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">What's next</div>
+        <div class="tl-what"><strong>A calmer nursery monitor category.</strong>The direction is broader wellness insights, on your terms, with the same restraint that shipped in the first version.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE THINGS -->
+<section class="pillars-block">
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow">Three things I won't budge on</div>
+      <h2 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.8rem,2.8vw,2.2rem);letter-spacing:-.01em;line-height:1.2;color:var(--charcoal);margin-bottom:12px">The Nonnanest promise, in three lines.</h2>
+      <p>These aren't marketing slogans. They're the questions I ask every time we consider changing something on the product.</p>
+    </div>
+    <div class="pb-grid">
+      <div class="pb-card">
+        <div class="num">01</div>
+        <h3>Add calm, not features.</h3>
+        <p>Every design decision is measured against whether it makes parenting feel quieter. If it doesn't, it doesn't ship.</p>
+      </div>
+      <div class="pb-card">
+        <div class="num">02</div>
+        <h3>Respect the parent's judgment.</h3>
+        <p>The device prompts you to check on your baby. It doesn't make the check for you. Your instinct is not something we're trying to replace.</p>
+      </div>
+      <div class="pb-card">
+        <div class="num">03</div>
+        <h3>Say what we mean.</h3>
+        <p>Wellness, not medical. One price today, not "buy now, subscribe later." What the box says on day one is what it does on day one thousand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="s-cta">
+  <div class="container">
+    <div class="eyebrow">If this resonates</div>
+    <h2>See what we built.</h2>
+    <p>SightAware™ by Nonnanest is $329, one-time. No subscription today. Free shipping in the continental US, 30-day returns, 1-year warranty.</p>
+    <a href="#" class="btn btn-primary" style="padding:16px 32px">Order yours</a>
+    <div class="signature"><strong>— Nathan Overbey</strong> · August 2026</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- PARTIAL:footer-start -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="wordmark" style="color:var(--warm-white);">Nonnanest</span>
+      <p>A quieter kind of baby monitor.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/nonnanest.baby/" target="_blank" rel="noopener" aria-label="Nonnanest on Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/nonnanest" target="_blank" rel="noopener" aria-label="Nonnanest on Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@nonnanest" target="_blank" rel="noopener" aria-label="Nonnanest on YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.5s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 5.4 12 5.4 12 5.4s-4.2 0-7.1.2c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S1.8 10.1 1.8 11.7v1.5C1.8 14.9 2 16.5 2 16.5s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.1.2 7.1.2s4.2 0 7.1-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22.2 10.1 22 8.5 22 8.5zM10 15V9l5.5 3-5.5 3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="/shop/">SightAware™</a>
+      <a href="/shipping">Shipping</a>
+      <a href="/returns">Returns</a>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <a href="/blog">Blog</a>
+      <a href="/wellness">Wellness awareness</a>
+      <a href="/privacy">Privacy by design</a>
+      <a href="/nursery-checklist">Nursery Checklist</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/story">Our Story</a>
+      <a href="/press">Press</a>
+      <a href="/support">Support</a>
+      <a href="mailto:hello@nonnanest.com">Contact</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · NAPPA 2026 Award Winner</p>
+    <div class="footer-bottom-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+    </div>
+  </div>
+
+  <div class="wellness-disclaimer">
+    Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.
+  </div>
+</footer>
+<!-- PARTIAL:footer-end -->
+</body></html>
