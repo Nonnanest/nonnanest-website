@@ -1089,6 +1089,166 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
     font-size: 12.5px;
   }
 }
+
+/* ===== HERO — updated Aug 6, 2026 ===== */
+.hero-nos { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.hero-nos .chip-no {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--warm-white); border: 1px solid var(--warm-sand);
+  padding: 8px 14px; border-radius: 999px;
+  font-family: 'Outfit', sans-serif; font-size: 14px; color: var(--deep-teal); font-weight: 500;
+}
+.hero-nos .chip-no::before {
+  content: "\00d7"; color: var(--alert-red); font-weight: 700; font-size: 16px; line-height: 1;
+}
+.hero-disclaimer-line {
+  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-size: 16px; color: var(--bark); margin-bottom: 24px;
+}
+.hero-trust-row {
+  display: flex; flex-wrap: wrap; gap: 20px; padding-top: 20px; margin-top: 8px;
+  border-top: 1px solid var(--linen); color: var(--bark); font-size: 13px;
+}
+.hero-trust-row span { display: inline-flex; align-items: center; gap: 8px; }
+.hero-trust-row span::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--soft-teal);
+}
+.hero-visual .product-showcase { position: relative; }
+.hero-edu-callout {
+  position: absolute; bottom: 16px; left: 16px; right: 16px;
+  background: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--linen); border-radius: 12px;
+  padding: 14px 16px;
+  display: flex; gap: 10px; align-items: flex-start;
+  z-index: 3;
+  box-shadow: 0 4px 20px rgba(44, 37, 32, 0.10);
+  font-family: 'Outfit', sans-serif; font-size: 12px; line-height: 1.5; color: var(--charcoal);
+}
+.hero-edu-callout svg {
+  width: 16px; height: 16px; color: var(--soft-teal);
+  flex-shrink: 0; margin-top: 2px;
+}
+.hero-edu-callout strong { color: var(--deep-teal); font-weight: 500; }
+
+/* ===== FOUNDER PREVIEW (position 2) ===== */
+.founder-preview-section {
+  background: var(--warm-white);
+  padding: 60px 48px;
+}
+.founder-preview-wrap {
+  max-width: 1000px; margin: 0 auto;
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 1px 2px rgba(44, 37, 32, 0.04);
+}
+.founder-preview-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.founder-preview-photo {
+  width: 240px; aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(44,37,32,.04), 0 8px 24px rgba(44,37,32,.06);
+}
+.founder-preview-quote {
+  font-family: 'Fraunces', serif; font-weight: 400;
+  font-size: 22px; line-height: 1.35;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+}
+.founder-preview-quote::before {
+  content: "\201C"; color: var(--soft-teal); font-size: 2rem;
+  line-height: 0; margin-right: 2px; vertical-align: -0.3em;
+}
+.founder-preview-attr {
+  display: flex; flex-direction: column; gap: 2px;
+  margin-bottom: 16px;
+}
+.founder-preview-name { font-weight: 500; color: var(--charcoal); font-size: 15px; }
+.founder-preview-title { font-size: 13px; color: var(--bark); }
+.founder-preview-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--deep-teal);
+  font-weight: 500; text-decoration: none;
+}
+.founder-preview-link:hover { color: var(--soft-teal); }
+
+/* ===== PILLAR TEASERS (Wellness + Privacy pair) ===== */
+.pillars-section {
+  background: var(--warm-white);
+  padding: 80px 48px;
+}
+.pillars-wrap { max-width: 1200px; margin: 0 auto; }
+.pillars-head { max-width: 760px; margin-bottom: 40px; }
+.pillars-head .section-label { margin-bottom: 14px; }
+.pillars-head h2 {
+  font-family: 'Fraunces', serif; font-weight: 400;
+  font-size: clamp(28px, 3vw, 40px);
+  color: var(--charcoal); line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.pillars-lede { color: var(--bark); font-size: 17px; line-height: 1.55; }
+.pillars-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.pillar-card {
+  border-radius: 20px; padding: 44px 40px;
+  box-shadow: 0 1px 2px rgba(44,37,32,.04), 0 8px 24px rgba(44,37,32,.06);
+  display: flex; flex-direction: column;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pillar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(44,37,32,.06), 0 20px 60px rgba(44,37,32,.10);
+}
+.pillar-wellness { background: linear-gradient(135deg, #DDE9E4, #C8DBD1); }
+.pillar-privacy { background: linear-gradient(135deg, var(--mist), var(--pale-aqua)); }
+.pillar-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--deep-teal);
+  font-weight: 500; margin-bottom: 14px;
+}
+.pillar-card h3 {
+  font-family: 'Fraunces', serif; font-weight: 400;
+  font-size: 26px; line-height: 1.2;
+  margin-bottom: 14px;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+.pillar-card p {
+  color: var(--earth); margin-bottom: 24px;
+  font-size: 15px; line-height: 1.55;
+}
+.pillar-read-more {
+  margin-top: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--deep-teal);
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+@media (max-width: 900px) {
+  .founder-preview-wrap { padding: 28px; }
+  .founder-preview-grid { grid-template-columns: 1fr; gap: 28px; }
+  .founder-preview-photo { width: 100%; max-width: 320px; margin: 0 auto; }
+  .pillars-section { padding: 60px 24px; }
+  .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pillar-card { padding: 32px 28px; }
+  .pillar-card h3 { font-size: 22px; }
+  .hero-edu-callout { position: static; margin-top: 16px; }
+}
+
 </style>
   <link rel="stylesheet" href="/css/site-chrome.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1186,60 +1346,48 @@ function closeMobileNav() {
 <section class="hero">
   <div class="hero-content">
     <a href="#testimonials" class="hero-award-badge" aria-label="2026 NAPPA Award Winner — read evaluator reviews">
-      <img src="images/nappa-2026-winner.png" alt="2026 National Parenting Product Awards Winner seal" class="hero-award-seal">
+      <img src="/images/nappa-2026-winner.png" alt="2026 National Parenting Product Awards Winner seal" class="hero-award-seal">
       <span class="hero-award-text">
         <span class="hero-award-title">2026 NAPPA Award Winner</span>
         <span class="hero-award-sub">National Parenting Product Awards</span>
       </span>
     </a>
-    <div class="hero-tagline">SightAware™ by Nonnanest</div>
-    <h1>Skin temperature awareness — <em>without touching your baby</em></h1>
-    <p class="hero-subtitle">SightAware™ by Nonnanest is the only baby monitor that senses skin temperature without wearables. No socks. No ankle bands. No chest clips. Just a camera mounted above the crib — and continuous comfort awareness while they sleep.</p>
-    
+    <h1>A quieter kind of baby monitor.</h1>
+    <p class="hero-subtitle">Contactless skin-temperature awareness on a dedicated 5-inch display. Built for the nursery, not the network.</p>
+
+    <div class="hero-nos">
+      <span class="chip-no">No WiFi</span>
+      <span class="chip-no">No app</span>
+      <span class="chip-no">No subscription</span>
+      <span class="chip-no">No wearable</span>
+    </div>
+
+    <p class="hero-disclaimer-line">A wellness device, on purpose. Not a medical device.</p>
+
     <div class="hero-actions">
       <a href="https://www.nonnanest.com/shop/" class="btn-primary">
-        Order SightAware™ — $329
+        Order — $329
       </a>
       <a href="#how-it-works" class="btn-secondary">
-        See how it works
+        How it works
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
 
-    <div class="hero-proof">
-      <div class="proof-item">
-        <div class="proof-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="proof-text">
-          <strong>Nothing on your baby</strong>
-          Fully contactless
-        </div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20"/></svg>
-        </div>
-        <div class="proof-text">
-          <strong>No WiFi needed</strong>
-          FHSS encrypted
-        </div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div class="proof-text">
-          <strong>No subscriptions</strong>
-          One-time purchase
-        </div>
-      </div>
+    <div class="hero-trust-row">
+      <span>FHSS · closed network</span>
+      <span>Patent pending</span>
+      <span>Built by a parent</span>
     </div>
   </div>
 
   <div class="hero-visual">
     <div class="product-showcase">
-      <img src="images/Nonnanest_Handheld_v1.png" alt="Nonnanest handheld parent display showing sleeping baby with real-time skin temperature reading of 98.0°F and room temperature of 75°F" class="product-hero-img">
+      <img src="/images/Nonnanest_Handheld_v1.png" alt="Nonnanest handheld parent display showing sleeping baby with real-time skin temperature reading" class="product-hero-img">
+      <div class="hero-edu-callout">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+        <span><strong>Skin temperature reads cooler than a contact thermometer.</strong> A sleeping baby&#39;s SightAware read normally sits between the mid-90s and just under 98°F. It&#39;s not a low number — it&#39;s a healthy one.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1279,20 +1427,26 @@ function closeMobileNav() {
 <!-- ===== TRUST BAR ===== -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Private by design — your data never touches the internet
-    </div>
-    <div class="trust-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      Patent pending technology
-    </div>
-    <div class="trust-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Designed in Charleston, SC
-    </div>
   </div>
 </div>
+
+<!-- ===== FOUNDER PREVIEW (position 2) ===== -->
+<section class="founder-preview-section">
+  <div class="founder-preview-wrap">
+    <div class="founder-preview-grid">
+      <img src="/images/family/founder-with-kids-calm.jpg" alt="Nathan Overbey with his daughter and son Reed" class="founder-preview-photo">
+      <div class="founder-preview-content">
+        <p class="founder-preview-quote">&ldquo;At 3 AM, my son Reed&#39;s skin was warmer than it should have been and the monitor next to my bed showed nothing. That was the night the gap became obvious. And it&#39;s the night Nonnanest started.&rdquo;</p>
+        <div class="founder-preview-attr">
+          <span class="founder-preview-name">Nathan Overbey</span>
+          <span class="founder-preview-title">Founder &amp; CEO · Customer Zero</span>
+        </div>
+        <a href="/story" class="founder-preview-link">Read the full story <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- ===== HOW IT WORKS ===== -->
@@ -1415,6 +1569,32 @@ function closeMobileNav() {
   </div>
 </section>
 
+<!-- ===== WELLNESS + PRIVACY PILLARS ===== -->
+<section class="pillars-section">
+  <div class="pillars-wrap">
+    <div class="pillars-head">
+      <div class="section-label">What Nonnanest is really about</div>
+      <h2>Wellness insights, plus privacy by design.</h2>
+      <p class="pillars-lede">Two things nobody else in the category delivers together — and the two ideas behind every design decision we&#39;ve made. Each has its own page. Both are worth your time.</p>
+    </div>
+    <div class="pillars-grid">
+      <a class="pillar-card pillar-wellness" href="/wellness">
+        <div class="pillar-eyebrow">Wellness awareness</div>
+        <h3>The best kind of monitoring is the kind your baby never feels.</h3>
+        <p>Contactless skin-temperature awareness, calibrated to your baby&#39;s baseline. A wellness monitor, by design, that supports your awareness instead of trying to replace your judgment.</p>
+        <span class="pillar-read-more">Read the wellness page <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="pillar-card pillar-privacy" href="/privacy">
+        <div class="pillar-eyebrow">Privacy by design</div>
+        <h3>The safest video of your baby is the video that never leaves your house.</h3>
+        <p>Closed network, no cloud, no account. Nothing about your nursery leaves your home. Not a marketing phrase — the engineering starting point. And a foundation we intend to keep even as the product grows.</p>
+        <span class="pillar-read-more">Read the privacy page <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- ===== TESTIMONIALS ===== -->
 <section class="testimonial-section" id="testimonials">
@@ -1478,25 +1658,6 @@ function closeMobileNav() {
 
 
 <!-- ===== FOUNDER ===== -->
-<section class="section founder-section" id="story">
-  <div class="section" style="padding-top:0;padding-bottom:0;">
-    <div class="founder-grid">
-      <div class="founder-photo">
-        <img src="images/Ellis_Reed_Founder_Story.jpg" alt="Nathan, founder of Nonnanest, with his children">
-        <span class="founder-photo-label">Nathan · Founder</span>
-      </div>
-      <div class="founder-text">
-        <div class="section-label">Built by a parent</div>
-        <blockquote>"At 3 AM, my son Reed's cry jolted us awake. Something was off — but our monitor could only show us video. When we got to the nursery, his skin was hot to the touch. And I couldn't stop wondering — how long had his skin temperature been climbing while we slept?"</blockquote>
-        <p>That feeling stayed with me. Not the panic — the gap. I couldn't find a single monitor that offered continuous skin temperature awareness without strapping a sock or ankle band to my baby. Every option required a wearable. None of them felt right.</p>
-        <p>In 2024, I founded Nonnanest to build what I wished had existed — a monitor that senses skin temperature contactlessly, with nothing on your baby, and gives you the kind of quiet awareness that lets you actually rest.</p>
-        <div class="founder-sig">— Nathan, founder · Charleston, SC</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- ===== PRICING ===== -->
 <section class="section pricing-section" id="pricing">
   <h2 style="font-family:'Fraunces',serif;font-size:40px;font-weight:400;letter-spacing:-1px;color:var(--charcoal);margin-bottom:12px;">One monitor. <em style="font-style:italic;font-weight:300;color:var(--soft-teal);">Everything included.</em></h2>
