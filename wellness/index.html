@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wellness Awareness — Nonnanest</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Outfit:wght@300;400;500;600;700&family=Oswald:wght@600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site-chrome.css">
+  <link rel="stylesheet" href="/css/site-content.css">
+<style>
+/* HERO — same architecture as privacy, warmer accent */
+.w-hero{padding:80px 0 60px;background:
+  radial-gradient(ellipse at 25% 0%,var(--mist) 0%,transparent 55%),
+  radial-gradient(ellipse at 100% 100%,rgba(184,201,190,.35) 0%,transparent 60%),var(--warm-white)}
+.w-hero .eyebrow{margin-bottom:16px}
+.w-hero h1{max-width:900px;margin-bottom:24px;font-size:clamp(2.4rem,4.6vw,3.6rem)}
+.w-hero .lede{font-size:1.2rem;max-width:720px;color:var(--earth);line-height:1.5}
+.w-hero .commitment{display:flex;gap:24px;margin-top:40px;padding-top:32px;border-top:1px solid var(--linen);flex-wrap:wrap}
+.w-hero .commitment div{flex:1;min-width:180px}
+.w-hero .commitment .lbl{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bark);margin-bottom:6px}
+.w-hero .commitment .val{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--charcoal)}
+
+/* CONTEXT — parallels privacy page context section */
+.context{padding:80px 0;background:var(--charcoal);color:var(--warm-white)}
+.context h2{color:var(--warm-white)}
+.context .eyebrow{color:var(--pale-aqua);margin-bottom:16px}
+.context-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;margin-top:40px}
+@media(max-width:800px){.context-grid{grid-template-columns:1fr;gap:32px}}
+.context .stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px;margin-bottom:16px}
+.context .stat .num{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--pale-aqua);line-height:1;margin-bottom:10px}
+.context .stat .desc{color:var(--sand);font-size:.9rem;line-height:1.5}
+.context .stat .src{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--bark);letter-spacing:.1em;text-transform:uppercase;margin-top:12px;display:block}
+.context .stmt{font-family:'Fraunces',serif;font-size:1.5rem;line-height:1.35;color:var(--warm-white);margin-bottom:20px}
+.context .stmt::before{content:"\201C";color:var(--soft-teal);font-size:2.6rem;line-height:0;vertical-align:-0.3em}
+.context .attr{color:var(--pale-aqua);font-size:.85rem;font-family:'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+
+/* PRINCIPLES — same treatment as privacy */
+.principles{padding:80px 0;background:var(--warm-white)}
+.principles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+@media(max-width:800px){.principles-grid{grid-template-columns:1fr}}
+.principle{background:var(--cream);border-radius:14px;padding:32px;border-left:3px solid var(--soft-teal)}
+.principle .num{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:var(--deep-teal);margin-bottom:10px}
+.principle h3{margin-bottom:12px;font-size:1.3rem}
+.principle p{color:var(--earth);font-size:.95rem;line-height:1.6}
+.principle .what{margin-top:16px;padding-top:16px;border-top:1px dashed var(--sand);font-size:.85rem;color:var(--bark)}
+.principle .what strong{color:var(--charcoal);font-weight:500}
+
+/* Reading ranges — inline callout block */
+.ranges{background:var(--cream);padding:60px 0}
+.ranges .head{max-width:820px;margin-bottom:32px}
+.ranges .head p{color:var(--bark);margin-top:8px;font-size:1rem}
+.range-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media(max-width:800px){.range-grid{grid-template-columns:1fr}}
+.range-card{background:var(--warm-white);border:1px solid var(--linen);border-radius:12px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
+.range-card .scenario{font-size:.9rem;color:var(--earth);line-height:1.5}
+.range-card .value{font-family:'Fraunces',serif;font-size:1.8rem;color:var(--deep-teal);line-height:1}
+.range-card .value .unit{font-size:.85rem;color:var(--bark);margin-left:6px;font-family:'Outfit',sans-serif}
+.ranges-note{max-width:820px;margin-top:24px;padding:16px 20px;background:var(--warm-white);border-radius:10px;font-size:.9rem;color:var(--earth);line-height:1.55}
+
+/* COMPARE TABLE — parallel to privacy page */
+.how-diff{padding:80px 0;background:var(--warm-white)}
+.how-diff table{width:100%;background:var(--warm-white);border:1px solid var(--linen);border-radius:14px;
+  border-collapse:separate;border-spacing:0;box-shadow:var(--shadow-sm);overflow:hidden;margin-top:32px}
+.how-diff th,.how-diff td{padding:20px 24px;text-align:left;border-bottom:1px solid var(--linen)}
+.how-diff th{background:var(--cream);font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--bark);font-weight:500}
+.how-diff th:first-child{width:28%}
+.how-diff tr:last-child td{border-bottom:none}
+.how-diff td.cat{font-weight:500;color:var(--charcoal)}
+.how-diff td.us{color:var(--deep-teal);font-weight:500}
+.how-diff td.us::before{content:"✓ ";color:var(--soft-teal);font-weight:700;margin-right:4px}
+.how-diff td.them{color:var(--bark)}
+.how-diff td.them::before{content:"✕ ";color:var(--alert-red);font-weight:700;margin-right:4px}
+
+/* TODAY / WHERE WE'RE GOING — parallel to privacy */
+.roadmap{padding:80px 0;background:var(--cream)}
+.roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+@media(max-width:900px){.roadmap-grid{grid-template-columns:1fr}}
+.roadmap-card{background:var(--warm-white);border:1px solid var(--linen);border-radius:14px;padding:28px}
+.roadmap-card .glyph{width:36px;height:36px;color:var(--deep-teal);margin-bottom:16px}
+.roadmap-card .risk{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--deep-teal);margin-bottom:8px}
+.roadmap-card h3{font-size:1.15rem;margin-bottom:10px}
+.roadmap-card p{font-size:.9rem;color:var(--earth);line-height:1.55;margin-bottom:14px}
+.roadmap-card .our-answer{background:var(--cream);border-radius:8px;padding:14px;
+  font-size:.85rem;color:var(--deep-teal);border-left:3px solid var(--soft-teal)}
+.roadmap-card .our-answer strong{color:var(--charcoal);display:block;margin-bottom:4px;
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* HONEST — same as privacy */
+.honest{padding:60px 0;background:var(--warm-white)}
+.honest-card{background:var(--cream);border:1px solid var(--linen);border-radius:16px;padding:44px;max-width:820px;margin:0 auto}
+.honest-card h3{font-family:'Fraunces',serif;font-weight:400;margin-bottom:20px;font-size:1.5rem}
+.honest-card p{color:var(--earth);margin-bottom:16px;font-size:1rem;line-height:1.6}
+.honest-card p:last-child{margin-bottom:0}
+.honest-card .split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+@media(max-width:700px){.honest-card .split{grid-template-columns:1fr}}
+.honest-card .split div{padding:18px 20px;border-radius:10px}
+.honest-card .split .yes{background:var(--mist);color:var(--deep-teal)}
+.honest-card .split .no{background:#F5EDE7;color:#8A5A45}
+.honest-card .split .lbl{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;font-weight:500}
+
+/* PEDIATRICIAN CALLOUT */
+.ped-callout{padding:40px 0 20px;background:var(--warm-white)}
+.ped-card{background:var(--mist);border-radius:16px;padding:32px 36px;max-width:820px;margin:0 auto;
+  border-left:3px solid var(--soft-teal);display:flex;gap:20px;align-items:flex-start}
+.ped-card .glyph{width:32px;height:32px;color:var(--deep-teal);flex-shrink:0}
+.ped-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.3rem;margin-bottom:10px}
+.ped-card p{color:var(--earth);font-size:.95rem;line-height:1.6}
+
+/* CTA & sources — same styles as privacy page */
+.w-cta{padding:80px 0;text-align:center;background:linear-gradient(180deg,var(--warm-white),var(--cream))}
+.w-cta h2{margin-bottom:16px}
+.w-cta p{color:var(--bark);margin-bottom:32px;font-size:1.1rem;max-width:520px;margin-left:auto;margin-right:auto}
+
+.strip{background:var(--mist);padding:16px 0;font-size:.85rem;color:var(--deep-teal);text-align:center;font-family:'Fraunces',serif;font-style:italic}
+</style>
+  <meta name="description" content="The best kind of monitoring is the kind your baby never feels. Contactless skin-temperature awareness, calibrated to your baby's baseline. A wellness monitor, by design.">
+  <link rel="canonical" href="https://www.nonnanest.com/wellness">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wellness Awareness — Nonnanest">
+  <meta property="og:description" content="The best kind of monitoring is the kind your baby never feels. Contactless skin-temperature awareness, calibrated to your baby's baseline. A wellness monitor, by design.">
+  <meta property="og:url" content="https://www.nonnanest.com/wellness">
+  <meta property="og:image" content="https://www.nonnanest.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wellness Awareness — Nonnanest">
+  <meta name="twitter:description" content="The best kind of monitoring is the kind your baby never feels. Contactless skin-temperature awareness, calibrated to your baby's baseline. A wellness monitor, by design.">
+  <meta name="twitter:image" content="https://www.nonnanest.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3D6B6D">
+</head>
+<body>
+<!-- PARTIAL:nav-start -->
+<nav>
+  <a href="/" class="wordmark">Nonnanest™</a>
+  <ul class="nav-links">
+    <li><a href="/#how-it-works">How It Works</a></li>
+    <li><a href="/wellness">Wellness</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/press">Press</a></li>
+    <li><a href="/story">Our Story</a></li>
+    <li><a href="/shop/" class="nav-cta">Order — $329</a></li>
+  </ul>
+  <button class="hamburger" onclick="this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('open');" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.querySelector('.hamburger').classList.remove('active');this.parentElement.classList.remove('open');" aria-label="Close menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="/#how-it-works" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">How It Works</a>
+  <a href="/wellness" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Wellness</a>
+  <a href="/privacy" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Privacy</a>
+  <a href="/blog" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Blog</a>
+  <a href="/press" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Press</a>
+  <a href="/story" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Our Story</a>
+  <a href="/shop/" class="mobile-nav-cta">Order — $329</a>
+</div>
+<!-- PARTIAL:nav-end -->
+
+<!-- HERO -->
+<section class="w-hero">
+  <div class="container">
+    <div class="eyebrow">Wellness awareness</div>
+    <h1>The best kind of monitoring is the kind your baby never feels.</h1>
+    <p class="lede">Nonnanest gives you a wellness signal — skin-temperature awareness, from above the crib, with nothing on your baby. This page explains what the signal means, why "awareness" is the goal instead of "alarm," and why we designed a wellness monitor instead of trying to be something else.</p>
+    <div class="commitment">
+      <div>
+        <div class="lbl">Wearable on your baby</div>
+        <div class="val">None.</div>
+      </div>
+      <div>
+        <div class="lbl">Baseline</div>
+        <div class="val">Calibrated to your baby.</div>
+      </div>
+      <div>
+        <div class="lbl">Alert threshold</div>
+        <div class="val">Set by you.</div>
+      </div>
+      <div>
+        <div class="lbl">What this device is</div>
+        <div class="val">A wellness monitor, by design.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<section class="context">
+  <div class="container">
+    <div class="eyebrow">Why "awareness" matters more than "alerts"</div>
+    <h2>The nursery-monitoring reality parents are actually living.</h2>
+    <div class="context-grid">
+      <div>
+        <div class="stat">
+          <div class="num">86%</div>
+          <div class="desc">Of U.S. mothers wake nightly to check on their child. 79% report anxiety about their child's safety during sleep. 20% lose more than an hour of sleep every night to it.</div>
+          <span class="src">National consumer survey · Pollfish · March–April 2026 <sup>[1]</sup></span>
+        </div>
+        <div class="stat">
+          <div class="num">32%</div>
+          <div class="desc">Of infant sleep-monitor reviews in a 2025 analysis of 11,262 reviews described poor device performance. Reviewers of <em>wearable</em> monitors specifically reported more negative experiences than users of cameras or under-mattress sensors.</div>
+          <span class="src">Dosso et al. · BMJ Paediatrics Open · Aug 2025 <sup>[2]</sup></span>
+        </div>
+      </div>
+      <div>
+        <p class="stmt">The right monitor should reduce anxiety, not manufacture it. That's harder to design than it sounds — and it's the thing we cared most about getting right.</p>
+        <div class="attr">Nonnanest Editorial · 2026</div>
+        <p style="color:var(--sand);font-size:.95rem;line-height:1.6;margin-top:24px">Same 2025 study: only 23% of monitor reviewers reported reduced anxiety, and 7% linked their monitor purchase to a personal mental-health concern. "Peace of mind" is the exact phrase parents use — but a device that promises it and then buzzes at 2 AM for a false alarm delivers the opposite.</p>
+        <p style="color:var(--sand);font-size:.95rem;line-height:1.6;margin-top:16px">Nonnanest was designed to be present without being loud. The next section explains what that looks like in practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Four principles</div>
+      <h2>What "wellness awareness" actually means here.</h2>
+      <p>Not a marketing phrase. Four design decisions that shape what the device does, and — just as importantly — what it doesn't try to do.</p>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="num">01 · SKIN TEMPERATURE</div>
+        <h3>The signal your thermometer doesn't show you.</h3>
+        <p>SightAware reads the actual temperature at your baby's skin — from above the crib, without touching them. Your ear or forehead thermometer adds a mathematical offset to estimate a deeper reading. We don't do that. We show what's actually happening on the surface, where skin is quietly trading heat with the room to keep your baby comfortable.</p>
+        <div class="what"><strong>Why it matters:</strong> a mid-90s read on SightAware isn't a "low" reading. It's a healthy one for a sleeping baby. When it starts to climb, that's the signal — and that's the moment to reach for a contact thermometer.</div>
+      </div>
+      <div class="principle">
+        <div class="num">02 · YOUR BABY'S BASELINE, NOT A GENERIC THRESHOLD</div>
+        <h3>What "normal" looks like is different for every baby.</h3>
+        <p>SightAware doesn't ship with a preset alert. You watch what the reading looks like when your baby is comfortable and well for a few nights, and that becomes your baseline. Then you set an alert threshold above it — usually 2 to 3°F above the top of that baseline. That's intentional. No two babies read the same, and a pre-set threshold designed for the average child would be too tight or too loose for most.</p>
+        <div class="what"><strong>Why it matters:</strong> a personalized baseline surfaces real change; a generic threshold surfaces false alarms.</div>
+      </div>
+      <div class="principle">
+        <div class="num">03 · AWARENESS, NOT INTERVENTION</div>
+        <h3>The device prompts a check. It doesn't answer the question.</h3>
+        <p>When an alert fires, that's the cue to check your baby with a contact thermometer, look at them, and — if your gut says something is off — call your pediatrician. SightAware supports the check. It doesn't replace it. Every design decision on the handheld reflects that: no diagnosis language, no confidence scores, no push toward action that isn't yours to take.</p>
+        <div class="what"><strong>Why it matters:</strong> awareness devices earn trust by respecting the parent's judgment. Alarm devices erode it — one false alarm at a time.</div>
+      </div>
+      <div class="principle">
+        <div class="num">04 · A WELLNESS MONITOR, ON PURPOSE</div>
+        <h3>Not trying to be something we're not.</h3>
+        <p>Nonnanest is designed as a wellness monitor. That's a category that supports parents' general awareness of a baby's comfort — not a device that tries to replace clinical judgment. The framing is intentional. It's also the honest description of what a contactless skin-temperature read can and can't tell you. What lives on your bedside table should support your instinct — not compete with your pediatrician.</p>
+        <div class="what"><strong>Why it matters:</strong> you get a signal you can trust in its lane. Not a false sense of certainty about anything outside it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- READING RANGES -->
+<section class="ranges">
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow">What a typical reading looks like</div>
+      <h2 style="font-size:1.8rem;line-height:1.2">Real-world ranges in a comfortable nursery.</h2>
+      <p>Every baby is a little different, but at recommended room temperatures (69–75°F), sleeping babies read here.</p>
+    </div>
+    <div class="range-grid">
+      <div class="range-card">
+        <div class="scenario">Baby in a sleep sack or sleepwear, sleeping calmly</div>
+        <div class="value">95–97<span class="unit">°F</span></div>
+      </div>
+      <div class="range-card">
+        <div class="scenario">Baby swaddled or under a light layer</div>
+        <div class="value">96–98<span class="unit">°F</span></div>
+      </div>
+      <div class="range-card">
+        <div class="scenario">Baby with more exposed skin, cooler room</div>
+        <div class="value">94–96<span class="unit">°F</span></div>
+      </div>
+    </div>
+    <div class="ranges-note">
+      <strong>The AAP identifies overheating as a risk factor</strong> in the infant sleep environment, and advises dressing a baby in no more than one additional layer than a parent would wear comfortably in the same room. <sup>[3]</sup> That's what makes environmental awareness worth having — not to answer a question about your baby's health, but to notice the change that prompts a check.
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section class="how-diff">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Design decisions, side by side</div>
+      <h2>What "wellness-first" actually changes.</h2>
+      <p>A values comparison, not a spec sheet. Names on the left are the category defaults, not any single brand.</p>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Design decision</th>
+          <th>Category default</th>
+          <th>Nonnanest</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="cat">How the read is captured</td><td class="them">Wearable on baby's foot or chest</td><td class="us">Contactless, from above the crib</td></tr>
+        <tr><td class="cat">Baseline used for alerts</td><td class="them">Preset threshold, same for every baby</td><td class="us">Personalized — you set it to your baby</td></tr>
+        <tr><td class="cat">Signal framing</td><td class="them">Framed as clinical certainty</td><td class="us">Framed as wellness awareness</td></tr>
+        <tr><td class="cat">What an alert asks you to do</td><td class="them">Intervene, escalate, worry</td><td class="us">Check with a contact thermometer</td></tr>
+        <tr><td class="cat">If the reading looks unusual</td><td class="them">Device implies something is wrong</td><td class="us">Device suggests you check on your baby</td></tr>
+        <tr><td class="cat">Language on the display</td><td class="them">Clinical numbers and confidence scores</td><td class="us">Plain-English state — comfortable, watch, check</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Where wellness awareness starts — and where it's going</div>
+      <h2>Insight should broaden with your baby, not with your worry.</h2>
+      <p>We designed Nonnanest to be honest about what a monitor can and can't know. The signal we ship today is deliberately narrow. What we're exploring next expands the awareness picture — without expanding what the device claims to be.</p>
+    </div>
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke-linecap="round"/></svg>
+        <div class="risk">Today</div>
+        <h3>Contactless skin-temperature awareness.</h3>
+        <p>A quiet read from above the crib, personalized to your baby's baseline, with an alert threshold you set. Live view on the dedicated 5" display. No wearable. No app. No cloud. The signal is narrow on purpose — it's the one we can deliver honestly, without overreaching what a wellness device is meant to do.</p>
+        <div class="our-answer"><strong>What this means</strong>You know what "normal" looks like for your baby. When something changes, you know to check.</div>
+      </div>
+      <div class="roadmap-card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20h16M6 20V10l6-6 6 6v10M9 20v-5h6v5"/></svg>
+        <div class="risk">Where we're going</div>
+        <h3>A fuller picture of the nursery — without adding noise.</h3>
+        <p>Wellness awareness is more than temperature. Room conditions, sleep environment, patterns over time — these are things a well-designed nursery monitor can help parents see, if the design bar is "notice the change" rather than "trigger the alarm." We're exploring which of these signals belong on a wellness device, and which don't. What ships next will be what we can deliver without medicalizing the experience.</p>
+        <div class="our-answer"><strong>What this means</strong>Broader awareness, same restraint. If a signal can't help without over-claiming, it doesn't ship.</div>
+      </div>
+      <div class="roadmap-card">
+        <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6L7.1 18.2 8 12.7 4 8.8l5.5-.8L12 3z"/></svg>
+        <div class="risk">How we think about this</div>
+        <h3>Awareness that respects your judgment.</h3>
+        <p>The most valuable insight we can give a parent isn't a diagnosis — it's a well-timed prompt to look at their baby. Every design decision on Nonnanest, today and going forward, is measured against that. A signal that would push a parent toward panic instead of a check doesn't earn a place on the device. A quiet, honest one does.</p>
+        <div class="our-answer"><strong>What this means</strong>Wellness insights are only useful if they make parenting feel calmer, not more surveilled.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST -->
+<section class="honest">
+  <div class="container">
+    <div class="honest-card">
+      <h3>What this page is not saying.</h3>
+      <p>We're not saying skin-temperature awareness is a substitute for a contact thermometer or a call to your pediatrician. It isn't. It's designed to help you notice the change that prompts one of those checks — not to make the check for you.</p>
+      <p>What we're saying is that a wellness monitor, thoughtfully designed, can quietly surface the moments that deserve a closer look — without waking anyone, without a wearable on your baby, and without pretending to know more than it does. That's the specific job Nonnanest was built for.</p>
+      <div class="split">
+        <div class="yes">
+          <div class="lbl">What Nonnanest does</div>
+          Contactless awareness of your baby's skin temperature · a personalized baseline that reflects your baby, not an average · a plain-English signal that prompts you to check
+        </div>
+        <div class="no">
+          <div class="lbl">What Nonnanest doesn't do</div>
+          Replace a contact thermometer · replace a call to your pediatrician · make decisions that are yours to make · substitute for a parent's instinct
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEDIATRICIAN -->
+<section class="ped-callout">
+  <div class="container">
+    <div class="ped-card">
+      <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-8-5-8-11a5 5 0 019-3 5 5 0 019 3c0 6-8 11-8 11z"/></svg>
+      <div>
+        <h3>When to call your pediatrician.</h3>
+        <p>Trust your gut. If your baby seems uncomfortable, isn't feeding well, is unusually sleepy or fussy, or if a contact thermometer reading concerns you — call your pediatrician. Nonnanest supports your awareness. It doesn't replace it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITATIONS -->
+<section style="padding:40px 0;background:var(--cream);border-top:1px solid var(--linen)">
+  <div class="container">
+    <div class="eyebrow" style="margin-bottom:16px">Sources</div>
+    <ol style="list-style:decimal;padding-left:20px;font-size:.82rem;color:var(--bark);line-height:1.65;max-width:900px">
+      <li style="margin-bottom:8px">"Maternal Sleep Crisis: New National Surveys Show 86% of U.S. Mothers Lose Sleep Every Night," National Law Review press release, May 6, 2026 (survey data via Pollfish, n=600 parents). <a href="https://natlawreview.com/press-releases/maternal-sleep-crisis-new-national-surveys-show-86-us-mothers-lose-sleep" target="_blank" rel="noopener">natlawreview.com</a></li>
+      <li style="margin-bottom:8px">Dosso JA, Teng KA, Roy KT, Robillard JM. "The quantified baby: real-world use of infant sleep monitoring technologies and its impact on parent mental health and medical decision-making." <em>BMJ Paediatrics Open</em>, Aug 31, 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12406816/" target="_blank" rel="noopener">bmj.com</a></li>
+      <li style="margin-bottom:8px">American Academy of Pediatrics / HealthyChildren.org, "A Parent's Guide to Safe Sleep." <a href="https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx" target="_blank" rel="noopener">healthychildren.org</a></li>
+    </ol>
+    <p style="font-size:.75rem;color:var(--bark);margin-top:20px;font-style:italic">This page is reviewed and updated quarterly. Last updated: August 2026.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="w-cta">
+  <div class="container">
+    <div class="eyebrow" style="margin-bottom:14px">Ready when you are</div>
+    <h2>Awareness, not alarm.</h2>
+    <p>$329, one-time. No subscription. Free shipping in the continental US. 30-day returns. 1-year warranty.</p>
+    <a href="#" class="btn btn-primary" style="padding:16px 32px">Order yours — $329</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- PARTIAL:footer-start -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="wordmark" style="color:var(--warm-white);">Nonnanest</span>
+      <p>A quieter kind of baby monitor.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/nonnanest.baby/" target="_blank" rel="noopener" aria-label="Nonnanest on Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/nonnanest" target="_blank" rel="noopener" aria-label="Nonnanest on Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@nonnanest" target="_blank" rel="noopener" aria-label="Nonnanest on YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.5s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 5.4 12 5.4 12 5.4s-4.2 0-7.1.2c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S1.8 10.1 1.8 11.7v1.5C1.8 14.9 2 16.5 2 16.5s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7.1.2 7.1.2s4.2 0 7.1-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22.2 10.1 22 8.5 22 8.5zM10 15V9l5.5 3-5.5 3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="/shop/">SightAware™</a>
+      <a href="/shipping">Shipping</a>
+      <a href="/returns">Returns</a>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <a href="/blog">Blog</a>
+      <a href="/wellness">Wellness awareness</a>
+      <a href="/privacy">Privacy by design</a>
+      <a href="/nursery-checklist">Nursery Checklist</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/story">Our Story</a>
+      <a href="/press">Press</a>
+      <a href="/support">Support</a>
+      <a href="mailto:hello@nonnanest.com">Contact</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · NAPPA 2026 Award Winner</p>
+    <div class="footer-bottom-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+    </div>
+  </div>
+
+  <div class="wellness-disclaimer">
+    Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.
+  </div>
+</footer>
+<!-- PARTIAL:footer-end -->
+</body></html>
