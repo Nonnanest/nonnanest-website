@@ -1249,6 +1249,93 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .hero-edu-callout { position: static; margin-top: 16px; }
 }
 
+
+/* ===== WIREFRAME-MATCH SECTIONS (Aug 7, 2026) ===== */
+.dc-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--soft-teal); font-weight: 500; margin-bottom: 14px;
+}
+.nappa-elevated { background: linear-gradient(135deg, var(--charcoal), #1c1815); color: var(--warm-white); padding: 80px 24px; }
+.nappa-elevated-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.nappa-elevated-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--pale-aqua); font-weight: 500; margin-bottom: 24px; }
+.nappa-elevated blockquote { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(22px, 3vw, 34px); line-height: 1.35; color: var(--warm-white); max-width: 820px; margin: 0 auto 24px; letter-spacing: -0.01em; }
+.nappa-elevated blockquote::before { content: "\201C"; color: var(--soft-teal); font-size: 3rem; line-height: 0; vertical-align: -0.3em; margin-right: 4px; }
+.nappa-elevated-attr { color: var(--pale-aqua); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+.diff-checklist { background: var(--warm-white); padding: 80px 24px; }
+.diff-checklist-wrap { max-width: 1100px; margin: 0 auto; }
+.diff-checklist-head { max-width: 760px; margin-bottom: 40px; }
+.diff-checklist-head h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: var(--charcoal); letter-spacing: -0.01em; }
+.diff-checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.diff-col { padding: 32px; border-radius: 16px; border: 1px solid var(--linen); }
+.diff-col-other { background: var(--cream); }
+.diff-col-us { background: var(--warm-white); border-color: var(--soft-teal); position: relative; }
+.diff-col-us::before { content: "NONNANEST"; position: absolute; top: -11px; left: 24px; background: var(--soft-teal); color: var(--warm-white); padding: 3px 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; font-weight: 500; }
+.diff-col h3 { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; color: var(--bark); }
+.diff-col-us h3 { color: var(--deep-teal); }
+.diff-col ul { list-style: none; padding: 0; }
+.diff-col li { padding: 12px 0; border-bottom: 1px dashed var(--linen); display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; }
+.diff-col li:last-child { border-bottom: none; }
+.diff-col li .mark { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: var(--warm-white); margin-top: 2px; }
+.diff-col-other .mark { background: var(--warm-sand); }
+.diff-col-us .mark { background: var(--soft-teal); }
+.diff-col-other li { color: var(--bark); }
+.diff-col-us li { color: var(--charcoal); }
+@media (max-width: 800px) { .diff-checklist-grid { grid-template-columns: 1fr; } }
+.how-numbered { background: var(--cream); padding: 80px 24px; }
+.how-numbered-wrap { max-width: 1200px; margin: 0 auto; }
+.how-numbered-head { max-width: 760px; margin-bottom: 40px; }
+.how-numbered-head h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: var(--charcoal); letter-spacing: -0.01em; }
+.how-numbered-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.how-num-card { background: var(--warm-white); padding: 32px; border-radius: 16px; border: 1px solid var(--linen); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.how-num-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,.06); }
+.how-num-step { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal); font-weight: 500; margin-bottom: 16px; }
+.how-num-card h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 20px; color: var(--charcoal); margin-bottom: 12px; letter-spacing: -0.3px; }
+.how-num-card p { font-size: 14.5px; color: var(--bark); line-height: 1.6; }
+@media (max-width: 800px) { .how-numbered-grid { grid-template-columns: 1fr; } }
+.testimonials-simple { background: var(--cream); padding: 80px 24px; }
+.test-simple-wrap { max-width: 1100px; margin: 0 auto; }
+.test-simple-head { max-width: 760px; margin-bottom: 40px; }
+.test-simple-head h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: var(--charcoal); letter-spacing: -0.01em; }
+.test-simple-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.test-simple-card { background: var(--warm-white); border: 1px solid var(--linen); border-radius: 14px; padding: 28px; }
+.ts-quote { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.45; color: var(--charcoal); margin-bottom: 16px; font-weight: 400; }
+.ts-attr { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--bark); font-weight: 500; }
+@media (max-width: 700px) { .test-simple-grid { grid-template-columns: 1fr; } }
+.price-simple { background: var(--warm-white); padding: 80px 24px; }
+.price-simple-wrap { max-width: 900px; margin: 0 auto; }
+.price-simple-head { text-align: center; margin-bottom: 48px; }
+.price-simple-head .dc-eyebrow { text-align: center; }
+.price-simple-head h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: var(--charcoal); letter-spacing: -0.01em; text-align: center; }
+.price-simple-card { max-width: 560px; margin: 0 auto; background: var(--cream); border: 1px solid var(--linen); border-radius: 20px; padding: 44px; text-align: center; box-shadow: 0 1px 2px rgba(44,37,32,.04), 0 8px 24px rgba(44,37,32,.06); }
+.ps-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal); font-weight: 500; }
+.ps-amount { font-family: 'Fraunces', serif; font-weight: 400; font-size: 56px; color: var(--charcoal); line-height: 1; margin: 16px 0; letter-spacing: -0.02em; }
+.ps-sub { color: var(--bark); margin-bottom: 24px; font-size: 15px; }
+.ps-includes { text-align: left; list-style: none; padding: 0; margin: 24px 0; font-size: 14px; color: var(--earth); }
+.ps-includes li { padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid var(--linen); }
+.ps-includes li:last-child { border-bottom: none; }
+.ps-includes li::before { content: "\2713"; position: absolute; left: 0; top: 10px; color: var(--soft-teal); font-weight: 700; }
+.ps-cta { width: 100%; justify-content: center; padding: 16px; margin-top: 8px; display: inline-flex; align-items: center; }
+.ps-disclaimer { margin-top: 20px; font-size: 11px; line-height: 1.55; color: var(--bark); text-align: left; font-style: italic; }
+.blog-tease { background: var(--cream); padding: 80px 24px; }
+.blog-tease-wrap { max-width: 1200px; margin: 0 auto; }
+.blog-tease-head { max-width: 760px; margin-bottom: 40px; }
+.blog-tease-head h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: var(--charcoal); letter-spacing: -0.01em; }
+.blog-tease-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.bt-card { background: var(--warm-white); border: 1px solid var(--linen); border-radius: 14px; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: inherit; display: block; }
+.bt-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,.08); }
+.bt-art { aspect-ratio: 16/10; position: relative; overflow: hidden; }
+.bt-art-privacy { background: linear-gradient(135deg, var(--deep-teal), var(--soft-teal)); }
+.bt-art-wellness { background: linear-gradient(135deg, #B8C9BE, var(--soft-sage)); }
+.bt-art-product { background: linear-gradient(135deg, var(--cream), var(--warm-sand)); }
+.bt-art svg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44%; color: rgba(255,255,255,.85); }
+.bt-art-product svg { color: var(--deep-teal); }
+.bt-body { padding: 22px; }
+.bt-pillar { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal); font-weight: 500; margin-bottom: 10px; }
+.bt-body h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 18px; line-height: 1.3; color: var(--charcoal); margin-bottom: 10px; letter-spacing: -0.2px; }
+.bt-body p { font-size: 13.5px; color: var(--bark); line-height: 1.55; }
+@media (max-width: 900px) { .blog-tease-grid { grid-template-columns: 1fr; } }
+
 </style>
   <link rel="stylesheet" href="/css/site-chrome.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1393,6 +1480,74 @@ function dismissDisclaimer() {
   </div>
 </section>
 
+<!-- ===== NAPPA ELEVATED QUOTE ===== -->
+<section class="nappa-elevated">
+  <div class="nappa-elevated-inner">
+    <div class="nappa-elevated-eyebrow">NAPPA 2026 &middot; Independently evaluated</div>
+    <blockquote>It is an absolute breeze to use. It operates without WiFi and you don&#39;t need to download an app to receive notifications &mdash; it&#39;s all available on the parent monitor. It&#39;s a pure &ldquo;plug-and-play&rdquo; experience.</blockquote>
+    <div class="nappa-elevated-attr">NAPPA Awards Evaluator &middot; 2026</div>
+  </div>
+</section>
+
+<!-- ===== DIFFERENTIATOR (2-col checklist) ===== -->
+<section class="diff-checklist" id="why">
+  <div class="diff-checklist-wrap">
+    <div class="diff-checklist-head">
+      <div class="dc-eyebrow">A different kind of monitor</div>
+      <h2>Most monitors ask you to add. We built one to remove.</h2>
+    </div>
+    <div class="diff-checklist-grid">
+      <div class="diff-col diff-col-other">
+        <h3>The default in the category</h3>
+        <ul>
+          <li><span class="mark">&times;</span>WiFi + cloud account required by default</li>
+          <li><span class="mark">&times;</span>A wearable sensor on your baby to get the wellness read</li>
+          <li><span class="mark">&times;</span>Subscription tiers gate the features you thought you bought</li>
+          <li><span class="mark">&times;</span>Your phone becomes the interface &mdash; and the notification vector</li>
+          <li><span class="mark">&times;</span>Video and insights routed through servers you don&#39;t control</li>
+        </ul>
+      </div>
+      <div class="diff-col diff-col-us">
+        <h3>Nonnanest</h3>
+        <ul>
+          <li><span class="mark">&#10003;</span>FHSS wireless out of the box &mdash; connectivity is a choice, not a requirement</li>
+          <li><span class="mark">&#10003;</span>Contactless &mdash; the read happens without anything on your baby</li>
+          <li><span class="mark">&#10003;</span>One-time purchase &mdash; no subscription today</li>
+          <li><span class="mark">&#10003;</span>Dedicated 5" display &mdash; your phone stays your phone</li>
+          <li><span class="mark">&#10003;</span>Designed to start closed. Built to grow, on your terms.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS (numbered 01/02/03) ===== -->
+<section class="how-numbered" id="how-it-works">
+  <div class="how-numbered-wrap">
+    <div class="how-numbered-head">
+      <div class="dc-eyebrow">How it works</div>
+      <h2>Three parts. That&#39;s it.</h2>
+    </div>
+    <div class="how-numbered-grid">
+      <div class="how-num-card">
+        <div class="how-num-step">01 &middot; CAMERA</div>
+        <h3>Contactless infrared sensor</h3>
+        <p>Mounts on the wall, flex arm, or crib. Reads skin temperature from up to four feet away &mdash; no touching, no wearable, no attention needed from your baby.</p>
+      </div>
+      <div class="how-num-card">
+        <div class="how-num-step">02 &middot; CONNECTION</div>
+        <h3>FHSS wireless, not WiFi</h3>
+        <p>The camera talks only to your handheld. Frequency-hopping spread spectrum &mdash; the same secure protocol used by air-traffic radios. No router, no cloud, no app.</p>
+      </div>
+      <div class="how-num-card">
+        <div class="how-num-step">03 &middot; DISPLAY</div>
+        <h3>5-inch HD handheld</h3>
+        <p>A real screen you can prop by your bed. Live view, skin-temperature awareness, adjustable alert threshold. Your phone stays your phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== WELLNESS + PRIVACY PILLARS ===== -->
 <section class="pillars-section">
   <div class="pillars-wrap">
@@ -1420,96 +1575,95 @@ function dismissDisclaimer() {
 
 
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonial-section" id="testimonials">
-  <div style="max-width:900px;margin:0 auto;text-align:center;">
-    <span class="nappa-badge">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      2026 NAPPA Award Winner
-    </span>
-    <h2 style="font-family:'Fraunces',serif;font-size:40px;font-weight:400;letter-spacing:-1px;color:var(--warm-white);margin-bottom:16px;">In their <em style="font-style:italic;font-weight:300;color:var(--pale-aqua);">own words</em></h2>
-    <p style="font-size:16px;color:var(--clay);line-height:1.7;max-width:600px;margin:0 auto 56px;">SightAware™ by Nonnanest was independently evaluated by the National Parenting Product Awards. Here's what their evaluators had to say.</p>
-
-    <div class="testimonial-single">
-      <svg class="quote-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/>
-      </svg>
-      <blockquote>
-        It is an absolute breeze to use. It operates without wifi and you don't need to download an app to receive notifications; it's all available on the parent monitor. It's a pure 'plug-and-play' experience.
-      </blockquote>
-      <div class="testimonial-attribution">
-        <span class="attribution-line"></span>
-        <span class="attribution-text">NAPPA Awards Evaluator · 2026</span>
-        <span class="attribution-line"></span>
-      </div>
+<!-- ===== TESTIMONIALS (simple 2x2) ===== -->
+<section class="testimonials-simple" id="testimonials">
+  <div class="test-simple-wrap">
+    <div class="test-simple-head">
+      <div class="dc-eyebrow">What NAPPA evaluators said</div>
+      <h2>Third-party voice, on the record.</h2>
     </div>
-
-    <div class="testimonial-grid">
-      <div class="testimonial-mini">
-        <div class="testimonial-mini-label">Design</div>
-        <blockquote>
-          I noticed that the product was small and sleek, unlike some bulkier baby monitor options I've used before.
-        </blockquote>
-        <div class="testimonial-mini-attr">NAPPA Awards Evaluator · 2026</div>
+    <div class="test-simple-grid">
+      <div class="test-simple-card">
+        <p class="ts-quote">&ldquo;The quality is superb. The camera lens is crystal clear, and the physical housing feels durable and well-constructed. The parent monitor is slim and easy to navigate.&rdquo;</p>
+        <div class="ts-attr">NAPPA Awards Evaluator &middot; 2026</div>
       </div>
-
-      <div class="testimonial-mini">
-        <div class="testimonial-mini-label">Quality</div>
-        <blockquote>
-          The quality is superb. The camera lens is crystal clear, and the physical housing feels durable and well-constructed. The parent monitor is slim and easy to navigate.
-        </blockquote>
-        <div class="testimonial-mini-attr">NAPPA Awards Evaluator · 2026</div>
+      <div class="test-simple-card">
+        <p class="ts-quote">&ldquo;I love any baby monitor that operates without WiFi. I also like the non-wearable temperature tracking.&rdquo;</p>
+        <div class="ts-attr">NAPPA Awards Evaluator &middot; 2026</div>
       </div>
-
-      <div class="testimonial-mini">
-        <div class="testimonial-mini-label">Personal Touch</div>
-        <blockquote>
-          The SightAware by Nonnanest arrived in clean packaging and the first thing I saw was a heartfelt, handwritten note from the product's creator. It felt like a really personal touch!
-        </blockquote>
-        <div class="testimonial-mini-attr">NAPPA Awards Evaluator · 2026</div>
+      <div class="test-simple-card">
+        <p class="ts-quote">&ldquo;Goes way beyond a basic video monitor by integrating smart tracking and wellness alerts. It doesn&#39;t just show you your baby; it actively helps you understand their environment without requiring wearable sensors.&rdquo;</p>
+        <div class="ts-attr">NAPPA Awards Evaluator &middot; 2026</div>
       </div>
-
-      <div class="testimonial-mini">
-        <div class="testimonial-mini-label">Privacy</div>
-        <blockquote>
-          I love any baby monitor that operates without wifi.
-        </blockquote>
-        <div class="testimonial-mini-attr">NAPPA Awards Evaluator · 2026</div>
+      <div class="test-simple-card">
+        <p class="ts-quote">&ldquo;Since it&#39;s a passive device, my baby isn&#39;t even aware it&#39;s there, allowing them to sleep completely undisturbed.&rdquo;</p>
+        <div class="ts-attr">NAPPA Awards Evaluator &middot; 2026</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===== PRICING (simplified per wireframe) ===== -->
+<section class="price-simple" id="pricing">
+  <div class="price-simple-wrap">
+    <div class="price-simple-head">
+      <div class="dc-eyebrow">One price. No upsell.</div>
+      <h2>Everything&#39;s in the box.</h2>
+    </div>
+    <div class="price-simple-card">
+      <div class="ps-label">SightAware&trade; by Nonnanest</div>
+      <div class="ps-amount">$329</div>
+      <p class="ps-sub">One-time. No subscription today.</p>
+      <ul class="ps-includes">
+        <li>Contactless infrared camera + wall / flex-arm / crib mount</li>
+        <li>5-inch HD handheld display + charging cradle</li>
+        <li>Everything you need to set up in under 10 minutes</li>
+        <li>Free shipping in the continental US &middot; 30-day returns &middot; 1-year warranty</li>
+      </ul>
+      <a href="/shop/" class="btn-primary ps-cta">Order yours &mdash; $329</a>
+      <p class="ps-disclaimer">Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
+    </div>
+  </div>
+</section>
 
-<!-- ===== FOUNDER ===== -->
-<!-- ===== PRICING ===== -->
-<section class="section pricing-section" id="pricing">
-  <h2 style="font-family:'Fraunces',serif;font-size:40px;font-weight:400;letter-spacing:-1px;color:var(--charcoal);margin-bottom:12px;">One monitor. <em style="font-style:italic;font-weight:300;color:var(--soft-teal);">Everything included.</em></h2>
-  <p class="section-intro" style="max-width:480px;margin:0 auto 48px;text-align:center;">No subscriptions. No hidden fees. No features behind paywalls.</p>
-
-  <div class="pricing-card">
-    <div class="pricing-label">SightAware™ by Nonnanest</div>
-    <div class="pricing-desc">Contactless skin temp sensing + video + audio</div>
-    <div class="pricing-amount">$329</div>
-    <div class="pricing-sub">One-time purchase · Free shipping</div>
-
-    <ul class="pricing-features">
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Contactless infrared skin temp sensing — nothing on your baby</li>
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dedicated 5" HD parent display — no phone needed</li>
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> FHSS encrypted — fully private, no WiFi</li>
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 355° pan · 60° tilt · infrared night vision</li>
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Two-way audio + built-in lullabies</li>
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Room temperature</li>
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Crib mount + wall mount for overhead positioning</li>
-      <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> No subscriptions. Ever.</li>
-    </ul>
-
-    <a href="https://www.nonnanest.com/shop/" class="btn-primary" style="width:100%;justify-content:center;">
-      Order SightAware™
-    </a>
-
-    <div class="pricing-installment">
-      Or 4 interest-free payments of ~$82 with Shop Pay
+<!-- ===== BLOG TEASE ===== -->
+<section class="blog-tease" id="blog-tease">
+  <div class="blog-tease-wrap">
+    <div class="blog-tease-head">
+      <div class="dc-eyebrow">From the journal</div>
+      <h2>The category, explained by the people redefining it.</h2>
+    </div>
+    <div class="blog-tease-grid">
+      <a class="bt-card" href="/blog/wifi-vs-fhss-baby-monitor-connectivity/">
+        <div class="bt-art bt-art-privacy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2l9 4v6c0 5.5-3.8 10.5-9 12-5.2-1.5-9-6.5-9-12V6l9-4z"/><path d="M9 12l2 2 4-4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="bt-body">
+          <div class="bt-pillar">Privacy</div>
+          <h3>Why we built a monitor that can&#39;t be hacked</h3>
+          <p>A plain-English explanation of FHSS, closed networks, and why the safest video is the video that never leaves your house.</p>
+        </div>
+      </a>
+      <a class="bt-card" href="/blog/contact-free-baby-monitors-why-skin-temperature-matters/">
+        <div class="bt-art bt-art-wellness">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+        </div>
+        <div class="bt-body">
+          <div class="bt-pillar">Wellness</div>
+          <h3>Why your Nonnanest reads different from your contact thermometer</h3>
+          <p>What the reading on your Nonnanest actually tells you, and what to do (and not do) with it.</p>
+        </div>
+      </a>
+      <a class="bt-card" href="/blog/do-baby-monitors-need-wifi/">
+        <div class="bt-art bt-art-product">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M9 21h6M12 17v4"/></svg>
+        </div>
+        <div class="bt-body">
+          <div class="bt-pillar">Product</div>
+          <h3>The case against another baby-monitor app</h3>
+          <p>Why we chose a dedicated 5-inch display instead of your phone. It&#39;s a design decision with second-order effects.</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
