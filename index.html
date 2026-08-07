@@ -1322,24 +1322,7 @@ function dismissDisclaimer() {
   <a href="/story" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Our Story</a>
   <a href="/shop/" class="mobile-nav-cta">Order — $329</a>
 </div>
-<!-- PARTIAL:nav-end --><!-- Mobile Nav Overlay -->
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-  <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
-  <a href="#features" onclick="closeMobileNav()">Why Nonnanest</a>
-  <a href="#story" onclick="closeMobileNav()">Our Story</a>
-  <a href="#faq" onclick="closeMobileNav()">FAQ</a>
-  <a href="https://www.nonnanest.com/shop/" class="mobile-nav-cta" onclick="closeMobileNav()">Order Yours — $329</a>
-</div>
-
-<script>
-function closeMobileNav() {
-  document.getElementById('mobileNav').classList.remove('open');
-  document.querySelector('.hamburger').classList.remove('active');
-}
-</script>
+<!-- PARTIAL:nav-end -->
 
 
 <!-- ===== HERO ===== -->
@@ -1423,12 +1406,6 @@ function closeMobileNav() {
   </div>
 </div>
 
-
-<!-- ===== TRUST BAR ===== -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-  </div>
-</div>
 
 <!-- ===== FOUNDER PREVIEW (position 2) ===== -->
 <section class="founder-preview-section">
