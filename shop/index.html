@@ -190,6 +190,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 @media (max-width: 600px) { .box-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 400px) { .box-grid { grid-template-columns: 1fr; } }
 
+ /* ===== REVIEWS ===== */
+.reviews-section { padding: 60px 24px; max-width: 800px; margin: 0 auto; border-top: 1px solid var(--linen); }
+.reviews-section h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); text-align: center; margin-bottom: 32px; }
+.review-card { background: var(--warm-white); border: 1px solid var(--linen); border-radius: 14px; padding: 28px 32px; max-width: 640px; margin: 0 auto; }
+.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.review-stars { display: inline-flex; gap: 2px; color: var(--deep-teal); }
+.review-stars svg { width: 18px; height: 18px; }
+.review-verified { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: var(--teal-mist); border: 1px solid var(--pale-aqua); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--deep-teal); }
+.review-verified svg { width: 11px; height: 11px; }
+.review-body { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 300; line-height: 1.55; color: var(--charcoal); font-style: italic; margin-bottom: 20px; }
+.review-attribution { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; color: var(--charcoal); }
+.review-disclaimer { text-align: center; font-size: 12px; color: var(--earth); margin-top: 24px; opacity: 0.75; max-width: 560px; margin-left: auto; margin-right: auto; }
+  
 /* ===== BOTTOM CTA ===== */
 .bottom-cta { padding: 60px 24px 80px; max-width: 600px; margin: 0 auto; text-align: center; }
 .bottom-cta h2 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 400; color: var(--charcoal); margin-bottom: 12px; letter-spacing: -0.5px; }
@@ -350,6 +363,29 @@ function closeMobileNav() {
   </div>
 </section>
 
+<!-- ===== REVIEWS ===== -->
+<section class="reviews-section">
+  <h2>What parents are saying</h2>
+  <div class="review-card">
+    <div class="review-header">
+      <span class="review-stars" aria-label="5 out of 5 stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </span>
+      <span class="review-verified">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Verified Buyer
+      </span>
+    </div>
+    <p class="review-body">"We've only had our nonnanest for 2 weeks but we love it already. It was super easy to set up. We used the wall mount as our son is moving around. We really bought this because of the skin temp feature. So far so good but we've found the skin temp to be accurate."</p>
+    <p class="review-attribution">Amanda S.</p>
+  </div>
+  <p class="review-disclaimer">Individual experiences vary. Nonnanest is a wellness device, not a medical device. Temperature readings are for informational purposes only.</p>
+</section>
+  
 <!-- ===== KEY DIFFERENTIATORS ===== -->
 <section class="diff-strip">
   <h2>What makes Nonnanest different</h2>
