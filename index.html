@@ -114,7 +114,7 @@
     {
       "@type": "Question",
       "name": "Is Nonnanest a medical device?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Nonnanest is not a medical device. It is not intended to monitor vital signs or to diagnose, treat, prevent, or cure any disease or health condition. Nonnanest is designed solely to provide parents with general information and awareness about their baby's comfort and environment." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider." }
     }
   ]
 }
@@ -178,87 +178,6 @@ img { max-width: 100%; display: block; }
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--charcoal);
-}
-
-/* ===== DISCLAIMER TOAST ===== */
-.disclaimer-toast {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9999;
-  background: var(--warm-white);
-  border: 1px solid var(--linen);
-  border-radius: 16px;
-  max-width: 360px;
-  width: calc(100% - 48px);
-  padding: 24px;
-  box-shadow: 0 8px 32px rgba(44,37,32,0.12), 0 2px 8px rgba(44,37,32,0.06);
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  animation: toastSlideIn 0.5s ease-out 0.8s both;
-}
-
-@keyframes toastSlideIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.disclaimer-toast.hidden {
-  opacity: 0;
-  transform: translateY(16px);
-  pointer-events: none;
-}
-
-.disclaimer-toast-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.disclaimer-toast-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--soft-teal);
-  flex-shrink: 0;
-}
-
-.disclaimer-toast-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--charcoal);
-  letter-spacing: 0.2px;
-}
-
-.disclaimer-toast p {
-  font-size: 12.5px;
-  color: var(--earth);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.disclaimer-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 24px;
-  background: var(--deep-teal);
-  color: var(--warm-white);
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s;
-  letter-spacing: 0.2px;
-  width: 100%;
-}
-
-.disclaimer-btn:hover {
-  background: var(--soft-teal);
 }
 
 /* ===== NAV ===== */
@@ -930,7 +849,6 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .diff-vs { display: none; }
   .diff-banner { padding: 60px 24px; }
   .diff-banner h2 { font-size: 28px; }
-  .disclaimer-toast { right: 16px; bottom: 16px; left: 16px; max-width: none; width: auto; }
 }
 
 @media (max-width: 600px) {
@@ -1114,23 +1032,6 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--soft-teal);
 }
 .hero-visual .product-showcase { position: relative; }
-.hero-edu-callout {
-  position: absolute; bottom: 16px; left: 16px; right: 16px;
-  background: rgba(250, 248, 245, 0.95);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--linen); border-radius: 12px;
-  padding: 14px 16px;
-  display: flex; gap: 10px; align-items: flex-start;
-  z-index: 3;
-  box-shadow: 0 4px 20px rgba(44, 37, 32, 0.10);
-  font-family: 'Outfit', sans-serif; font-size: 12px; line-height: 1.5; color: var(--charcoal);
-}
-.hero-edu-callout svg {
-  width: 16px; height: 16px; color: var(--soft-teal);
-  flex-shrink: 0; margin-top: 2px;
-}
-.hero-edu-callout strong { color: var(--deep-teal); font-weight: 500; }
-
 /* ===== FOUNDER PREVIEW (position 2) ===== */
 .founder-preview-section {
   background: var(--warm-white);
@@ -1246,7 +1147,6 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
   .pillar-card { padding: 32px 28px; }
   .pillar-card h3 { font-size: 22px; }
-  .hero-edu-callout { position: static; margin-top: 16px; }
 }
 
 
@@ -1349,36 +1249,6 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 
 <body>
 
-<!-- ===== DISCLAIMER TOAST ===== -->
-<div class="disclaimer-toast" id="disclaimerToast" style="display:none;">
-  <div class="disclaimer-toast-header">
-    <svg class="disclaimer-toast-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-    <span class="disclaimer-toast-title">Wellness Device Notice</span>
-  </div>
-  <p>Nonnanest is not a medical device. It is not intended to monitor vital signs or to diagnose, treat, prevent, or cure any disease or health condition. Nonnanest is designed solely to provide parents with general information and awareness about their baby's comfort and environment.</p>
-  <button class="disclaimer-btn" onclick="dismissDisclaimer()">
-    I Understand
-  </button>
-</div>
-
-<script>
-function dismissDisclaimer() {
-  var el = document.getElementById('disclaimerToast');
-  el.classList.add('hidden');
-  setTimeout(function(){ el.style.display = 'none'; }, 400);
-  try { localStorage.setItem('nonnanest_disclaimer_accepted', 'true'); } catch(e) {}
-}
-
-// Only show toast if user hasn't already accepted
-(function() {
-  try {
-    if (localStorage.getItem('nonnanest_disclaimer_accepted') === 'true') return;
-  } catch(e) {}
-  var el = document.getElementById('disclaimerToast');
-  el.style.display = '';
-})();
-</script>
-
 <!-- ===== NAV ===== -->
 <!-- PARTIAL:nav-start -->
 <nav>
@@ -1454,10 +1324,6 @@ function dismissDisclaimer() {
   <div class="hero-visual">
     <div class="product-showcase">
       <img src="/images/Nonnanest_Handheld_v1.png" alt="Nonnanest handheld parent display showing sleeping baby with real-time skin temperature reading" class="product-hero-img">
-      <div class="hero-edu-callout">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
-        <span><strong>Skin temperature reads cooler than a contact thermometer.</strong> A sleeping baby&#39;s SightAware read normally sits between the mid-90s and just under 98°F. It&#39;s not a low number — it&#39;s a healthy one.</span>
-      </div>
     </div>
   </div>
 </section>
@@ -1804,7 +1670,7 @@ function dismissDisclaimer() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>No. Nonnanest is not a medical device. It is not intended to monitor vital signs or to diagnose, treat, prevent, or cure any disease or health condition. It provides skin temperature wellness insights to help parents stay aware of their baby's comfort and environment. For any health concerns, always consult a pediatrician.</p>
+        <p>No. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
       </div>
     </div>
 
