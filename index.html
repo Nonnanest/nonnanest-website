@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXRF2PKBGP"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-VXRF2PKBGP");</script>
@@ -12,7 +14,6 @@
 <!-- HubSpot -->
 <script src="https://js-na2.hsforms.net/forms/embed/242981565.js" defer></script>
 
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SightAware™ by Nonnanest — The Only Contactless Skin Temperature Baby Monitor | No Wearables, No WiFi</title>
 <link rel="canonical" href="https://www.nonnanest.com/">
@@ -273,14 +274,10 @@ nav {
 
 /* ===== HERO ===== */
 .hero {
-  padding: 160px 48px 100px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  min-height: 90vh;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  display: block;
 }
 .hero-content { animation: fadeUp 0.8s ease-out both; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -827,9 +824,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; padding: 140px 24px 60px; gap: 48px; }
   .hero h1 { font-size: 36px; }
-  .hero-visual { order: -1; }
   .product-showcase { max-width: 400px; margin: 0 auto; }
   .product-hero-img { border-radius: 20px; }
   .float-badge { display: none; }
@@ -1236,6 +1231,167 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 .bt-body p { font-size: 13.5px; color: var(--bark); line-height: 1.55; }
 @media (max-width: 900px) { .blog-tease-grid { grid-template-columns: 1fr; } }
 
+
+/* ===== HOMEPAGE REVAMP — display screens / quiet by design / real families ===== */
+
+/* §6 What you'll see — two-up display screens */
+.screens-section { background: var(--cream); padding: 80px 48px; }
+.screens-wrap { max-width: 1200px; margin: 0 auto; }
+.screens-head { max-width: 760px; margin-bottom: 40px; }
+.screens-head h2 {
+  font-family: 'Fraunces', serif; font-weight: 400;
+  font-size: clamp(28px, 3vw, 40px); line-height: 1.15;
+  color: var(--charcoal); letter-spacing: -0.01em;
+}
+.screens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.screen-card {
+  background: var(--warm-white); border: 1px solid var(--linen);
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 1px 2px rgba(44,37,32,.04), 0 8px 24px rgba(44,37,32,.06);
+  display: flex; flex-direction: column;
+}
+.screen-card img { width: 100%; height: auto; display: block; aspect-ratio: 3 / 4; object-fit: cover; }
+.screen-cap {
+  padding: 24px 28px 28px; color: var(--earth);
+  font-size: 15px; line-height: 1.55;
+}
+.screen-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 500; margin-bottom: 10px; display: block;
+}
+.screen-card-calm .screen-tag { color: var(--deep-teal); }
+.screen-card-elevated .screen-tag { color: var(--alert-red); }
+
+/* §7 Quiet by design — payoff lifestyle shot */
+.quiet-section { background: var(--warm-white); padding: 80px 48px; }
+.quiet-wrap { max-width: 1200px; margin: 0 auto; }
+.quiet-frame {
+  position: relative; border-radius: 24px; overflow: hidden;
+  box-shadow: 0 1px 2px rgba(44,37,32,.04), 0 8px 24px rgba(44,37,32,.06);
+}
+.quiet-frame img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+.quiet-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 48px;
+  background:
+    linear-gradient(to right, rgba(28,24,21,.70) 0%, rgba(28,24,21,.28) 48%, rgba(28,24,21,0) 78%),
+    linear-gradient(to top, rgba(28,24,21,.82) 0%, rgba(28,24,21,.48) 30%, rgba(28,24,21,.12) 62%, rgba(28,24,21,0) 88%);
+}
+.quiet-overlay .dc-eyebrow { color: var(--pale-aqua); }
+.quiet-overlay p {
+  font-family: 'Fraunces', serif; font-weight: 300; font-style: italic;
+  font-size: clamp(22px, 2.6vw, 34px); line-height: 1.25;
+  color: var(--warm-white); max-width: 20ch; letter-spacing: -0.01em;
+  text-shadow: 0 1px 12px rgba(28,24,21,.55);
+}
+.quiet-overlay .dc-eyebrow { text-shadow: 0 1px 8px rgba(28,24,21,.6); }
+
+/* §8 Real families — UGC strip */
+.ugc-section { background: var(--cream); padding: 80px 48px; }
+.ugc-wrap { max-width: 1200px; margin: 0 auto; }
+.ugc-head { max-width: 760px; margin-bottom: 40px; }
+.ugc-head h2 {
+  font-family: 'Fraunces', serif; font-weight: 400;
+  font-size: clamp(28px, 3vw, 40px); line-height: 1.15;
+  color: var(--charcoal); letter-spacing: -0.01em;
+}
+.ugc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.ugc-grid img {
+  width: 100%; height: auto; display: block; aspect-ratio: 2 / 3; object-fit: cover;
+  border-radius: 16px; background: var(--linen);
+}
+.ugc-caption {
+  margin-top: 24px; text-align: center;
+  color: var(--bark); font-size: 13px; line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .screens-section, .quiet-section, .ugc-section { padding: 60px 24px; }
+  .screens-grid { grid-template-columns: 1fr; gap: 16px; }
+  .ugc-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .quiet-frame img { aspect-ratio: 4 / 5; }
+  .quiet-overlay { padding: 28px; }
+}
+
+/* ===== HERO — full-bleed looping video (REVAMP) ===== */
+:root { --nav-h: 73px; }
+
+.hero-media {
+  position: relative;
+  margin-top: var(--nav-h);
+  height: clamp(420px, calc(100vh - var(--nav-h)), 760px);
+  overflow: hidden;
+  background: var(--linen);
+}
+.hero-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+/* Award pill floats over the white-wall space, top-right */
+.hero-award-float {
+  position: absolute; top: 28px; right: 28px;
+  z-index: 2; margin-bottom: 0;
+}
+/* Dark bottom gradient carries the white type over pale footage */
+.hero-overlay {
+  position: absolute; inset: auto 0 0 0; z-index: 2;
+  padding: 160px 48px 48px;
+  background: linear-gradient(to top, rgba(28,24,21,.88) 0%, rgba(28,24,21,.66) 32%, rgba(28,24,21,.28) 62%, rgba(28,24,21,0) 100%);
+}
+.hero-overlay-inner { max-width: 1200px; margin: 0 auto; }
+.hero-overlay h1, .hero-overlay .hero-subtitle { text-shadow: 0 1px 14px rgba(28,24,21,.5); }
+.hero-overlay h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 5vw, 56px); font-weight: 400; line-height: 1.1;
+  letter-spacing: -0.02em; color: var(--warm-white); margin-bottom: 16px;
+  text-wrap: balance;
+}
+.hero-overlay .hero-subtitle {
+  font-size: clamp(16px, 1.6vw, 19px); line-height: 1.6;
+  color: rgba(250,248,245,.88); max-width: 46ch; margin-bottom: 28px;
+}
+.hero-overlay .hero-actions { margin-bottom: 0; flex-wrap: wrap; }
+.hero-overlay .btn-primary { background: var(--warm-white); color: var(--charcoal); }
+.hero-overlay .btn-primary:hover { background: var(--pale-aqua); transform: translateY(-1px); }
+.hero-overlay .btn-secondary { color: var(--warm-white); }
+.hero-overlay .btn-secondary:hover { color: var(--pale-aqua); }
+
+/* Chip band + disclaimer + trust row, centered under the hero */
+.hero-band {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--linen);
+  padding: 28px 24px 32px;
+  text-align: center;
+}
+.hero-band .hero-nos { justify-content: center; margin-bottom: 14px; }
+.hero-band .hero-disclaimer-line { margin-bottom: 0; }
+.hero-band .hero-trust-row {
+  justify-content: center; margin-top: 20px;
+  max-width: 720px; margin-left: auto; margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .hero-media { height: clamp(380px, calc(100vh - var(--nav-h)), 620px); }
+  .hero-overlay { padding: 120px 24px 32px; }
+  .hero-award-float { top: 16px; right: 16px; }
+}
+@media (max-width: 560px) {
+  .hero-overlay .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero-overlay .btn-primary, .hero-overlay .btn-secondary { justify-content: center; }
+  /* Compact the award pill so it reads as a badge, not a banner */
+  .hero-award-float { top: 12px; right: 12px; padding: 6px 14px 6px 6px; gap: 9px; }
+  .hero-award-float .hero-award-sub { display: none; }
+  .hero-award-float .hero-award-title { font-size: 12px; }
+  .hero-award-float .hero-award-seal { width: 34px; height: 34px; }
+}
+/* Honor reduced-motion: the poster frame stands in for the loop. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  .hero-media { background: var(--linen) center/cover no-repeat url("/images/home/hero-poster.jpg"); }
+}
 </style>
   <link rel="stylesheet" href="/css/site-chrome.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1282,19 +1438,40 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 <!-- PARTIAL:nav-end -->
 
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO — full-bleed looping video (REVAMP) ===== -->
 <section class="hero">
-  <div class="hero-content">
-    <a href="#testimonials" class="hero-award-badge" aria-label="2026 NAPPA Award Winner — read evaluator reviews">
+  <div class="hero-media">
+    <video class="hero-video"
+           autoplay muted loop playsinline
+           preload="metadata"
+           poster="/images/home/hero-poster.jpg">
+      <source src="/videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <a href="#testimonials" class="hero-award-badge hero-award-float" aria-label="2026 NAPPA Award Winner &mdash; read evaluator reviews">
       <img src="/images/nappa-2026-winner.png" alt="2026 National Parenting Product Awards Winner seal" class="hero-award-seal">
       <span class="hero-award-text">
         <span class="hero-award-title">2026 NAPPA Award Winner</span>
         <span class="hero-award-sub">National Parenting Product Awards</span>
       </span>
     </a>
-    <h1>A quieter kind of baby monitor.</h1>
-    <p class="hero-subtitle">Contactless skin-temperature awareness on a dedicated 5-inch display. Built for the nursery, not the network.</p>
 
+    <div class="hero-overlay">
+      <div class="hero-overlay-inner">
+        <h1>A quieter kind of baby monitor.</h1>
+        <p class="hero-subtitle">Contactless skin-temperature awareness on a dedicated 5-inch display.</p>
+        <div class="hero-actions">
+          <a href="https://www.nonnanest.com/shop/" class="btn-primary">Order &mdash; $329</a>
+          <a href="#how-it-works" class="btn-secondary">
+            How it works
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-band">
     <div class="hero-nos">
       <span class="chip-no">No WiFi</span>
       <span class="chip-no">No app</span>
@@ -1302,28 +1479,12 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
       <span class="chip-no">No wearable</span>
     </div>
 
-    <p class="hero-disclaimer-line">A wellness device, on purpose. Not a medical device.</p>
-
-    <div class="hero-actions">
-      <a href="https://www.nonnanest.com/shop/" class="btn-primary">
-        Order — $329
-      </a>
-      <a href="#how-it-works" class="btn-secondary">
-        How it works
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
+    <p class="hero-disclaimer-line">Wellness device. Not a medical device. See nonnanest.com for details.</p>
 
     <div class="hero-trust-row">
-      <span>FHSS · closed network</span>
+      <span>FHSS &middot; closed network</span>
       <span>Patent pending</span>
       <span>Built by a parent</span>
-    </div>
-  </div>
-
-  <div class="hero-visual">
-    <div class="product-showcase">
-      <img src="/images/Nonnanest_Handheld_v1.png" alt="Nonnanest handheld parent display showing sleeping baby with real-time skin temperature reading" class="product-hero-img">
     </div>
   </div>
 </section>
@@ -1342,6 +1503,32 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         </div>
         <a href="/story" class="founder-preview-link">Read the full story <span aria-hidden="true">&rarr;</span></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT YOU'LL SEE — display screens (REVAMP · P1) ===== -->
+<section class="screens-section" id="what-youll-see">
+  <div class="screens-wrap">
+    <div class="screens-head">
+      <div class="dc-eyebrow">What you&rsquo;ll see</div>
+      <h2>See exactly what the display shows.</h2>
+    </div>
+    <div class="screens-grid">
+      <figure class="screen-card screen-card-calm">
+        <img src="/images/home/display-calm.jpg" alt="The Nonnanest handheld on a nightstand showing a live view of a sleeping baby and a calm skin temperature reading." loading="lazy" decoding="async" width="1086" height="1448">
+        <figcaption class="screen-cap">
+          <span class="screen-tag">Live reading &middot; Calm</span>
+          A calm night. The reading sits at your baby&rsquo;s usual range.
+        </figcaption>
+      </figure>
+      <figure class="screen-card screen-card-elevated">
+        <img src="/images/home/display-elevated.jpg" alt="The Nonnanest handheld showing a live view of a sleeping baby with an elevated skin temperature reading highlighted." loading="lazy" decoding="async" width="1086" height="1448">
+        <figcaption class="screen-cap">
+          <span class="screen-tag">Live reading &middot; Elevated</span>
+          An elevated skin temp reading gets your attention, so you can decide what&rsquo;s next.
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1441,6 +1628,19 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 
 
 
+<!-- ===== QUIET BY DESIGN — payoff (REVAMP · P3) ===== -->
+<section class="quiet-section">
+  <div class="quiet-wrap">
+    <figure class="quiet-frame">
+      <img src="/images/home/quiet-by-design.jpg" alt="A parent resting with a warm drink while the Nonnanest handheld nearby shows their sleeping baby." loading="lazy" decoding="async" width="1672" height="941">
+      <figcaption class="quiet-overlay">
+        <div class="dc-eyebrow">Quiet by design</div>
+        <p>The best kind of monitoring is the kind your baby never feels.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ===== TESTIMONIALS (simple 2x2) ===== -->
 <section class="testimonials-simple" id="testimonials">
   <div class="test-simple-wrap">
@@ -1466,6 +1666,23 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <div class="ts-attr">NAPPA Awards Evaluator &middot; 2026</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== REAL FAMILIES — UGC strip (REVAMP · P5) ===== -->
+<section class="ugc-section">
+  <div class="ugc-wrap">
+    <div class="ugc-head">
+      <div class="dc-eyebrow">Real families</div>
+      <h2>Our favorite view? Yours.</h2>
+    </div>
+    <div class="ugc-grid">
+      <img src="/images/home/ugc-johnson-family.jpg" alt="A family holding their newborn in the nursery, with the Nonnanest camera set up on the crib behind them." loading="lazy" decoding="async" width="800" height="1200">
+      <img src="/images/home/ugc-pink-nursery.jpg" alt="A nursery with the Nonnanest camera mounted on the crib rail." loading="lazy" decoding="async" width="800" height="1200">
+      <img src="/images/home/ugc-flex-arm.jpg" alt="The Nonnanest camera on a flexible arm positioned over a crib." loading="lazy" decoding="async" width="800" height="1067">
+      <img src="/images/home/ugc-baby-monitor.jpg" alt="A baby sleeping in a crib with the Nonnanest camera mounted above." loading="lazy" decoding="async" width="800" height="1067">
+    </div>
+    <p class="ugc-caption">Shared by Nonnanest families. Wellness device. Not a medical device. See nonnanest.com for details.</p>
   </div>
 </section>
 
