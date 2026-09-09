@@ -200,8 +200,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
    without competing visually with the Deep Teal primary CTA. */
 .registry-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 22px; background: #EC79A0; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; color: #FFFFFF; text-decoration: none; letter-spacing: 0.2px; transition: background 0.25s, transform 0.25s; }
 .registry-cta:hover { background: #D96389; transform: translateY(-1px); }
-.registry-cta.poppylist { background: #f04f33; margin-bottom: 22px; }
+.registry-cta.poppylist { background: #f04f33; }
 .registry-cta.poppylist:hover { background: #D6412A; }
+.registry-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .registry-note { font-size: 11px; color: var(--clay); margin-top: 8px; margin-bottom: 22px; line-height: 1.45; }
 
 /* Subordinate spec / credentials strip */
@@ -439,14 +440,15 @@ function closeMobileNav() {
       <div id='product-component-hero'></div>
     </div>
 
-    <a href="https://www.babylist.com/add-items" target="_blank" rel="noopener" class="registry-cta">Add to Babylist</a>
-    <p class="registry-note">Use Babylist&#39;s button to add this product to your registry.</p>
-
-    <a href="https://www.poppylist.com/add_to_registry?source=shopify&amp;product_name=SightAware%E2%84%A2%20by%20Nonnanest&amp;product_price_cents=32900&amp;product_url=https%3A%2F%2Fwww.nonnanest.com%2Fshop%2F&amp;product_image_url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0857%2F3337%2F6193%2Ffiles%2FNonnanest_Handheld_NAPPA_Award.png%3Fv%3D1786557869"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="registry-cta poppylist"
-       onclick="if(typeof gtag==='function'){gtag('event','poppylist_add_to_registry',{product_id:'10929901338817'});}">Add to Poppylist Registry</a>
+    <div class="registry-row">
+      <a href="https://www.babylist.com/add-items" target="_blank" rel="noopener" class="registry-cta">Add to Babylist</a>
+      <a href="https://www.poppylist.com/add_to_registry?source=shopify&amp;product_name=SightAware%E2%84%A2%20by%20Nonnanest&amp;product_price_cents=32900&amp;product_url=https%3A%2F%2Fwww.nonnanest.com%2Fshop%2F&amp;product_image_url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0857%2F3337%2F6193%2Ffiles%2FNonnanest_Handheld_NAPPA_Award.png%3Fv%3D1786557869"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="registry-cta poppylist"
+         onclick="if(typeof gtag==='function'){gtag('event','poppylist_add_to_registry',{product_id:'10929901338817'});}">Add to Poppylist</a>
+    </div>
+    <p class="registry-note">Add this product to your baby registry.</p>
 
     <div class="product-disclaimer">
       Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only. <a href="/terms/">Full terms</a>
