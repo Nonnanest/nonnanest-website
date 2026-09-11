@@ -158,8 +158,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 .product-hero { padding: 80px 24px 0; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 @media (max-width: 900px) { .product-hero { grid-template-columns: 1fr; padding-top: 80px; gap: 32px; } }
 .gallery { position: sticky; top: 80px; }
-.gallery-main { background: var(--cream); border: 1px solid var(--linen); border-radius: 20px; overflow: hidden; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: 24px; margin-bottom: 12px; }
-.gallery-main img { max-width: 100%; max-height: 100%; object-fit: contain; transition: opacity 0.3s; }
+.gallery-main { background: var(--cream); border: 1px solid var(--linen); border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.gallery-main img { width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s; }
 .gallery-thumbs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
 .gallery-thumb { width: 72px; height: 72px; border-radius: 12px; border: 2px solid var(--linen); overflow: hidden; cursor: pointer; flex-shrink: 0; transition: border-color 0.2s; background: var(--cream); display: flex; align-items: center; justify-content: center; padding: 4px; }
 .gallery-thumb.active, .gallery-thumb:hover { border-color: var(--soft-teal); }
@@ -400,8 +400,17 @@ function closeMobileNav() {
       <div class="gallery-thumb" onclick="switchImage(this, '/images/Mounting_Options_Nonnanest.png')">
         <img src="/images/Mounting_Options_Nonnanest.png" alt="Mounting options — crib and wall">
       </div>
-      <div class="gallery-thumb" onclick="switchImage(this, '/images/Skin_Temp_Focus.png')">
-        <img src="/images/Skin_Temp_Focus.png" alt="Skin temperature sensing closeup">
+      <div class="gallery-thumb" onclick="switchImage(this, '/images/home/04_alert-setting.png')">
+        <img src="/images/home/04_alert-setting.png" alt="Skin temperature sensing closeup">
+      </div>
+      <div class="gallery-thumb" onclick="switchImage(this, '/images/home/06_room-temperature.png')">
+        <img src="/images/home/06_room-temperature.png" alt="Nursery room temperature shown on the parent display">
+      </div>
+      <div class="gallery-thumb" onclick="switchImage(this, '/images/home/07_lullabies.png')">
+        <img src="/images/home/07_lullabies.png" alt="Built-in lullabies and white noise played from the camera">
+      </div>
+      <div class="gallery-thumb" onclick="switchImage(this, '/images/home/08_dedicated-display.png')">
+        <img src="/images/home/08_dedicated-display.png" alt="The 5-inch HD dedicated parent display on a table">
       </div>
     </div>
   </div>
