@@ -1188,6 +1188,9 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 .how-feat { flex: 0 0 340px; scroll-snap-align: start; }
 .how-feat-media { position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: var(--linen); margin-bottom: 20px; }
 .how-feat-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.how-feat-cta { position: absolute; left: 16px; bottom: 16px; max-width: calc(100% - 32px); display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 16px; border-radius: 999px; background: var(--deep-teal); color: var(--warm-white); font-size: 13px; font-weight: 400; line-height: 1.2; text-decoration: none; box-shadow: 0 2px 10px rgba(28,24,21,.22); transition: background 0.2s ease, transform 0.2s ease; }
+.how-feat-cta:hover, .how-feat-cta:focus-visible { background: #2f5456; transform: translateY(-1px); }
+.how-feat-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
 .how-feat h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; line-height: 1.25; color: var(--charcoal); margin-bottom: 10px; letter-spacing: -0.3px; }
 .how-feat p { font-size: 15px; color: var(--bark); line-height: 1.6; }
 @media (max-width: 800px) {
@@ -1602,6 +1605,10 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
       <article class="how-feat">
         <div class="how-feat-media">
           <img src="/images/home/04_alert-setting.png" alt="A sleeping baby in a crib, with an on-screen reading showing a skin temperature of 97.2°F and an adjustable alert set at 99.6°." loading="lazy" decoding="async" width="1080" height="1350">
+          <a class="how-feat-cta" href="/wellness/">
+            How skin temperature works
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
         <h3>A reading that never touches your baby.</h3>
         <p>Infrared sensing from up to four feet away. No band, no sock, nothing clipped to a onesie &mdash; your baby sleeps through the whole thing, unaware there was anything to sleep through.</p>
