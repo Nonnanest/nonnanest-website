@@ -1171,17 +1171,30 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 .diff-col-other li { color: var(--bark); }
 .diff-col-us li { color: var(--charcoal); }
 @media (max-width: 800px) { .diff-checklist-grid { grid-template-columns: 1fr; } }
+/* ===== HOW IT WORKS — feature carousel ===== */
 .how-numbered { background: var(--cream); padding: 80px 24px; }
 .how-numbered-wrap { max-width: 1200px; margin: 0 auto; }
-.how-numbered-head { max-width: 760px; margin-bottom: 40px; }
+.how-numbered-head { max-width: 760px; margin-bottom: 12px; }
 .how-numbered-head h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: var(--charcoal); letter-spacing: -0.01em; }
-.how-numbered-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.how-num-card { background: var(--warm-white); padding: 32px; border-radius: 16px; border: 1px solid var(--linen); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.how-num-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(44,37,32,.06); }
-.how-num-step { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--soft-teal); font-weight: 500; margin-bottom: 16px; }
-.how-num-card h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 20px; color: var(--charcoal); margin-bottom: 12px; letter-spacing: -0.3px; }
-.how-num-card p { font-size: 14.5px; color: var(--bark); line-height: 1.6; }
-@media (max-width: 800px) { .how-numbered-grid { grid-template-columns: 1fr; } }
+.how-lede { max-width: 640px; font-size: 16px; color: var(--bark); line-height: 1.65; margin-bottom: 28px; }
+.how-rail-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+.how-rail-nav { display: flex; gap: 8px; flex-shrink: 0; }
+.how-rail-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--clay); background: var(--warm-white); color: var(--charcoal); box-shadow: 0 1px 3px rgba(44,37,32,.08); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease; }
+.how-rail-btn:hover:not(:disabled) { background: var(--teal-mist); border-color: var(--soft-teal); }
+.how-rail-btn:disabled { opacity: 0.35; cursor: default; }
+.how-rail-btn svg { width: 16px; height: 16px; }
+.how-rail { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.how-rail::-webkit-scrollbar { display: none; }
+.how-feat { flex: 0 0 340px; scroll-snap-align: start; }
+.how-feat-media { position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: var(--linen); margin-bottom: 20px; }
+.how-feat-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.how-feat h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; line-height: 1.25; color: var(--charcoal); margin-bottom: 10px; letter-spacing: -0.3px; }
+.how-feat p { font-size: 15px; color: var(--bark); line-height: 1.6; }
+@media (max-width: 800px) {
+  .how-feat { flex: 0 0 78vw; }
+  .how-rail-nav { display: none; }
+  .how-rail { gap: 16px; }
+}
 .testimonials-simple { background: var(--cream); padding: 80px 24px; }
 .test-simple-wrap { max-width: 1100px; margin: 0 auto; }
 .test-simple-head { max-width: 760px; margin-bottom: 40px; }
@@ -1565,29 +1578,67 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   </div>
 </section>
 
-<!-- ===== HOW IT WORKS (numbered 01/02/03) ===== -->
+<!-- ===== HOW IT WORKS (feature rail) ===== -->
 <section class="how-numbered" id="how-it-works">
   <div class="how-numbered-wrap">
-    <div class="how-numbered-head">
-      <div class="dc-eyebrow">How it works</div>
-      <h2>Three parts. That&#39;s it.</h2>
+    <div class="how-rail-head">
+      <div class="how-numbered-head">
+        <div class="dc-eyebrow">How it works</div>
+        <h2>Five things, done quietly.</h2>
+        <p class="how-lede">Contactless temperature awareness, a closed wireless connection, and a dedicated screen that does exactly one job. Here&#39;s what that looks like in a real nursery.</p>
+      </div>
+      <div class="how-rail-nav">
+        <button type="button" class="how-rail-btn" data-rail-prev aria-label="Previous features" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="how-rail-btn" data-rail-next aria-label="More features">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
     </div>
-    <div class="how-numbered-grid">
-      <div class="how-num-card">
-        <div class="how-num-step">01 &middot; CAMERA</div>
-        <h3>Contactless infrared sensor</h3>
-        <p>Mounts on the wall, flex arm, or crib. Reads skin temperature from up to four feet away &mdash; no touching, no wearable, no attention needed from your baby.</p>
-      </div>
-      <div class="how-num-card">
-        <div class="how-num-step">02 &middot; CONNECTION</div>
-        <h3>FHSS wireless, not WiFi</h3>
-        <p>The camera talks only to your handheld. Frequency-hopping spread spectrum &mdash; the same secure protocol used by air-traffic radios. No router, no cloud, no app.</p>
-      </div>
-      <div class="how-num-card">
-        <div class="how-num-step">03 &middot; DISPLAY</div>
-        <h3>5-inch HD handheld</h3>
-        <p>A real screen you can prop by your bed. Live view, skin-temperature awareness, adjustable alert threshold. Your phone stays your phone.</p>
-      </div>
+
+    <div class="how-rail" data-rail tabindex="0" role="group" aria-label="Product features, scrollable">
+
+      <article class="how-feat">
+        <div class="how-feat-media">
+          <img src="/images/home/04_alert-setting.png" alt="A sleeping baby in a crib, with an on-screen reading showing a skin temperature of 97.2°F and an adjustable alert set at 99.6°." loading="lazy" decoding="async" width="1080" height="1350">
+        </div>
+        <h3>A reading that never touches your baby.</h3>
+        <p>Infrared sensing from up to four feet away. No band, no sock, nothing clipped to a onesie &mdash; your baby sleeps through the whole thing, unaware there was anything to sleep through.</p>
+      </article>
+
+      <article class="how-feat">
+        <div class="how-feat-media">
+          <img src="/images/home/06_room-temperature.png" alt="The Nonnanest camera mounted on a crib-side flex arm, with a reading showing the nursery at 71.0°F." loading="lazy" decoding="async" width="1080" height="1350">
+        </div>
+        <h3>Two temperatures, one picture.</h3>
+        <p>Skin and room, side by side on the same screen. A warm reading means more when you can see the room it happened in &mdash; context you&#39;d otherwise be guessing at from the hallway.</p>
+      </article>
+
+      <article class="how-feat">
+        <div class="how-feat-media">
+          <img src="/images/home/10a_connection-pair_4x5.png" alt="The Nonnanest camera and 5-inch handheld side by side on a nursery table, with a connection panel showing camera-to-handheld set to Direct and WiFi network, account, and cloud server all set to None." loading="lazy" decoding="async" width="1080" height="1350">
+        </div>
+        <h3>A closed connection, not a WiFi one.</h3>
+        <p>The camera talks to your handheld and nothing else. It pairs in the first minute out of the box, and keeps working on the night your internet doesn&#39;t.</p>
+      </article>
+
+      <article class="how-feat">
+        <div class="how-feat-media">
+          <img src="/images/home/07_lullabies.png" alt="The Nonnanest camera above a crib, with a soothing-sounds menu showing six lullabies and two white noise options." loading="lazy" decoding="async" width="1080" height="1350">
+        </div>
+        <h3>Sound where your baby is, not where you are.</h3>
+        <p>Start a lullaby from the handheld and it plays out of the camera, across the room. You never open the door &mdash; and you never have to walk a phone into a dark nursery.</p>
+      </article>
+
+      <article class="how-feat">
+        <div class="how-feat-media">
+          <img src="/images/home/08_dedicated-display.png" alt="The 5-inch Nonnanest parent display propped on a wooden table, showing a live view of a swaddled baby sleeping." loading="lazy" decoding="async" width="1080" height="1350">
+        </div>
+        <h3>A screen with no notifications on it.</h3>
+        <p>Prop it on the nightstand and it shows one thing all night. No texts arriving mid-check, no feed to fall into at 3 a.m., no reason to pick up the phone you just put down.</p>
+      </article>
+
     </div>
   </div>
 </section>
@@ -1955,6 +2006,26 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   </div>
 </footer>
 <!-- PARTIAL:footer-end -->
+
+<script>
+(function(){
+  var rail=document.querySelector('[data-rail]');
+  if(!rail)return;
+  var prev=document.querySelector('[data-rail-prev]'),next=document.querySelector('[data-rail-next]');
+  if(!prev||!next)return;
+  function step(){var c=rail.querySelector('.how-feat');return c?c.offsetWidth+24:360;}
+  function sync(){
+    var max=rail.scrollWidth-rail.clientWidth-1;
+    prev.disabled=rail.scrollLeft<=1;
+    next.disabled=rail.scrollLeft>=max;
+  }
+  prev.addEventListener('click',function(){rail.scrollBy({left:-step(),behavior:'smooth'});});
+  next.addEventListener('click',function(){rail.scrollBy({left:step(),behavior:'smooth'});});
+  rail.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('resize',sync);
+  sync();
+})();
+</script>
 
 </body>
 </html>
