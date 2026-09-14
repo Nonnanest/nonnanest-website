@@ -35,6 +35,13 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Guides -->
+  <url>
+    <loc>https://www.nonnanest.com/how-to-choose-a-baby-monitor/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Blog posts (evergreen; real publish/update dates) -->
   <url>
     <loc>https://www.nonnanest.com/blog/nurse-mom-wellness-monitor/</loc>
