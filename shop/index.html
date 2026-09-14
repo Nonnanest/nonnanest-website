@@ -735,6 +735,7 @@ function closeMobileNav() {
   // event, so contents_viewed / checkout_started / order_created all agree.
   w.NN_PRODUCT = {
     id: "sightaware",
+    shopifyProductId: "10929901338817",
     name: "SightAware Baby Monitor",
     listPriceCents: 32900,
     currency: "USD"
@@ -756,6 +757,10 @@ function closeMobileNav() {
         currency: p.currency
       }]
     });
+
+    // GA4 view_item + Meta ViewContent. This is a product-page view,
+    // not an automatic event on every page of the site.
+    if (w.nnAnalytics) { w.nnAnalytics.viewItem(p); }
   }
 
   if (d.readyState === "loading") {
@@ -808,6 +813,12 @@ function closeMobileNav() {
         quantity: quantity
       }]
     });
+
+    // GA4 begin_checkout + Meta InitiateCheckout, fired only when the
+    // Buy Button begins a real Shopify checkout hand-off.
+    if (w.nnAnalytics) {
+      w.nnAnalytics.beginCheckout(p, quantity, unitCents, currency);
+    }
   };
 
 })(window, document);
@@ -840,25 +851,31 @@ function closeMobileNav() {
       storefrontAccessToken: 'b4fd75c765d32381d5e6c827d77dba29',
     });
 
-    // OpenAI Ads: carry `oppref` into the Shopify-hosted checkout.
-    // Checkout lives on a Shopify domain, so the first-party `__oppref`
-    // cookie set on nonnanest.com is not readable there. Attaching it as a
-    // checkout custom attribute puts it on the Shopify order (as a note
-    // attribute), where the Custom Pixel / Conversions API can read it.
+    // Carry first-party attribution into Shopify's off-domain checkout.
+    // The values are order attributes so the checkout-completed custom pixel
+    // can connect GA4's purchase to the originating website session. No PII
+    // is collected here. Attribute lookup has a short timeout and can never
+    // block checkout if an analytics library is unavailable.
     (function (checkout) {
       if (!checkout || typeof checkout.create !== 'function') { return; }
       var create = checkout.create.bind(checkout);
       checkout.create = function (input) {
         input = input || {};
-        try {
-          var oppref = window.nnAnalytics && window.nnAnalytics.getOppref();
-          if (oppref) {
-            input.customAttributes = (input.customAttributes || []).concat([
-              { key: 'oppref', value: String(oppref) }
-            ]);
-          }
-        } catch (e) { /* never block checkout on attribution */ }
-        return create(input);
+        var current = input.customAttributes || [];
+        var attributes = window.nnAnalytics
+          ? window.nnAnalytics.checkoutAttributes()
+          : Promise.resolve([]);
+
+        return Promise.resolve(attributes).catch(function () { return []; })
+          .then(function (analyticsAttributes) {
+            var keys = {};
+            current.forEach(function (a) { if (a && a.key) { keys[a.key] = true; } });
+            analyticsAttributes.forEach(function (a) {
+              if (a && a.key && !keys[a.key]) { current.push(a); keys[a.key] = true; }
+            });
+            input.customAttributes = current;
+            return create(input);
+          });
       };
     })(client.checkout);
     ShopifyBuy.UI.onReady(client).then(function (ui) {
