@@ -19,6 +19,7 @@ The split domain is the reason `order_created` is not in this repo.
 | `page_viewed` | `js/oaiq.js` | `DOMContentLoaded`, guarded per pathname |
 | `contents_viewed` | [`shop/index.html`](../../shop/index.html) | `/shop/` finishing load |
 | `checkout_started` | `shop/index.html`, via the Buy Button's `openCheckout` event | the SDK beginning the checkout hand-off |
+| `lead_created` | [`how-to-choose-a-baby-monitor/index.html`](../../how-to-choose-a-baby-monitor/index.html) | HubSpot `hs-form-event:on-submission:success` for the $30-off form (`3039c3b6-…`); the same handler fires Meta `Lead` and GA4 `generate_lead` with a shared `event_id` |
 | `order_created` | [`shopify-custom-pixel.js`](./shopify-custom-pixel.js) — **installed in Shopify admin, not here** | Shopify `checkout_completed` |
 
 `page_viewed` is fired on `DOMContentLoaded` rather than inline: the loader sits

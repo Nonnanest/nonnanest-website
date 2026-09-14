@@ -691,6 +691,38 @@ main.guide{padding-top:0}
       }
     });
   });
+
+  // Conversion tracking for the $30-off form. HubSpot emits its form events
+  // on window; these listeners sit in the body so they're registered before
+  // the deferred embed script runs. Only this form counts as a Lead, once per
+  // form instance, with one shared id so each platform can deduplicate.
+  var OFFER_FORM_ID = '3039c3b6-ed0d-45a7-963b-317df8b619f3';
+  var offer = window.nnOfferForm = { ready: false, leads: 0 };
+  var sentFor = {};
+  function isOfferForm(event){
+    var id = event.detail && event.detail.formId;
+    return !id || id === OFFER_FORM_ID;
+  }
+  window.addEventListener('hs-form-event:on-ready', function(event){
+    if (isOfferForm(event)) offer.ready = true;
+  });
+  window.addEventListener('hs-form-event:on-submission:success', function(event){
+    if (!isOfferForm(event)) return;
+    var instance = (event.detail && event.detail.instanceId) || 'offer';
+    if (sentFor[instance]) return;
+    sentFor[instance] = true;
+    offer.leads++;
+    var eventId = 'guide-offer-' + instance + '-' + Date.now();
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: 'Baby monitor guide $30 offer' }, { eventID: eventId });
+    }
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', { form_id: OFFER_FORM_ID, form_name: 'guide_30_off' });
+    }
+    if (typeof oaiq === 'function') {
+      oaiq('measure', 'lead_created', { type: 'customer_action', event_id: eventId });
+    }
+  });
 })();
 </script>
 </body>
