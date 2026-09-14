@@ -31,7 +31,7 @@ analytics.subscribe("checkout_completed", (event) => {
     const subtotal = checkout.subtotalPrice || {};
     const tax = checkout.totalTax || {};
     const shipping = checkout.shippingLine && checkout.shippingLine.price;
-    const value = Number.parseFloat(total.amount || "0") || 0;
+    const value = parseFloat(total.amount || "0") || 0;
     const currency = total.currencyCode || "USD";
     const attributes = checkout.attributes || [];
     const attr = (key) => {
@@ -42,22 +42,23 @@ analytics.subscribe("checkout_completed", (event) => {
     const items = (checkout.lineItems || []).map((line) => {
       const variant = line.variant || {};
       const product = variant.product || {};
-      const unitPrice = variant.price && variant.price.amount != null
-        ? Number.parseFloat(variant.price.amount)
-        : undefined;
+      let unitPrice = null;
+      if (variant.price && variant.price.amount != null) {
+        unitPrice = parseFloat(variant.price.amount);
+      }
       const item = {
         item_id: String(product.id || variant.id || variant.sku || "sightaware"),
         item_name: product.title || line.title || "SightAware Baby Monitor",
         quantity: Number(line.quantity || 1)
       };
       if (variant.sku) item.item_variant = String(variant.sku);
-      if (Number.isFinite(unitPrice)) item.price = unitPrice;
+      if (unitPrice != null && isFinite(unitPrice)) item.price = unitPrice;
       return item;
     });
 
     /* ---------------- GA4 purchase ---------------------------------- */
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    const gtag = (...args) => { window.dataLayer.push(args); };
     const gaClientId = attr("nn_ga_client_id");
     const gaSessionId = attr("nn_ga_session_id");
     const gaConfig = { send_page_view: false };
@@ -77,10 +78,10 @@ analytics.subscribe("checkout_completed", (event) => {
       items: items
     };
     if (gaSessionId) purchase.session_id = Number(gaSessionId) || gaSessionId;
-    if (subtotal.amount != null) purchase.subtotal = Number.parseFloat(subtotal.amount) || 0;
-    if (tax.amount != null) purchase.tax = Number.parseFloat(tax.amount) || 0;
+    if (subtotal.amount != null) purchase.subtotal = parseFloat(subtotal.amount) || 0;
+    if (tax.amount != null) purchase.tax = parseFloat(tax.amount) || 0;
     if (shipping && shipping.amount != null) {
-      purchase.shipping = Number.parseFloat(shipping.amount) || 0;
+      purchase.shipping = parseFloat(shipping.amount) || 0;
     }
     gtag("event", "purchase", purchase);
 
