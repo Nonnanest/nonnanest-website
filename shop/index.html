@@ -317,6 +317,55 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 .bottom-cta .shopify-buy-container { max-width: 320px; margin: 0 auto 12px; }
 .bottom-cta .bottom-disclaimer { font-size: 11px; color: var(--bark); line-height: 1.5; max-width: 480px; margin: 0 auto; }
 
+/* ===== TOTAL COST OF OWNERSHIP ===== */
+.tco-section { padding: 60px 24px; max-width: 900px; margin: 0 auto; border-top: 1px solid var(--linen); --tco-ours: #00918A; --tco-theirs: #B0703F; }
+.tco-section h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); text-align: center; margin-bottom: 12px; letter-spacing: -0.5px; }
+.tco-deck { font-size: 15px; color: var(--earth); line-height: 1.7; max-width: 620px; margin: 0 auto 36px; text-align: center; }
+.tco-deck strong { font-weight: 500; color: var(--charcoal); }
+
+.tco-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--linen); border-top: 1px solid var(--linen); border-bottom: 1px solid var(--linen); margin-bottom: 36px; }
+.tco-kpi { background: var(--warm-white); padding: 20px 18px 18px; }
+.tco-kpi-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.1px; text-transform: uppercase; color: var(--bark); margin-bottom: 9px; line-height: 1.45; }
+.tco-kpi-val { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 34px; line-height: 1; letter-spacing: -0.8px; font-variant-numeric: tabular-nums; color: var(--charcoal); margin-bottom: 7px; }
+.tco-kpi-val.is-ours { color: var(--deep-teal); }
+.tco-kpi-sub { font-size: 12.5px; color: var(--warm-gray); line-height: 1.5; }
+
+.tco-chart-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 6px; }
+.tco-chart-title { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 15px; color: var(--charcoal); }
+.tco-legend { display: flex; gap: 16px; flex-wrap: wrap; list-style: none; }
+.tco-legend li { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--earth); }
+.tco-swatch { width: 11px; height: 11px; border-radius: 2px; flex: none; }
+.tco-swatch.is-ours { background: var(--tco-ours); }
+.tco-swatch.is-theirs { background: var(--tco-theirs); }
+
+.tco-chart { position: relative; margin-top: 10px; }
+.tco-chart svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
+.tco-tip { position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s; background: var(--charcoal); color: var(--warm-white); border-radius: 4px; padding: 10px 12px; font-size: 12.5px; line-height: 1.5; white-space: nowrap; z-index: 3; transform: translate(-50%, -115%); }
+.tco-tip.is-on { opacity: 1; }
+.tco-tip .tco-tip-when { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .9px; text-transform: uppercase; color: var(--clay); display: block; margin-bottom: 5px; }
+.tco-tip .tco-tip-row { display: flex; align-items: center; gap: 7px; font-variant-numeric: tabular-nums; }
+.tco-tip .tco-tip-row b { font-weight: 500; }
+.tco-tip .tco-tip-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+
+.tco-method { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--linen); }
+.tco-method summary { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--bark); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+.tco-method summary::-webkit-details-marker { display: none; }
+.tco-method summary::before { content: "+"; font-size: 14px; line-height: 1; color: var(--soft-teal); }
+.tco-method[open] summary::before { content: "\2013"; }
+.tco-method summary:focus-visible { outline: 2px solid var(--soft-teal); outline-offset: 3px; }
+.tco-method-body { font-size: 13.5px; color: var(--warm-gray); line-height: 1.7; margin-top: 14px; max-width: 70ch; }
+.tco-method-body p { margin-bottom: 10px; }
+.tco-method-body strong { font-weight: 500; color: var(--earth); }
+.tco-table-scroll { overflow-x: auto; margin-top: 14px; }
+.tco-table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.tco-table th, .tco-table td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--linen); white-space: nowrap; }
+.tco-table th:first-child, .tco-table td:first-child { text-align: left; white-space: normal; }
+.tco-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .8px; text-transform: uppercase; color: var(--bark); font-weight: 400; }
+
+@media (max-width: 620px) {
+  .tco-kpis { grid-template-columns: 1fr; }
+}
+
 </style>
   <link rel="stylesheet" href="/css/site-chrome.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -545,6 +594,272 @@ function closeMobileNav() {
     </div>
   </div>
 </section>
+
+<!-- ===== TOTAL COST OF OWNERSHIP ===== -->
+<section class="tco-section">
+  <h2>The price tag isn&rsquo;t the price</h2>
+  <p class="tco-deck">Most families use a baby monitor for about two and a half years. Most <strong>wellness monitors</strong> &mdash; the ones that sense something about your baby, rather than just showing you a picture &mdash; keep charging you for all of it. Here&rsquo;s the whole two and a half years, priced on the <strong>cheapest plan each one offers</strong>. Most families end up paying more than this.</p>
+
+  <div class="tco-kpis">
+    <div class="tco-kpi">
+      <p class="tco-kpi-label">Nonnanest, 2&frac12; years</p>
+      <p class="tco-kpi-val is-ours">$329</p>
+      <p class="tco-kpi-sub" id="tcoOursSub">&nbsp;</p>
+    </div>
+    <div class="tco-kpi">
+      <p class="tco-kpi-label">Typical wellness monitor</p>
+      <p class="tco-kpi-val" id="tcoTheirs">&mdash;</p>
+      <p class="tco-kpi-sub" id="tcoTheirsSub">&nbsp;</p>
+    </div>
+    <div class="tco-kpi">
+      <p class="tco-kpi-label">What you keep</p>
+      <p class="tco-kpi-val is-ours" id="tcoGap">&mdash;</p>
+      <p class="tco-kpi-sub" id="tcoGapSub">&nbsp;</p>
+    </div>
+  </div>
+
+  <div class="tco-chart-head">
+    <p class="tco-chart-title">What you&rsquo;ve spent, as your baby grows</p>
+    <ul class="tco-legend">
+      <li><span class="tco-swatch is-ours"></span>Nonnanest</li>
+      <li><span class="tco-swatch is-theirs"></span>Typical wellness monitor</li>
+    </ul>
+  </div>
+
+  <div class="tco-chart" id="tcoChart">
+    <svg id="tcoSvg" role="img" aria-label="Total spent over two and a half years. Nonnanest stays flat at $329 from day one. A typical wellness monitor starts around $390 and climbs to about $660."></svg>
+    <div class="tco-tip" id="tcoTip" aria-hidden="true"></div>
+  </div>
+
+  <details class="tco-method">
+    <summary>How we worked this out</summary>
+    <div class="tco-method-body">
+      <p>Families use a baby monitor for about two and a half years &mdash; newborn through the toddler bed. So that&rsquo;s the stretch we priced, instead of just the number on the checkout page.</p>
+      <p>For everything else in the wellness category we took what they cost today: <strong>around $390</strong> for a camera and a parent screen, and then a plan. Plans come in tiers &mdash; about $9 a month at the bottom, $25 or more at the top &mdash; and <strong>we used the cheapest one every time</strong>. We added the parts a baby outgrows and you buy again, gave every product the free trial it comes with, and rounded down. That comes to <strong>about $10 a month</strong> once the trial ends.</p>
+      <p>So the figures above are the friendliest version of the other side. Pick a bigger plan, as plenty of families do, and the gap widens from here.</p>
+      <p><strong>Nonnanest is $329, once.</strong> There&rsquo;s no plan to pick and nothing to replace &mdash; the sensing is contactless, so there&rsquo;s nothing your baby wears and nothing to outgrow.</p>
+      <p>We&rsquo;ve kept these figures general on purpose. Prices and plans move around; the shape of the curve doesn&rsquo;t. Checked September 2026.</p>
+      <div class="tco-table-scroll">
+        <table class="tco-table">
+          <thead><tr><th>When</th><th>Nonnanest</th><th>Typical wellness monitor</th><th>Difference</th></tr></thead>
+          <tbody id="tcoTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+</section>
+
+<script>
+/* ===== TOTAL COST OF OWNERSHIP =====
+   Every competitor input is a rounded CATEGORY figure, chosen in their
+   favour: cheapest plan tier, monthly rounded down, free trials credited,
+   low end of the hardware range. No single product is identified.
+   Checked September 2026 — re-check these three numbers quarterly.     */
+(function(){
+  "use strict";
+
+  var MONTHS      = 30;   // 2.5 years — how long a monitor actually gets used
+  var OURS        = 329;  // one payment, no plan, nothing to replace
+  var THEIR_HW    = 390;  // typical wellness monitor with a parent screen
+  var FREE_MONTHS = 3;    // free trial period most of them include
+  var ONGOING     = 10;   // cheapest plan tier ($9) + replacement parts (~$1.50), rounded down
+
+  function theirs(month){
+    return THEIR_HW + ONGOING * Math.max(0, month - FREE_MONTHS);
+  }
+  function usd(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+
+  var box = document.getElementById("tcoChart");
+  var svg = document.getElementById("tcoSvg");
+  var tip = document.getElementById("tcoTip");
+  if (!box || !svg || !tip) return;
+
+  var CSS = getComputedStyle(document.querySelector(".tco-section"));
+  var C = {
+    ours:    CSS.getPropertyValue("--tco-ours").trim()   || "#00918A",
+    theirs:  CSS.getPropertyValue("--tco-theirs").trim() || "#B0703F",
+    grid:    CSS.getPropertyValue("--linen").trim()      || "#EDE7DF",
+    muted:   CSS.getPropertyValue("--bark").trim()       || "#8C7B6B",
+    surface: CSS.getPropertyValue("--warm-white").trim() || "#FAF8F5"
+  };
+
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function el(name, attrs){
+    var node = document.createElementNS(SVGNS, name);
+    for (var k in attrs) node.setAttribute(k, attrs[k]);
+    return node;
+  }
+
+  var TICKS = [
+    {m:0,  label:"Birth"}, {m:6,  label:"6 mo"}, {m:12, label:"1 yr"},
+    {m:18, label:"18 mo"}, {m:24, label:"2 yr"}, {m:30, label:"2\u00BD yr"}
+  ];
+
+  var geom = null;
+
+  function draw(){
+    var W = Math.max(280, box.clientWidth);
+    var narrow = W < 560;
+    var H = narrow ? 268 : 300;
+    var padL = narrow ? 40 : 52, padR = narrow ? 64 : 150, padT = 26, padB = 44;
+    var x0 = padL, x1 = W - padR, y0 = padT, y1 = H - padB;
+    var yMax = 900;
+
+    function X(m){ return x0 + (m / MONTHS) * (x1 - x0); }
+    function Y(v){ return y1 - (v / yMax) * (y1 - y0); }
+
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("width", W);
+    svg.setAttribute("height", H);
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    [0, 300, 600, 900].forEach(function(v){
+      svg.appendChild(el("line", {x1:x0, x2:x1, y1:Y(v), y2:Y(v), stroke:C.grid, "stroke-width":1}));
+      var t = el("text", {x:x0-10, y:Y(v)+4, "text-anchor":"end", fill:C.muted,
+        "font-family":"'JetBrains Mono',monospace", "font-size":narrow?9.5:10.5});
+      t.textContent = v === 0 ? "$0" : "$" + v;
+      svg.appendChild(t);
+    });
+
+    TICKS.forEach(function(tk, i){
+      if (narrow && (i === 1 || i === 3 || i === 4)) return;
+      var t = el("text", {x:X(tk.m), y:y1+22, "text-anchor":"middle", fill:C.muted,
+        "font-family":"'JetBrains Mono',monospace", "font-size":narrow?9.5:10.5});
+      t.textContent = tk.label;
+      svg.appendChild(t);
+    });
+
+    var wedge = "M " + X(0) + " " + Y(OURS) + " L " + X(MONTHS) + " " + Y(OURS);
+    for (var n = MONTHS; n >= 0; n--) wedge += " L " + X(n) + " " + Y(theirs(n));
+    wedge += " Z";
+    svg.appendChild(el("path", {d:wedge, fill:"rgba(0,145,138,0.09)", stroke:"none"}));
+
+    var dT = "";
+    for (var i2 = 0; i2 <= MONTHS; i2++) dT += (i2 ? " L " : "M ") + X(i2) + " " + Y(theirs(i2));
+    svg.appendChild(el("path", {d:dT, fill:"none", stroke:C.theirs, "stroke-width":2,
+      "stroke-linecap":"round", "stroke-linejoin":"round"}));
+
+    svg.appendChild(el("path", {d:"M " + X(0) + " " + Y(OURS) + " L " + X(MONTHS) + " " + Y(OURS),
+      fill:"none", stroke:C.ours, "stroke-width":2, "stroke-linecap":"round"}));
+
+    [[Y(theirs(MONTHS)), C.theirs], [Y(OURS), C.ours]].forEach(function(pt){
+      svg.appendChild(el("circle", {cx:X(MONTHS), cy:pt[0], r:5, fill:pt[1],
+        stroke:C.surface, "stroke-width":2}));
+    });
+
+    function endLabel(yv, value, caption, color){
+      var ax = X(MONTHS) + 12;
+      var v = el("text", {x:ax, y:yv - (narrow?6:2), fill:color,
+        "font-family":"'Outfit',sans-serif", "font-size":narrow?14:17, "font-weight":500});
+      v.textContent = value;
+      svg.appendChild(v);
+      if (!narrow){
+        var c = el("text", {x:ax, y:yv+14, fill:C.muted,
+          "font-family":"'Outfit',sans-serif", "font-size":11.5, "font-weight":300});
+        c.textContent = caption;
+        svg.appendChild(c);
+      }
+    }
+    endLabel(Y(theirs(MONTHS)), usd(theirs(MONTHS)), "and still going", C.theirs);
+    endLabel(Y(OURS), usd(OURS), "and done", C.ours);
+
+    if (!narrow){
+      var gapTop = Y(theirs(19.5)), gapBot = Y(OURS);
+      var lab = el("text", {x:X(19.5), y:(gapTop+gapBot)/2 + 4, "text-anchor":"middle",
+        fill:"#0B6E6A", "font-family":"'Outfit',sans-serif", "font-size":13});
+      lab.textContent = usd(theirs(MONTHS) - OURS) + " you never spend";
+      svg.appendChild(lab);
+    }
+
+    var hoverLine = el("line", {x1:0, x2:0, y1:y0, y2:y1, stroke:C.muted, "stroke-width":1, opacity:0});
+    svg.appendChild(hoverLine);
+    var hoverPts = [
+      el("circle", {r:5, fill:C.theirs, stroke:C.surface, "stroke-width":2, opacity:0}),
+      el("circle", {r:5, fill:C.ours,   stroke:C.surface, "stroke-width":2, opacity:0})
+    ];
+    hoverPts.forEach(function(pt){ svg.appendChild(pt); });
+    svg.appendChild(el("rect", {x:x0, y:y0, width:Math.max(1,x1-x0), height:Math.max(1,y1-y0),
+      fill:"transparent", "pointer-events":"all"}));
+
+    geom = {W:W, X:X, Y:Y, x0:x0, x1:x1, hoverLine:hoverLine, hoverPts:hoverPts};
+  }
+
+  function whenLabel(m){
+    if (m === 0)  return "Day one";
+    if (m === 12) return "1 year in";
+    if (m === 24) return "2 years in";
+    if (m === 30) return "2\u00BD years in";
+    return "Month " + m;
+  }
+
+  function moveHover(clientX){
+    if (!geom) return;
+    var r = svg.getBoundingClientRect();
+    var px = (clientX - r.left) * (geom.W / r.width);
+    var m = Math.min(MONTHS, Math.max(0, Math.round(((px - geom.x0) / (geom.x1 - geom.x0)) * MONTHS)));
+    var vT = theirs(m);
+
+    geom.hoverLine.setAttribute("x1", geom.X(m));
+    geom.hoverLine.setAttribute("x2", geom.X(m));
+    geom.hoverLine.setAttribute("opacity", 0.35);
+    geom.hoverPts[0].setAttribute("cx", geom.X(m));
+    geom.hoverPts[0].setAttribute("cy", geom.Y(vT));
+    geom.hoverPts[0].setAttribute("opacity", 1);
+    geom.hoverPts[1].setAttribute("cx", geom.X(m));
+    geom.hoverPts[1].setAttribute("cy", geom.Y(OURS));
+    geom.hoverPts[1].setAttribute("opacity", 1);
+
+    tip.innerHTML =
+      '<span class="tco-tip-when">' + whenLabel(m) + '</span>' +
+      '<span class="tco-tip-row"><span class="tco-tip-dot" style="background:' + C.ours + '"></span>Nonnanest <b>' + usd(OURS) + '</b></span>' +
+      '<span class="tco-tip-row"><span class="tco-tip-dot" style="background:' + C.theirs + '"></span>Typical <b>' + usd(vT) + '</b></span>';
+    tip.classList.add("is-on");
+    tip.style.left = ((geom.X(m) / geom.W) * box.clientWidth) + "px";
+    tip.style.top  = ((geom.Y(vT) / geom.W) * box.clientWidth) + "px";
+  }
+
+  function clearHover(){
+    tip.classList.remove("is-on");
+    if (!geom) return;
+    geom.hoverLine.setAttribute("opacity", 0);
+    geom.hoverPts.forEach(function(pt){ pt.setAttribute("opacity", 0); });
+  }
+
+  svg.addEventListener("mousemove", function(e){ moveHover(e.clientX); });
+  svg.addEventListener("mouseleave", clearHover);
+  svg.addEventListener("touchstart", function(e){ moveHover(e.touches[0].clientX); }, {passive:true});
+  svg.addEventListener("touchmove",  function(e){ moveHover(e.touches[0].clientX); }, {passive:true});
+  svg.addEventListener("touchend", clearHover);
+
+  /* headline figures derive from the model above, so copy can't drift */
+  var total = theirs(MONTHS);
+  document.getElementById("tcoOursSub").textContent =
+    usd(THEIR_HW - OURS) + " less than the typical monitor before a single fee.";
+  document.getElementById("tcoTheirs").textContent = usd(total);
+  document.getElementById("tcoTheirsSub").textContent =
+    "About " + usd(THEIR_HW) + " to start, then around " + usd(ONGOING) + " a month on the cheapest plan.";
+  document.getElementById("tcoGap").textContent = usd(total - OURS);
+  document.getElementById("tcoGapSub").textContent = "And that's before anyone picks a bigger plan.";
+
+  var tbody = document.getElementById("tcoTable");
+  [0, 6, 12, 18, 24, 30].forEach(function(m){
+    var t = theirs(m);
+    var tr = document.createElement("tr");
+    tr.innerHTML = "<td>" + whenLabel(m) + "</td><td>" + usd(OURS) + "</td><td>" +
+                   usd(t) + "</td><td>" + usd(t - OURS) + "</td>";
+    tbody.appendChild(tr);
+  });
+
+  draw();
+  var raf;
+  function onResize(){
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function(){ clearHover(); draw(); });
+  }
+  if (window.ResizeObserver) new ResizeObserver(onResize).observe(box);
+  else window.addEventListener("resize", onResize);
+})();
+</script>
 
 <!-- ===== FEATURES ===== -->
 <section class="features-section">
