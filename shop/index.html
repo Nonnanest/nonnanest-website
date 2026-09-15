@@ -155,8 +155,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 @media (max-width: 600px) { .nav-links { display: none; } .hamburger { display: flex; } }
 
 /* ===== PRODUCT HERO ===== */
-.product-hero { padding: 80px 24px 0; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-@media (max-width: 900px) { .product-hero { grid-template-columns: 1fr; padding-top: 80px; gap: 32px; } }
+.product-hero { padding: 80px 24px 0; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+@media (max-width: 900px) { .product-hero { grid-template-columns: minmax(0, 1fr); padding-top: 80px; gap: 32px; } }
 .gallery { position: sticky; top: 80px; }
 .gallery-main { background: var(--cream); border: 1px solid var(--linen); border-radius: 20px; overflow: hidden; aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
 .gallery-main img { width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s; }
