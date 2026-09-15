@@ -627,7 +627,7 @@ function closeMobileNav() {
   </div>
 
   <div class="tco-chart" id="tcoChart">
-    <svg id="tcoSvg" role="img" aria-label="Total spent over two and a half years. Nonnanest stays flat at $329 from day one. A typical wellness monitor starts around $390 and climbs to about $687."></svg>
+    <svg id="tcoSvg" role="img" aria-label="Total spent over two and a half years. Nonnanest stays flat at $329 from day one. A typical wellness monitor starts around $390 and climbs to about $660."></svg>
     <div class="tco-tip" id="tcoTip" aria-hidden="true"></div>
   </div>
 
@@ -635,7 +635,7 @@ function closeMobileNav() {
     <summary>How we worked this out</summary>
     <div class="tco-method-body">
       <p>Families use a baby monitor for about two and a half years &mdash; newborn through the toddler bed. So that&rsquo;s the stretch we priced, instead of just the number on the checkout page.</p>
-      <p>For everything else in the wellness category we took what they cost today: <strong>around $390</strong> for a camera and a parent screen, and then a plan. Plans come in tiers &mdash; roughly $10 a month at the bottom, $25 or more at the top &mdash; and <strong>we used the cheapest one every time</strong>. We added the parts a baby outgrows and you buy again, gave every product the free trial it comes with, and rounded down. That comes to <strong>about $11 a month</strong> once the trial ends.</p>
+      <p>For everything else in the wellness category we took what they cost today: <strong>around $390</strong> for a camera and a parent screen, and then a plan. Plans come in tiers &mdash; about $9 a month at the bottom, $25 or more at the top &mdash; and <strong>we used the cheapest one every time</strong>. We added the parts a baby outgrows and you buy again, gave every product the free trial it comes with, and rounded down. That comes to <strong>about $10 a month</strong> once the trial ends.</p>
       <p>So the figures above are the friendliest version of the other side. Pick a bigger plan, as plenty of families do, and the gap widens from here.</p>
       <p><strong>Nonnanest is $329, once.</strong> There&rsquo;s no plan to pick and nothing to replace &mdash; the sensing is contactless, so there&rsquo;s nothing your baby wears and nothing to outgrow.</p>
       <p>We&rsquo;ve kept these figures general on purpose. Prices and plans move around; the shape of the curve doesn&rsquo;t. Checked September 2026.</p>
@@ -662,7 +662,7 @@ function closeMobileNav() {
   var OURS        = 329;  // one payment, no plan, nothing to replace
   var THEIR_HW    = 390;  // typical wellness monitor with a parent screen
   var FREE_MONTHS = 3;    // free trial period most of them include
-  var ONGOING     = 11;   // cheapest plan tier + replacement parts, rounded down
+  var ONGOING     = 10;   // cheapest plan tier ($9) + replacement parts (~$1.50), rounded down
 
   function theirs(month){
     return THEIR_HW + ONGOING * Math.max(0, month - FREE_MONTHS);
