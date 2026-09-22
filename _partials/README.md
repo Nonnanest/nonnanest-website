@@ -29,6 +29,19 @@ tool, we keep the site cohesive by:
 Edit the `PAGES` list at the top of `sync.py`. The new page will get the
 canonical nav/footer stamped on the next run.
 
+## Canonical check
+
+After stamping, `sync.py` audits `rel=canonical` and `og:url` on every
+indexable page in the repo, not just the ones in `PAGES`, and exits
+non-zero if any are wrong. To audit without stamping anything:
+
+```
+python3 _partials/sync.py --check
+```
+
+That is the form the pre-commit hook runs. `--skip-canonical-check`
+stamps without auditing.
+
 ## The markers
 
 `<!-- PARTIAL:nav-start -->` and `<!-- PARTIAL:nav-end -->` — sync
@@ -84,9 +97,14 @@ stale answers.
 
 ### The pre-commit hook
 
-`--check` runs automatically before each commit that touches a page with
-an FAQ. The hook lives at `_partials/hooks/pre-commit`, versioned with the
-repo rather than untracked in `.git/hooks`, so it survives a fresh clone.
+Before each commit that touches a page, the hook runs two read-only
+audits: this FAQ schema check, and the canonical check from `sync.py`
+(`python3 _partials/sync.py --check`, which audits without stamping).
+Both run even if the first fails, so one commit attempt surfaces every
+problem rather than trickling them out.
+
+The hook lives at `_partials/hooks/pre-commit`, versioned with the repo
+rather than untracked in `.git/hooks`, so it survives a fresh clone.
 
 **It needs enabling once per clone:**
 
@@ -96,9 +114,16 @@ git config core.hooksPath _partials/hooks
 
 Already set on this machine. Confirm with `git config core.hooksPath`.
 
-The hook skips commits that touch no FAQ page, and it skips itself rather
-than blocking you if it cannot find a `python3`, since a commit should
-never be wedged by a missing interpreter. To commit past a real failure:
+Every page on this site is an `index.html`, so the hook skips commits
+that touch no page at all (scripts, css, images). It also skips itself
+rather than blocking you if it cannot find a `python3`, since a commit
+should never be wedged by a missing interpreter.
+
+One thing to know: the canonical audit covers every indexable page in the
+repo, not only the ones being committed. If it ever fails on a page you
+did not touch, that is a real pre-existing problem rather than a false
+alarm — but it will block the commit in front of you. To commit past a
+failure:
 
 ```
 git commit --no-verify

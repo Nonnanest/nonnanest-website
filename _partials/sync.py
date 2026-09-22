@@ -7,7 +7,8 @@ tracked HTML page between PARTIAL markers. Also ensures every page links
 css/site-chrome.css from its <head>.
 
 Usage:
-    python3 _partials/sync.py
+    python3 _partials/sync.py            # stamp, then audit canonicals
+    python3 _partials/sync.py --check    # audit canonicals only, no writes
 
 Idempotent — safe to run repeatedly.
 Bootstraps automatically: if a page has no PARTIAL markers, this looks
@@ -183,7 +184,25 @@ def check_canonicals() -> list:
     return problems
 
 
+def report_canonicals() -> int:
+    problems = check_canonicals()
+    if problems:
+        print(f"\n✗ Canonical check failed ({len(problems)} problem(s)):")
+        for problem in problems:
+            print(f"  {problem}")
+        return 1
+    print("\n✓ Canonical check passed on every indexable page.")
+    return 0
+
+
 def main() -> int:
+    if "--check" in sys.argv:
+        # Audit only, stamping nothing. This is what the pre-commit hook
+        # runs: a hook that rewrote nav and footer across 21 pages midway
+        # through a commit would be a nasty surprise.
+        print("Auditing canonicals across every indexable page...")
+        return report_canonicals()
+
     print(f"Syncing partials across {len(PAGES)} pages...")
     report = []
     for page in PAGES:
@@ -194,14 +213,7 @@ def main() -> int:
         print("\nCanonical check skipped.")
         return 0
 
-    problems = check_canonicals()
-    if problems:
-        print(f"\n✗ Canonical check failed ({len(problems)} problem(s)):")
-        for problem in problems:
-            print(f"  {problem}")
-        return 1
-    print("\n✓ Canonical check passed on every indexable page.")
-    return 0
+    return report_canonicals()
 
 
 if __name__ == "__main__":
