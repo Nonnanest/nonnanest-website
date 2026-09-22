@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# Nonnanest pre-commit hook.
+#
+# Blocks a commit whose FAQ page copy no longer matches its FAQPage
+# JSON-LD. That drift is silent - the rendered page looks completely
+# normal while the markup describes older copy - so a human reviewing
+# the diff will not catch it.
+#
+# Installed via core.hooksPath, so this file is versioned with the repo
+# rather than living untracked in .git/hooks. See _partials/README.md.
+#
+# To commit anyway:  git commit --no-verify
+
+set -u
+
+# Only worth running when a page carrying an FAQ is part of this commit.
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+case "$staged" in
+    *index.html*) ;;
+    *) exit 0 ;;
+esac
+
+repo=$(git rev-parse --show-toplevel)
+script="$repo/_partials/sync_faq_schema.py"
+[ -f "$script" ] || exit 0
+
+# GitHub Desktop and other GUI clients run hooks with a minimal PATH that
+# often lacks Homebrew, so fall back to the python3 macOS ships with.
+python=""
+for candidate in python3 /opt/homebrew/bin/python3 /usr/local/bin/python3 /usr/bin/python3; do
+    if command -v "$candidate" >/dev/null 2>&1; then
+        python=$(command -v "$candidate")
+        break
+    fi
+done
+
+if [ -z "$python" ]; then
+    # Never wedge the commit over a missing interpreter - say so and let it through.
+    echo "pre-commit: no python3 found, skipping the FAQ schema check." >&2
+    exit 0
+fi
+
+"$python" "$script" --check || {
+    echo "" >&2
+    echo "Commit blocked: FAQ schema is out of sync with the visible FAQ." >&2
+    echo "  Fix:  python3 _partials/sync_faq_schema.py" >&2
+    echo "  then stage the updated page and commit again." >&2
+    echo "  Bypass:  git commit --no-verify" >&2
+    exit 1
+}
+
+exit 0

@@ -77,10 +77,37 @@ python3 _partials/sync_faq_schema.py --check
 ```
 
 `--check` exits non-zero when a page's schema has drifted from its visible
-FAQ. Worth running before a deploy: this drift is silent, because the
-rendered page looks completely normal while the markup describes older
-copy. That is exactly how the homepage schema ended up missing a whole
-question and carrying three stale answers.
+FAQ. This drift is silent, because the rendered page looks completely
+normal while the markup describes older copy. That is exactly how the
+homepage schema ended up missing a whole question and carrying three
+stale answers.
+
+### The pre-commit hook
+
+`--check` runs automatically before each commit that touches a page with
+an FAQ. The hook lives at `_partials/hooks/pre-commit`, versioned with the
+repo rather than untracked in `.git/hooks`, so it survives a fresh clone.
+
+**It needs enabling once per clone:**
+
+```
+git config core.hooksPath _partials/hooks
+```
+
+Already set on this machine. Confirm with `git config core.hooksPath`.
+
+The hook skips commits that touch no FAQ page, and it skips itself rather
+than blocking you if it cannot find a `python3`, since a commit should
+never be wedged by a missing interpreter. To commit past a real failure:
+
+```
+git commit --no-verify
+```
+
+This also works from GitHub Desktop, which runs hooks the same way. Note
+that GUI clients start with a minimal `PATH`, which is why the hook looks
+for Homebrew's python before falling back to `/usr/bin/python3` — and why
+the sync script stays compatible with the 3.9 macOS ships.
 
 Do not edit the JSON-LD between the `<!-- PARTIAL:faq-schema-* -->` markers
 by hand — the next sync overwrites it. Edit the visible FAQ and re-run.

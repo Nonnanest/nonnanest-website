@@ -25,6 +25,8 @@ Adding a page: append it to FAQ_PAGES. The page needs a visible FAQ in
 one of the two shapes below and an existing FAQPage block to bootstrap
 from (or the markers already in place).
 """
+from __future__ import annotations  # keeps this runnable on macOS system python 3.9
+
 import html
 import json
 import re
