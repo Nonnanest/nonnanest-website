@@ -1,0 +1,81 @@
+#!/bin/sh
+#
+# Nonnanest pre-commit hook.
+#
+# Runs the two audits that catch mistakes a human reading the diff will
+# not:
+#
+#   1. FAQ schema drift - a page's FAQPage JSON-LD no longer matching the
+#      FAQ it visibly shows. Silent, because the rendered page looks
+#      completely normal while the markup describes older copy.
+#
+#   2. Canonical errors - a page whose rel=canonical or og:url names a
+#      different page. New pages here are made by copying an existing
+#      one, so the classic version is a copy that still points at its
+#      source, quietly telling Google the new page is a duplicate.
+#
+# Both audits are read-only. Neither stamps anything, because a hook that
+# rewrote pages midway through a commit would be a nasty surprise.
+#
+# Installed via core.hooksPath, so this file is versioned with the repo
+# rather than living untracked in .git/hooks. See _partials/README.md.
+#
+# To commit anyway:  git commit --no-verify
+
+set -u
+
+# Every page on this site is an index.html, so this gate means "is any
+# page part of this commit?" Commits touching only scripts, css or
+# images skip both audits.
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+case "$staged" in
+    *index.html*) ;;
+    *) exit 0 ;;
+esac
+
+repo=$(git rev-parse --show-toplevel)
+
+# GitHub Desktop and other GUI clients run hooks with a minimal PATH that
+# often lacks Homebrew, so fall back to the python3 macOS ships.
+python=""
+for candidate in python3 /opt/homebrew/bin/python3 /usr/local/bin/python3 /usr/bin/python3; do
+    if command -v "$candidate" >/dev/null 2>&1; then
+        python=$(command -v "$candidate")
+        break
+    fi
+done
+
+if [ -z "$python" ]; then
+    # Never wedge the commit over a missing interpreter - say so and let it through.
+    echo "pre-commit: no python3 found, skipping the page audits." >&2
+    exit 0
+fi
+
+status=0
+
+# Both audits run even if the first fails, so one commit attempt surfaces
+# every problem rather than trickling them out one at a time.
+faq="$repo/_partials/sync_faq_schema.py"
+if [ -f "$faq" ] && ! "$python" "$faq" --check; then
+    echo "" >&2
+    echo "FAQ schema is out of sync with the visible FAQ." >&2
+    echo "  Fix:  python3 _partials/sync_faq_schema.py" >&2
+    echo "  then stage the updated page." >&2
+    status=1
+fi
+
+sync="$repo/_partials/sync.py"
+if [ -f "$sync" ] && ! "$python" "$sync" --check; then
+    echo "" >&2
+    echo "A page's canonical or og:url points somewhere else." >&2
+    echo "  Fix the tags named above by hand, then stage the page." >&2
+    status=1
+fi
+
+if [ "$status" -ne 0 ]; then
+    echo "" >&2
+    echo "Commit blocked. Bypass with:  git commit --no-verify" >&2
+    exit 1
+fi
+
+exit 0

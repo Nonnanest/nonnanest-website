@@ -15,6 +15,7 @@ tool, we keep the site cohesive by:
 - `nav.html` — canonical nav (desktop + mobile drawer)
 - `footer.html` — canonical footer (4-column grid, social row, wellness disclaimer)
 - `sync.py` — stamping script (idempotent, safe to run repeatedly)
+- `sync_faq_schema.py` — regenerates FAQ JSON-LD from each page's visible FAQ
 - The `.css` that makes it all work lives at `/css/site-chrome.css`
 
 ## Editing the nav or footer
@@ -27,6 +28,19 @@ tool, we keep the site cohesive by:
 
 Edit the `PAGES` list at the top of `sync.py`. The new page will get the
 canonical nav/footer stamped on the next run.
+
+## Canonical check
+
+After stamping, `sync.py` audits `rel=canonical` and `og:url` on every
+indexable page in the repo, not just the ones in `PAGES`, and exits
+non-zero if any are wrong. To audit without stamping anything:
+
+```
+python3 _partials/sync.py --check
+```
+
+That is the form the pre-commit hook runs. `--skip-canonical-check`
+stamps without auditing.
 
 ## The markers
 
@@ -55,6 +69,82 @@ Do not paraphrase. Do not edit inline in pages. Edit here only.
 - Instagram: `nonnanest.baby`
 - Facebook: `nonnanest`
 - YouTube: `@nonnanest`
+
+## FAQ schema
+
+The `FAQPage` JSON-LD on the homepage and shop page is **generated**, not
+hand-maintained. The visible FAQ is the source of truth, because that is
+the copy that goes through voice review, and Google expects FAQ markup to
+mirror what the reader actually sees.
+
+After editing any visible FAQ question or answer:
+
+```
+python3 _partials/sync_faq_schema.py
+```
+
+Then commit the page. To verify without writing anything:
+
+```
+python3 _partials/sync_faq_schema.py --check
+```
+
+`--check` exits non-zero when a page's schema has drifted from its visible
+FAQ. This drift is silent, because the rendered page looks completely
+normal while the markup describes older copy. That is exactly how the
+homepage schema ended up missing a whole question and carrying three
+stale answers.
+
+### The pre-commit hook
+
+Before each commit that touches a page, the hook runs two read-only
+audits: this FAQ schema check, and the canonical check from `sync.py`
+(`python3 _partials/sync.py --check`, which audits without stamping).
+Both run even if the first fails, so one commit attempt surfaces every
+problem rather than trickling them out.
+
+The hook lives at `_partials/hooks/pre-commit`, versioned with the repo
+rather than untracked in `.git/hooks`, so it survives a fresh clone.
+
+**It needs enabling once per clone:**
+
+```
+git config core.hooksPath _partials/hooks
+```
+
+Already set on this machine. Confirm with `git config core.hooksPath`.
+
+Every page on this site is an `index.html`, so the hook skips commits
+that touch no page at all (scripts, css, images). It also skips itself
+rather than blocking you if it cannot find a `python3`, since a commit
+should never be wedged by a missing interpreter.
+
+One thing to know: the canonical audit covers every indexable page in the
+repo, not only the ones being committed. If it ever fails on a page you
+did not touch, that is a real pre-existing problem rather than a false
+alarm — but it will block the commit in front of you. To commit past a
+failure:
+
+```
+git commit --no-verify
+```
+
+This also works from GitHub Desktop, which runs hooks the same way. Note
+that GUI clients start with a minimal `PATH`, which is why the hook looks
+for Homebrew's python before falling back to `/usr/bin/python3` — and why
+the sync script stays compatible with the 3.9 macOS ships.
+
+Do not edit the JSON-LD between the `<!-- PARTIAL:faq-schema-* -->` markers
+by hand — the next sync overwrites it. Edit the visible FAQ and re-run.
+
+A trailing "read more" link whose text ends in `→` is treated as
+navigation and left out of the schema answer. Everything else in the
+answer is carried through verbatim.
+
+Adding a page: append it to `FAQ_PAGES` in the script. It needs a visible
+FAQ in one of the two supported shapes (the homepage accordion, or the
+shop page's `<h3>` + `<p>` items) and an existing `FAQPage` block to
+bootstrap from.
 
 ## Analytics
 
