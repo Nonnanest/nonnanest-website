@@ -15,6 +15,7 @@ tool, we keep the site cohesive by:
 - `nav.html` — canonical nav (desktop + mobile drawer)
 - `footer.html` — canonical footer (4-column grid, social row, wellness disclaimer)
 - `sync.py` — stamping script (idempotent, safe to run repeatedly)
+- `sync_faq_schema.py` — regenerates FAQ JSON-LD from each page's visible FAQ
 - The `.css` that makes it all work lives at `/css/site-chrome.css`
 
 ## Editing the nav or footer
@@ -55,6 +56,43 @@ Do not paraphrase. Do not edit inline in pages. Edit here only.
 - Instagram: `nonnanest.baby`
 - Facebook: `nonnanest`
 - YouTube: `@nonnanest`
+
+## FAQ schema
+
+The `FAQPage` JSON-LD on the homepage and shop page is **generated**, not
+hand-maintained. The visible FAQ is the source of truth, because that is
+the copy that goes through voice review, and Google expects FAQ markup to
+mirror what the reader actually sees.
+
+After editing any visible FAQ question or answer:
+
+```
+python3 _partials/sync_faq_schema.py
+```
+
+Then commit the page. To verify without writing anything:
+
+```
+python3 _partials/sync_faq_schema.py --check
+```
+
+`--check` exits non-zero when a page's schema has drifted from its visible
+FAQ. Worth running before a deploy: this drift is silent, because the
+rendered page looks completely normal while the markup describes older
+copy. That is exactly how the homepage schema ended up missing a whole
+question and carrying three stale answers.
+
+Do not edit the JSON-LD between the `<!-- PARTIAL:faq-schema-* -->` markers
+by hand — the next sync overwrites it. Edit the visible FAQ and re-run.
+
+A trailing "read more" link whose text ends in `→` is treated as
+navigation and left out of the schema answer. Everything else in the
+answer is carried through verbatim.
+
+Adding a page: append it to `FAQ_PAGES` in the script. It needs a visible
+FAQ in one of the two supported shapes (the homepage accordion, or the
+shop page's `<h3>` + `<p>` items) and an existing `FAQPage` block to
+bootstrap from.
 
 ## Analytics
 
