@@ -63,8 +63,8 @@
   }
 
   /* HERO — the form sits above the fold on phone and desktop alike. */
-  .hero{padding:22px 0 12px}
-  .hero-grid{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
+  .hero{padding:14px 0 12px}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:12px;letter-spacing:.14em;text-transform:uppercase;
@@ -74,14 +74,14 @@
   h1{
     font-family:'Fraunces',Georgia,serif;
     font-size:clamp(30px,6vw,46px);line-height:1.12;font-weight:400;
-    margin:0 0 10px;letter-spacing:-.01em;
+    margin:0 0 8px;letter-spacing:-.01em;
   }
-  .sub{font-size:clamp(15.5px,2.4vw,18px);color:var(--muted);margin:0 0 18px;max-width:46ch;line-height:1.5}
+  .sub{font-size:clamp(15.5px,2.4vw,18px);color:var(--muted);margin:0 0 14px;max-width:46ch;line-height:1.5}
   .sub strong{color:var(--ink);font-weight:500}
 
   .capture{
     background:#fff;border:1px solid var(--line);border-radius:16px;
-    padding:18px 18px;box-shadow:0 1px 3px rgba(43,47,46,.05);
+    padding:16px 16px;box-shadow:0 1px 3px rgba(43,47,46,.05);
   }
   .capture h2{
     font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:500;
@@ -89,6 +89,14 @@
   }
   .capture p.note{font-size:14px;color:var(--muted);margin:0 0 10px}
   .capture .hs-form-frame{max-width:100%}
+  .read-guide{
+    margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 16px;
+    border:1px solid var(--teal);border-radius:12px;
+    color:var(--teal);text-decoration:none;font-size:15px;font-weight:400;
+    background:transparent;text-align:center;
+  }
+  .read-guide:hover{background:rgba(61,107,109,.06)}
   .disclaimer-hero{margin:12px 0 0;font-size:11.5px;line-height:1.55;color:var(--muted)}
 
   .hero-img{
@@ -155,7 +163,7 @@
         <p class="sub">Five questions that get you to the right monitor &mdash; without anyone&rsquo;s top&#8209;ten list. <strong>Free, plus $30 off SightAware</strong> if it turns out to be your fit.</p>
 
         <div class="capture">
-          <h2>Send me the guide</h2>
+          <h2>Send me the $30 off code</h2>
           <p class="note">Drop your email and we&rsquo;ll send the code for $30 off.</p>
           <div class="hs-form-frame" data-region="na2" data-form-id="3039c3b6-ed0d-45a7-963b-317df8b619f3" data-portal-id="242981565"></div>
         </div>
@@ -166,6 +174,12 @@
              miss even though the footer also carries it. Exact approved
              wording — do not paraphrase or abbreviate. -->
         <p class="disclaimer disclaimer-hero">Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
+
+        <a class="read-guide" href="/how-to-choose-a-baby-monitor/">
+          Or read the full guide now &mdash; free, no email needed
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+
       </div>
 
       <div>
@@ -192,8 +206,7 @@
       </div>
 
       <div class="exits">
-        <a href="/how-to-choose-a-baby-monitor/">Prefer to just read it? Full guide</a>
-        <a href="/shop/">Already decided? See SightAware</a>
+        <a href="/shop/">Already decided? See SightAware &rarr;</a>
       </div>
     </div>
   </section>
