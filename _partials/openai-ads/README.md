@@ -20,7 +20,7 @@ The split domain is the reason `order_created` is not in this repo.
 | `contents_viewed` | [`shop/index.html`](../../shop/index.html) | `/shop/` finishing load |
 | `checkout_started` | `shop/index.html`, via the Buy Button's `openCheckout` event | the SDK beginning the checkout hand-off |
 | `lead_created` | [`how-to-choose-a-baby-monitor/index.html`](../../how-to-choose-a-baby-monitor/index.html) | HubSpot `hs-form-event:on-submission:success` for the $30-off form (`3039c3b6-…`); the same handler fires Meta `Lead` and GA4 `generate_lead` with a shared `event_id` |
-| `order_created` | [`shopify-custom-pixel.js`](./shopify-custom-pixel.js) — **installed in Shopify admin, not here** | Shopify `checkout_completed` |
+| `order_created` | [`shopify-custom-pixel.js`](./shopify-custom-pixel.js) — **installed in Shopify admin, not here** | Shopify `checkout_completed` — but see the sandbox limitation below |
 
 `page_viewed` is fired on `DOMContentLoaded` rather than inline: the loader sits
 above `<title>` in `<head>`, so `document.title` is still empty at parse time.
@@ -39,16 +39,48 @@ Idempotent, and it walks the repo rather than a hand-maintained list, so new
 pages pick the Pixel up automatically. Edit `HEAD_BLOCK` in that script to
 change the snippet site-wide.
 
-## Remaining install step (needs Shopify admin — not doable from this repo)
+## Who owns which Shopify-side event
 
-`order_created` is **not live yet.** Install it:
+| Event | Owner |
+|---|---|
+| GA4 `page_view`, `view_item`, `add_to_cart`, `begin_checkout`, `purchase` | **Google & YouTube sales channel**, connected to GA4 property `418635238`. Installed Sept 2026; verified firing on the storefront with a single `G-VXRF2PKBGP` collect hit and no duplication. |
+| Meta `Purchase` | Facebook & Instagram sales channel (Web + Server). |
+| OpenAI `order_created` | `shopify-custom-pixel.js`. |
 
-1. Shopify admin → **Settings → Customer events → Add custom pixel**.
-2. Name it `OpenAI Ads Pixel`, permission **Analytics**.
-3. Paste the whole of `shopify-custom-pixel.js`, **Save**, then **Connect**.
+Never add GA4 back into the custom pixel while the channel is installed — every
+purchase would count twice.
 
-Shopify's `checkout_completed` fires only after payment succeeds, and does not
-re-fire on a thank-you-page refresh. `event_id` is set to the Shopify order id.
+### Why GA4 is not in the custom pixel
+
+It was, briefly, and it could not work. Shopify runs custom pixels in a sandbox
+that **shims the DOM**: a `<script>` appended with
+`document.createElement` / `appendChild` never actually loads. `gtag.js` was
+proven not to fetch at all from inside the sandbox — no network request was made,
+and the sandbox's CSP is only `frame-ancestors`, so the block is the DOM shim,
+not CSP. The console warning `In a sandboxed environment, addEventListener may
+not behave as expected` is the same shim announcing itself.
+
+The Measurement Protocol is the usual workaround, and it was rejected here: it
+would put a write-capable API secret in client-side code, and its events do not
+carry proper traffic-source attribution — which is the entire thing this setup
+exists to measure.
+
+### The gtag shim bug, recorded so it is not reintroduced
+
+An earlier version of the pixel used
+`const gtag = (...args) => window.dataLayer.push(args)`. That pushes a plain
+Array; `gtag.js` only processes `arguments` objects and silently ignores Arrays,
+so every GA4 command including `purchase` was discarded. Confirmed by A/B test on
+a live page. If GA4 is ever hand-rolled again anywhere, use
+`function gtag(){ dataLayer.push(arguments); }`.
+
+### ⚠️ `order_created` is unverified
+
+The OpenAI SDK is injected by the same `createElement`/`appendChild` route that
+failed for `gtag.js`, so expect it to fail the same way. It cannot be tested
+without a real order. **If OpenAI Ads is not a live channel, disconnect the
+custom pixel** rather than leaving a non-functioning one connected. The durable
+fix is the server-side Conversions API webhook described below.
 
 ## Attribution: how `oppref` travels
 
@@ -90,9 +122,9 @@ in the repo), and the Pixel is installed the same unconditional way as the
 existing GA4 and Meta pixels. If a consent tool is added later, gate
 `js/oaiq.js` behind it alongside those two.
 
-## Before going to production
+## Debug flags
 
-`debug: true` is set in **two** places. Flip both to `false`:
+Both are already `false` and should stay that way in production:
 
-- `js/oaiq.js` → `var DEBUG = true;`
-- `shopify-custom-pixel.js` → `debug: true` (edit in the Shopify admin box)
+- `js/oaiq.js` → `var OPENAI_DEBUG = false;`
+- `shopify-custom-pixel.js` → `oaiq("init", { …, debug: false })`
