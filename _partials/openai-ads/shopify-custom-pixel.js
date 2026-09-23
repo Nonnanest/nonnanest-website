@@ -1,93 +1,63 @@
 /**
- * Nonnanest checkout-completion pixel for Shopify.
+ * Nonnanest — Shopify Web Pixel: OpenAI Ads `order_created` only.
  *
- * Sends:
- * - GA4 `purchase`, using the website's GA client/session IDs carried into
- *   checkout as order attributes.
- * - OpenAI Ads `order_created`, preserving the existing integration.
+ * INSTALL
+ *   Shopify admin -> Settings -> Customer events -> (the Nonnanest custom pixel)
+ *   Permission: Analytics. Paste, Save, Connect.
  *
- * Meta Purchase is intentionally NOT sent here. Shopify's official
- * Facebook & Instagram app is connected with Web + Server tracking and owns
- * that event. Sending it again here would risk duplicate purchases.
+ * WHAT OWNS WHAT — do not add any of these back here:
+ *   GA4 (page_view / view_item / add_to_cart / begin_checkout / purchase)
+ *       -> the Google & YouTube sales channel, connected to property 418635238.
+ *          Installed Sept 2026 and verified firing on the storefront.
+ *   Meta Purchase
+ *       -> the Facebook & Instagram sales channel (Web + Server).
+ *   OpenAI order_created
+ *       -> this file.
+ * Adding GA4 back here double-counts every purchase against the channel.
  *
- * Install in Shopify: Settings -> Customer events -> Add custom pixel.
- * Name: Nonnanest - GA4 and OpenAI purchase
+ * ⚠️ KNOWN LIMITATION — this pixel is UNVERIFIED and probably does not fire.
+ * Shopify runs custom pixels in a sandbox that shims the DOM. A <script> tag
+ * appended via document.createElement/appendChild never actually loads: GA4's
+ * gtag.js was proven not to fetch at all from here (no network request, and the
+ * sandbox CSP is only `frame-ancestors`, so it is the DOM shim, not CSP). The
+ * OpenAI SDK below is injected exactly the same way, so expect the same result.
+ * It cannot be tested without placing a real order.
+ *
+ * THE REAL FIX, when OpenAI Ads becomes a live channel: send the order from a
+ * Shopify `orders/paid` webhook through OpenAI's server-side Conversions API,
+ * reading `oppref` out of the order's note_attributes and reusing the Shopify
+ * order id as `event_id`. That also solves the attribution gap described in
+ * README.md — the sandbox cannot read the `__oppref` cookie set on
+ * nonnanest.com. That webhook needs somewhere to run; this site is static.
+ *
+ * If OpenAI Ads is not running, disconnect this pixel rather than leaving a
+ * non-functioning pixel connected.
  */
-analytics.subscribe("checkout_completed", (event) => {
+
+const OPENAI_PIXEL_ID = "3BtUqwjBRU491xrkqEJtib";
+
+analytics.subscribe("checkout_completed", function (event) {
   try {
-    const checkout = (event.data && event.data.checkout) || {};
-    const orderId = String(
-      (checkout.order && checkout.order.id) || checkout.token || ""
-    );
-    if (!orderId) return;
+    var checkout = (event.data && event.data.checkout) || {};
+    var orderId = String((checkout.order && checkout.order.id) || checkout.token || "");
+    if (!orderId) { return; }
 
-    const seenKey = "nn_purchase_" + orderId;
+    // Shopify fires checkout_completed once per completion and does not re-fire
+    // on a thank-you-page refresh. Belt-and-braces only — never block the event
+    // if storage is unavailable in the sandbox.
+    var seenKey = "nn_purchase_" + orderId;
     try {
-      if (window.localStorage.getItem(seenKey)) return;
+      if (window.localStorage.getItem(seenKey)) { return; }
       window.localStorage.setItem(seenKey, "1");
-    } catch (e) { /* Shopify's event is already once-per-completion. */ }
+    } catch (e) { /* no storage in the sandbox — rely on Shopify's own dedupe */ }
 
-    const total = checkout.totalPrice || {};
-    const subtotal = checkout.subtotalPrice || {};
-    const tax = checkout.totalTax || {};
-    const shipping = checkout.shippingLine && checkout.shippingLine.price;
-    const value = parseFloat(total.amount || "0") || 0;
-    const currency = total.currencyCode || "USD";
-    const attributes = checkout.attributes || [];
-    const attr = (key) => {
-      const found = attributes.find((a) => a && a.key === key);
-      return found ? String(found.value || "") : "";
-    };
+    var total = checkout.totalPrice || {};
+    var amount = parseFloat(total.amount);
+    if (!isFinite(amount)) { amount = 0; }
+    var currency = total.currencyCode || "USD";
 
-    const items = (checkout.lineItems || []).map((line) => {
-      const variant = line.variant || {};
-      const product = variant.product || {};
-      let unitPrice = null;
-      if (variant.price && variant.price.amount != null) {
-        unitPrice = parseFloat(variant.price.amount);
-      }
-      const item = {
-        item_id: String(product.id || variant.id || variant.sku || "sightaware"),
-        item_name: product.title || line.title || "SightAware Baby Monitor",
-        quantity: Number(line.quantity || 1)
-      };
-      if (variant.sku) item.item_variant = String(variant.sku);
-      if (unitPrice != null && isFinite(unitPrice)) item.price = unitPrice;
-      return item;
-    });
-
-    /* ---------------- GA4 purchase ---------------------------------- */
-    window.dataLayer = window.dataLayer || [];
-    const gtag = (...args) => { window.dataLayer.push(args); };
-    const gaClientId = attr("nn_ga_client_id");
-    const gaSessionId = attr("nn_ga_session_id");
-    const gaConfig = { send_page_view: false };
-    if (gaClientId) gaConfig.client_id = gaClientId;
-
-    const gaScript = document.createElement("script");
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-VXRF2PKBGP";
-    document.head.appendChild(gaScript);
-    gtag("js", new Date());
-    gtag("config", "G-VXRF2PKBGP", gaConfig);
-
-    const purchase = {
-      transaction_id: orderId,
-      value: value,
-      currency: currency,
-      items: items
-    };
-    if (gaSessionId) purchase.session_id = Number(gaSessionId) || gaSessionId;
-    if (subtotal.amount != null) purchase.subtotal = parseFloat(subtotal.amount) || 0;
-    if (tax.amount != null) purchase.tax = parseFloat(tax.amount) || 0;
-    if (shipping && shipping.amount != null) {
-      purchase.shipping = parseFloat(shipping.amount) || 0;
-    }
-    gtag("event", "purchase", purchase);
-
-    /* ---------------- OpenAI Ads order_created ---------------------- */
-    !function (w, d, s, u) {
-      if (w.oaiq) return;
+    (function (w, d, s, u) {
+      if (w.oaiq) { return; }
       var q = function () { q.q.push(arguments); };
       q.q = [];
       w.oaiq = q;
@@ -96,27 +66,30 @@ analytics.subscribe("checkout_completed", (event) => {
       js.src = u;
       var first = d.getElementsByTagName(s)[0];
       first.parentNode.insertBefore(js, first);
-    }(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+    })(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
 
-    oaiq("init", { pixelId: "3BtUqwjBRU491xrkqEJtib", debug: false });
+    oaiq("init", { pixelId: OPENAI_PIXEL_ID, debug: false });
     oaiq(
       "measure",
       "order_created",
       {
         type: "contents",
-        amount: Math.round(value * 100),
+        amount: Math.round(amount * 100),
         currency: currency,
-        contents: (checkout.lineItems || []).map((line) => ({
-          id: (line.variant && line.variant.sku) || "sightaware",
-          name: (line.variant && line.variant.product && line.variant.product.title) ||
-                line.title || "SightAware Baby Monitor",
-          content_type: "product",
-          quantity: line.quantity || 1
-        }))
+        contents: (checkout.lineItems || []).map(function (line) {
+          var variant = line.variant || {};
+          var product = variant.product || {};
+          return {
+            id: variant.sku || String(product.id || "sightaware"),
+            name: product.title || line.title || "SightAware Baby Monitor",
+            content_type: "product",
+            quantity: line.quantity || 1
+          };
+        })
       },
       { event_id: orderId }
     );
   } catch (error) {
-    console.error("[Nonnanest purchase pixel] failed", error);
+    console.error("[Nonnanest pixel] checkout_completed failed", error);
   }
 });
