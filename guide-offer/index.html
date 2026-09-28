@@ -123,6 +123,23 @@
     font-family:'Outfit',sans-serif;
   }
 
+  /* REVIEW — one customer voice between the questions and the trust note. */
+  .review{margin:32px 0 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;max-width:640px}
+  .review-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+  .review-stars{display:inline-flex;gap:2px;color:var(--teal)}
+  .review-stars svg{width:17px;height:17px}
+  .review-verified{
+    display:inline-flex;align-items:center;gap:5px;padding:3px 10px;
+    background:rgba(61,107,109,.07);border:1px solid rgba(61,107,109,.18);border-radius:100px;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--teal);
+  }
+  .review-verified svg{width:11px;height:11px}
+  .review blockquote{
+    margin:0 0 12px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:300;
+    font-size:clamp(17px,2.6vw,19px);line-height:1.5;color:var(--ink);
+  }
+  .review cite{font-style:normal;font-size:14px;font-weight:500;color:var(--ink)}
+
   /* TRUST */
   .trust{margin:40px 0 0;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .trust p{margin:0;color:var(--muted);font-size:15px;max-width:62ch}
@@ -199,6 +216,15 @@
         <li>WiFi, or no WiFi?</li>
         <li>What does it cost after you buy it?</li>
       </ol>
+
+      <figure class="review">
+        <div class="review-head">
+          <span class="review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+          <span class="review-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Verified Buyer</span>
+        </div>
+        <blockquote>&ldquo;We&rsquo;ve tried other baby monitors previously but nonnanest truly is top tier. The display is so clear, it&rsquo;s easy to setup and scanning baby&rsquo;s temperature really is an unbelievable feature.&rdquo;</blockquote>
+        <figcaption><cite>Michaela F.</cite></figcaption>
+      </figure>
 
       <div class="trust">
         <p>Written by a parent who built one. Nonnanest is a <strong>contactless wellness monitor</strong> &mdash; skin temperature awareness with <strong>no WiFi, no app and no subscription</strong>. The guide is honest about where other kinds of monitor are the better call.</p>
