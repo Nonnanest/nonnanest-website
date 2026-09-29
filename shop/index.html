@@ -208,6 +208,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 .registry-cta:hover { background: #D96389; transform: translateY(-1px); }
 .registry-cta.poppylist { background: #f04f33; }
 .registry-cta.poppylist:hover { background: #D6412A; }
+.registry-cta.amazon { background: #232F3E; }
+.registry-cta.amazon:hover { background: #37475A; }
 .registry-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .registry-note { font-size: 11px; color: var(--clay); margin-top: 8px; margin-bottom: 22px; line-height: 1.45; }
 
@@ -493,14 +495,28 @@ function closeMobileNav() {
     </div>
 
     <div class="registry-row">
-      <a href="https://www.babylist.com/add-items" target="_blank" rel="noopener" class="registry-cta">Add to Babylist</a>
+      <a href="https://www.babylist.com/add-items" target="_blank" rel="noopener" class="registry-cta" data-registry="babylist">Add to Babylist</a>
       <a href="https://www.poppylist.com/add_to_registry?source=shopify&amp;product_name=SightAware%E2%84%A2%20by%20Nonnanest&amp;product_price_cents=32900&amp;product_url=https%3A%2F%2Fwww.nonnanest.com%2Fshop%2F&amp;product_image_url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0857%2F3337%2F6193%2Ffiles%2FNonnanest_Handheld_NAPPA_Award.png%3Fv%3D1786557869"
          target="_blank"
          rel="noopener noreferrer"
          class="registry-cta poppylist"
-         onclick="if(typeof gtag==='function'){gtag('event','poppylist_add_to_registry',{product_id:'10929901338817'});}">Add to Poppylist</a>
+         data-registry="poppylist">Add to Poppylist</a>
+      <a href="https://www.amazon.com/dp/B0HHGK9RSZ" target="_blank" rel="noopener" class="registry-cta amazon" data-registry="amazon">Add to Amazon Registry</a>
     </div>
     <p class="registry-note">Add this product to your baby registry.</p>
+    <script>
+    // One GA4 event for every registry button; the "registry" param says which one.
+    document.querySelectorAll('[data-registry]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'registry_click', {
+          registry: a.dataset.registry,
+          product_id: '10929901338817',
+          transport_type: 'beacon'
+        });
+      });
+    });
+    </script>
 
     <div class="product-disclaimer">
       Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only. <a href="/terms/">Full terms</a>
