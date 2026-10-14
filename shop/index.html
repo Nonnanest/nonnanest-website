@@ -95,6 +95,10 @@
     { "@type": "PropertyValue", "name": "Display", "value": "Dedicated 5-inch HD handheld display — no phone or app required" },
     { "@type": "PropertyValue", "name": "Wearables Required", "value": "None — fully contactless from up to 4 feet" }
   ],
+  "award": [
+    "2026 NAPPA Award Winner, Best for Baby",
+    "ZestYears Golden Grandparent Award for Excellence in Baby Monitoring (2026)"
+  ],
   "offers": {
     "@type": "Offer",
     "url": "https://www.nonnanest.com/shop/",
@@ -226,6 +230,17 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 
 /* Shopify Buy Button container */
 .shopify-buy-container { margin-bottom: 16px; }
+
+/* Awards strip, directly under the hero Buy Button */
+.awards-strip { margin: 4px 0 20px; padding: 16px 18px; background: var(--warm-white); border: 1px solid var(--linen); border-radius: 14px; text-align: center; }
+.awards-strip-heading { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--bark); margin: 0 0 12px; }
+.awards-strip-items { display: flex; justify-content: center; gap: 28px; }
+.awards-strip-item { margin: 0; flex: 0 1 150px; display: flex; flex-direction: column; align-items: center; }
+.awards-strip-item img { width: 80px; height: 80px; object-fit: contain; }
+.awards-strip-item figcaption { font-size: 12.5px; line-height: 1.35; color: var(--earth); margin-top: 8px; }
+.awards-strip-link { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--deep-teal); border-bottom: 1px solid var(--pale-aqua); padding-bottom: 1px; }
+.awards-strip-link:hover { color: var(--soft-teal); border-color: var(--soft-teal); }
+@media (max-width: 420px) { .awards-strip-items { gap: 16px; } .awards-strip-item img { width: 72px; height: 72px; } }
 
 /* ===== KEY DIFFERENTIATORS ===== */
 .diff-strip { padding: 60px 24px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--linen); }
@@ -492,6 +507,22 @@ function closeMobileNav() {
     <!-- Shopify Buy Button (hero) -->
     <div class="shopify-buy-container">
       <div id='product-component-hero'></div>
+    </div>
+
+    <!-- Awards strip: sits under the Buy Button so it never pushes the button down -->
+    <div class="awards-strip">
+      <p class="awards-strip-heading">Independently recognized</p>
+      <div class="awards-strip-items">
+        <figure class="awards-strip-item">
+          <img src="/images/nappa-2026-winner.png" alt="2026 National Parenting Product Awards Winner seal" width="974" height="691" loading="lazy">
+          <figcaption>2026 NAPPA Award Winner</figcaption>
+        </figure>
+        <figure class="awards-strip-item">
+          <img src="/images/zestyears-golden-grandparent-2026.png" alt="ZestYears Golden Grandparent Award winner seal" width="595" height="591" loading="lazy">
+          <figcaption>ZestYears Golden Grandparent Award</figcaption>
+        </figure>
+      </div>
+      <a href="/awards/" class="awards-strip-link">See our awards</a>
     </div>
 
     <div class="registry-row">
@@ -1055,6 +1086,7 @@ function closeMobileNav() {
       <h4>Company</h4>
       <a href="/story/">Our Story</a>
       <a href="/press/">Press</a>
+      <a href="/awards/">Awards</a>
       <a href="/support/">Support</a>
       <a href="/partners/">Partner Program</a>
       <a href="mailto:hello@nonnanest.com">Contact</a>
@@ -1062,7 +1094,7 @@ function closeMobileNav() {
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · NAPPA 2026 Award Winner</p>
+    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · <a href="/awards/">NAPPA 2026 Award Winner · ZestYears Golden Grandparent Award 2026</a></p>
     <div class="footer-bottom-links">
       <a href="/privacy-policy/">Privacy Policy</a>
       <a href="/terms/">Terms of Service</a>

@@ -55,6 +55,7 @@ PAGES = [
     "privacy/index.html",
     "how-to-choose-a-baby-monitor/index.html",
     "partners/index.html",
+    "awards/index.html",
 ]
 
 SITE = "https://www.nonnanest.com"
