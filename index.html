@@ -171,6 +171,10 @@
     "name": "Nonnanest"
   },
   "category": "Baby Monitors",
+  "award": [
+    "2026 NAPPA Award Winner, Best for Baby",
+    "ZestYears Golden Grandparent Award for Excellence in Baby Monitoring (2026)"
+  ],
   "additionalProperty": [
     {
       "@type": "PropertyValue",
@@ -1420,10 +1424,11 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   object-fit: cover; display: block;
 }
 /* Award pill floats over the white-wall space, top-right */
-.hero-award-float {
-  position: absolute; top: 28px; right: 28px;
-  z-index: 2; margin-bottom: 0;
+.hero-awards {
+  position: absolute; top: 28px; right: 28px; z-index: 2;
+  display: flex; align-items: center; gap: 12px;
 }
+.hero-award-float { margin-bottom: 0; }
 /* Dark bottom gradient carries the white type over pale footage */
 .hero-overlay {
   position: absolute; inset: auto 0 0 0; z-index: 2;
@@ -1465,13 +1470,18 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 @media (max-width: 900px) {
   .hero-media { height: clamp(380px, calc(100vh - var(--nav-h)), 620px); }
   .hero-overlay { padding: 120px 24px 32px; }
-  .hero-award-float { top: 16px; right: 16px; }
+  .hero-awards { top: 16px; right: 16px; }
+}
+/* Two pills side by side need ~700px; stack them below that */
+@media (max-width: 720px) {
+  .hero-awards { flex-direction: column; align-items: flex-end; gap: 8px; }
 }
 @media (max-width: 560px) {
   .hero-overlay .hero-actions { flex-direction: column; align-items: stretch; gap: 10px; }
   .hero-overlay .btn-primary, .hero-overlay .btn-secondary { justify-content: center; }
   /* Compact the award pill so it reads as a badge, not a banner */
-  .hero-award-float { top: 12px; right: 12px; padding: 6px 14px 6px 6px; gap: 9px; }
+  .hero-awards { top: 12px; right: 12px; }
+  .hero-award-float { padding: 6px 14px 6px 6px; gap: 9px; }
   .hero-award-float .hero-award-sub { display: none; }
   .hero-award-float .hero-award-title { font-size: 12px; }
   .hero-award-float .hero-award-seal { width: 34px; height: 34px; }
@@ -1536,13 +1546,22 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
       <source src="/videos/hero.mp4" type="video/mp4">
     </video>
 
-    <a href="#testimonials" class="hero-award-badge hero-award-float" aria-label="2026 NAPPA Award Winner &mdash; read evaluator reviews">
-      <img src="/images/nappa-2026-winner.png" alt="2026 National Parenting Product Awards Winner seal" class="hero-award-seal">
-      <span class="hero-award-text">
-        <span class="hero-award-title">2026 NAPPA Award Winner</span>
-        <span class="hero-award-sub">National Parenting Product Awards</span>
-      </span>
-    </a>
+    <div class="hero-awards">
+      <a href="#testimonials" class="hero-award-badge hero-award-float" aria-label="2026 NAPPA Award Winner &mdash; read evaluator reviews">
+        <img src="/images/nappa-2026-winner.png" alt="2026 National Parenting Product Awards Winner seal" class="hero-award-seal">
+        <span class="hero-award-text">
+          <span class="hero-award-title">2026 NAPPA Award Winner</span>
+          <span class="hero-award-sub">National Parenting Product Awards</span>
+        </span>
+      </a>
+      <a href="/awards/" class="hero-award-badge hero-award-float" aria-label="ZestYears Golden Grandparent Award 2026, see our awards">
+        <img src="/images/zestyears-golden-grandparent-2026.png" alt="ZestYears Golden Grandparent Award winner seal" class="hero-award-seal" width="595" height="591">
+        <span class="hero-award-text">
+          <span class="hero-award-title">Golden Grandparent Award</span>
+          <span class="hero-award-sub">ZestYears 2026</span>
+        </span>
+      </a>
+    </div>
 
     <div class="hero-overlay">
       <div class="hero-overlay-inner">
@@ -2085,6 +2104,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
       <h4>Company</h4>
       <a href="/story/">Our Story</a>
       <a href="/press/">Press</a>
+      <a href="/awards/">Awards</a>
       <a href="/support/">Support</a>
       <a href="/partners/">Partner Program</a>
       <a href="mailto:hello@nonnanest.com">Contact</a>
@@ -2092,7 +2112,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · NAPPA 2026 Award Winner</p>
+    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · <a href="/awards/">NAPPA 2026 Award Winner · ZestYears Golden Grandparent Award 2026</a></p>
     <div class="footer-bottom-links">
       <a href="/privacy-policy/">Privacy Policy</a>
       <a href="/terms/">Terms of Service</a>
