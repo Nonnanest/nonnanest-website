@@ -80,7 +80,7 @@
     {
       "@type": "Question",
       "name": "Does my baby need to wear anything?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Nonnanest uses passive infrared sensors to read your baby's skin temperature from up to 4 feet away. Nothing touches your baby — no socks, no ankle bands, no clips, no straps. Mount the camera directly above the crib and it does the rest. Every other device that tracks wellness insights requires a wearable — Nonnanest is the only one that doesn't." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Nonnanest uses contactless sensing to read your baby's skin temperature from up to 4 feet away. Nothing touches your baby: no socks, no ankle bands, no clips, no straps. Mount the camera directly above the crib and it does the rest." }
     },
     {
       "@type": "Question",
@@ -90,7 +90,7 @@
     {
       "@type": "Question",
       "name": "How is Nonnanest different from wearable monitors?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Every other device that tracks wellness insights requires your baby to wear a sock or ankle band. Nonnanest is the only monitor that senses skin temperature contactlessly — nothing touches your baby. We also don't require WiFi, don't need an app or phone, and have no subscriptions. We're built for parents who want skin temperature awareness without putting anything on their baby." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nonnanest is the only monitor that reads skin temperature without anything on your baby. We also don't require WiFi, don't need an app or phone, and have no subscriptions. We're built for parents who want skin temperature awareness without putting anything on their baby." }
     },
     {
       "@type": "Question",
@@ -100,22 +100,22 @@
     {
       "@type": "Question",
       "name": "How accurate is the skin temperature reading?",
-      "acceptedAnswer": { "@type": "Answer", "text": "We test every reading against a NIST-traceable blackbody calibration source, the same kind of reference used to check professional and medical infrared instruments. Nonnanest is calibrated to work within recommended ambient temperatures of 69–75°F and between 3 and 4 feet from baby, at a safe distance. While it works closer than 3 feet, pediatric guidance and our own guidance is to always maintain a 3-foot distance from baby." }
+      "acceptedAnswer": { "@type": "Answer", "text": "We test every reading against a NIST-traceable blackbody calibration source. Nonnanest is calibrated to work within recommended ambient temperatures of 69–75°F and between 3 and 4 feet from baby, at a safe distance. While it works closer than 3 feet, pediatric guidance and our own guidance is to always maintain a 3-foot distance from baby." }
     },
     {
       "@type": "Question",
       "name": "Why is skin temperature different from what a thermometer reads?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Skin runs cooler than the inside of the body, and how much cooler depends on the room. That's normal, and it's true of every contactless thermometer, including the one at your pediatrician's office. What matters for you isn't the exact gap. It's that skin temp goes up when your baby warms up. That's the signal Nonnanest is built to catch." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Skin runs cooler than the inside of the body, and how much cooler depends on the room. That's normal, and it's true of every contactless thermometer, including the one at your pediatrician's office. What matters for you isn't the exact gap. It's that skin temp goes up when your baby warms up. That's the change Nonnanest shows you." }
     },
     {
       "@type": "Question",
       "name": "Why doesn't the number match my thermometer?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because they're measuring different things. Your thermometer reads inside. Nonnanest reads the surface. Neither one is wrong. If Nonnanest shows something elevated, that's your cue to reach for the thermometer, not a replacement for it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Because they're measuring different things. Your thermometer reads inside. Nonnanest reads the surface. Neither one is wrong. Nonnanest shows you the change. It isn't a replacement for your thermometer." }
     },
     {
       "@type": "Question",
       "name": "What do I do if the reading looks high?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Check your baby with a contact thermometer. SightAware is built to get your attention, not to answer the question. Because every baby's baseline is different, you set your own alert threshold on the handheld, typically 2 to 3°F above your baby's usual reading. If anything concerns you, call your pediatrician. That part never changes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Check in. Look at layers, bedding, and the room. You know your baby. If something feels off, trust your instincts. Reach for your thermometer or call your pediatrician. Because every baby's baseline is different, you set your own alert threshold on the handheld, typically 2 to 3°F above your baby's usual reading." }
     },
     {
       "@type": "Question",
@@ -125,7 +125,7 @@
     {
       "@type": "Question",
       "name": "Is Nonnanest a medical device?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider." }
     },
     {
       "@type": "Question",
@@ -1437,6 +1437,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 }
 .hero-overlay-inner { max-width: 1200px; margin: 0 auto; }
 .hero-overlay h1, .hero-overlay .hero-subtitle { text-shadow: 0 1px 14px rgba(28,24,21,.5); }
+.hero-overlay .dc-eyebrow { color: var(--pale-aqua); text-shadow: 0 1px 8px rgba(28,24,21,.6); }
 .hero-overlay h1 {
   font-family: 'Fraunces', serif;
   font-size: clamp(32px, 5vw, 56px); font-weight: 400; line-height: 1.1;
@@ -1565,8 +1566,9 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 
     <div class="hero-overlay">
       <div class="hero-overlay-inner">
-        <h1>A quieter kind of baby monitor.</h1>
-        <p class="hero-subtitle">The only offline baby wellness monitor. Contactless skin temperature awareness. No WiFi. No app. No subscription.</p>
+        <div class="dc-eyebrow">The only offline baby wellness monitor.</div>
+        <h1>Know they&rsquo;re getting too warm, before they wake up crying.</h1>
+        <p class="hero-subtitle">SightAware reads your baby&rsquo;s skin temperature, contactless, with a gentle alert when it rises above the level you choose. So you know when to check in, and decide what&rsquo;s next.</p>
         <div class="hero-actions">
           <a href="https://www.nonnanest.com/shop/" class="btn-primary">Order &mdash; $329</a>
           <a href="#how-it-works" class="btn-secondary">
@@ -1589,9 +1591,10 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
     <p class="hero-disclaimer-line">Wellness device. Not a medical device.</p>
 
     <div class="hero-trust-row">
-      <span>Direct connection &middot; no WiFi</span>
-      <span>Patent pending</span>
-      <span>Built by a parent</span>
+      <span>Nothing worn</span>
+      <span>Fully offline</span>
+      <span>No app</span>
+      <span>No subscription</span>
     </div>
   </div>
 </section>
@@ -1602,7 +1605,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
     <div class="founder-preview-grid">
       <img src="/images/family/founder-with-kids-calm.jpg" alt="Nathan Overbey with his daughter and son Reed" class="founder-preview-photo">
       <div class="founder-preview-content">
-        <p class="founder-preview-quote">&ldquo;At 3 AM, my son Reed&#39;s skin was warmer than it should have been and the monitor next to my bed showed nothing. That was the night the gap became obvious. And it&#39;s the night Nonnanest started.&rdquo;</p>
+        <p class="founder-preview-quote">&ldquo;When my son was six months old, he woke up warm in the night. The monitor next to my bed could only tell me the room temperature. That gap is why SightAware exists.&rdquo;</p>
         <div class="founder-preview-attr">
           <span class="founder-preview-name">Nathan Overbey</span>
           <span class="founder-preview-title">Founder &amp; CEO &middot; Customer Zero</span>
@@ -1661,19 +1664,18 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <ul>
           <li><span class="mark">&times;</span>WiFi + cloud account required by default</li>
           <li><span class="mark">&times;</span>A wearable sensor on your baby to get the wellness read</li>
-          <li><span class="mark">&times;</span>Subscription tiers gate the features you thought you bought</li>
+          <li><span class="mark">&times;</span>Features split across subscription tiers</li>
           <li><span class="mark">&times;</span>Your phone becomes the interface &mdash; and the notification vector</li>
-          <li><span class="mark">&times;</span>Video and insights routed through servers you don&#39;t control</li>
+          <li><span class="mark">&times;</span>Video and insights stored in the cloud by default</li>
         </ul>
       </div>
       <div class="diff-col diff-col-us">
         <h3>Nonnanest</h3>
         <ul>
-          <li><span class="mark">&#10003;</span>A direct camera-to-screen connection out of the box &mdash; connectivity is a choice, not a requirement</li>
+          <li><span class="mark">&#10003;</span>A direct camera-to-screen connection. Fully offline.</li>
           <li><span class="mark">&#10003;</span>Contactless &mdash; the read happens without anything on your baby</li>
-          <li><span class="mark">&#10003;</span>One-time purchase &mdash; no subscription today</li>
+          <li><span class="mark">&#10003;</span>One-time purchase. No subscription.</li>
           <li><span class="mark">&#10003;</span>Dedicated 5" display &mdash; your phone stays your phone</li>
-          <li><span class="mark">&#10003;</span>Designed to start closed. Built to grow, on your terms.</li>
         </ul>
       </div>
     </div>
@@ -1710,7 +1712,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
           </a>
         </div>
         <h3>A reading that never touches your baby.</h3>
-        <p>Infrared sensing from up to four feet away. No band, no sock, nothing clipped to a onesie &mdash; your baby sleeps through the whole thing, unaware there was anything to sleep through.</p>
+        <p>Contactless sensing from up to four feet away. No band, no sock, nothing clipped to a onesie. Your baby sleeps through the whole thing, unaware there was anything to sleep through.</p>
       </article>
 
       <article class="how-feat">
@@ -1761,7 +1763,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
       <a class="pillar-card pillar-wellness" href="/wellness/">
         <div class="pillar-eyebrow">Wellness awareness</div>
         <h3>The best kind of monitoring is the kind your baby never feels.</h3>
-        <p>Contactless skin-temperature awareness, calibrated to your baby&#39;s baseline. A wellness monitor, by design, that supports your awareness instead of trying to replace your judgment.</p>
+        <p>Contactless skin-temperature awareness, set to your baby&#39;s usual range. A wellness monitor, by design, that supports your awareness instead of trying to replace your judgment.</p>
         <span class="pillar-read-more">Read the wellness page <span aria-hidden="true">→</span></span>
       </a>
       <a class="pillar-card pillar-privacy" href="/privacy/">
@@ -1842,15 +1844,15 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
     <div class="price-simple-card">
       <div class="ps-label">SightAware&trade; by Nonnanest</div>
       <div class="ps-amount">$329</div>
-      <p class="ps-sub">One-time. No subscription today.</p>
+      <p class="ps-sub">One-time. No subscription.</p>
       <ul class="ps-includes">
         <li>Contactless infrared camera + wall / flex-arm / crib mount</li>
         <li>5-inch HD handheld display + charging cradle</li>
-        <li>Everything you need to set up in under 10 minutes</li>
+        <li>Everything you need to set up in about five minutes</li>
         <li>Free shipping in the continental US &middot; 30-day returns &middot; 1-year warranty</li>
       </ul>
       <a href="/shop/" class="btn-primary ps-cta">Order yours &mdash; $329</a>
-      <p class="ps-disclaimer">Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
+      <p class="ps-disclaimer">Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
     </div>
   </div>
 </section>
@@ -1907,7 +1909,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
     <div class="resources-card-content">
       <div class="resources-card-eyebrow">Interactive checklist</div>
       <h3>Nursery Safety Check</h3>
-      <p>Walk through your nursery against current pediatric guidance — temperature, humidity, crib setup, monitor placement, lighting, sound, and air quality. Reviewed by a registered nurse for clinical accuracy.</p>
+      <p>Walk through your nursery against current pediatric guidance: temperature, humidity, crib setup, monitor placement, lighting, sound, and air quality. Reviewed by a registered nurse.</p>
       <div class="resources-card-meta">
         <span class="resources-meta-item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1953,7 +1955,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>No. Nonnanest uses passive infrared sensors to read your baby's skin temperature from up to 4 feet away. Nothing touches your baby — no socks, no ankle bands, no clips, no straps. Mount the camera directly above the crib and it does the rest. Every other device that tracks wellness insights requires a wearable — Nonnanest is the only one that doesn't.</p>
+        <p>No. Nonnanest uses contactless sensing to read your baby's skin temperature from up to 4 feet away. Nothing touches your baby: no socks, no ankle bands, no clips, no straps. Mount the camera directly above the crib and it does the rest.</p>
       </div>
     </div>
 
@@ -1973,7 +1975,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>Every other device that tracks wellness insights requires your baby to wear a sock or ankle band. Nonnanest is the only monitor that senses skin temperature contactlessly — nothing touches your baby. We also don't require WiFi, don't need an app or phone, and have no subscriptions. We're built for parents who want skin temperature awareness without putting anything on their baby.</p>
+        <p>Nonnanest is the only monitor that reads skin temperature without anything on your baby. We also don't require WiFi, don't need an app or phone, and have no subscriptions. We're built for parents who want skin temperature awareness without putting anything on their baby.</p>
       </div>
     </div>
 
@@ -1993,7 +1995,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>We test every reading against a NIST-traceable blackbody calibration source, the same kind of reference used to check professional and medical infrared instruments. Nonnanest is calibrated to work within recommended ambient temperatures of 69–75°F and between 3 and 4 feet from baby, at a safe distance. While it works closer than 3 feet, pediatric guidance and our own guidance is to always maintain a 3-foot distance from baby.</p>
+        <p>We test every reading against a NIST-traceable blackbody calibration source. Nonnanest is calibrated to work within recommended ambient temperatures of 69–75°F and between 3 and 4 feet from baby, at a safe distance. While it works closer than 3 feet, pediatric guidance and our own guidance is to always maintain a 3-foot distance from baby.</p>
       </div>
     </div>
 
@@ -2003,7 +2005,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>Skin runs cooler than the inside of the body, and how much cooler depends on the room. That's normal, and it's true of every contactless thermometer, including the one at your pediatrician's office. What matters for you isn't the exact gap. It's that skin temp goes up when your baby warms up. That's the signal Nonnanest is built to catch.</p>
+        <p>Skin runs cooler than the inside of the body, and how much cooler depends on the room. That's normal, and it's true of every contactless thermometer, including the one at your pediatrician's office. What matters for you isn't the exact gap. It's that skin temp goes up when your baby warms up. That's the change Nonnanest shows you.</p>
       </div>
     </div>
 
@@ -2013,7 +2015,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>Because they're measuring different things. Your thermometer reads inside. Nonnanest reads the surface. Neither one is wrong. If Nonnanest shows something elevated, that's your cue to reach for the thermometer, not a replacement for it.</p>
+        <p>Because they're measuring different things. Your thermometer reads inside. Nonnanest reads the surface. Neither one is wrong. Nonnanest shows you the change. It isn't a replacement for your thermometer.</p>
       </div>
     </div>
 
@@ -2023,7 +2025,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>Check your baby with a contact thermometer. SightAware is built to get your attention, not to answer the question. Because every baby's baseline is different, you set your own alert threshold on the handheld, typically 2 to 3°F above your baby's usual reading. If anything concerns you, call your pediatrician. That part never changes. <a href="/understanding-readings/" style="color:var(--deep-teal);text-decoration:underline;">Read the full guide to your readings →</a></p>
+        <p>Check in. Look at layers, bedding, and the room. You know your baby. If something feels off, trust your instincts. Reach for your thermometer or call your pediatrician. Because every baby's baseline is different, you set your own alert threshold on the handheld, typically 2 to 3°F above your baby's usual reading. <a href="/understanding-readings/" style="color:var(--deep-teal);text-decoration:underline;">Read the full guide to your readings →</a></p>
       </div>
     </div>
 
@@ -2043,7 +2045,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
       <div class="faq-answer">
-        <p>No. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
+        <p>No. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
       </div>
     </div>
 
@@ -2063,7 +2065,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 <section style="padding:64px 24px;text-align:center;background:var(--teal-mist, #E4EFEE);">
   <div style="max-width:520px;margin:0 auto;">
     <h2 style="font-family:'Fraunces',serif;font-size:28px;font-weight:400;color:var(--charcoal, #2C2520);margin-bottom:8px;letter-spacing:-0.5px;">Stay in the loop</h2>
-    <p style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;color:var(--earth, #5C4F43);margin-bottom:24px;line-height:1.6;">Product updates, wellness insights, and early access — delivered to your inbox. No spam, ever.</p>
+    <p style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;color:var(--earth, #5C4F43);margin-bottom:24px;line-height:1.6;">Product updates and wellness insights, delivered to your inbox. No spam, ever.</p>
     <div class="hs-form-frame" data-region="na2" data-form-id="8785b463-f6bf-4943-bd64-72e6fbca119c" data-portal-id="242981565"></div>
   </div>
 </section>
@@ -2120,7 +2122,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   </div>
 
   <div class="wellness-disclaimer">
-    Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.
+    Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.
   </div>
 </footer>
 <!-- PARTIAL:footer-end -->
