@@ -57,7 +57,7 @@ the markers.
 
 > Nonnanest is a wellness device, not a medical device, and is not
 > intended to diagnose, treat, cure, or prevent any disease or
-> condition. Temperature readings are for informational purposes only
+> condition. Skin temperature readings are for informational purposes only
 > to help parents monitor general wellness and comfort. For any health
 > concerns, always consult a pediatrician or qualified healthcare
 > provider.
