@@ -350,11 +350,11 @@ const STOPS = [{
   key: "temp",
   Icon: IconThermo,
   name: "Temperature",
-  what: "Choose your units, then turn the alert sound on: a red X over the thermometer and speaker means it's off, so press left or right until the X is gone. Then highlight Set and use the left and right keys to choose the temperature that triggers the alert.",
+  what: "Choose your units, then switch the alert on: a red X over the thermometer and speaker means it's off, so press left or right until the X is gone. Then highlight Set and use the left and right keys to choose the temperature that triggers the alert.",
   settings: ["°F", "°C", "Skin temp alert"],
   def: 0,
   settingLabel: "Options",
-  note: "On some handhelds the alert sound is off by default. With the red X showing, the display won't beep or light up, even with an alert temperature set. If you do not set your own value, the default alert temperature is 102.2°F."
+  note: "On some handhelds the alert is off by default. With the red X showing, the display won't beep or light up at your alert temperature. Only a reading above 102.2°F lights the screen, with no sound. Keep the volume up too: if it's muted, an alert lights the screen but won't beep."
 }, {
   key: "camera",
   Icon: IconCam,
