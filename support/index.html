@@ -86,6 +86,11 @@ nav {
 .page-subtitle { font-size: 17px; color: var(--bark); line-height: 1.6; }
 
 /* Quick links */
+.alert-sound-notice { display: flex; gap: 12px; align-items: flex-start; padding: 18px 20px; margin-bottom: 32px; background: #FDF6F4; border: 2px solid #C45B4A; border-radius: 14px; }
+.alert-sound-notice svg { width: 20px; height: 20px; color: #C45B4A; flex-shrink: 0; margin-top: 2px; }
+.alert-sound-notice h2 { font-size: 16px; font-weight: 600; color: #C45B4A; margin: 0 0 4px; font-family: inherit; }
+.alert-sound-notice p { font-size: 14px; color: #7A3D33; line-height: 1.6; margin: 0; }
+.alert-sound-notice a { color: #7A3D33; font-weight: 600; }
 .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 56px; }
 .quick-link {
   display: flex; align-items: flex-start; gap: 14px;
@@ -171,6 +176,14 @@ nav {
     <div class="section-label">Help Center</div>
     <h1 class="page-title">How can we help?</h1>
     <p class="page-subtitle">Browse quick answers below or send us a message — we typically respond within one business day.</p>
+  </div>
+
+  <div class="alert-sound-notice" role="note">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <div>
+      <h2>Set an alert temperature? Make sure the alert sound is on.</h2>
+      <p>On some handhelds the skin temperature alert sound is off by default. In the temperature menu, a <strong>red X</strong> over the thermometer-and-speaker icon means the display won't beep or light up when the reading passes your alert temperature. <a href="/quickstart/#alert-sound">See how to turn it on &rarr;</a></p>
+    </div>
   </div>
 
   <div class="quick-links">

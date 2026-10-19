@@ -350,11 +350,11 @@ const STOPS = [{
   key: "temp",
   Icon: IconThermo,
   name: "Temperature",
-  what: "Choose your units, then set a skin temperature alert. Pick the baby icon, highlight Set, and use the left and right keys to choose the temperature that triggers the alert.",
+  what: "Choose your units, then turn the alert sound on: a red X over the thermometer and speaker means it's off, so press left or right until the X is gone. Then highlight Set and use the left and right keys to choose the temperature that triggers the alert.",
   settings: ["°F", "°C", "Skin temp alert"],
   def: 0,
   settingLabel: "Options",
-  note: "If you do not set your own value, the default alert temperature is 102.2°F."
+  note: "On some handhelds the alert sound is off by default. With the red X showing, the display won't beep or light up, even with an alert temperature set. If you do not set your own value, the default alert temperature is 102.2°F."
 }, {
   key: "camera",
   Icon: IconCam,
@@ -396,7 +396,7 @@ function MenuTour() {
   const [idx, setIdx] = useState(0);
   const [playing, setPlaying] = useState(true);
   const [subSel, setSubSel] = useState(0);
-  const [tempPhase, setTempPhase] = useState(0); // 0:units 1:picked F 2:highlight set 3:toggling value 4:done
+  const [tempPhase, setTempPhase] = useState(0); // 0:units 1:picked F (sound off) 2:sound on 3:highlight set 4:toggling value 5:done
   const [alertVal, setAlertVal] = useState(102.2);
   const timer = useRef(null);
   const subTimer = useRef(null);
@@ -421,12 +421,13 @@ function MenuTour() {
     if (stop.key === "temp") {
       // scripted alert flow across the 10s window
       const T = phaseTimers.current;
-      T.push(setTimeout(() => setTempPhase(1), 1600)); // pick °F, alert rows appear
-      T.push(setTimeout(() => setTempPhase(2), 3200)); // highlight "set"
-      T.push(setTimeout(() => setTempPhase(3), 4400)); // begin toggling value
+      T.push(setTimeout(() => setTempPhase(1), 1400)); // pick °F, alert rows appear (sound off: red X)
+      T.push(setTimeout(() => setTempPhase(2), 3000)); // alert sound turned on
+      T.push(setTimeout(() => setTempPhase(3), 4400)); // highlight "set"
+      T.push(setTimeout(() => setTempPhase(4), 5200)); // begin toggling value
       // toggle the value down then settle
-      [101.5, 101.0, 100.4].forEach((v, i) => T.push(setTimeout(() => setAlertVal(v), 4800 + i * 700)));
-      T.push(setTimeout(() => setTempPhase(4), 7200)); // settled
+      [101.5, 101.0, 100.4].forEach((v, i) => T.push(setTimeout(() => setAlertVal(v), 5500 + i * 600)));
+      T.push(setTimeout(() => setTempPhase(5), 7600)); // settled
       return () => {
         T.forEach(clearTimeout);
       };
@@ -919,8 +920,9 @@ function TempAlertPanel({
   alertVal
 }) {
   const fSel = tempPhase >= 1; // °F chosen
-  const setHi = tempPhase >= 2; // "set" row highlighted
-  const valActive = tempPhase >= 3; // value toggling
+  const soundOn = tempPhase >= 2; // alert sound switched on (red X cleared)
+  const setHi = tempPhase >= 3; // "set" row highlighted
+  const valActive = tempPhase >= 4; // value toggling
   const cell = {
     color: "#fff",
     display: "flex",
@@ -1002,7 +1004,7 @@ function TempAlertPanel({
   }, /*#__PURE__*/React.createElement(IconThermo, {
     s: 13,
     c: "#fff"
-  }), /*#__PURE__*/React.createElement(Spk, null)), /*#__PURE__*/React.createElement("span", {
+  }), soundOn ? /*#__PURE__*/React.createElement(Spk, null) : /*#__PURE__*/React.createElement(SpkOff, null)), /*#__PURE__*/React.createElement("span", {
     style: {
       color: "#fff",
       opacity: 0.8
@@ -1055,6 +1057,24 @@ function TempAlertPanel({
       opacity: 0.85
     }
   }, ">"))));
+}
+// Alert sound OFF state as shown on the device: red X over the speaker
+function SpkOff() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "12",
+    viewBox: "0 0 24 16",
+    fill: "none"
+  }, /*#__PURE__*/React.createElement("polygon", {
+    points: "3,6 6,6 9,3 9,13 6,10 3,10",
+    fill: "#fff",
+    opacity: 0.5
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M11 2l11 12M22 2L11 14",
+    stroke: S.red,
+    strokeWidth: "2.4",
+    strokeLinecap: "round"
+  }));
 }
 function Spk() {
   return /*#__PURE__*/React.createElement("svg", {
