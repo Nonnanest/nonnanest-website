@@ -24,15 +24,32 @@
   --alert-red: #C45B4A;
 }
 
-/* ===== WORDMARK ===== */
+/* ===== WORDMARK =====
+   Curve horizontal lockup (Brand Standards v1.0). The wordmark is the
+   supplied outlined SVG — never live text. Only the ™ is typed, so it
+   can be adjusted without touching the artwork. 36px tall keeps the
+   lockup above the 120px-wide digital minimum. */
 .wordmark {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--charcoal);
+  display: inline-flex;
+  align-items: flex-start;
+  text-decoration: none;
+  line-height: 0;
 }
+.wordmark img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+.wordmark .tm {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #2E5D57;
+  margin: 10px 0 0 2px;
+}
+.wordmark--reversed .tm { color: var(--warm-white); }
 
 /* ===== NAV ===== */
 nav {
