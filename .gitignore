@@ -1,2 +1,5 @@
 /Brand/
 .DS_Store
+
+# Video masters stay out of git; ship the web encodes only
+videos/FINAL_*

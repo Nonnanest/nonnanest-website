@@ -175,6 +175,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 .gallery-thumb.active, .gallery-thumb:hover { border-color: var(--soft-teal); }
 .gallery-thumb img { width: 100%; height: 100%; object-fit: contain; }
 @media (max-width: 900px) { .gallery { position: static; } }
+/* Brand film slot: a <video> that swaps in for #mainImage, and a button thumb */
+.gallery-main [hidden] { display: none; }
+.gallery-film { width: 100%; height: 100%; object-fit: contain; background: var(--charcoal); }
+button.gallery-thumb { font: inherit; position: relative; }
+.gallery-thumb:focus-visible { outline: 2px solid var(--soft-teal); outline-offset: 2px; }
+.gallery-thumb--film { padding: 0; }
+.gallery-thumb--film img { object-fit: cover; }
+.gallery-thumb-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.gallery-thumb-play svg { width: 26px; height: 26px; filter: drop-shadow(0 1px 3px rgba(44,37,32,0.45)); }
 .product-info { padding-top: 16px; }
 .product-info h1 { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 400; line-height: 1.15; letter-spacing: -1px; color: var(--charcoal); margin-bottom: 8px; }
 .product-info h1 em { font-style: italic; font-weight: 300; color: var(--soft-teal); }
@@ -308,6 +317,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24
 .review-body { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 300; line-height: 1.55; color: var(--charcoal); font-style: italic; margin-bottom: 20px; }
 .review-attribution { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; color: var(--charcoal); }
 .review-disclaimer { text-align: center; font-size: 12px; color: var(--earth); margin-top: 24px; opacity: 0.75; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+/* ===== BRAND FILM ===== */
+.film-section { padding: 60px 24px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--linen); }
+.film-section h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400; color: var(--charcoal); text-align: center; margin-bottom: 32px; letter-spacing: -0.5px; }
+.film-frame { max-width: 960px; margin: 0 auto; background: var(--cream); border: 1px solid var(--linen); border-radius: 20px; overflow: hidden; }
+.film-player { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--charcoal); }
   
 /* ===== BOTTOM CTA ===== */
 /* ===== BEST FOR / NOT FOR ===== */
@@ -446,11 +461,20 @@ function closeMobileNav() {
   <div class="gallery">
     <div class="gallery-main">
       <img id="mainImage" src="/images/Nonnanest_Handheld_v1.png" alt="Nonnanest Baby Monitor — camera and 5 inch HD display">
+      <video id="galleryFilm" class="gallery-film" data-film="gallery" controls playsinline preload="none" poster="/images/film/why-poster.jpg" aria-label="Nonnanest brand film, 61 seconds, with captions" hidden>
+        <source src="/videos/why-nonnanest-720.mp4" type="video/mp4" media="(max-width: 900px)">
+        <source src="/videos/why-nonnanest-1080.mp4" type="video/mp4">
+        <track kind="captions" src="/videos/why-nonnanest.en.vtt" srclang="en" label="English" default>
+      </video>
     </div>
     <div class="gallery-thumbs">
       <div class="gallery-thumb active" onclick="switchImage(this, '/images/Nonnanest_Handheld_v1.png')">
         <img src="/images/Nonnanest_Handheld_v1.png" alt="Monitor front view">
       </div>
+      <button type="button" class="gallery-thumb gallery-thumb--film" onclick="showFilm(this)" aria-label="Play brand film, 61 seconds">
+        <img src="/images/film/why-thumb.jpg" alt="" width="200" height="180">
+        <span class="gallery-thumb-play" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="rgba(44,37,32,0.55)"/><path d="M9.5 7.5v9l7-4.5z" fill="#FAF8F5"/></svg></span>
+      </button>
       <div class="gallery-thumb" onclick="switchImage(this, '/images/Nonnanest_Baby_Camera_Feature.png')">
         <img src="/images/Nonnanest_Baby_Camera_Feature.png" alt="Camera features overview">
       </div>
@@ -474,9 +498,23 @@ function closeMobileNav() {
 
   <script>
   function switchImage(thumb, src) {
+    var film = document.getElementById('galleryFilm');
+    film.pause();
+    film.hidden = true;
+    document.getElementById('mainImage').hidden = false;
     document.getElementById('mainImage').src = src;
     document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
     thumb.classList.add('active');
+  }
+  // Brand film: plays only from this tap, never on load.
+  function showFilm(thumb) {
+    var film = document.getElementById('galleryFilm');
+    document.getElementById('mainImage').hidden = true;
+    film.hidden = false;
+    document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+    film.focus();
+    film.play();
   }
   </script>
 
@@ -652,7 +690,57 @@ function closeMobileNav() {
 
   <p class="review-disclaimer">Individual experiences vary. Nonnanest is a wellness device, not a medical device. Skin temperature readings are for informational purposes only.</p>
 </section>
-  
+
+<!-- ===== BRAND FILM ===== -->
+<section class="film-section" aria-labelledby="filmHeading">
+  <h2 id="filmHeading">A calmer kind of night</h2>
+  <div class="film-frame">
+    <video id="sectionFilm" class="film-player" data-film="section" controls playsinline preload="none" poster="/images/film/why-poster.jpg" width="1920" height="1080" aria-label="Nonnanest brand film, 61 seconds, with captions">
+      <source src="/videos/why-nonnanest-720.mp4" type="video/mp4" media="(max-width: 900px)">
+      <source src="/videos/why-nonnanest-1080.mp4" type="video/mp4">
+      <track kind="captions" src="/videos/why-nonnanest.en.vtt" srclang="en" label="English" default>
+    </video>
+  </div>
+  <p class="review-disclaimer">Nonnanest is a wellness device, not a medical device. Skin temperature readings are for informational purposes only. For any health concerns, consult a pediatrician.</p>
+</section>
+
+<script>
+// Brand film GA4 events, one set per player per page load. GA4 enhanced
+// measurement only sees YouTube embeds, so native <video> plays are sent here.
+// Starting one player pauses the other.
+(function () {
+  var films = document.querySelectorAll('video[data-film]');
+  films.forEach(function (v) {
+    var sent = {};
+    function send(name, percent) {
+      if (typeof gtag !== 'function') return;
+      gtag('event', name, {
+        video_title: 'Why Nonnanest',
+        video_provider: 'self_hosted',
+        video_url: 'https://www.nonnanest.com/videos/why-nonnanest-1080.mp4',
+        video_duration: 61,
+        video_percent: percent,
+        placement: v.dataset.film
+      });
+    }
+    v.addEventListener('play', function () {
+      films.forEach(function (other) { if (other !== v) other.pause(); });
+      if (!sent.start) { sent.start = true; send('video_start', 0); }
+    });
+    v.addEventListener('timeupdate', function () {
+      if (!v.duration) return;
+      var percent = v.currentTime / v.duration * 100;
+      [25, 50, 75].forEach(function (mark) {
+        if (percent >= mark && !sent[mark]) { sent[mark] = true; send('video_progress', mark); }
+      });
+    });
+    v.addEventListener('ended', function () {
+      if (!sent.complete) { sent.complete = true; send('video_complete', 100); }
+    });
+  });
+})();
+</script>
+
 <!-- ===== KEY DIFFERENTIATORS ===== -->
 <section class="diff-strip">
   <h2>What makes Nonnanest different</h2>
