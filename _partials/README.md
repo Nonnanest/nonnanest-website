@@ -55,7 +55,7 @@ the markers.
 
 ## Approved footer disclaimer text (locked)
 
-> Nonnanest is a wellness device, not a medical device, and is not
+> SightAware is a wellness device, not a medical device, and is not
 > intended to diagnose, treat, cure, or prevent any disease or
 > condition. Skin temperature readings are for informational purposes only
 > to help parents monitor general wellness and comfort. For any health

@@ -910,7 +910,7 @@ main#main { padding-top: 72px; }
     <li><a href="/blog/">Blog</a></li>
     <li><a href="/press/">Press</a></li>
     <li><a href="/story/">Our Story</a></li>
-    <li><a href="/shop/" class="nav-cta">Order — $329</a></li>
+    <li><a href="/shop/" class="nav-cta">Order SightAware · $329</a></li>
   </ul>
   <button class="hamburger" onclick="this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('open');" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -927,7 +927,7 @@ main#main { padding-top: 72px; }
   <a href="/blog/" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Blog</a>
   <a href="/press/" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Press</a>
   <a href="/story/" onclick="document.querySelector('.hamburger').classList.remove('active');document.getElementById('mobileNav').classList.remove('open');">Our Story</a>
-  <a href="/shop/" class="mobile-nav-cta">Order — $329</a>
+  <a href="/shop/" class="mobile-nav-cta">Order SightAware · $329</a>
 </div>
 <!-- PARTIAL:nav-end -->
 
@@ -1370,7 +1370,7 @@ function closeMobileNav() {
   </div>
 
   <div class="wellness-disclaimer">
-    Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.
+    SightAware is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.
   </div>
 </footer>
 <!-- PARTIAL:footer-end -->
@@ -2045,7 +2045,7 @@ function checklist() {
       block('Watch as baby grows', this.results.watch);
       lines.push('---');
       lines.push('This checklist reflects publicly available pediatric and safety guidance.');
-      lines.push('Nonnanest is a wellness device, not a medical device.');
+      lines.push('SightAware is a wellness device, not a medical device.');
       lines.push('https://www.nonnanest.com/nursery-checklist/');
       return lines.join('\n');
     },
@@ -2099,7 +2099,7 @@ function generatePdf(results, ageBand) {
     doc.setDrawColor(...CHAR).setLineWidth(0.4);
     doc.line(M, fy - 22, W - M, fy - 22);
     setFont('body', 8); doc.setTextColor(...CHAR70);
-    const disc = "This checklist reflects publicly available pediatric and safety guidance. Nonnanest is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. For specific questions about your baby's health or environment, consult your pediatrician.";
+    const disc = "This checklist reflects publicly available pediatric and safety guidance. SightAware is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. For specific questions about your baby's health or environment, consult your pediatrician.";
     const lines = doc.splitTextToSize(disc, W - M * 2 - 24);
     doc.text(lines, M, fy - 8);
     setFont('body', 8); doc.setTextColor(...CHAR50);
