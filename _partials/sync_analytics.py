@@ -2,9 +2,9 @@
 """
 Nonnanest analytics sync.
 
-Stamps the shared analytics <head> block — currently the OpenAI Ads Pixel
-loader at /js/oaiq.js — into the top of <head> on every HTML page in the
-repo.
+Stamps the shared analytics <head> block — the OpenAI Ads Pixel loader at
+/js/oaiq.js, Klaviyo's onsite script and the $30-off offer at /js/offer.js —
+into the top of <head> on every HTML page in the repo.
 
 Usage:
     python3 _partials/sync_analytics.py
@@ -34,7 +34,10 @@ START = "<!-- PARTIAL:analytics-start -->"
 END = "<!-- PARTIAL:analytics-end -->"
 
 HEAD_BLOCK = """<!-- OpenAI Ads Pixel (base + page_viewed + oppref) -->
-<script src="/js/oaiq.js"></script>"""
+<script src="/js/oaiq.js"></script>
+<!-- Klaviyo onsite (identify + Active on Site) and the $30-off tab / form -->
+<script async src="https://static.klaviyo.com/onsite/js/WZWyAb/klaviyo.js"></script>
+<script src="/js/offer.js" defer></script>"""
 
 SKIP_DIRS = {".git", "_partials", "node_modules"}
 

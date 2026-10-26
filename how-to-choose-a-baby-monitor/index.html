@@ -6,6 +6,9 @@
 <!-- PARTIAL:analytics-start -->
 <!-- OpenAI Ads Pixel (base + page_viewed + oppref) -->
 <script src="/js/oaiq.js"></script>
+<!-- Klaviyo onsite (identify + Active on Site) and the $30-off tab / form -->
+<script async src="https://static.klaviyo.com/onsite/js/WZWyAb/klaviyo.js"></script>
+<script src="/js/offer.js" defer></script>
 <!-- PARTIAL:analytics-end -->
 <script>document.documentElement.classList.replace('no-js','js');</script>
 
@@ -17,7 +20,6 @@
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1076529151218038");fbq("track","PageView");</script>
 
 <!-- HubSpot -->
-<script src="https://js-na2.hsforms.net/forms/embed/242981565.js" defer></script>
 
 <title>How to Choose a Baby Monitor: 5 Questions | Nonnanest</title>
 <meta name="description" content="A short, honest framework for choosing a baby monitor: audio-visual vs. wellness insights, wearable vs. contactless, WiFi vs. offline, and subscription costs.">
@@ -279,7 +281,7 @@ main.guide{padding-top:0}
 .capture{background:var(--mist);border:1px solid var(--pale-aqua);border-radius:20px;padding:44px 36px;text-align:center}
 .capture .g-h2{font-size:clamp(1.5rem,3vw,1.9rem);max-width:520px;margin:12px auto 10px}
 .capture p{font-size:1rem;font-weight:300;line-height:1.6;color:var(--earth);max-width:460px;margin:0 auto 24px}
-.capture .hs-form-frame{max-width:460px;margin:0 auto}
+.capture [data-nn-offer]{max-width:460px;margin:0 auto}
 /* WHAT IT DOES + PEDIATRICIAN (required closing sections) */
 .scope{border-top:1px solid var(--linen);padding-top:56px}
 .scope p{font-size:1.05rem;line-height:1.75;color:var(--earth)}
@@ -585,7 +587,7 @@ main.guide{padding-top:0}
         <div class="eyebrow">For readers of this guide</div>
         <h2 class="g-h2" id="offer">If SightAware looks like your fit, here's $30 off.</h2>
         <p>Drop your email and we'll send a code for $30 off. No follow-up spam, just the code.</p>
-        <div class="hs-form-frame" data-region="na2" data-form-id="3039c3b6-ed0d-45a7-963b-317df8b619f3" data-portal-id="242981565"></div>
+        <div data-nn-offer="guide"></div>
       </div>
       <p class="offer-disclaimer">SightAware is a wellness device, not a medical device, and is not intended to diagnose, treat, cure, or prevent any disease or condition. Skin temperature readings are for informational purposes only to help parents monitor general wellness and comfort. For any health concerns, always consult a pediatrician or qualified healthcare provider.</p>
     </div>
@@ -690,38 +692,6 @@ main.guide{padding-top:0}
         btn.setAttribute('aria-expanded', 'true');
       }
     });
-  });
-
-  // Conversion tracking for the $30-off form. HubSpot emits its form events
-  // on window; these listeners sit in the body so they're registered before
-  // the deferred embed script runs. Only this form counts as a Lead, once per
-  // form instance, with one shared id so each platform can deduplicate.
-  var OFFER_FORM_ID = '3039c3b6-ed0d-45a7-963b-317df8b619f3';
-  var offer = window.nnOfferForm = { ready: false, leads: 0 };
-  var sentFor = {};
-  function isOfferForm(event){
-    var id = event.detail && event.detail.formId;
-    return !id || id === OFFER_FORM_ID;
-  }
-  window.addEventListener('hs-form-event:on-ready', function(event){
-    if (isOfferForm(event)) offer.ready = true;
-  });
-  window.addEventListener('hs-form-event:on-submission:success', function(event){
-    if (!isOfferForm(event)) return;
-    var instance = (event.detail && event.detail.instanceId) || 'offer';
-    if (sentFor[instance]) return;
-    sentFor[instance] = true;
-    offer.leads++;
-    var eventId = 'guide-offer-' + instance + '-' + Date.now();
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead', { content_name: 'Baby monitor guide $30 offer' }, { eventID: eventId });
-    }
-    if (typeof gtag === 'function') {
-      gtag('event', 'generate_lead', { form_id: OFFER_FORM_ID, form_name: 'guide_30_off' });
-    }
-    if (typeof oaiq === 'function') {
-      oaiq('measure', 'lead_created', { type: 'customer_action', event_id: eventId });
-    }
   });
 })();
 </script>
