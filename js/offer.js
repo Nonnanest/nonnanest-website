@@ -8,8 +8,8 @@
  *
  * A sign-up goes to Klaviyo (Email List, which starts the welcome flow) with
  * signup_source set to "site" or "guide"; the flow uses that to pick which
- * version of email 1 to send. Guide sign-ups also go to the HubSpot $30 form
- * so HubSpot keeps counting the ad funnel's leads exactly as before. Every
+ * version of email 1 to send. Klaviyo is the record of sign-ups; leads are
+ * counted there (by signup_source) and in GA4 `generate_lead`. Every
  * sign-up fires Meta `Lead`, GA4 `generate_lead` and OpenAI `lead_created`
  * with one shared event id so each platform can deduplicate.
  *
@@ -20,8 +20,6 @@
 
   var KLAVIYO_COMPANY = 'WZWyAb';
   var KLAVIYO_LIST = 'TUKPBA';
-  var HUBSPOT_PORTAL = '242981565';
-  var HUBSPOT_GUIDE_FORM = '3039c3b6-ed0d-45a7-963b-317df8b619f3';
 
   // Pages that show no side tab: the guide pages have the form inline, and
   // the rest are for people who already own one or are mid-task.
@@ -128,11 +126,6 @@
       '<p>Don&rsquo;t see it in a few minutes? Check your promotions or spam folder.</p>' +
     '</div>';
 
-  function cookie(name) {
-    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
-    return m ? decodeURIComponent(m[1]) : undefined;
-  }
-
   function toKlaviyo(email, babyDate, source) {
     var props = { signup_source: source, signup_page: location.pathname };
     if (babyDate) props.baby_due_or_birth_date = babyDate;
@@ -156,22 +149,9 @@
     });
   }
 
-  // Best effort: a HubSpot failure must never cost the visitor their code.
-  function toHubSpot(email) {
-    var context = { pageUri: location.href, pageName: document.title };
-    var hutk = cookie('hubspotutk');
-    if (hutk) context.hutk = hutk;
-    return fetch('https://api.hsforms.com/submissions/v3/integration/submit/' +
-        HUBSPOT_PORTAL + '/' + HUBSPOT_GUIDE_FORM, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ fields: [{ name: 'email', value: email }], context: context })
-    }).catch(function () {});
-  }
-
   function trackLead(source) {
     var meta = SOURCES[source];
-    // The ad landing page keeps its own GA4 form name, as it had under HubSpot.
+    // The ad landing page keeps the GA4 form name it has always reported.
     var formName = location.pathname.indexOf('/guide-offer/') === 0 ? 'guide_30_off_lp' : meta.formName;
     var eventId = formName + '-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
     if (typeof fbq === 'function') {
@@ -212,9 +192,7 @@
 
       btn.disabled = true;
       btn.textContent = 'Sending…';
-      var jobs = [toKlaviyo(email, babyDate, source)];
-      if (source === 'guide') jobs.push(toHubSpot(email));
-      Promise.all(jobs).then(function () {
+      toKlaviyo(email, babyDate, source).then(function () {
         sent = true;
         offer.leads++;
         setFlag('localStorage', SIGNED_UP);
