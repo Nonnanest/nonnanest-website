@@ -23,7 +23,7 @@
 
   // Pages that show no side tab: the guide pages have the form inline, and
   // the rest are for people who already own one or are mid-task.
-  var NO_TAB = ['/guide-offer/', '/how-to-choose-a-baby-monitor/', '/quickstart/',
+  var NO_TAB = ['/guide-offer/', '/how-to-choose-a-baby-monitor/', '/quickstart/', '/gift/',
     '/returns/', '/support/', '/feedback/', '/privacy-policy/', '/terms/'];
 
   var SIGNED_UP = 'nn_offer_signed_up';   // localStorage: never show the tab again
