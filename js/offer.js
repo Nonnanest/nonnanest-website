@@ -29,9 +29,12 @@
   var SIGNED_UP = 'nn_offer_signed_up';   // localStorage: never show the tab again
   var DISMISSED = 'nn_offer_tab_hidden';  // sessionStorage: tab closed this visit
 
+  // signup is the signup_source the welcome flow branches on: guide sign-ups
+  // get email 1A, everything else 1B.
   var SOURCES = {
-    site:  { formName: 'site_30_off_tab', content: 'Site $30 tab' },
-    guide: { formName: 'guide_30_off',    content: 'Baby monitor guide $30 offer' }
+    site:       { formName: 'site_30_off_tab', content: 'Site $30 tab', signup: 'site' },
+    guide:      { formName: 'guide_30_off', content: 'Baby monitor guide $30 offer', signup: 'guide' },
+    newsletter: { formName: 'home_newsletter', content: 'Homepage newsletter', signup: 'site' }
   };
 
   var offer = window.nnOfferForm = { ready: false, leads: 0 };
@@ -127,7 +130,7 @@
     '</div>';
 
   function toKlaviyo(email, babyDate, source) {
-    var props = { signup_source: source, signup_page: location.pathname };
+    var props = { signup_source: SOURCES[source].signup, signup_page: location.pathname };
     if (babyDate) props.baby_due_or_birth_date = babyDate;
     return fetch('https://a.klaviyo.com/client/subscriptions?company_id=' + KLAVIYO_COMPANY, {
       method: 'POST',
@@ -135,7 +138,7 @@
       body: JSON.stringify({ data: {
         type: 'subscription',
         attributes: {
-          custom_source: source === 'guide' ? 'Guide $30 offer' : 'Site $30 tab',
+          custom_source: SOURCES[source].content,
           profile: { data: { type: 'profile', attributes: {
             // No subscriptions field: this endpoint rejects it, and a
             // subscription here already records email marketing consent.
