@@ -137,9 +137,10 @@
         attributes: {
           custom_source: source === 'guide' ? 'Guide $30 offer' : 'Site $30 tab',
           profile: { data: { type: 'profile', attributes: {
+            // No subscriptions field: this endpoint rejects it, and a
+            // subscription here already records email marketing consent.
             email: email,
-            properties: props,
-            subscriptions: { email: { marketing: { consent: 'SUBSCRIBED' } } }
+            properties: props
           } } }
         },
         relationships: { list: { data: { type: 'list', id: KLAVIYO_LIST } } }
