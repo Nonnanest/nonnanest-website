@@ -218,6 +218,8 @@
   function buildTab() {
     var path = location.pathname;
     for (var i = 0; i < NO_TAB.length; i++) if (path.indexOf(NO_TAB[i]) === 0) return;
+    // A sale banner from promo.js is showing a bigger offer; one at a time.
+    if (window.nnPromo && window.nnPromo.active) return;
     if (getFlag('localStorage', SIGNED_UP) || getFlag('sessionStorage', DISMISSED)) return;
 
     var tab = document.createElement('div');
