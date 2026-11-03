@@ -16,6 +16,10 @@ tool, we keep the site cohesive by:
 - `footer.html` — canonical footer (4-column grid, social row, wellness disclaimer)
 - `sync.py` — stamping script (idempotent, safe to run repeatedly)
 - `sync_faq_schema.py` — regenerates FAQ JSON-LD from each page's visible FAQ
+- `sync_seo.py` — stamps Organization, Article and BreadcrumbList JSON-LD,
+  and the blog post footer (see "SEO blocks" below)
+- `organization.json` — the one Organization entity, stamped on every page
+- `post-footer.html` — the BlogPostFooter, stamped at the end of every post
 - The `.css` that makes it all work lives at `/css/site-chrome.css`
 
 ## Editing the nav or footer
@@ -145,6 +149,43 @@ Adding a page: append it to `FAQ_PAGES` in the script. It needs a visible
 FAQ in one of the two supported shapes (the homepage accordion, or the
 shop page's `<h3>` + `<p>` items) and an existing `FAQPage` block to
 bootstrap from.
+
+## SEO blocks
+
+`sync_seo.py` stamps two things, both generated from each page's own
+head tags so they cannot disagree with what Google reads in the result:
+
+1. **Structured data**, between `<!-- PARTIAL:seo-schema-start -->` and
+   `<!-- PARTIAL:seo-schema-end -->` in `<head>`:
+   - `Organization` on every indexable page, from `organization.json`
+   - `Article` on every blog post and `/learn/` hub. Headline, description,
+     image and URL come from `<title>`, meta description, og:image and
+     canonical. Dates and author are read back from the block itself, so
+     to mark a post updated, edit its `dateModified` there and re-run.
+   - `BreadcrumbList` on every indexable page except the homepage, unless
+     the page already carries its own (the buyer's guide does)
+2. **The blog post footer**, between `<!-- PARTIAL:post-footer-start -->`
+   and `<!-- PARTIAL:post-footer-end -->` at the end of each post's
+   article body. The "Related reading" list comes from `CLUSTERS` in the
+   script: a link to the post's hub, then up to three sibling posts.
+
+After editing a title, description, `organization.json`,
+`post-footer.html`, or the clusters:
+
+```
+python3 _partials/sync_seo.py
+```
+
+`--check` writes nothing and exits non-zero on drift. The pre-commit hook
+runs it alongside the other two audits.
+
+Adding a blog post: create it, run the script, and it picks up the
+schema and footer automatically. To put it in a topic cluster, add its
+slug to `CLUSTERS` and add a card for it on that hub page.
+
+Product JSON-LD on `/` and `/shop/` is still hand-maintained. Do not add
+`aggregateRating` or `review` without real, structured review data behind
+it.
 
 ## Analytics
 

@@ -1,0 +1,21 @@
+/* BlogPostFooter, stamped from _partials/post-footer.html by
+   _partials/sync_seo.py. Also used by the /learn/ hub pages. */
+.post-footer{margin:48px 0 0;display:grid;gap:20px;font-family:'Outfit',sans-serif}
+.post-footer h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.2rem;line-height:1.3;color:var(--charcoal,#2C2520);margin:0 0 8px}
+.post-footer p{font-size:15px;line-height:1.7;color:var(--earth,#5C4F43);margin:0}
+.post-footer .disclaimer-box{background:var(--cream,#F5F0EA);border-left:3px solid var(--soft-teal,#559092);border-radius:12px;padding:24px 28px}
+.post-footer .pediatrician-note{background:var(--warm-white,#FAF8F5);border:1px solid var(--linen,#EDE7DF);border-radius:12px;padding:24px 28px}
+.post-footer .related-reading{padding:8px 0 0}
+.post-footer .related-reading ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.post-footer .related-reading li{position:relative;padding-left:22px;font-size:15px;line-height:1.5}
+.post-footer .related-reading li::before{content:"\2192";position:absolute;left:0;color:var(--soft-teal,#559092)}
+.post-footer .related-reading a{color:var(--deep-teal,#3D6B6D);text-decoration:underline;text-decoration-color:var(--pale-aqua,#C8E3DF);text-underline-offset:3px}
+.post-footer .related-reading a:hover{color:var(--soft-teal,#559092)}
+.post-footer .legal-disclaimer p{font-size:12px;line-height:1.6;color:var(--bark,#8C7B6B)}
+@media (max-width:600px){.post-footer .disclaimer-box,.post-footer .pediatrician-note{padding:20px}}
+
+/* Visible FAQ on a blog post. Mark it up as
+   <div class="faq-item"><h3>Question</h3><p>Answer</p></div>
+   and _partials/sync_faq_schema.py generates the FAQPage JSON-LD. */
+.article-body .faq-item{border-top:1px solid var(--linen,#EDE7DF);padding:18px 0}
+.article-body .faq-item h3{margin-top:0}
