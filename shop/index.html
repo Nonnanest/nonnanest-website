@@ -566,22 +566,38 @@ function closeMobileNav() {
     </div>
 
     <div class="registry-row">
-      <a href="https://www.babylist.com/add-items" target="_blank" rel="noopener" class="registry-cta" data-registry="babylist">Add to Babylist</a>
+      <a href="https://www.babylist.com/add-items" target="_blank" rel="noopener" class="registry-cta" data-registry="babylist" data-registry-location="shop_product_info">Add to Babylist</a>
       <a href="https://www.poppylist.com/add_to_registry?source=shopify&amp;product_name=SightAware%E2%84%A2%20by%20Nonnanest&amp;product_price_cents=32900&amp;product_url=https%3A%2F%2Fwww.nonnanest.com%2Fshop%2F&amp;product_image_url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0857%2F3337%2F6193%2Ffiles%2FNonnanest_Handheld_NAPPA_Award.png%3Fv%3D1786557869"
          target="_blank"
          rel="noopener noreferrer"
          class="registry-cta poppylist"
-         data-registry="poppylist">Add to Poppylist</a>
-      <a href="https://www.amazon.com/dp/B0HHGK9RSZ" target="_blank" rel="noopener" class="registry-cta amazon" data-registry="amazon">Add to Amazon Registry</a>
+         data-registry="poppylist"
+         data-registry-location="shop_product_info">Add to Poppylist</a>
+      <a href="https://www.amazon.com/dp/B0HHGK9RSZ" target="_blank" rel="noopener" class="registry-cta amazon" data-registry="amazon" data-registry-location="shop_product_info">Add to Amazon Registry</a>
     </div>
     <p class="registry-note">Add this product to your baby registry.</p>
     <script>
-    // One GA4 event for every registry button; the "registry" param says which one.
+    // One GA4 registry_click per intentional click on a registry button.
+    // registry_provider is the reporting param; registry is kept so the
+    // Sept/Oct 2026 data stays comparable. The link itself is never touched:
+    // no preventDefault, so the browser opens the destination natively, and
+    // GA4 enhanced measurement still records its own outbound "click".
+    // A repeat click on the same button within 1s (a double-click) is not
+    // counted again; the link still opens as the browser decides.
     document.querySelectorAll('[data-registry]').forEach(function (a) {
+      var lastSentAt = 0;
       a.addEventListener('click', function () {
         if (typeof gtag !== 'function') return;
+        var now = Date.now();
+        if (now - lastSentAt < 1000) return;
+        lastSentAt = now;
         gtag('event', 'registry_click', {
+          registry_provider: a.dataset.registry,
           registry: a.dataset.registry,
+          button_location: a.dataset.registryLocation || 'unknown',
+          page_location: location.href,
+          link_url: a.href,
+          link_domain: a.hostname.replace(/^www\./, ''),
           product_id: '10929901338817',
           transport_type: 'beacon'
         });
