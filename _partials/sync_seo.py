@@ -81,6 +81,24 @@ HOME_HUB = {
     "contact-free-baby-monitors-why-skin-temperature-matters": "learn/skin-temperature",
 }
 
+# Hand-picked links that reach outside a post's cluster, listed after the
+# hub and siblings. Carried over from the posts' old "Related reading"
+# sections when those were folded into the stamped footer.
+EXTRA_RELATED = {
+    "baby-monitor-false-alarms-at-night": ["why-does-baby-feel-warm-at-night", "non-wearable-baby-monitor-guide"],
+    "baby-monitors-no-subscription": ["non-wearable-baby-monitor-guide"],
+    "do-baby-monitors-need-wifi": ["what-happens-when-baby-monitor-company-shuts-down"],
+    "nurse-mom-wellness-monitor": [
+        "why-does-baby-feel-warm-at-night",
+        "wearable-vs-contactless-baby-monitors",
+        "contact-free-baby-monitors-why-skin-temperature-matters",
+    ],
+    "offline-baby-wellness-monitor": ["wearable-vs-contactless-baby-monitors"],
+    "wearable-vs-contactless-baby-monitors": ["wifi-vs-fhss-baby-monitor-connectivity"],
+    "what-happens-when-baby-monitor-company-shuts-down": ["baby-monitors-no-subscription"],
+    "wifi-vs-fhss-baby-monitor-connectivity": ["wearable-vs-contactless-baby-monitors", "why-does-baby-feel-warm-at-night"],
+}
+
 # Short breadcrumb labels for pages whose <title> is written for the
 # search result, so the trail reads Home > Shop, not Home > Order ...
 SECTION_NAMES = {
@@ -270,11 +288,12 @@ def home_hub(slug: str) -> str | None:
 
 def related_reading(slug: str, titles: dict[str, str]) -> str:
     hub = home_hub(slug)
+    posts = [s for s in CLUSTERS[hub] if s != slug][:3] if hub else []
+    posts += [s for s in EXTRA_RELATED.get(slug, []) if s not in posts]
+    links = [(f"/{hub}/", titles[hub])] if hub else []
+    links += [(f"/blog/{s}/", titles[f"blog/{s}"]) for s in posts]
     if hub is None:
-        links = [("/blog/", "More from the Nonnanest blog")]
-    else:
-        siblings = [s for s in CLUSTERS[hub] if s != slug][:3]
-        links = [(f"/{hub}/", titles[hub])] + [(f"/blog/{s}/", titles[f"blog/{s}"]) for s in siblings]
+        links.append(("/blog/", "More from the Nonnanest blog"))
     items = "\n".join(
         f'      <li><a href="{href}">{html.escape(text, quote=False)}</a></li>' for href, text in links
     )
@@ -286,9 +305,39 @@ def related_reading(slug: str, titles: dict[str, str]) -> str:
     )
 
 
+# Footer sections a post may already cover in its own body. When the body
+# matches, that section is left out of the stamped footer so the reader
+# doesn't see it twice. Related reading is always stamped.
+ALREADY_IN_BODY = {
+    "disclaimer-box": re.compile(
+        r"does (?:and|&amp;) does(?:n.t| not) do|and doesn(?:'|&rsquo;)t do|does &mdash; and doesn",
+        re.IGNORECASE,
+    ),
+    "pediatrician-note": re.compile(r"<h[23][^>]*>[^<]*pediatrician", re.IGNORECASE),
+    # Only the full locked text counts. Several posts carry just its first
+    # sentence, and blog posts need the long form.
+    "legal-disclaimer": re.compile(
+        r"Skin temperature readings are for informational purposes only to help\s+parents monitor general wellness and comfort"
+    ),
+}
+
+
+def article_body(page_html: str) -> str:
+    """The post's own content, without any footer this script stamped."""
+    start = page_html.find("<article")
+    end = page_html.find("</article>")
+    return marked_footer.sub("", page_html[start:end])
+
+
 def stamp_footer(path: Path, page_html: str, titles: dict[str, str]) -> str:
     slug = path.parent.name
-    footer = POST_FOOTER.replace("{{related}}", related_reading(slug, titles).rstrip("\n")).rstrip()
+    footer = POST_FOOTER
+    body = article_body(page_html)
+    for section, pattern in ALREADY_IN_BODY.items():
+        if pattern.search(body):
+            footer = re.sub(rf'\n  <div class="{section}">.*?</div>\n', "\n", footer, count=1, flags=re.DOTALL)
+    footer = footer.replace("{{related}}", related_reading(slug, titles).rstrip("\n")).rstrip()
+    footer = re.sub(r"\n{3,}", "\n\n", footer)
     block = f"{FOOTER_START}\n{footer}\n{FOOTER_END}"
 
     if marked_footer.search(page_html):
