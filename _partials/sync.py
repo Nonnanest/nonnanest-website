@@ -56,6 +56,10 @@ PAGES = [
     "how-to-choose-a-baby-monitor/index.html",
     "partners/index.html",
     "awards/index.html",
+    "learn/index.html",
+    "learn/skin-temperature/index.html",
+    "learn/non-wearable-monitors/index.html",
+    "learn/baby-monitor-privacy/index.html",
 ]
 
 SITE = "https://www.nonnanest.com"

@@ -2,7 +2,7 @@
 #
 # Nonnanest pre-commit hook.
 #
-# Runs the two audits that catch mistakes a human reading the diff will
+# Runs the three audits that catch mistakes a human reading the diff will
 # not:
 #
 #   1. FAQ schema drift - a page's FAQPage JSON-LD no longer matching the
@@ -14,7 +14,10 @@
 #      one, so the classic version is a copy that still points at its
 #      source, quietly telling Google the new page is a duplicate.
 #
-# Both audits are read-only. Neither stamps anything, because a hook that
+#   3. SEO drift - a page's Article or breadcrumb JSON-LD, or a blog
+#      post's footer, no longer matching its <title> and description.
+#
+# All three are read-only. None stamps anything, because a hook that
 # rewrote pages midway through a commit would be a nasty surprise.
 #
 # Installed via core.hooksPath, so this file is versioned with the repo
@@ -53,7 +56,7 @@ fi
 
 status=0
 
-# Both audits run even if the first fails, so one commit attempt surfaces
+# All audits run even if the first fails, so one commit attempt surfaces
 # every problem rather than trickling them out one at a time.
 faq="$repo/_partials/sync_faq_schema.py"
 if [ -f "$faq" ] && ! "$python" "$faq" --check; then
@@ -69,6 +72,15 @@ if [ -f "$sync" ] && ! "$python" "$sync" --check; then
     echo "" >&2
     echo "A page's canonical or og:url points somewhere else." >&2
     echo "  Fix the tags named above by hand, then stage the page." >&2
+    status=1
+fi
+
+seo="$repo/_partials/sync_seo.py"
+if [ -f "$seo" ] && ! "$python" "$seo" --check; then
+    echo "" >&2
+    echo "A page's structured data or blog post footer has drifted from its head tags." >&2
+    echo "  Fix:  python3 _partials/sync_seo.py" >&2
+    echo "  then stage the updated pages." >&2
     status=1
 fi
 

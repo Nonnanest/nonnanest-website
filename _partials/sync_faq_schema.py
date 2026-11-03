@@ -22,8 +22,12 @@ edit to a visible answer leaves the markup behind, and nothing on the
 rendered page looks wrong.
 
 Adding a page: append it to FAQ_PAGES. The page needs a visible FAQ in
-one of the two shapes below and an existing FAQPage block to bootstrap
-from (or the markers already in place).
+one of the two shapes below. If it has no FAQPage block yet, the first
+run adds one at the end of <head>.
+
+On a blog post, use the headings shape inside the article body:
+    <div class="faq-item"><h3>Question?</h3><p>Answer.</p></div>
+css/post-footer.css styles it.
 """
 from __future__ import annotations  # keeps this runnable on macOS system python 3.9
 
@@ -157,8 +161,14 @@ def sync_page(rel: str, check_only: bool, report: list) -> bool:
     else:
         template = wrap_existing(page_html)
         if template is None:
-            report.append(f"  ✗ {rel}: no FAQPage block to bootstrap from")
-            return False
+            # A page getting its first FAQ, such as a blog post: start a
+            # fresh marked block at the end of <head>.
+            head_end = page_html.index("</head>")
+            template = (
+                page_html[:head_end]
+                + f'{START}\n<script type="application/ld+json">\n{{schema}}\n</script>\n{END}\n'
+                + page_html[head_end:]
+            )
         updated = template.replace("{schema}", schema)
 
     if updated == page_html:
