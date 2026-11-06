@@ -58,6 +58,7 @@ PUBLISHER = {
 CLUSTERS = {
     "learn/skin-temperature": [
         "why-does-baby-feel-warm-at-night",
+        "baby-room-temperature",
         "contact-free-baby-monitors-why-skin-temperature-matters",
     ],
     "learn/non-wearable-monitors": [
@@ -85,6 +86,7 @@ HOME_HUB = {
 # hub and siblings. Carried over from the posts' old "Related reading"
 # sections when those were folded into the stamped footer.
 EXTRA_RELATED = {
+    "baby-room-temperature": ["non-wearable-baby-monitor-guide"],
     "baby-monitor-false-alarms-at-night": ["why-does-baby-feel-warm-at-night", "non-wearable-baby-monitor-guide"],
     "baby-monitors-no-subscription": ["non-wearable-baby-monitor-guide"],
     "do-baby-monitors-need-wifi": ["what-happens-when-baby-monitor-company-shuts-down"],

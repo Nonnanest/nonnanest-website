@@ -43,6 +43,7 @@ REPO = Path(__file__).resolve().parent.parent
 FAQ_PAGES = [
     "index.html",
     "shop/index.html",
+    "blog/baby-room-temperature/index.html",
 ]
 
 START = "<!-- PARTIAL:faq-schema-start -->"
