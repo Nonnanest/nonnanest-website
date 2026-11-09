@@ -548,10 +548,10 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 
 /* ===== ZESTYEARS PAGE ADDITIONS ===== */
 .press-hero-figure { max-width: 760px; margin: 0 auto 48px; padding: 0 48px; position: relative; }
-.press-hero-figure img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center 55%; border-radius: 20px; }
+.press-hero-figure img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; object-position: center 54%; border-radius: 20px; }
 .press-hero-seal { position: absolute; right: 72px; bottom: 24px; width: 112px !important; height: 112px; aspect-ratio: 1 !important; object-fit: contain !important; border-radius: 50% !important; background: rgba(250,248,245,0.92); padding: 8px; box-shadow: 0 8px 24px rgba(44,37,32,.18); }
 .press-figure { margin: 32px 0; }
-.press-figure img { width: 100%; max-width: 520px; margin: 0 auto; border-radius: 16px; background: #fff; }
+.press-figure img { width: 100%; max-width: 560px; height: auto; aspect-ratio: 4/3; object-fit: cover; object-position: center 45%; margin: 0 auto; border-radius: 16px; background: #fff; border: 1px solid var(--linen); }
 .press-release-body h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 400; line-height: 1.35; color: var(--charcoal); margin-bottom: 10px; }
 .press-release-body a.inline { color: var(--deep-teal); border-bottom: 1px solid var(--pale-aqua); transition: color 0.2s; }
 .press-release-body a.inline:hover { color: var(--soft-teal); }
@@ -563,6 +563,9 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
 @media (max-width: 900px) {
   .press-hero-figure { padding: 0 24px; }
   .press-hero-seal { right: 40px; bottom: 16px; width: 84px !important; height: 84px; }
+}
+@media (max-width: 600px) {
+  .press-hero-seal { right: 32px; bottom: 8px; width: 60px !important; height: 60px; padding: 4px; }
   .pull-quote { padding: 24px 22px; }
   .pull-quote p { font-size: 18px; }
 }
