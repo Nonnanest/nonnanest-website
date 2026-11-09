@@ -39,6 +39,7 @@ PAGES = [
     "press/index.html",
     "press/company-profile-preorders-open/index.html",
     "press/nappa-award-winner-2026/index.html",
+    "press/golden-grandparent-award-contactless-skin-temperature-monitor/index.html",
     "press/patent-pending-april-2026/index.html",
     "support/index.html",
     "quickstart/index.html",

@@ -44,6 +44,7 @@ FAQ_PAGES = [
     "index.html",
     "shop/index.html",
     "blog/baby-room-temperature/index.html",
+    "press/golden-grandparent-award-contactless-skin-temperature-monitor/index.html",
 ]
 
 START = "<!-- PARTIAL:faq-schema-start -->"
