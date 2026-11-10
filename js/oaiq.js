@@ -16,7 +16,7 @@
 
   var OPENAI_PIXEL_ID = "3BtUqwjBRU491xrkqEJtib";
   var GA_MEASUREMENT_ID = "G-VXRF2PKBGP";
-  var GOOGLE_ADS_ID = "AW-11433739720";
+  var GOOGLE_TAG_ID = "GTM-PGSVZDNZ"; // Google tag; includes the AW-11433739720 Ads destination
   var META_PIXEL_ID = "1076529151218038";
   var OPENAI_DEBUG = false;
   var OPPREF_MIRROR_KEY = "nn_oppref";
@@ -104,7 +104,7 @@
     d.head.appendChild(js);
     w.gtag("js", new Date());
     w.gtag("config", GA_MEASUREMENT_ID);
-    w.gtag("config", GOOGLE_ADS_ID);
+    w.gtag("config", GOOGLE_TAG_ID);
   }
 
   function ensureMeta() {
