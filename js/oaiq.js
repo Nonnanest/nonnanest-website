@@ -16,6 +16,7 @@
 
   var OPENAI_PIXEL_ID = "3BtUqwjBRU491xrkqEJtib";
   var GA_MEASUREMENT_ID = "G-VXRF2PKBGP";
+  var GOOGLE_ADS_ID = "AW-11433739720";
   var META_PIXEL_ID = "1076529151218038";
   var OPENAI_DEBUG = false;
   var OPPREF_MIRROR_KEY = "nn_oppref";
@@ -103,10 +104,13 @@
     d.head.appendChild(js);
     w.gtag("js", new Date());
     w.gtag("config", GA_MEASUREMENT_ID);
+    w.gtag("config", GOOGLE_ADS_ID);
   }
 
   function ensureMeta() {
     if (typeof w.fbq === "function") { return; }
+    // Keep local testing out of Meta: no pixel on localhost / 127.0.0.1.
+    if (/^(localhost|127\.0\.0\.1)$/.test(w.location.hostname)) { return; }
     !function (f, b, e, v, n, t, s) {
       n = f.fbq = function () {
         n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
