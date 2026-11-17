@@ -4,12 +4,12 @@
   <!-- Core pages -->
   <url>
     <loc>https://www.nonnanest.com/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.nonnanest.com/shop/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -19,16 +19,21 @@
   </url>
   <url>
     <loc>https://www.nonnanest.com/press/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nonnanest.com/awards/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <priority>0.7</priority>
   </url>
 
   <!-- Press releases (patent-first, launch-second sequence) -->
+  <url>
+    <loc>https://www.nonnanest.com/press/mother-chapter-best-no-wifi-baby-monitor-2026/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.nonnanest.com/press/golden-grandparent-award-contactless-skin-temperature-monitor/</loc>
     <lastmod>2026-11-10</lastmod>
