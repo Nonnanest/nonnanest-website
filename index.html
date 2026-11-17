@@ -133,7 +133,8 @@
   "category": "Baby Monitors",
   "award": [
     "2026 NAPPA Award Winner, Wellness + Awareness",
-    "ZestYears Golden Grandparent Award for Excellence in Baby Monitoring (2026)"
+    "2026 ZestYears Golden Grandparent Award for Excellence in Baby Monitoring",
+    "Best No-Wi-Fi Baby Monitor, The Mother Chapter Awards 2026"
   ],
   "additionalProperty": [
     {
@@ -1389,6 +1390,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   display: flex; align-items: center; gap: 12px;
 }
 .hero-award-float { margin-bottom: 0; }
+.hero-award-textonly { padding: 10px 24px; min-height: 78px; }
 /* Dark bottom gradient carries the white type over pale footage */
 .hero-overlay {
   position: absolute; inset: auto 0 0 0; z-index: 2;
@@ -1433,8 +1435,8 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .hero-overlay { padding: 120px 24px 32px; }
   .hero-awards { top: 16px; right: 16px; }
 }
-/* Two pills side by side need ~700px; stack them below that */
-@media (max-width: 720px) {
+/* Three pills side by side need ~1100px; stack them below that */
+@media (max-width: 1100px) {
   .hero-awards { flex-direction: column; align-items: flex-end; gap: 8px; }
 }
 @media (max-width: 560px) {
@@ -1446,6 +1448,14 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   .hero-award-float .hero-award-sub { display: none; }
   .hero-award-float .hero-award-title { font-size: 12px; }
   .hero-award-float .hero-award-seal { width: 34px; height: 34px; }
+  /* Three stacked pills run into the headline on a phone: one compact row instead,
+     seal-only for NAPPA and ZestYears (aria-labels carry the full titles) */
+  .hero-awards { flex-direction: row; align-items: center; gap: 6px; }
+  .hero-award-float:not(.hero-award-textonly) { padding: 5px; }
+  .hero-award-float:not(.hero-award-textonly) .hero-award-text { display: none; }
+  .hero-award-textonly { padding: 6px 12px; min-height: 46px; }
+  .hero-award-textonly .hero-award-title { font-size: 11.5px; }
+  .hero-award-float.hero-award-textonly .hero-award-sub { display: block; font-size: 8px; letter-spacing: 1px; margin-top: 2px; }
 }
 /* Honor reduced-motion: the poster frame stands in for the loop. */
 @media (prefers-reduced-motion: reduce) {
@@ -1491,7 +1501,8 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   "email": "hello@nonnanest.com",
   "award": [
     "2026 NAPPA Award Winner, Wellness + Awareness",
-    "ZestYears Golden Grandparent Award for Excellence in Baby Monitoring (2026)"
+    "2026 ZestYears Golden Grandparent Award for Excellence in Baby Monitoring",
+    "Best No-Wi-Fi Baby Monitor, The Mother Chapter Awards 2026"
   ],
   "sameAs": [
     "https://www.instagram.com/nonnanest.baby/",
@@ -1548,7 +1559,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
     </video>
 
     <div class="hero-awards">
-      <a href="#testimonials" class="hero-award-badge hero-award-float" aria-label="2026 NAPPA Award Winner &mdash; read evaluator reviews">
+      <a href="/press/nappa-award-winner-2026/" class="hero-award-badge hero-award-float" aria-label="2026 NAPPA Award Winner, Wellness + Awareness">
         <img src="/images/nappa-2026-winner.png" alt="2026 National Parenting Product Awards Winner seal" class="hero-award-seal">
         <span class="hero-award-text">
           <span class="hero-award-title">2026 NAPPA Award Winner</span>
@@ -1560,6 +1571,13 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
         <span class="hero-award-text">
           <span class="hero-award-title">Golden Grandparent Award</span>
           <span class="hero-award-sub">ZestYears 2026</span>
+        </span>
+      </a>
+      <!-- Text lockup only. The Mother Chapter badge image is not licensed. -->
+      <a href="/press/mother-chapter-best-no-wifi-baby-monitor-2026/" class="hero-award-badge hero-award-float hero-award-textonly" aria-label="Best No-Wi-Fi Baby Monitor, The Mother Chapter Awards 2026">
+        <span class="hero-award-text">
+          <span class="hero-award-title">Best No-Wi-Fi Baby Monitor</span>
+          <span class="hero-award-sub">The Mother Chapter 2026</span>
         </span>
       </a>
     </div>
@@ -2114,7 +2132,7 @@ footer { background: var(--charcoal); color: var(--warm-sand); padding: 80px 48p
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · <a href="/awards/">NAPPA 2026 Award Winner · ZestYears Golden Grandparent Award 2026</a></p>
+    <p>© 2026 Nonnanest, Inc. · Charleston, SC · Patent pending · <a href="/awards/">2026 NAPPA Award Winner · 2026 ZestYears Golden Grandparent Award · Best No-Wi-Fi Baby Monitor, The Mother Chapter Awards 2026</a></p>
     <div class="footer-bottom-links">
       <a href="/privacy-policy/">Privacy Policy</a>
       <a href="/terms/">Terms of Service</a>

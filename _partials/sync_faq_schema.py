@@ -44,6 +44,7 @@ FAQ_PAGES = [
     "index.html",
     "shop/index.html",
     "blog/baby-room-temperature/index.html",
+    "press/mother-chapter-best-no-wifi-baby-monitor-2026/index.html",
 ]
 
 START = "<!-- PARTIAL:faq-schema-start -->"
